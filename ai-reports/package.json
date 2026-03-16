@@ -1,0 +1,36 @@
+{
+  "name": "sales-bi-dashboard",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+
+    "generate:report": "tsx scripts/generateDailyMetrics.ts",
+    "generate:daily": "tsx scripts/generateDailyMetrics.ts",
+    "generate:test": "tsx scripts/generateDailyMetrics.ts",
+
+    "generate:daily-text": "tsx scripts/generateDailyReportText.ts"
+  },
+
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.344.0",
+    "papaparse": "^5.4.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "@types/react": "^18.2.21",
+    "@types/react-dom": "^18.2.7",
+    "@vitejs/plugin-react": "^4.2.1",
+    "tsx": "^4.7.1",
+    "typescript": "^5.3.3",
+    "vite": "^5.1.4"
+  }
+}
