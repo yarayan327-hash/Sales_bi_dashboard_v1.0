@@ -1,0 +1,19 @@
+{
+  "name": "sales-bi-dashboard-ai-reports",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "generate:report": "tsx scripts/generateDailyMetrics.ts",
+    "generate:daily-text": "tsx scripts/generateDailyReportText.ts",
+    "generate:action": "tsx scripts/generateActionEngine.ts"
+  },
+  "dependencies": {
+    "papaparse": "^5.5.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3"
+  }
+}
