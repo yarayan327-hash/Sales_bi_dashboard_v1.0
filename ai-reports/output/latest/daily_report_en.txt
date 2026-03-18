@@ -1,0 +1,36 @@
+📊 Daily Sales Report
+
+【MTD Performance】
+Leads: 542
+Bookings: 284
+Attendance: 94
+Orders: 6
+GMV: 4319
+Attendance Rate: 33.1%
+Conversion Rate: 6.4%
+
+【Key Diagnosis】
+当前首要问题为：线索量偏弱、出席不足、转化不足
+
+1. 线索量偏弱
+MTD 线索 542，较上月同期少 144 条
+- MTD线索 542
+- 较上月同期 Δ -144
+
+2. 出席不足
+MTD 出席率 33.1%，低于健康值 45%。
+- MTD出席 94 / 预约 284
+- 出席率 33.1%
+- 预约方式弱项: 自约 出席率 18.2%
+- 时段弱项: 17:00-19:00 出席率 11.8%
+- 课前动作弱项: Team002 EGCC-fatmamohamed 课前2h触达率 0.0%
+
+3. 转化不足
+MTD 出席转化率 6.4%，低于健康值 18%。
+- MTD订单 6 / 出席 94
+- 出席转化率 6.4%
+- 课后动作弱项: Team002 51nadamuhammad 出席后6h触达率 36.4%
+
+【Team PK】
+Team001: 2 orders / GMV 1440
+Team002: 4 orders / GMV 2879

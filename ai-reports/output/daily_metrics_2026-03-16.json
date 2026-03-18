@@ -1,0 +1,47 @@
+{
+  "report_date": "2026-03-16",
+  "yesterday": {
+    "leads": 0,
+    "booked": 0,
+    "attended": 0,
+    "orders": 0,
+    "gmv": 0,
+    "booking_rate": 0,
+    "attendance_rate": 0,
+    "attended_conversion_rate": 0,
+    "lead_conversion_rate": 0,
+    "aov": 0
+  },
+  "mtd": {
+    "leads": 380,
+    "booked": 179,
+    "attended": 56,
+    "orders": 5,
+    "gmv": 3720,
+    "booking_rate": 0.4710526315789474,
+    "attendance_rate": 0.3128491620111732,
+    "attended_conversion_rate": 0.08928571428571429,
+    "lead_conversion_rate": 0.013157894736842105,
+    "aov": 744
+  },
+  "vs_last_month_same_period": {
+    "leads_delta": -263,
+    "booked_delta": -239,
+    "attended_delta": -120,
+    "orders_delta": -6,
+    "gmv_delta": -5039
+  },
+  "debug": {
+    "ranges": {
+      "yesterday": "2026-03-16",
+      "mtd": {
+        "start": "2026-03-01",
+        "end": "2026-03-16"
+      },
+      "lm_same_period": {
+        "start": "2026-02-01",
+        "end": "2026-02-16"
+      }
+    }
+  }
+}
