@@ -6,7 +6,8 @@
   "scripts": {
     "generate:report": "tsx scripts/generateDailyMetrics.ts",
     "generate:daily-text": "tsx scripts/generateDailyReportText.ts",
-    "generate:action": "tsx scripts/generateActionEngine.ts"
+    "generate:action": "tsx scripts/generateActionEngine.ts",
+    "validate:latest": "tsx scripts/validateLatestData.ts"
   },
   "dependencies": {
     "papaparse": "^5.5.3"
