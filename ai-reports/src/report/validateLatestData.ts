@@ -15,14 +15,6 @@ export interface ValidationResult {
   checkedFiles: string[];
 }
 
-function safeReadText(filePath: string): string | null {
-  try {
-    return fs.readFileSync(filePath, "utf8");
-  } catch {
-    return null;
-  }
-}
-
 function safeReadJson(filePath: string): any | null {
   try {
     const raw = fs.readFileSync(filePath, "utf8");
@@ -41,24 +33,111 @@ function normalizeJson(obj: any): string {
 }
 
 function extractDateFromPayload(payload: any): string {
-  return (
-    String(
-      payload?.report_date ??
-        payload?.daily_metrics?.report_date ??
-        payload?.daily_metrics?.yesterday?.report_date ??
-        ""
-    ).slice(0, 10)
-  );
+  return String(
+    payload?.report_date ??
+      payload?.daily_metrics?.report_date ??
+      payload?.daily_metrics?.yesterday?.report_date ??
+      ""
+  ).slice(0, 10);
 }
 
-function hasCrossMonthRisk(reportDate: string, payload: any): boolean {
-  const monthPrefix = String(reportDate).slice(0, 7);
-  const text = JSON.stringify(payload);
+function getMonthStart(reportDate: string): string {
+  return `${String(reportDate).slice(0, 7)}-01`;
+}
 
-  // 只做轻量风险提示，不做强制报错
-  // 如果 payload 中明显出现更早月份日期，则提示
-  const dateMatches = text.match(/\d{4}-\d{2}-\d{2}/g) || [];
-  return dateMatches.some((d) => !String(d).startsWith(monthPrefix));
+function extractYmdFromAny(raw: any): string {
+  const text = String(raw ?? "").trim();
+  if (!text) return "";
+
+  // 支持：
+  // 2026-03-19
+  // 2026/3/19
+  // 2026-03-19 12:00
+  // 2026/3/19 12:00
+  // 2026-03-19T12:00:00+08:00
+  const m = text.match(/^(\d{4})[/-](\d{1,2})[/-](\d{1,2})/);
+  if (!m) return "";
+
+  const y = m[1];
+  const mm = String(Number(m[2])).padStart(2, "0");
+  const dd = String(Number(m[3])).padStart(2, "0");
+  return `${y}-${mm}-${dd}`;
+}
+
+function isWithinMtd(ymd: string, monthStart: string, reportDate: string): boolean {
+  return !!ymd && ymd >= monthStart && ymd <= reportDate;
+}
+
+function validateMtdDateField(params: {
+  data: any[];
+  field: string;
+  monthStart: string;
+  reportDate: string;
+  fileLabel: string;
+  maxExamples?: number;
+}): ValidationIssue[] {
+  const {
+    data,
+    field,
+    monthStart,
+    reportDate,
+    fileLabel,
+    maxExamples = 5,
+  } = params;
+
+  const issues: ValidationIssue[] = [];
+  if (!Array.isArray(data)) {
+    issues.push({
+      level: "error",
+      code: "INVALID_ACTION_FILE",
+      message: `${fileLabel} 不是数组，无法校验 MTD 口径`,
+    });
+    return issues;
+  }
+
+  const outOfRangeRows = data
+    .map((row, idx) => {
+      const raw = row?.[field];
+      const ymd = extractYmdFromAny(raw);
+      return { idx, raw, ymd };
+    })
+    .filter((x) => !!x.raw && !!x.ymd && !isWithinMtd(x.ymd, monthStart, reportDate));
+
+  if (outOfRangeRows.length > 0) {
+    const examples = outOfRangeRows
+      .slice(0, maxExamples)
+      .map((x) => `${field}=${x.raw}`)
+      .join("; ");
+
+    issues.push({
+      level: "error",
+      code: "ACTION_SCOPE_NOT_MTD",
+      message: `${fileLabel} 存在非 MTD 数据（字段 ${field}），示例：${examples}`,
+    });
+  }
+
+  const missingDateRows = data
+    .map((row, idx) => {
+      const raw = row?.[field];
+      const ymd = extractYmdFromAny(raw);
+      return { idx, raw, ymd };
+    })
+    .filter((x) => !!x.raw && !x.ymd);
+
+  if (missingDateRows.length > 0) {
+    const examples = missingDateRows
+      .slice(0, maxExamples)
+      .map((x) => `${field}=${x.raw}`)
+      .join("; ");
+
+    issues.push({
+      level: "warning",
+      code: "UNPARSEABLE_ACTION_DATE",
+      message: `${fileLabel} 中有无法解析的日期字段（${field}），示例：${examples}`,
+    });
+  }
+
+  return issues;
 }
 
 export function validateLatestData(input: {
@@ -67,8 +146,8 @@ export function validateLatestData(input: {
 }): ValidationResult {
   const reportDate = String(input.reportDate ?? "").slice(0, 10);
   const outputDir = input.outputDir || path.resolve("output");
-
   const latestDir = path.join(outputDir, "latest");
+  const monthStart = getMonthStart(reportDate);
 
   const requiredLatestFiles = [
     "daily_metrics.json",
@@ -76,12 +155,16 @@ export function validateLatestData(input: {
     "action_payload.json",
     "daily_report_cn.txt",
     "daily_report_en.txt",
+    "sales_todo.json",
+    "unreached_leads.json",
+    "preclass_unfollowed.json",
+    "postclass_unfollowed.json",
   ];
 
   const issues: ValidationIssue[] = [];
   const checkedFiles: string[] = [];
 
-  // 1) 检查 latest 必需文件
+  // 1) latest 必需文件
   for (const name of requiredLatestFiles) {
     const p = path.join(latestDir, name);
     checkedFiles.push(p);
@@ -94,7 +177,6 @@ export function validateLatestData(input: {
     }
   }
 
-  // 如果基础文件都不齐，后面不继续深挖
   const hasMissingCritical = issues.some((i) => i.level === "error");
   if (hasMissingCritical) {
     return {
@@ -106,13 +188,11 @@ export function validateLatestData(input: {
     };
   }
 
-  // 2) 检查 latest report_payload 日期
+  // 2) latest report_date 校验
   const latestReportPayloadPath = path.join(latestDir, "report_payload.json");
-  const latestActionPayloadPath = path.join(latestDir, "action_payload.json");
   const latestDailyMetricsPath = path.join(latestDir, "daily_metrics.json");
 
   const latestReportPayload = safeReadJson(latestReportPayloadPath);
-  const latestActionPayload = safeReadJson(latestActionPayloadPath);
   const latestDailyMetrics = safeReadJson(latestDailyMetricsPath);
 
   const payloadDate =
@@ -133,12 +213,8 @@ export function validateLatestData(input: {
     });
   }
 
-  // 3) 检查 latest 和当日文件一致性
-  const pairFiles = [
-    "daily_metrics",
-    "report_payload",
-    "action_payload",
-  ];
+  // 3) latest vs dated 文件一致性
+  const pairFiles = ["daily_metrics", "report_payload", "action_payload"];
 
   for (const base of pairFiles) {
     const datedPath = path.join(outputDir, `${base}_${reportDate}.json`);
@@ -177,20 +253,49 @@ export function validateLatestData(input: {
     }
   }
 
-  // 4) 轻量检查跨月污染风险（warning）
-  if (latestActionPayload && hasCrossMonthRisk(reportDate, latestActionPayload)) {
-    issues.push({
-      level: "warning",
-      code: "CROSS_MONTH_RISK",
-      message: "action_payload 中检测到跨月日期，需确认行动数据是否已严格限制为 MTD",
-    });
-  }
+  // 4) 真正的 MTD 行动口径校验
+  const unreachedLeads = safeReadJson(path.join(latestDir, "unreached_leads.json"));
+  const preclassUnfollowed = safeReadJson(path.join(latestDir, "preclass_unfollowed.json"));
+  const postclassUnfollowed = safeReadJson(path.join(latestDir, "postclass_unfollowed.json"));
+  const salesTodo = safeReadJson(path.join(latestDir, "sales_todo.json"));
 
-  if (latestReportPayload && hasCrossMonthRisk(reportDate, latestReportPayload)) {
+  issues.push(
+    ...validateMtdDateField({
+      data: unreachedLeads,
+      field: "assigned_time",
+      monthStart,
+      reportDate,
+      fileLabel: "unreached_leads.json",
+    })
+  );
+
+  issues.push(
+    ...validateMtdDateField({
+      data: preclassUnfollowed,
+      field: "class_start_ksa",
+      monthStart,
+      reportDate,
+      fileLabel: "preclass_unfollowed.json",
+    })
+  );
+
+  issues.push(
+    ...validateMtdDateField({
+      data: postclassUnfollowed,
+      field: "class_start_ksa",
+      monthStart,
+      reportDate,
+      fileLabel: "postclass_unfollowed.json",
+    })
+  );
+
+  // sales_todo 通常是聚合结果，不强制检查所有字段日期
+  // 只做轻量结构检查，避免误报
+  if (!Array.isArray(salesTodo)) {
     issues.push({
       level: "warning",
-      code: "REPORT_PAYLOAD_CROSS_MONTH_RISK",
-      message: "report_payload 中检测到跨月日期，需确认分析口径是否正确",
+      code: "INVALID_SALES_TODO",
+      message: "sales_todo.json 不是数组，跳过销售待办结构检查",
     });
   }
 
