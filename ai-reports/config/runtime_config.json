@@ -1,0 +1,26 @@
+{
+  "engine_name": "Sales Engine",
+  "current_daily_version": "daily_v3",
+  "current_weekly_version": "weekly_v1",
+  "timezone": "Africa/Cairo",
+  "date_scope_default": "MTD",
+  "thresholds": {
+    "attendance_rate": 0.45,
+    "attended_conversion_rate": 0.18
+  },
+  "action_priority_rules": {
+    "P0": "directly_impacts_today_orders",
+    "P1": "impacts_tomorrow_orders_or_attendance",
+    "P2": "future_supply_or_cleanup"
+  },
+  "data_rules": {
+    "action_scope_default": "MTD",
+    "forbid_historical_data_for_actions": true,
+    "require_latest_consistency": true
+  },
+  "output_rules": {
+    "daily_structure_locked": true,
+    "weekly_structure_locked": true,
+    "must_have_single_core_problem": true
+  }
+}
