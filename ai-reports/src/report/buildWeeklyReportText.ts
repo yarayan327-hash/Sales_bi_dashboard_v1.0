@@ -20,6 +20,7 @@ export function buildWeeklyReportText(input: {
   const teams = Array.isArray(payload.teams) ? payload.teams : [];
   const sources = Array.isArray(payload.sources) ? payload.sources : [];
   const summary = diagnosis.summary ?? {};
+  const focus = diagnosis.focus ?? {};
 
   const teamLines = teams
     .map(
@@ -34,14 +35,17 @@ export function buildWeeklyReportText(input: {
 
   const sourceLines = sources
     .slice(0, 8)
-    .map(
-      (s: any) =>
-        `- ${s.lead_source}: 线索 ${fmt(s.leads)} / 预约 ${fmt(s.booked)} / 出席 ${fmt(
-          s.attended
-        )} / 成交 ${fmt(s.orders)} / 出席率 ${pct(s.attendance_rate)} / 转化率 ${pct(
-          s.attended_conversion_rate
-        )}`
-    )
+    .map((s: any) => {
+      const label =
+        focus?.best_source?.lead_source === s.lead_source && focus?.best_source?.source_label
+          ? `（${focus.best_source.source_label}）`
+          : "";
+      return `- ${s.lead_source}${label}: 线索 ${fmt(s.leads)} / 预约 ${fmt(s.booked)} / 出席 ${fmt(
+        s.attended
+      )} / 成交 ${fmt(s.orders)} / 出席率 ${pct(s.attendance_rate)} / 转化率 ${pct(
+        s.attended_conversion_rate
+      )}`;
+    })
     .join("\n");
 
   const actionLines = (diagnosis.next_week_actions ?? [])
@@ -88,12 +92,15 @@ export function buildWeeklyReportText(input: {
 - 时间进度：${pct(summary.time_progress)}
 - 节奏判断：${summary.rhythm}
 - 可达性：${summary.feasibility}
+- 运行模式：${summary.operating_mode}
+- 本周主目标：${summary.weekly_primary_goal}
 - 剩余目标：${fmt(summary.remaining_target)}
 - 剩余天数：${fmt(summary.remaining_days)}
 - 当前日均 GMV：${fmt(summary.current_daily_gmv)}
 - 当前日均订单：${fmt(summary.current_daily_orders)}
 - 日均需完成 GMV：${fmt(summary.daily_gmv_needed)}
 - 日均需完成订单：${summary.daily_orders_needed?.toFixed?.(1) ?? "0.0"}
+- 目标压力倍数：${Number(summary.pressure_multiple ?? 0).toFixed(1)}x
 
 五、核心问题判断
 - 核心问题：${summary.core_problem}
@@ -107,6 +114,7 @@ ${teamLines || "-"}
 
 七、来源拆解（业务口径）
 ${sourceLines || "-"}
+- 说明：若来源名称包含“转介绍”，当前只表示高转化表现，默认需做上游归因验证，不直接作为扩量依据。
 
 八、数据异常监控
 - 未归属预约池：预约 ${fmt(exceptionPool.booked)} / 出席 ${fmt(
@@ -114,7 +122,8 @@ ${sourceLines || "-"}
   )} / 成交 ${fmt(exceptionPool.orders)} / GMV ${fmt(exceptionPool.gmv)}
 - 未归属预约占总预约：${pct(exceptionPool.booked_share_of_all)}
 - 未归属出席占总出席：${pct(exceptionPool.attended_share_of_all)}
-- 说明：未归属预约池不参与团队PK与管理动作判断，但会影响业务全量漏斗表现。
+- 风险等级：${focus?.exception_pool?.severity || "低"}
+- 说明：未归属预约池不参与团队PK与管理动作判断，但会影响业务全量漏斗表现；当占比过高时，应优先修复数据归属规则。
 
 九、下周行动计划
 ${actionLines || "-"}
@@ -122,5 +131,5 @@ ${actionLines || "-"}
 十、管理层一句话总结
 ${summary.executive_summary}
 
-🦞 Sales Engine Weekly Report V1`;
+🦞 Sales Engine Weekly Report V1.1`;
 }
