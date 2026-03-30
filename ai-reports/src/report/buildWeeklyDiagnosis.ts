@@ -7,8 +7,12 @@ function safeNum(v: any) {
   return Number.isFinite(n) ? n : 0;
 }
 
+function safeText(v: any) {
+  return String(v ?? "").trim();
+}
+
 export function buildWeeklyDiagnosis(input: any) {
-  // ⚠️ 管理判断必须基于 overall_managed
+  // 管理判断统一基于 managed 口径
   const overall = input?.overall_managed ?? input?.overall ?? {};
   const overallAll = input?.overall ?? {};
   const exceptionPool = input?.exception_pool ?? {};
@@ -59,14 +63,20 @@ export function buildWeeklyDiagnosis(input: any) {
     rhythm = "严重落后";
   }
 
-  // 可达性
+  // 可达性分级
+  const gmvMultiple = currentDailyGMV > 0 ? dailyGmvNeeded / currentDailyGMV : Infinity;
+  const orderMultiple = currentDailyOrders > 0 ? dailyOrdersNeeded / currentDailyOrders : Infinity;
+  const pressureMultiple = Math.max(gmvMultiple, orderMultiple);
+
   let feasibility = "可达";
-  if (dailyGmvNeeded <= currentDailyGMV * 1.5) {
+  if (pressureMultiple <= 2) {
     feasibility = "可达";
-  } else if (dailyGmvNeeded <= currentDailyGMV * 2.5) {
-    feasibility = "有风险";
-  } else {
+  } else if (pressureMultiple <= 5) {
+    feasibility = "困难";
+  } else if (pressureMultiple <= 10) {
     feasibility = "不可达";
+  } else {
+    feasibility = "极端不可达";
   }
 
   // 核心问题判断
@@ -111,22 +121,59 @@ export function buildWeeklyDiagnosis(input: any) {
     .filter((s) => safeNum(s.leads) > 0)
     .sort((a, b) => safeNum(b.attended_conversion_rate) - safeNum(a.attended_conversion_rate));
 
-  const bestSource = sortedSourcesByConversion[0] || null;
+  const bestSourceRaw = sortedSourcesByConversion[0] || null;
   const weakestSource =
     [...sources]
       .filter((s) => safeNum(s.leads) >= 10)
       .sort((a, b) => safeNum(a.attended_conversion_rate) - safeNum(b.attended_conversion_rate))[0] || null;
 
+  const bestSource = bestSourceRaw
+    ? {
+        ...bestSourceRaw,
+        source_label:
+          safeText(bestSourceRaw.lead_source).includes("转介绍")
+            ? "高转化表现来源（需溯源验证）"
+            : "高转化来源",
+        needs_traceback: safeText(bestSourceRaw.lead_source).includes("转介绍"),
+      }
+    : null;
+
+  // 异常池严重度
+  const exceptionBookedShare = safeNum(exceptionPool?.booked_share_of_all);
+  let exceptionSeverity = "低";
+  if (exceptionBookedShare >= 0.15) {
+    exceptionSeverity = "高";
+  } else if (exceptionBookedShare >= 0.08) {
+    exceptionSeverity = "中";
+  }
+
+  // 战略模式切换
+  let operatingMode = "稳定推进模式";
+  let weeklyPrimaryGoal = "按月目标节奏推进";
+  if (feasibility === "困难") {
+    operatingMode = "加压修复模式";
+    weeklyPrimaryGoal = "在保留目标推进的同时，重点修复核心短板";
+  } else if (feasibility === "不可达" || feasibility === "极端不可达") {
+    operatingMode = "能力修复模式";
+    weeklyPrimaryGoal = "本周不以硬冲月目标为主，而以修复转化/出席链路为主";
+  }
+
   // 管理摘要
   let executiveSummary = "";
-  if (feasibility === "不可达") {
+  if (feasibility === "极端不可达") {
+    executiveSummary = `当前管理口径 GMV 仅完成 ${pct(completionRate)}，远低于时间进度 ${pct(
+      timeProgress
+    )}，且日均目标压力已达当前产出的 ${pressureMultiple.toFixed(
+      1
+    )} 倍，当前月目标已极端不可达，必须切换为能力修复模式。`;
+  } else if (feasibility === "不可达") {
     executiveSummary = `当前管理口径 GMV 仅完成 ${pct(completionRate)}，远低于时间进度 ${pct(
       timeProgress
     )}，节奏已${rhythm}，按当前速度本月目标不可自然达成，必须立刻调整策略。`;
-  } else if (feasibility === "有风险") {
-    executiveSummary = `当前节奏${rhythm}，虽仍有机会达成，但需显著提升后续日均产出，否则月目标存在明显风险。`;
+  } else if (feasibility === "困难") {
+    executiveSummary = `当前节奏${rhythm}，虽仍有机会达成，但后续日均目标压力已明显偏高，需要边推进边修复链路。`;
   } else {
-    executiveSummary = `当前节奏${rhythm}，在可达范围内，关键是保持核心链路稳定并放大高质量来源。`;
+    executiveSummary = `当前节奏${rhythm}，仍在可达区间，关键是保持核心链路稳定并放大高质量来源。`;
   }
 
   let managementJudgement = "";
@@ -145,7 +192,7 @@ export function buildWeeklyDiagnosis(input: any) {
   }
 
   // 下周动作
-  const nextWeekActions = [];
+  const nextWeekActions: any[] = [];
 
   if (coreProblem === "转化") {
     nextWeekActions.push(
@@ -196,9 +243,11 @@ export function buildWeeklyDiagnosis(input: any) {
     nextWeekActions.push(
       {
         priority: "P0",
-        target: bestSource?.lead_source || "高质量来源",
-        action: "放大高质量来源占比，优先承接高转化来源",
-        why: "最快提升下周增量",
+        target: bestSource?.lead_source || "高转化表现来源",
+        action: bestSource?.needs_traceback
+          ? "先做上游归因核查，确认是否为真实转介绍，再决定是否扩量"
+          : "放大高转化来源占比，优先承接高转化来源",
+        why: bestSource?.needs_traceback ? "避免误把归因异常当成优质来源" : "最快提升下周增量",
       },
       {
         priority: "P1",
@@ -209,14 +258,34 @@ export function buildWeeklyDiagnosis(input: any) {
     );
   }
 
-  nextWeekActions.push({
-    priority: "P2",
-    target: "管理层",
-    action: `按当前差距，重新拆解下周日均目标：至少 ${dailyOrdersNeeded.toFixed(
-      1
-    )} 单 / 日，至少 ${Math.round(dailyGmvNeeded).toLocaleString()} GMV / 日`,
-    why: "让团队对目标有明确节奏感",
-  });
+  if (exceptionSeverity === "高" || exceptionSeverity === "中") {
+    nextWeekActions.push({
+      priority: "P1",
+      target: "数据归属",
+      action: `优先修复未归属预约池，目前占总预约 ${pct(
+        exceptionBookedShare
+      )}，否则团队分析与追责会持续失真`,
+      why: "数据治理已开始影响管理判断",
+    });
+  }
+
+  if (feasibility === "不可达" || feasibility === "极端不可达") {
+    nextWeekActions.push({
+      priority: "P2",
+      target: "管理层",
+      action: "本周将目标切换为能力修复：优先提升转化率与出席率，不再按当前月目标做硬冲拆解",
+      why: "避免用不可执行目标误导团队行为",
+    });
+  } else {
+    nextWeekActions.push({
+      priority: "P2",
+      target: "管理层",
+      action: `按当前差距，重新拆解下周日均目标：至少 ${dailyOrdersNeeded.toFixed(
+        1
+      )} 单 / 日，至少 ${Math.round(dailyGmvNeeded).toLocaleString()} GMV / 日`,
+      why: "让团队对目标有明确节奏感",
+    });
+  }
 
   return {
     summary: {
@@ -226,6 +295,8 @@ export function buildWeeklyDiagnosis(input: any) {
       problem_type: problemType,
       rhythm,
       feasibility,
+      operating_mode: operatingMode,
+      weekly_primary_goal: weeklyPrimaryGoal,
       executive_summary: executiveSummary,
       management_judgement: managementJudgement,
       completion_rate: completionRate,
@@ -236,6 +307,7 @@ export function buildWeeklyDiagnosis(input: any) {
       current_daily_orders: currentDailyOrders,
       daily_gmv_needed: dailyGmvNeeded,
       daily_orders_needed: dailyOrdersNeeded,
+      pressure_multiple: pressureMultiple,
     },
     diagnosis: {
       conversion: {
@@ -262,7 +334,10 @@ export function buildWeeklyDiagnosis(input: any) {
       weakest_team: weakestTeam || null,
       best_source: bestSource || null,
       weakest_source: weakestSource || null,
-      exception_pool: exceptionPool || null,
+      exception_pool: {
+        ...exceptionPool,
+        severity: exceptionSeverity,
+      },
       overall_all: overallAll || null,
     },
     next_week_actions: nextWeekActions,
