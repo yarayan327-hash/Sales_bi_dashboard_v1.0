@@ -1,14 +1,15 @@
 {
   "name": "sales-bi-dashboard-ai-reports",
   "version": "1.0.0",
-  "description": "Sales BI AI Reports Engine (Daily / Weekly / Action Engine)",
+  "description": "Sales BI AI Reports Engine (Daily / Weekly / Monthly / Action Engine)",
   "type": "module",
   "scripts": {
     "generate:report": "tsx scripts/generateDailyMetrics.ts",
     "generate:daily-text": "tsx scripts/generateDailyReportText.ts",
     "generate:action": "tsx scripts/generateActionEngine.ts",
     "generate:weekly": "tsx scripts/generateWeeklyReport.ts",
-    "validate:latest": "tsx src/report/validateLatestData.ts"
+    "generate:monthly": "tsx scripts/generateMonthlyReport.ts",
+    "validate:latest": "tsx scripts/validateLatestData.ts"
   },
   "dependencies": {
     "papaparse": "^5.4.1"
