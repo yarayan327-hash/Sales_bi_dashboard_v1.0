@@ -1,0 +1,132 @@
+{
+  "summary": {
+    "core_problem": "转化",
+    "severity": 95,
+    "core_reason": "整月出席转化率仅 5.7%，低于健康值 18.0%。",
+    "problem_type": "系统性问题",
+    "month_result": "未达成",
+    "completion_rate": 0.11749068322981367,
+    "executive_summary": "本月管理口径 GMV 完成率仅 11.7%，整月未达目标，核心短板集中在转化环节，需作为下月首要修复项。",
+    "management_judgement": "下月不应先补量，而应先修复出席后的跟进与关单能力。",
+    "weekly_trend_direction": "下降"
+  },
+  "diagnosis": {
+    "conversion": {
+      "ok": false,
+      "value": 0.05670103092783505,
+      "threshold": 0.18
+    },
+    "attendance": {
+      "ok": true,
+      "value": 0.47317073170731705,
+      "threshold": 0.45
+    },
+    "booking": {
+      "ok": false,
+      "value": 0.4205128205128205,
+      "threshold": 0.5
+    },
+    "lead_conversion": {
+      "value": 0.011282051282051283
+    }
+  },
+  "focus": {
+    "best_team": {
+      "sales_group": "002",
+      "leads": 550,
+      "booked": 256,
+      "attended": 109,
+      "orders": 7,
+      "gmv": 6618,
+      "booking_rate": 0.46545454545454545,
+      "attendance_rate": 0.42578125,
+      "attended_conversion_rate": 0.06422018348623854,
+      "lead_conversion_rate": 0.012727272727272728,
+      "aov": 945.4285714285714
+    },
+    "weakest_team": {
+      "sales_group": "001",
+      "leads": 425,
+      "booked": 154,
+      "attended": 85,
+      "orders": 4,
+      "gmv": 2840,
+      "booking_rate": 0.3623529411764706,
+      "attendance_rate": 0.551948051948052,
+      "attended_conversion_rate": 0.047058823529411764,
+      "lead_conversion_rate": 0.009411764705882352,
+      "aov": 710
+    },
+    "best_source": {
+      "lead_source": "转介绍分配cc",
+      "leads": 21,
+      "booked": 6,
+      "attended": 3,
+      "orders": 4,
+      "gmv": 4579,
+      "booking_rate": 0.2857142857142857,
+      "attendance_rate": 0.5,
+      "attended_conversion_rate": 1.3333333333333333,
+      "lead_conversion_rate": 0.19047619047619047,
+      "aov": 1144.75,
+      "source_label": "高转化表现来源（需溯源验证）",
+      "needs_traceback": true
+    },
+    "weakest_source": {
+      "lead_source": "中东成人高中生分配",
+      "leads": 531,
+      "booked": 253,
+      "attended": 125,
+      "orders": 2,
+      "gmv": 1440,
+      "booking_rate": 0.4764595103578154,
+      "attendance_rate": 0.49407114624505927,
+      "attended_conversion_rate": 0.016,
+      "lead_conversion_rate": 0.003766478342749529,
+      "aov": 720
+    },
+    "exception_pool": {
+      "booked": 96,
+      "attended": 3,
+      "orders": 0,
+      "gmv": 0,
+      "booked_share_of_all": 0.18972332015810275,
+      "attended_share_of_all": 0.015228426395939087,
+      "severity": "高"
+    },
+    "overall_all": {
+      "leads": 975,
+      "booked": 506,
+      "attended": 197,
+      "orders": 11,
+      "gmv": 9458,
+      "booking_rate": 0.518974358974359,
+      "attendance_rate": 0.3893280632411067,
+      "attended_conversion_rate": 0.05583756345177665,
+      "lead_conversion_rate": 0.011282051282051283,
+      "aov": 859.8181818181819
+    }
+  },
+  "next_month_actions": [
+    {
+      "priority": "P0",
+      "target": "转化",
+      "action": "下月第一优先级：修复课后 6h / 24h 跟进覆盖与关单动作"
+    },
+    {
+      "priority": "P1",
+      "target": "Team001",
+      "action": "针对最弱团队做专项复盘，并形成独立整改计划"
+    },
+    {
+      "priority": "P1",
+      "target": "数据归属",
+      "action": "优先修复未归属预约池，目前占总预约 19.0%，否则月度团队分析持续存在偏差"
+    },
+    {
+      "priority": "P2",
+      "target": "转介绍分配cc",
+      "action": "先做上游溯源验证，再判断是否作为扩量来源"
+    }
+  ]
+}
