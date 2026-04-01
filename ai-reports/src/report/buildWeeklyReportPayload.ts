@@ -8,7 +8,17 @@ function safeDiv(a: number, b: number) {
 }
 
 function ymd(s: any) {
-  return String(s ?? "").slice(0, 10);
+  const text = String(s ?? "").trim();
+  if (!text) return "";
+
+  const m = text.match(/^(\d{4})[\/-](\d{1,2})[\/-](\d{1,2})/);
+  if (!m) return text.slice(0, 10);
+
+  const y = m[1];
+  const mm = String(Number(m[2])).padStart(2, "0");
+  const dd = String(Number(m[3])).padStart(2, "0");
+
+  return `${y}-${mm}-${dd}`;
 }
 
 function monthStart(reportDate: string) {
@@ -35,20 +45,16 @@ function normalizeSource(v: any) {
   return String(v ?? "").trim() || "(empty)";
 }
 
-function normalizeUserId(v: any) {
-  return String(v ?? "").trim();
-}
-
 function parseLeadDate(r: any) {
   return ymd(r.assigned_time || r.assigned_date || r.assigned_time_ksa);
 }
 
 function parseTrialDate(r: any) {
-  return ymd(r.class_date_ksa || r.class_start_ksa || r.class_date);
+  return ymd(r.class_date_ksa || r.class_start_ksa || r.class_date || r.trial_date);
 }
 
 function parseOrderDate(r: any) {
-  return ymd(r.processed_date || r.processed_time || r.processed_time_ksa);
+  return ymd(r.processed_time || r.processed_date || r.order_time || r.order_date || r.processed_time_ksa);
 }
 
 function isBookedStatus(r: any) {
@@ -70,7 +76,6 @@ function aggregateBlock(input: {
 
   const booked = trials.filter(isBookedStatus);
   const attended = trials.filter(isAttendedStatus);
-
   const gmv = orders.reduce((s, r) => s + toNum(r.paid_amount), 0);
 
   return {
@@ -87,14 +92,175 @@ function aggregateBlock(input: {
   };
 }
 
-function groupBy<T>(rows: T[], getKey: (x: T) => string) {
-  const map = new Map<string, T[]>();
-  for (const r of rows) {
-    const k = getKey(r) || "(empty)";
-    if (!map.has(k)) map.set(k, []);
-    map.get(k)!.push(r);
+function normId(v: any) {
+  return String(v ?? "").trim();
+}
+
+function collectCandidateIds(record: any, keys: string[]) {
+  const ids = new Set<string>();
+  for (const key of keys) {
+    const val = normId(record?.[key]);
+    if (val) ids.add(val);
   }
-  return map;
+  return Array.from(ids);
+}
+
+function getLeadCandidateIds(record: any) {
+  return collectCandidateIds(record, [
+    "user_id",
+    "student_id",
+    "account_id",
+    "lead_user_id",
+    "source_user_id",
+    "parent_user_id",
+    "family_id",
+    "phone",
+    "mobile",
+    "wa_phone",
+  ]);
+}
+
+function getTrialCandidateIds(record: any) {
+  return collectCandidateIds(record, [
+    "user_id",
+    "student_id",
+    "account_id",
+    "lead_user_id",
+    "source_user_id",
+    "parent_user_id",
+    "family_id",
+    "phone",
+    "mobile",
+    "wa_phone",
+  ]);
+}
+
+function getOrderCandidateIds(record: any) {
+  return collectCandidateIds(record, [
+    "user_id",
+    "student_id",
+    "account_id",
+    "lead_user_id",
+    "source_user_id",
+    "parent_user_id",
+    "family_id",
+    "phone",
+    "mobile",
+    "wa_phone",
+  ]);
+}
+
+function buildLeadSourceIndex(leads: any[]) {
+  const idToSource = new Map<string, string>();
+  const sourceLeadRows = new Map<string, any[]>();
+
+  for (const lead of leads) {
+    const source = normalizeSource(lead.lead_source);
+
+    if (!sourceLeadRows.has(source)) sourceLeadRows.set(source, []);
+    sourceLeadRows.get(source)!.push(lead);
+
+    const ids = getLeadCandidateIds(lead);
+    for (const id of ids) {
+      if (!idToSource.has(id)) {
+        idToSource.set(id, source);
+      }
+    }
+  }
+
+  return { idToSource, sourceLeadRows };
+}
+
+function resolveSourceFromRecord(
+  record: any,
+  getIds: (r: any) => string[],
+  idToSource: Map<string, string>
+) {
+  const ids = getIds(record);
+  for (const id of ids) {
+    const source = idToSource.get(id);
+    if (source) return source;
+  }
+  return "unknown";
+}
+
+function buildSourceRowsV2(input: {
+  leads: any[];
+  trials: any[];
+  orders: any[];
+}) {
+  const leads = input.leads ?? [];
+  const trials = input.trials ?? [];
+  const orders = input.orders ?? [];
+
+  const { idToSource, sourceLeadRows } = buildLeadSourceIndex(leads);
+
+  const metricsMap = new Map<
+    string,
+    {
+      lead_source: string;
+      leads: number;
+      booked: number;
+      attended: number;
+      orders: number;
+      gmv: number;
+    }
+  >();
+
+  const ensureSource = (source: string) => {
+    if (!metricsMap.has(source)) {
+      metricsMap.set(source, {
+        lead_source: source,
+        leads: 0,
+        booked: 0,
+        attended: 0,
+        orders: 0,
+        gmv: 0,
+      });
+    }
+    return metricsMap.get(source)!;
+  };
+
+  for (const [source, rows] of sourceLeadRows.entries()) {
+    const row = ensureSource(source);
+    row.leads = rows.length;
+  }
+
+  for (const t of trials) {
+    const source = resolveSourceFromRecord(t, getTrialCandidateIds, idToSource);
+    const row = ensureSource(source);
+
+    if (isBookedStatus(t)) row.booked += 1;
+    if (isAttendedStatus(t)) row.attended += 1;
+  }
+
+  for (const o of orders) {
+    const source = resolveSourceFromRecord(o, getOrderCandidateIds, idToSource);
+    const row = ensureSource(source);
+
+    row.orders += 1;
+    row.gmv += toNum(o.paid_amount);
+  }
+
+  return Array.from(metricsMap.values())
+    .map((r) => ({
+      lead_source: r.lead_source,
+      leads: r.leads,
+      booked: r.booked,
+      attended: r.attended,
+      orders: r.orders,
+      gmv: r.gmv,
+      booking_rate: safeDiv(r.booked, r.leads),
+      attendance_rate: safeDiv(r.attended, r.booked),
+      attended_conversion_rate: safeDiv(r.orders, r.attended),
+      lead_conversion_rate: safeDiv(r.orders, r.leads),
+      aov: safeDiv(r.gmv, r.orders),
+    }))
+    .sort((a, b) => {
+      if (a.lead_source === "unknown") return 1;
+      if (b.lead_source === "unknown") return -1;
+      return b.leads - a.leads;
+    });
 }
 
 export function buildWeeklyReportPayload(input: {
@@ -113,9 +279,6 @@ export function buildWeeklyReportPayload(input: {
   const orders = Array.isArray(input.orders) ? input.orders : [];
   const monthlyTarget = toNum(input.monthlyTarget);
 
-  // =========================
-  // MTD
-  // =========================
   const leadsMtd = leads.filter((r) => {
     const d = parseLeadDate(r);
     return d >= mStart && d <= reportDate;
@@ -131,9 +294,6 @@ export function buildWeeklyReportPayload(input: {
     return d >= mStart && d <= reportDate;
   });
 
-  // =========================
-  // Last Month Same Period
-  // =========================
   const leadsLm = leads.filter((r) => {
     const d = parseLeadDate(r);
     return d >= lm.start && d <= lm.end;
@@ -149,9 +309,6 @@ export function buildWeeklyReportPayload(input: {
     return d >= lm.start && d <= lm.end;
   });
 
-  // =========================
-  // Overall All (业务真实盘子)
-  // =========================
   const overall = aggregateBlock({
     leads: leadsMtd,
     trials: trialsMtd,
@@ -164,10 +321,6 @@ export function buildWeeklyReportPayload(input: {
     orders: ordersLm,
   });
 
-  // =========================
-  // Overall Managed (仅管理口径)
-  // 只保留有 sales_group 的线索 / 试听 / 订单
-  // =========================
   const leadsManaged = leadsMtd.filter((r) => normalizeGroup(r.sales_group) !== "(empty)");
   const trialsManaged = trialsMtd.filter((r) => normalizeGroup(r.sales_group) !== "(empty)");
   const ordersManaged = ordersMtd.filter((r) => normalizeGroup(r.sales_group) !== "(empty)");
@@ -178,10 +331,6 @@ export function buildWeeklyReportPayload(input: {
     orders: ordersManaged,
   });
 
-  // =========================
-  // Exception Pool (未归属预约池)
-  // 不进入团队PK / 不进入管理判断
-  // =========================
   const exceptionTrials = trialsMtd.filter((r) => normalizeGroup(r.sales_group) === "(empty)");
   const exceptionOrders = ordersMtd.filter((r) => normalizeGroup(r.sales_group) === "(empty)");
 
@@ -190,20 +339,10 @@ export function buildWeeklyReportPayload(input: {
     attended: exceptionTrials.filter(isAttendedStatus).length,
     orders: exceptionOrders.length,
     gmv: exceptionOrders.reduce((s, r) => s + toNum(r.paid_amount), 0),
-    booked_share_of_all: safeDiv(
-      exceptionTrials.filter(isBookedStatus).length,
-      overall.booked
-    ),
-    attended_share_of_all: safeDiv(
-      exceptionTrials.filter(isAttendedStatus).length,
-      overall.attended
-    ),
+    booked_share_of_all: safeDiv(exceptionTrials.filter(isBookedStatus).length, overall.booked),
+    attended_share_of_all: safeDiv(exceptionTrials.filter(isAttendedStatus).length, overall.attended),
   };
 
-  // =========================
-  // Team Breakdown
-  // 只做 managed 团队对比，不显示 empty
-  // =========================
   const teamKeys = new Set<string>([
     ...trialsManaged.map((r) => normalizeGroup(r.sales_group)),
     ...ordersManaged.map((r) => normalizeGroup(r.sales_group)),
@@ -228,37 +367,11 @@ export function buildWeeklyReportPayload(input: {
     })
     .sort((a, b) => b.gmv - a.gmv);
 
-  // =========================
-  // Source Breakdown
-  // 来源保留业务真实口径（基于 leadsMtd）
-  // 但只通过 lead user_id 映射同用户的 MTD trials / orders
-  // =========================
-  const sourceMap = groupBy(leadsMtd, (r) => normalizeSource(r.lead_source));
-
-  const sourceRows = Array.from(sourceMap.entries())
-    .map(([lead_source, sourceLeads]) => {
-      const leadUsers = new Set(
-        sourceLeads.map((r: any) => normalizeUserId(r.user_id)).filter(Boolean)
-      );
-
-      const sourceTrials = trialsMtd.filter((r) =>
-        leadUsers.has(normalizeUserId(r.user_id))
-      );
-
-      const sourceOrders = ordersMtd.filter((r) =>
-        leadUsers.has(normalizeUserId(r.user_id))
-      );
-
-      return {
-        lead_source,
-        ...aggregateBlock({
-          leads: sourceLeads,
-          trials: sourceTrials,
-          orders: sourceOrders,
-        }),
-      };
-    })
-    .sort((a, b) => b.leads - a.leads);
+  const sourceRows = buildSourceRowsV2({
+    leads: leadsMtd,
+    trials: trialsMtd,
+    orders: ordersMtd,
+  });
 
   return {
     report_date: reportDate,
@@ -268,16 +381,9 @@ export function buildWeeklyReportPayload(input: {
       lm_same_period_start: lm.start,
       lm_same_period_end: lm.end,
     },
-
-    // 业务全量口径
     overall,
-
-    // 管理判断口径
     overall_managed: overallManaged,
-
-    // 未归属异常池
     exception_pool: exceptionPool,
-
     overall_vs_last_month_same_period: {
       leads_delta: overall.leads - overallLm.leads,
       booked_delta: overall.booked - overallLm.booked,
@@ -285,7 +391,6 @@ export function buildWeeklyReportPayload(input: {
       orders_delta: overall.orders - overallLm.orders,
       gmv_delta: overall.gmv - overallLm.gmv,
     },
-
     teams: teamRows,
     sources: sourceRows,
     monthly_target: monthlyTarget,
