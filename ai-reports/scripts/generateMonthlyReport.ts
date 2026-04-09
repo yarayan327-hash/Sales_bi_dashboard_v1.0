@@ -59,6 +59,74 @@ function writeTextBoth(name: string, reportDate: string, text: string) {
   fs.writeFileSync(path.join(LATEST_DIR, `${name}.txt`), text, "utf8");
 }
 
+function toNum(v: any) {
+  const n = Number(String(v ?? "").replace(/,/g, "").trim());
+  return Number.isFinite(n) ? n : 0;
+}
+
+function normalizeDate(v: any): string {
+  const text = String(v ?? "").trim();
+  if (!text) return "";
+
+  const m = text.match(/^(\d{4})[\/-](\d{1,2})[\/-](\d{1,2})/);
+  if (!m) return text.slice(0, 10);
+
+  const y = m[1];
+  const mm = String(Number(m[2])).padStart(2, "0");
+  const dd = String(Number(m[3])).padStart(2, "0");
+  return `${y}-${mm}-${dd}`;
+}
+
+function normalizeMonth(v: any): string {
+  const text = String(v ?? "").trim();
+  if (!text) return "";
+
+  const m = text.match(/^(\d{4})[\/-](\d{1,2})$/);
+  if (m) {
+    return `${m[1]}-${String(Number(m[2])).padStart(2, "0")}`;
+  }
+
+  const d = text.match(/^(\d{4})[\/-](\d{1,2})[\/-](\d{1,2})/);
+  if (d) {
+    return `${d[1]}-${String(Number(d[2])).padStart(2, "0")}`;
+  }
+
+  return text.slice(0, 7);
+}
+
+function isTargetEffective(row: any, reportDate: string, reportMonth: string) {
+  const rowMonth = normalizeMonth(row.month ?? row.target_month ?? "");
+  const from = normalizeDate(row.effective_from);
+  const to = normalizeDate(row.effective_to);
+
+  // 如果有 month 字段，优先按 month 过滤
+  if (rowMonth && rowMonth !== reportMonth) return false;
+
+  // 再按生效区间过滤
+  if (from && reportDate < from) return false;
+  if (to && reportDate > to) return false;
+
+  return true;
+}
+
+function getMonthlyTarget(rawTargets: any[], reportDate: string) {
+  const reportMonth = reportDate.slice(0, 7);
+
+  const effectiveRows = (rawTargets ?? []).filter((r: any) =>
+    isTargetEffective(r, reportDate, reportMonth)
+  );
+
+  const monthlyTarget = effectiveRows.reduce((sum: number, r: any) => {
+    return sum + toNum(r.monthly_target_usd);
+  }, 0);
+
+  return {
+    monthlyTarget,
+    effectiveRows,
+    reportMonth,
+  };
+}
+
 function main() {
   ensureDir(OUTPUT_DIR);
   ensureDir(LATEST_DIR);
@@ -84,10 +152,7 @@ function main() {
     sales_id: r.agent_id ?? r.sales_id,
   }));
 
-  const monthlyTarget = (rawTargets ?? []).reduce((s: number, r: any) => {
-    const n = Number(String(r.monthly_target_usd ?? "").replace(/,/g, "").trim());
-    return s + (Number.isFinite(n) ? n : 0);
-  }, 0);
+  const { monthlyTarget, effectiveRows, reportMonth } = getMonthlyTarget(rawTargets, reportDate);
 
   const payload = buildMonthlyReportPayload({
     reportDate,
@@ -108,6 +173,9 @@ function main() {
   writeTextBoth("monthly_report", reportDate, reportText);
 
   console.log(`✅ Monthly report generated for ${reportDate}`);
+  console.log(`📌 Report month: ${reportMonth}`);
+  console.log(`📌 Effective target rows: ${effectiveRows.length}`);
+  console.log(`📌 Monthly target used: ${monthlyTarget}`);
 }
 
 main();
