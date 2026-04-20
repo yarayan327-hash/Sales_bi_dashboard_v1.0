@@ -49,12 +49,6 @@ function extractYmdFromAny(raw: any): string {
   const text = String(raw ?? "").trim();
   if (!text) return "";
 
-  // 支持：
-  // 2026-03-19
-  // 2026/3/19
-  // 2026-03-19 12:00
-  // 2026/3/19 12:00
-  // 2026-03-19T12:00:00+08:00
   const m = text.match(/^(\d{4})[/-](\d{1,2})[/-](\d{1,2})/);
   if (!m) return "";
 
@@ -66,6 +60,19 @@ function extractYmdFromAny(raw: any): string {
 
 function isWithinMtd(ymd: string, monthStart: string, reportDate: string): boolean {
   return !!ymd && ymd >= monthStart && ymd <= reportDate;
+}
+
+function minusDays(reportDate: string, days: number): string {
+  const d = new Date(`${String(reportDate).slice(0, 10)}T00:00:00Z`);
+  d.setUTCDate(d.getUTCDate() - days);
+  const y = d.getUTCFullYear();
+  const m = String(d.getUTCMonth() + 1).padStart(2, "0");
+  const dd = String(d.getUTCDate()).padStart(2, "0");
+  return `${y}-${m}-${dd}`;
+}
+
+function isWithinRecentDays(ymd: string, startDate: string, reportDate: string): boolean {
+  return !!ymd && ymd >= startDate && ymd <= reportDate;
 }
 
 function validateMtdDateField(params: {
@@ -140,6 +147,78 @@ function validateMtdDateField(params: {
   return issues;
 }
 
+function validateRecentDaysDateField(params: {
+  data: any[];
+  field: string;
+  startDate: string;
+  reportDate: string;
+  fileLabel: string;
+  maxExamples?: number;
+}): ValidationIssue[] {
+  const {
+    data,
+    field,
+    startDate,
+    reportDate,
+    fileLabel,
+    maxExamples = 5,
+  } = params;
+
+  const issues: ValidationIssue[] = [];
+  if (!Array.isArray(data)) {
+    issues.push({
+      level: "error",
+      code: "INVALID_ACTION_FILE",
+      message: `${fileLabel} 不是数组，无法校验近30天口径`,
+    });
+    return issues;
+  }
+
+  const outOfRangeRows = data
+    .map((row, idx) => {
+      const raw = row?.[field];
+      const ymd = extractYmdFromAny(raw);
+      return { idx, raw, ymd };
+    })
+    .filter((x) => !!x.raw && !!x.ymd && !isWithinRecentDays(x.ymd, startDate, reportDate));
+
+  if (outOfRangeRows.length > 0) {
+    const examples = outOfRangeRows
+      .slice(0, maxExamples)
+      .map((x) => `${field}=${x.raw}`)
+      .join("; ");
+
+    issues.push({
+      level: "error",
+      code: "ACTION_SCOPE_NOT_RECENT_30D",
+      message: `${fileLabel} 存在超出近30天范围的数据（字段 ${field}），示例：${examples}`,
+    });
+  }
+
+  const missingDateRows = data
+    .map((row, idx) => {
+      const raw = row?.[field];
+      const ymd = extractYmdFromAny(raw);
+      return { idx, raw, ymd };
+    })
+    .filter((x) => !!x.raw && !x.ymd);
+
+  if (missingDateRows.length > 0) {
+    const examples = missingDateRows
+      .slice(0, maxExamples)
+      .map((x) => `${field}=${x.raw}`)
+      .join("; ");
+
+    issues.push({
+      level: "warning",
+      code: "UNPARSEABLE_ACTION_DATE",
+      message: `${fileLabel} 中有无法解析的日期字段（${field}），示例：${examples}`,
+    });
+  }
+
+  return issues;
+}
+
 export function validateLatestData(input: {
   reportDate: string;
   outputDir?: string;
@@ -148,6 +227,7 @@ export function validateLatestData(input: {
   const outputDir = input.outputDir || path.resolve("output");
   const latestDir = path.join(outputDir, "latest");
   const monthStart = getMonthStart(reportDate);
+  const recent30dStart = minusDays(reportDate, 29);
 
   const requiredLatestFiles = [
     "daily_metrics.json",
@@ -164,7 +244,6 @@ export function validateLatestData(input: {
   const issues: ValidationIssue[] = [];
   const checkedFiles: string[] = [];
 
-  // 1) latest 必需文件
   for (const name of requiredLatestFiles) {
     const p = path.join(latestDir, name);
     checkedFiles.push(p);
@@ -188,7 +267,6 @@ export function validateLatestData(input: {
     };
   }
 
-  // 2) latest report_date 校验
   const latestReportPayloadPath = path.join(latestDir, "report_payload.json");
   const latestDailyMetricsPath = path.join(latestDir, "daily_metrics.json");
 
@@ -213,7 +291,6 @@ export function validateLatestData(input: {
     });
   }
 
-  // 3) latest vs dated 文件一致性
   const pairFiles = ["daily_metrics", "report_payload", "action_payload"];
 
   for (const base of pairFiles) {
@@ -253,22 +330,23 @@ export function validateLatestData(input: {
     }
   }
 
-  // 4) 真正的 MTD 行动口径校验
   const unreachedLeads = safeReadJson(path.join(latestDir, "unreached_leads.json"));
   const preclassUnfollowed = safeReadJson(path.join(latestDir, "preclass_unfollowed.json"));
   const postclassUnfollowed = safeReadJson(path.join(latestDir, "postclass_unfollowed.json"));
   const salesTodo = safeReadJson(path.join(latestDir, "sales_todo.json"));
 
+  // unreached_leads 按业务规则走“近30天”
   issues.push(
-    ...validateMtdDateField({
+    ...validateRecentDaysDateField({
       data: unreachedLeads,
       field: "assigned_time",
-      monthStart,
+      startDate: recent30dStart,
       reportDate,
       fileLabel: "unreached_leads.json",
     })
   );
 
+  // preclass / postclass 继续严格按 MTD
   issues.push(
     ...validateMtdDateField({
       data: preclassUnfollowed,
@@ -289,8 +367,6 @@ export function validateLatestData(input: {
     })
   );
 
-  // sales_todo 通常是聚合结果，不强制检查所有字段日期
-  // 只做轻量结构检查，避免误报
   if (!Array.isArray(salesTodo)) {
     issues.push({
       level: "warning",
