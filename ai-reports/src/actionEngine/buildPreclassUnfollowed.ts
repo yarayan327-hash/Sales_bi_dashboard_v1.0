@@ -10,6 +10,11 @@ function parseTs(v: any): number {
 
 const HOUR_MS = 60 * 60 * 1000;
 
+function getMonthStartYmd(reportDate: string) {
+  const ymd = String(reportDate ?? "").slice(0, 10);
+  return `${ymd.slice(0, 7)}-01`;
+}
+
 export function buildPreclassUnfollowed(input: {
   reportDate: string;
   trials: any[];
@@ -18,6 +23,7 @@ export function buildPreclassUnfollowed(input: {
   const trials = Array.isArray(input.trials) ? input.trials : [];
   const calls = Array.isArray(input.calls) ? input.calls : [];
   const reportDate = String(input.reportDate ?? "").slice(0, 10);
+  const monthStart = getMonthStartYmd(reportDate);
 
   const callsByUser = new Map<string, any[]>();
   for (const c of calls) {
@@ -35,7 +41,9 @@ export function buildPreclassUnfollowed(input: {
     .filter((t) => {
       const classDate = String(t.class_date_ksa ?? "").slice(0, 10);
       const status = String(t.class_status ?? "").trim().toLowerCase();
-      return classDate <= reportDate && status !== "cancel";
+
+      // 只保留 reportDate 所属自然月(MTD)内的课
+      return classDate >= monthStart && classDate <= reportDate && status !== "cancel";
     })
     .map((t) => {
       const uid = String(t.user_id ?? "").trim();
