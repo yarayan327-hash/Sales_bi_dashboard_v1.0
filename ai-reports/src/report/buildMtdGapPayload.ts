@@ -1,5 +1,12 @@
 // src/report/buildMtdGapPayload.ts
-import { normalizeName, parseLooseYmd, inRangeYmd, monthStartYmd, toNum, s } from "./reportUtils";
+import {
+  normalizeName,
+  parseLooseYmd,
+  inRangeYmd,
+  monthStartYmd,
+  toNum,
+  s
+} from "./reportUtils";
 
 type Input = {
   reportDate: string;
@@ -19,8 +26,13 @@ function pickEffectiveTarget(targets: any[], salesId: string, reportDate: string
   });
 
   if (effective.length > 0) {
+    effective.sort((a, b) =>
+      String(a.version ?? "").localeCompare(String(b.version ?? ""))
+    );
     return toNum(effective[effective.length - 1].monthly_target_usd);
   }
+
+  // 禁止使用无效效期 fallback，避免误吃历史目标
   return 0;
 }
 
@@ -42,15 +54,18 @@ export function buildMtdGapPayload(input: Input) {
       gap: 0
     };
 
-    bySalesId.set(row.sales_id, row);
-    bySalesName.set(normalizeName(row.sales_name), row);
+    if (row.sales_id) bySalesId.set(row.sales_id, row);
+    if (row.sales_name) bySalesName.set(normalizeName(row.sales_name), row);
   }
 
   for (const o of input.orders) {
     const ymd = parseLooseYmd(o.processed_time);
     if (!inRangeYmd(ymd, start, end)) continue;
 
-    const matched = bySalesName.get(normalizeName(o.sales_name_raw || o.sales_name));
+    const matched =
+      bySalesId.get(s(o.sales_id)) ||
+      bySalesName.get(normalizeName(o.sales_name_raw || o.sales_name));
+
     if (!matched) continue;
 
     matched.orders += 1;
