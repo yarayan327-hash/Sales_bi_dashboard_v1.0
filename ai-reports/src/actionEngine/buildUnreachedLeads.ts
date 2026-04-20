@@ -20,6 +20,14 @@ function hoursBetween(startTs: number, endTs: number): number | null {
   return (endTs - startTs) / 1000 / 60 / 60;
 }
 
+const DAY_MS = 24 * 60 * 60 * 1000;
+const THIRTY_DAYS_MS = 30 * DAY_MS;
+
+function parseReportDateTs(reportDate: string): number {
+  const t = Date.parse(`${String(reportDate).slice(0, 10)}T23:59:59Z`);
+  return Number.isFinite(t) ? t : 0;
+}
+
 export function buildUnreachedLeads(input: {
   reportDate: string;
   leads: any[];
@@ -30,6 +38,7 @@ export function buildUnreachedLeads(input: {
   const calls = Array.isArray(input.calls) ? input.calls : [];
   const agents = Array.isArray(input.agents) ? input.agents : [];
   const reportDate = String(input.reportDate ?? "").slice(0, 10);
+  const reportTs = parseReportDateTs(reportDate);
 
   const agentMap = new Map<string, any>();
   for (const a of agents) {
@@ -50,7 +59,13 @@ export function buildUnreachedLeads(input: {
   }
 
   return leads
-    .filter((l) => String(l.assigned_time ?? "").slice(0, 10) <= reportDate)
+    .filter((l) => {
+      const assignedTs = parseAssignedTs(l.assigned_time);
+      if (!assignedTs || !reportTs) return false;
+
+      // 只保留 reportDate 往前近30天内分配的线索
+      return assignedTs <= reportTs && reportTs - assignedTs <= THIRTY_DAYS_MS;
+    })
     .map((l) => {
       const uid = String(l.user_id ?? "").trim();
       const salesId = String(l.sales_id ?? "").trim();
