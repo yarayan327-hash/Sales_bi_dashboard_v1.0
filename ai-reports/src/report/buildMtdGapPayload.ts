@@ -21,9 +21,7 @@ function pickEffectiveTarget(targets: any[], salesId: string, reportDate: string
   if (effective.length > 0) {
     return toNum(effective[effective.length - 1].monthly_target_usd);
   }
-
-  const fallback = rows.find((t) => !s(t.effective_from) && !s(t.effective_to));
-  return fallback ? toNum(fallback.monthly_target_usd) : 0;
+  return 0;
 }
 
 export function buildMtdGapPayload(input: Input) {
