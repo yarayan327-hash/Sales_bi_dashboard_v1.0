@@ -1,0 +1,23 @@
+{
+  "ok": true,
+  "reportDate": "2026-04-20",
+  "checkedAt": "2026-04-21T11:31:44.942Z",
+  "issues": [],
+  "checkedFiles": [
+    "/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/daily_metrics.json",
+    "/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/report_payload.json",
+    "/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/action_payload.json",
+    "/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/daily_report_cn.txt",
+    "/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/daily_report_en.txt",
+    "/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/sales_todo.json",
+    "/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/unreached_leads.json",
+    "/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/preclass_unfollowed.json",
+    "/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/postclass_unfollowed.json",
+    "/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/daily_metrics_2026-04-20.json",
+    "/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/daily_metrics.json",
+    "/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/report_payload_2026-04-20.json",
+    "/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/report_payload.json",
+    "/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/action_payload_2026-04-20.json",
+    "/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/action_payload.json"
+  ]
+}
