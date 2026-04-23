@@ -1,6 +1,6 @@
-业绩归属销售组,用户,user_id,支付币种,定价币种支付金额,套餐内容,业绩归属销售,订单时间,订单号,优惠金额(支付币种优惠金额),处理时间,总金额(套餐定价币种),订单状态,_source_sheet_name
-前端销售部001组,student,62870529,SAR,840.00,Ramadan Special Offer-Comprehensive Learning Course-45,51habiba.hassan,2026-04-10 01:41:45,32460893,3150.00,2026-04-10 01:46:35,1680.00,已成功,20260410订单记录
-前端销售部001组,student,62870455,SAR,1900.00,100,51habiba.hassan,2026-04-09 23:30:50,32460820,10845.00,2026-04-10 01:12:08,4792.00,已成功,20260410订单记录
-前端销售部002组,Hoor,62897615,SAR,599.00,Ramadan Special Offer-Super foreign teacher course package-50,51nadamuhammad,2026-04-14 23:14:52,32477197,2246.00,2026-04-15 01:51:40,1198.00,已成功,20260415订单记录
-前端销售部001组,student,62942855,SAR,840.00,Ramadan Special Offer-Comprehensive Learning Course-45,51habiba.hassan,2026-04-19 18:21:44,32494107,3150.00,2026-04-19 18:25:15,1680.00,已成功,20260419订单记录
-前端销售部001组,student,62970298,SAR,840.00,Ramadan Special Offer-Comprehensive Learning Course-45,EGCC-eman.amr,2026-04-19 17:58:36,32493669,3150.00,2026-04-19 18:07:43,1680.00,已成功,20260419订单记录
+order_id,user_name,user_id,sales_name_raw,sales_group,original_price,paid_amount,package_name,order_time,payment_method,pay_currency,discount_amount,order_status,processed_time
+32460893,,62870529,,,0,0,,,,,0,,
+32460820,,62870455,,,0,0,,,,,0,,
+32477197,,62897615,,,0,0,,,,,0,,
+32494107,,62942855,,,0,0,,,,,0,,
+32493669,,62970298,,,0,0,,,,,0,,
