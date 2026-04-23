@@ -1,0 +1,157 @@
+{
+  "report_date": "2026-03-31",
+  "range": {
+    "mtd_start": "2026-03-01",
+    "mtd_end": "2026-03-31",
+    "lm_same_period_start": "2026-02-01",
+    "lm_same_period_end": "2026-02-31"
+  },
+  "overall": {
+    "leads": 957,
+    "booked": 506,
+    "attended": 197,
+    "orders": 11,
+    "gmv": 9458,
+    "booking_rate": 0.5287356321839081,
+    "attendance_rate": 0.3893280632411067,
+    "attended_conversion_rate": 0.05583756345177665,
+    "lead_conversion_rate": 0.011494252873563218,
+    "aov": 859.8181818181819
+  },
+  "overall_managed": {
+    "leads": 957,
+    "booked": 410,
+    "attended": 194,
+    "orders": 11,
+    "gmv": 9458,
+    "booking_rate": 0.4284221525600836,
+    "attendance_rate": 0.47317073170731705,
+    "attended_conversion_rate": 0.05670103092783505,
+    "lead_conversion_rate": 0.011494252873563218,
+    "aov": 859.8181818181819
+  },
+  "exception_pool": {
+    "booked": 96,
+    "attended": 3,
+    "orders": 0,
+    "gmv": 0,
+    "booked_share_of_all": 0.18972332015810275,
+    "attended_share_of_all": 0.015228426395939087
+  },
+  "overall_vs_last_month_same_period": {
+    "leads_delta": -94,
+    "booked_delta": -85,
+    "attended_delta": -49,
+    "orders_delta": -9,
+    "gmv_delta": -5659
+  },
+  "teams": [
+    {
+      "sales_group": "002",
+      "leads": 550,
+      "booked": 256,
+      "attended": 109,
+      "orders": 7,
+      "gmv": 6618,
+      "booking_rate": 0.46545454545454545,
+      "attendance_rate": 0.42578125,
+      "attended_conversion_rate": 0.06422018348623854,
+      "lead_conversion_rate": 0.012727272727272728,
+      "aov": 945.4285714285714
+    },
+    {
+      "sales_group": "001",
+      "leads": 407,
+      "booked": 154,
+      "attended": 85,
+      "orders": 4,
+      "gmv": 2840,
+      "booking_rate": 0.3783783783783784,
+      "attendance_rate": 0.551948051948052,
+      "attended_conversion_rate": 0.047058823529411764,
+      "lead_conversion_rate": 0.009828009828009828,
+      "aov": 710
+    }
+  ],
+  "sources": [
+    {
+      "lead_source": "中东成人高中生分配",
+      "leads": 518,
+      "booked": 253,
+      "attended": 125,
+      "orders": 3,
+      "gmv": 2240,
+      "booking_rate": 0.48841698841698844,
+      "attendance_rate": 0.49407114624505927,
+      "attended_conversion_rate": 0.024,
+      "lead_conversion_rate": 0.005791505791505791,
+      "aov": 746.6666666666666
+    },
+    {
+      "lead_source": "CC人工改派",
+      "leads": 414,
+      "booked": 117,
+      "attended": 51,
+      "orders": 1,
+      "gmv": 599,
+      "booking_rate": 0.2826086956521739,
+      "attendance_rate": 0.4358974358974359,
+      "attended_conversion_rate": 0.0196078431372549,
+      "lead_conversion_rate": 0.0024154589371980675,
+      "aov": 599
+    },
+    {
+      "lead_source": "转介绍分配cc",
+      "leads": 21,
+      "booked": 6,
+      "attended": 3,
+      "orders": 4,
+      "gmv": 4579,
+      "booking_rate": 0.2857142857142857,
+      "attendance_rate": 0.5,
+      "attended_conversion_rate": 1.3333333333333333,
+      "lead_conversion_rate": 0.19047619047619047,
+      "aov": 1144.75
+    },
+    {
+      "lead_source": "中东约课分配——阿语",
+      "leads": 3,
+      "booked": 2,
+      "attended": 0,
+      "orders": 0,
+      "gmv": 0,
+      "booking_rate": 0.6666666666666666,
+      "attendance_rate": 0,
+      "attended_conversion_rate": 0,
+      "lead_conversion_rate": 0,
+      "aov": 0
+    },
+    {
+      "lead_source": "中东多学科",
+      "leads": 1,
+      "booked": 2,
+      "attended": 1,
+      "orders": 0,
+      "gmv": 0,
+      "booking_rate": 2,
+      "attendance_rate": 0.5,
+      "attended_conversion_rate": 0,
+      "lead_conversion_rate": 0,
+      "aov": 0
+    },
+    {
+      "lead_source": "unknown",
+      "leads": 0,
+      "booked": 126,
+      "attended": 17,
+      "orders": 3,
+      "gmv": 2040,
+      "booking_rate": 0,
+      "attendance_rate": 0.1349206349206349,
+      "attended_conversion_rate": 0.17647058823529413,
+      "lead_conversion_rate": 0,
+      "aov": 680
+    }
+  ],
+  "monthly_target": 105500
+}

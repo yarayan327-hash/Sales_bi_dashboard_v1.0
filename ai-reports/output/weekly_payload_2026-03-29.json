@@ -1,0 +1,144 @@
+{
+  "report_date": "2026-03-29",
+  "range": {
+    "mtd_start": "2026-03-01",
+    "mtd_end": "2026-03-29",
+    "lm_same_period_start": "2026-02-01",
+    "lm_same_period_end": "2026-02-29"
+  },
+  "overall": {
+    "leads": 882,
+    "booked": 459,
+    "attended": 156,
+    "orders": 9,
+    "gmv": 8019,
+    "booking_rate": 0.5204081632653061,
+    "attendance_rate": 0.33986928104575165,
+    "attended_conversion_rate": 0.057692307692307696,
+    "lead_conversion_rate": 0.01020408163265306,
+    "aov": 891
+  },
+  "overall_managed": {
+    "leads": 882,
+    "booked": 369,
+    "attended": 153,
+    "orders": 9,
+    "gmv": 8019,
+    "booking_rate": 0.41836734693877553,
+    "attendance_rate": 0.4146341463414634,
+    "attended_conversion_rate": 0.058823529411764705,
+    "lead_conversion_rate": 0.01020408163265306,
+    "aov": 891
+  },
+  "exception_pool": {
+    "booked": 90,
+    "attended": 3,
+    "orders": 0,
+    "gmv": 0,
+    "booked_share_of_all": 0.19607843137254902,
+    "attended_share_of_all": 0.019230769230769232
+  },
+  "overall_vs_last_month_same_period": {
+    "leads_delta": -169,
+    "booked_delta": -132,
+    "attended_delta": -90,
+    "orders_delta": -11,
+    "gmv_delta": -7098
+  },
+  "teams": [
+    {
+      "sales_group": "002",
+      "leads": 500,
+      "booked": 230,
+      "attended": 83,
+      "orders": 5,
+      "gmv": 5179,
+      "booking_rate": 0.46,
+      "attendance_rate": 0.36086956521739133,
+      "attended_conversion_rate": 0.060240963855421686,
+      "lead_conversion_rate": 0.01,
+      "aov": 1035.8
+    },
+    {
+      "sales_group": "001",
+      "leads": 382,
+      "booked": 139,
+      "attended": 70,
+      "orders": 4,
+      "gmv": 2840,
+      "booking_rate": 0.36387434554973824,
+      "attendance_rate": 0.5035971223021583,
+      "attended_conversion_rate": 0.05714285714285714,
+      "lead_conversion_rate": 0.010471204188481676,
+      "aov": 710
+    }
+  ],
+  "sources": [
+    {
+      "lead_source": "中东成人高中生分配",
+      "leads": 463,
+      "booked": 221,
+      "attended": 93,
+      "orders": 2,
+      "gmv": 1440,
+      "booking_rate": 0.4773218142548596,
+      "attendance_rate": 0.42081447963800905,
+      "attended_conversion_rate": 0.021505376344086023,
+      "lead_conversion_rate": 0.004319654427645789,
+      "aov": 720
+    },
+    {
+      "lead_source": "CC人工改派",
+      "leads": 396,
+      "booked": 108,
+      "attended": 42,
+      "orders": 0,
+      "gmv": 0,
+      "booking_rate": 0.2727272727272727,
+      "attendance_rate": 0.3888888888888889,
+      "attended_conversion_rate": 0,
+      "lead_conversion_rate": 0,
+      "aov": 0
+    },
+    {
+      "lead_source": "转介绍分配cc",
+      "leads": 19,
+      "booked": 6,
+      "attended": 3,
+      "orders": 3,
+      "gmv": 3739,
+      "booking_rate": 0.3157894736842105,
+      "attendance_rate": 0.5,
+      "attended_conversion_rate": 1,
+      "lead_conversion_rate": 0.15789473684210525,
+      "aov": 1246.3333333333333
+    },
+    {
+      "lead_source": "中东约课分配——阿语",
+      "leads": 3,
+      "booked": 2,
+      "attended": 0,
+      "orders": 0,
+      "gmv": 0,
+      "booking_rate": 0.6666666666666666,
+      "attendance_rate": 0,
+      "attended_conversion_rate": 0,
+      "lead_conversion_rate": 0,
+      "aov": 0
+    },
+    {
+      "lead_source": "中东多学科",
+      "leads": 1,
+      "booked": 2,
+      "attended": 1,
+      "orders": 0,
+      "gmv": 0,
+      "booking_rate": 2,
+      "attendance_rate": 0.5,
+      "attended_conversion_rate": 0,
+      "lead_conversion_rate": 0,
+      "aov": 0
+    }
+  ],
+  "monthly_target": 80500
+}

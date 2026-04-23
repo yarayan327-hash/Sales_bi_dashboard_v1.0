@@ -1,0 +1,4268 @@
+========================================
+🚀 Daily automation started
+Run time   : 2026-04-22 04:10:01 +03
+Report date: 2026-04-21
+========================================
+🚀 Start DingTalk notable sync
+===== DEBUG SHEETS =====
+status_code: 400
+{
+  "requestid": "16B426EF-9F17-7CB4-BE4C-0BA8BC8951B9",
+  "code": "invalidRequest.inputArgs.invalid",
+  "message": "paramError-operatorId"
+}
+ERROR: 未找到 sheets/items，请检查 DEBUG SHEETS 输出
+⚠️ sync_dingtalk_data failed, continue daily report
+========================================
+🦞 Sales Engine Unified Runner Started
+Mode : daily
+Report Date: 2026-04-21
+Repo Root : /home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0
+========================================
+
+=== Step 1: Sync GitHub latest main ===
+
+▶ git fetch origin main
+From github.com:yarayan327-hash/Sales_bi_dashboard_v1.0
+ * branch            main       -> FETCH_HEAD
+
+▶ git checkout main
+Already on 'main'
+M	ai-reports/scripts/run_daily_and_push.sh
+Your branch is up to date with 'origin/main'.
+
+▶ git reset --hard origin/main
+HEAD is now at 1dc5b4d Add daily automation push script
+
+Latest commit:
+
+▶ git log -1 --oneline
+1dc5b4d Add daily automation push script
+
+=== Step 2: Check required CSV files ===
+✅ Required CSV files exist
+
+=== Step 3: Prepare npm dependencies ===
+
+▶ npm install
+
+up to date, audited 8 packages in 551ms
+
+2 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+=== Step 4A: Generate Daily Reports ===
+
+▶ npm run generate:report -- 2026-04-21
+
+> sales-bi-dashboard-ai-reports@1.0.0 generate:report
+> tsx scripts/generateDailyMetrics.ts 2026-04-21
+
+Duplicate headers found and renamed.
+✅ Daily metrics generated for 2026-04-21
+
+▶ npm run generate:daily-text -- 2026-04-21
+
+> sales-bi-dashboard-ai-reports@1.0.0 generate:daily-text
+> tsx scripts/generateDailyReportText.ts 2026-04-21
+
+✅ Daily report generated
+
+▶ npm run generate:action -- 2026-04-21
+
+> sales-bi-dashboard-ai-reports@1.0.0 generate:action
+> tsx scripts/generateActionEngine.ts 2026-04-21
+
+✅ Action engine generated for 2026-04-21
+
+=== Step 5: Validate latest outputs ===
+
+▶ npm run validate:latest -- 2026-04-21
+
+> sales-bi-dashboard-ai-reports@1.0.0 validate:latest
+> tsx scripts/validateLatestData.ts 2026-04-21
+
+=== Latest Data Validation ===
+reportDate: 2026-04-21
+ok: YES
+No issues found.
+
+=== Step 6: Check output/latest ===
+
+Files in output/latest:
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/action_payload.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/daily_metrics.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/daily_report_cn.txt
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/daily_report_en.txt
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/daily_report.txt
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/group_mentions.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_diagnosis_2026-03-31.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_diagnosis.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_payload_2026-03-31.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_payload.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_report_2026-03-31.txt
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_report.txt
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/mtd_gap.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/postclass_unfollowed.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/preclass_unfollowed.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/report_payload.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/sales_followup.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/sales_todo.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/team_pk.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/unreached_leads.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/validation_result.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/weekly_diagnosis.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/weekly_payload.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/weekly_report.txt
+
+Key files preview:
+--- monthly_report.txt (first 30 lines) ---
+📊 Sales Engine 月报
+报告日期：2026-04-07
+数据范围：2026-04-01 ~ 2026-04-30
+
+一、本月核心经营数据总览（业务全量）
+- 线索：322
+- 预约：316
+- 出席：88
+- 成交：8
+- GMV：7,139
+- 预约率：98.1%
+- 出席率：27.8%
+- 出席转化率：9.1%
+- 线索转化率：2.5%
+- 客单价：892.375
+
+二、本月管理口径核心经营数据（仅归属销售）
+- 线索：322
+- 预约：258
+- 出席：84
+- 成交：8
+- GMV：7,139
+- 预约率：80.1%
+- 出席率：32.6%
+- 出席转化率：9.5%
+- 线索转化率：2.5%
+- 客单价：892.375
+
+三、本月目标达成与上月对比
+- 月目标达成结果：undefined
+
+--- monthly_payload.json (summary) ---
+{
+  "orders": 8,
+  "gmv": 7139
+}
+
+========================================
+✅ Sales Engine Unified Runner Completed
+Mode : daily
+Report Date: 2026-04-21
+========================================
+[main b4a93e3] Auto daily report update: 2026-04-21
+ 22 files changed, 40162 insertions(+), 710 deletions(-)
+ create mode 100644 ai-reports/output/action_payload_2026-04-21.json
+ create mode 100644 ai-reports/output/daily_metrics_2026-04-21.json
+ create mode 100644 ai-reports/output/group_mentions_2026-04-21.json
+ create mode 100644 ai-reports/output/mtd_gap_2026-04-21.json
+ create mode 100644 ai-reports/output/postclass_unfollowed_2026-04-21.json
+ create mode 100644 ai-reports/output/preclass_unfollowed_2026-04-21.json
+ create mode 100644 ai-reports/output/report_payload_2026-04-21.json
+ create mode 100644 ai-reports/output/sales_followup_2026-04-21.json
+ create mode 100644 ai-reports/output/sales_todo_2026-04-21.json
+ create mode 100644 ai-reports/output/team_pk_2026-04-21.json
+ create mode 100644 ai-reports/output/unreached_leads_2026-04-21.json
+To github.com:yarayan327-hash/Sales_bi_dashboard_v1.0.git
+   1dc5b4d..b4a93e3  main -> main
+✅ Daily output pushed to GitHub
+========================================
+✅ Daily automation completed
+========================================
+========================================
+🚀 Daily automation started
+Run time   : 2026-04-22 12:17:01 +03
+Report date: 2026-04-21
+========================================
+========================================
+🦞 Sales Engine Unified Runner Started
+Mode : daily
+Report Date: 2026-04-21
+Repo Root : /home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0
+========================================
+
+=== Step 1: Sync GitHub latest main ===
+
+▶ git fetch origin main
+From github.com:yarayan327-hash/Sales_bi_dashboard_v1.0
+ * branch            main       -> FETCH_HEAD
+
+▶ git checkout main
+Already on 'main'
+Your branch is up to date with 'origin/main'.
+
+▶ git reset --hard origin/main
+HEAD is now at b4a93e3 Auto daily report update: 2026-04-21
+
+Latest commit:
+
+▶ git log -1 --oneline
+b4a93e3 Auto daily report update: 2026-04-21
+
+=== Step 2: Check required CSV files ===
+✅ Required CSV files exist
+
+=== Step 3: Prepare npm dependencies ===
+
+▶ npm install
+
+up to date, audited 8 packages in 575ms
+
+2 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+=== Step 4A: Generate Daily Reports ===
+
+▶ npm run generate:report -- 2026-04-21
+
+> sales-bi-dashboard-ai-reports@1.0.0 generate:report
+> tsx scripts/generateDailyMetrics.ts 2026-04-21
+
+Duplicate headers found and renamed.
+✅ Daily metrics generated for 2026-04-21
+
+▶ npm run generate:daily-text -- 2026-04-21
+
+> sales-bi-dashboard-ai-reports@1.0.0 generate:daily-text
+> tsx scripts/generateDailyReportText.ts 2026-04-21
+
+✅ Daily report generated
+
+▶ npm run generate:action -- 2026-04-21
+
+> sales-bi-dashboard-ai-reports@1.0.0 generate:action
+> tsx scripts/generateActionEngine.ts 2026-04-21
+
+✅ Action engine generated for 2026-04-21
+
+=== Step 5: Validate latest outputs ===
+
+▶ npm run validate:latest -- 2026-04-21
+
+> sales-bi-dashboard-ai-reports@1.0.0 validate:latest
+> tsx scripts/validateLatestData.ts 2026-04-21
+
+=== Latest Data Validation ===
+reportDate: 2026-04-21
+ok: YES
+No issues found.
+
+=== Step 6: Check output/latest ===
+
+Files in output/latest:
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/action_payload.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/daily_metrics.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/daily_report_cn.txt
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/daily_report_en.txt
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/daily_report.txt
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/group_mentions.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_diagnosis_2026-03-31.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_diagnosis.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_payload_2026-03-31.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_payload.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_report_2026-03-31.txt
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_report.txt
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/mtd_gap.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/postclass_unfollowed.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/preclass_unfollowed.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/report_payload.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/sales_followup.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/sales_todo.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/team_pk.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/unreached_leads.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/validation_result.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/weekly_diagnosis.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/weekly_payload.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/weekly_report.txt
+
+Key files preview:
+--- monthly_report.txt (first 30 lines) ---
+📊 Sales Engine 月报
+报告日期：2026-04-07
+数据范围：2026-04-01 ~ 2026-04-30
+
+一、本月核心经营数据总览（业务全量）
+- 线索：322
+- 预约：316
+- 出席：88
+- 成交：8
+- GMV：7,139
+- 预约率：98.1%
+- 出席率：27.8%
+- 出席转化率：9.1%
+- 线索转化率：2.5%
+- 客单价：892.375
+
+二、本月管理口径核心经营数据（仅归属销售）
+- 线索：322
+- 预约：258
+- 出席：84
+- 成交：8
+- GMV：7,139
+- 预约率：80.1%
+- 出席率：32.6%
+- 出席转化率：9.5%
+- 线索转化率：2.5%
+- 客单价：892.375
+
+三、本月目标达成与上月对比
+- 月目标达成结果：undefined
+
+--- monthly_payload.json (summary) ---
+{
+  "orders": 8,
+  "gmv": 7139
+}
+
+========================================
+✅ Sales Engine Unified Runner Completed
+Mode : daily
+Report Date: 2026-04-21
+========================================
+[main e9e973d] Auto daily report update: 2026-04-21
+ 5 files changed, 5 insertions(+), 5 deletions(-)
+To github.com:yarayan327-hash/Sales_bi_dashboard_v1.0.git
+   b4a93e3..e9e973d  main -> main
+✅ Daily output pushed to GitHub
+========================================
+✅ Daily automation completed
+========================================
+========================================
+🚀 Daily automation started
+Run time   : 2026-04-22 19:07:26 +03
+Report date: 2026-04-21
+========================================
+========================================
+🦞 Sales Engine Unified Runner Started
+Mode : daily
+Report Date: 2026-04-21
+Repo Root : /home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0
+========================================
+
+=== Step 1: Sync GitHub latest main ===
+
+▶ git fetch origin main
+Warning: Permanently added the ECDSA host key for IP address '140.82.114.4' to the list of known hosts.
+From github.com:yarayan327-hash/Sales_bi_dashboard_v1.0
+ * branch            main       -> FETCH_HEAD
+
+▶ git checkout main
+Already on 'main'
+M	public/data/fact_calls.csv
+M	public/data/fact_leads.csv
+M	public/data/fact_orders.csv
+M	public/data/fact_trials.csv
+Your branch is up to date with 'origin/main'.
+
+▶ git reset --hard origin/main
+HEAD is now at e9e973d Auto daily report update: 2026-04-21
+
+Latest commit:
+
+▶ git log -1 --oneline
+e9e973d Auto daily report update: 2026-04-21
+
+=== Step 2: Check required CSV files ===
+✅ Required CSV files exist
+
+=== Step 3: Prepare npm dependencies ===
+
+▶ npm install
+
+up to date, audited 8 packages in 599ms
+
+2 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+=== Step 4A: Generate Daily Reports ===
+
+▶ npm run generate:report -- 2026-04-21
+
+> sales-bi-dashboard-ai-reports@1.0.0 generate:report
+> tsx scripts/generateDailyMetrics.ts 2026-04-21
+
+Duplicate headers found and renamed.
+✅ Daily metrics generated for 2026-04-21
+
+▶ npm run generate:daily-text -- 2026-04-21
+
+> sales-bi-dashboard-ai-reports@1.0.0 generate:daily-text
+> tsx scripts/generateDailyReportText.ts 2026-04-21
+
+✅ Daily report generated
+
+▶ npm run generate:action -- 2026-04-21
+
+> sales-bi-dashboard-ai-reports@1.0.0 generate:action
+> tsx scripts/generateActionEngine.ts 2026-04-21
+
+✅ Action engine generated for 2026-04-21
+
+=== Step 5: Validate latest outputs ===
+
+▶ npm run validate:latest -- 2026-04-21
+
+> sales-bi-dashboard-ai-reports@1.0.0 validate:latest
+> tsx scripts/validateLatestData.ts 2026-04-21
+
+=== Latest Data Validation ===
+reportDate: 2026-04-21
+ok: YES
+No issues found.
+
+=== Step 6: Check output/latest ===
+
+Files in output/latest:
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/action_payload.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/daily_metrics.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/daily_report_cn.txt
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/daily_report_en.txt
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/daily_report.txt
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/group_mentions.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_diagnosis_2026-03-31.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_diagnosis.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_payload_2026-03-31.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_payload.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_report_2026-03-31.txt
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_report.txt
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/mtd_gap.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/postclass_unfollowed.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/preclass_unfollowed.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/report_payload.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/sales_followup.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/sales_todo.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/team_pk.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/unreached_leads.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/validation_result.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/weekly_diagnosis.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/weekly_payload.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/weekly_report.txt
+
+Key files preview:
+--- monthly_report.txt (first 30 lines) ---
+📊 Sales Engine 月报
+报告日期：2026-04-07
+数据范围：2026-04-01 ~ 2026-04-30
+
+一、本月核心经营数据总览（业务全量）
+- 线索：322
+- 预约：316
+- 出席：88
+- 成交：8
+- GMV：7,139
+- 预约率：98.1%
+- 出席率：27.8%
+- 出席转化率：9.1%
+- 线索转化率：2.5%
+- 客单价：892.375
+
+二、本月管理口径核心经营数据（仅归属销售）
+- 线索：322
+- 预约：258
+- 出席：84
+- 成交：8
+- GMV：7,139
+- 预约率：80.1%
+- 出席率：32.6%
+- 出席转化率：9.5%
+- 线索转化率：2.5%
+- 客单价：892.375
+
+三、本月目标达成与上月对比
+- 月目标达成结果：undefined
+
+--- monthly_payload.json (summary) ---
+{
+  "orders": 8,
+  "gmv": 7139
+}
+
+========================================
+✅ Sales Engine Unified Runner Completed
+Mode : daily
+Report Date: 2026-04-21
+========================================
+[main 60def7f] Auto daily report update: 2026-04-21
+ 5 files changed, 5 insertions(+), 5 deletions(-)
+Warning: Permanently added the ECDSA host key for IP address '140.82.113.4' to the list of known hosts.
+To github.com:yarayan327-hash/Sales_bi_dashboard_v1.0.git
+   e9e973d..60def7f  main -> main
+✅ Daily output pushed to GitHub
+========================================
+✅ Daily automation completed
+========================================
+========================================
+🚀 Daily automation started
+Run time   : 2026-04-22 20:30:54 +03
+Report date: 2026-04-21
+========================================
+========================================
+🦞 Sales Engine Unified Runner Started
+Mode : daily
+Report Date: 2026-04-21
+Repo Root : /home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0
+========================================
+
+=== Step 1: Sync GitHub latest main ===
+
+▶ git fetch origin main
+From github.com:yarayan327-hash/Sales_bi_dashboard_v1.0
+ * branch            main       -> FETCH_HEAD
+
+▶ git checkout main
+Already on 'main'
+M	public/data/fact_calls.csv
+M	public/data/fact_leads.csv
+M	public/data/fact_orders.csv
+M	public/data/fact_trials.csv
+Your branch is up to date with 'origin/main'.
+
+▶ git reset --hard origin/main
+HEAD is now at 60def7f Auto daily report update: 2026-04-21
+
+Latest commit:
+
+▶ git log -1 --oneline
+60def7f Auto daily report update: 2026-04-21
+
+=== Step 2: Check required CSV files ===
+✅ Required CSV files exist
+
+=== Step 3: Prepare npm dependencies ===
+
+▶ npm install
+
+up to date, audited 8 packages in 503ms
+
+2 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+=== Step 4A: Generate Daily Reports ===
+
+▶ npm run generate:report -- 2026-04-21
+
+> sales-bi-dashboard-ai-reports@1.0.0 generate:report
+> tsx scripts/generateDailyMetrics.ts 2026-04-21
+
+Duplicate headers found and renamed.
+✅ Daily metrics generated for 2026-04-21
+
+▶ npm run generate:daily-text -- 2026-04-21
+
+> sales-bi-dashboard-ai-reports@1.0.0 generate:daily-text
+> tsx scripts/generateDailyReportText.ts 2026-04-21
+
+✅ Daily report generated
+
+▶ npm run generate:action -- 2026-04-21
+
+> sales-bi-dashboard-ai-reports@1.0.0 generate:action
+> tsx scripts/generateActionEngine.ts 2026-04-21
+
+✅ Action engine generated for 2026-04-21
+
+=== Step 5: Validate latest outputs ===
+
+▶ npm run validate:latest -- 2026-04-21
+
+> sales-bi-dashboard-ai-reports@1.0.0 validate:latest
+> tsx scripts/validateLatestData.ts 2026-04-21
+
+=== Latest Data Validation ===
+reportDate: 2026-04-21
+ok: YES
+No issues found.
+
+=== Step 6: Check output/latest ===
+
+Files in output/latest:
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/action_payload.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/daily_metrics.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/daily_report_cn.txt
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/daily_report_en.txt
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/daily_report.txt
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/group_mentions.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_diagnosis_2026-03-31.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_diagnosis.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_payload_2026-03-31.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_payload.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_report_2026-03-31.txt
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_report.txt
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/mtd_gap.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/postclass_unfollowed.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/preclass_unfollowed.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/report_payload.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/sales_followup.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/sales_todo.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/team_pk.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/unreached_leads.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/validation_result.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/weekly_diagnosis.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/weekly_payload.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/weekly_report.txt
+
+Key files preview:
+--- monthly_report.txt (first 30 lines) ---
+📊 Sales Engine 月报
+报告日期：2026-04-07
+数据范围：2026-04-01 ~ 2026-04-30
+
+一、本月核心经营数据总览（业务全量）
+- 线索：322
+- 预约：316
+- 出席：88
+- 成交：8
+- GMV：7,139
+- 预约率：98.1%
+- 出席率：27.8%
+- 出席转化率：9.1%
+- 线索转化率：2.5%
+- 客单价：892.375
+
+二、本月管理口径核心经营数据（仅归属销售）
+- 线索：322
+- 预约：258
+- 出席：84
+- 成交：8
+- GMV：7,139
+- 预约率：80.1%
+- 出席率：32.6%
+- 出席转化率：9.5%
+- 线索转化率：2.5%
+- 客单价：892.375
+
+三、本月目标达成与上月对比
+- 月目标达成结果：undefined
+
+--- monthly_payload.json (summary) ---
+{
+  "orders": 8,
+  "gmv": 7139
+}
+
+========================================
+✅ Sales Engine Unified Runner Completed
+Mode : daily
+Report Date: 2026-04-21
+========================================
+[main 4b2905f] Auto daily report update: 2026-04-21
+ 5 files changed, 5 insertions(+), 5 deletions(-)
+To github.com:yarayan327-hash/Sales_bi_dashboard_v1.0.git
+   60def7f..4b2905f  main -> main
+✅ Daily output pushed to GitHub
+========================================
+✅ Daily automation completed
+========================================
+========================================
+🚀 Daily automation started
+Run time   : 2026-04-22 21:00:59 +03
+Report date: 2026-04-21
+========================================
+🚀 Start DingTalk notable sync
+===== DEBUG SHEETS =====
+status_code: 200
+{
+  "value": [
+    {
+      "name": "销售id对应名字表",
+      "id": "4FUUDnF"
+    },
+    {
+      "name": "20260408分配记录",
+      "id": "PTUH2yg"
+    },
+    {
+      "name": "20260408课程记录",
+      "id": "3hg61RU"
+    },
+    {
+      "name": "20260408订单记录",
+      "id": "LffMIpG"
+    },
+    {
+      "name": "20260407分配记录",
+      "id": "5ELvTmo"
+    },
+    {
+      "name": "20260407课程记录",
+      "id": "pVTLMMr"
+    },
+    {
+      "name": "20260410订单记录",
+      "id": "fhBcaQC"
+    },
+    {
+      "name": "20260410分配记录",
+      "id": "UeIZhSp"
+    },
+    {
+      "name": "20260410课程记录",
+      "id": "BoEJ2cc"
+    },
+    {
+      "name": "20260411分配记录",
+      "id": "K2lDNYr"
+    },
+    {
+      "name": "20260411订单记录",
+      "id": "DV7lwiS"
+    },
+    {
+      "name": "20260411课程记录",
+      "id": "X6vvKoj"
+    },
+    {
+      "name": "20260413课程记录",
+      "id": "V75jxA0"
+    },
+    {
+      "name": "20260413订单记录",
+      "id": "Ryg8Heh"
+    },
+    {
+      "name": "20260413分配记录",
+      "id": "LJ0FaeB"
+    },
+    {
+      "name": "20260412课程记录",
+      "id": "iiOIKUM"
+    },
+    {
+      "name": "20260412分配记录",
+      "id": "XWYaFU0"
+    },
+    {
+      "name": "20260412订单记录",
+      "id": "wkBmrc2"
+    },
+    {
+      "name": "20260414订单记录",
+      "id": "PQU3TRK"
+    },
+    {
+      "name": "20260414课程记录",
+      "id": "N4LlqdO"
+    },
+    {
+      "name": "20260414分配记录",
+      "id": "tOBhyTZ"
+    },
+    {
+      "name": "20260414通话记录",
+      "id": "9bkzJsv"
+    },
+    {
+      "name": "20260415订单记录",
+      "id": "pvnF7Ve"
+    },
+    {
+      "name": "20260415通话记录",
+      "id": "NxewF7b"
+    },
+    {
+      "name": "20260415分配记录",
+      "id": "lW4WM56"
+    },
+    {
+      "name": "20260415课程记录",
+      "id": "epdoGJB"
+    },
+    {
+      "name": "20260416课程记录",
+      "id": "uSGz5oi"
+    },
+    {
+      "name": "20260416分配记录",
+      "id": "659h0mQ"
+    },
+    {
+      "name": "20260416通话记录",
+      "id": "mum881c"
+    },
+    {
+      "name": "20260416订单记录",
+      "id": "Dmsj8HA"
+    },
+    {
+      "name": "20260419订单记录",
+      "id": "SCvtu5O"
+    },
+    {
+      "name": "20260419分配记录",
+      "id": "X4Grh2f"
+    },
+    {
+      "name": "20260419课程记录",
+      "id": "YJYDUaN"
+    },
+    {
+      "name": "20260419通话记录",
+      "id": "vDIml35"
+    },
+    {
+      "name": "20260418订单记录",
+      "id": "I1sJQvu"
+    },
+    {
+      "name": "20260418通话记录",
+      "id": "xDBtpp4"
+    },
+    {
+      "name": "20260418课程记录",
+      "id": "VcswTOB"
+    },
+    {
+      "name": "20260418分配记录",
+      "id": "P5Zmi1W"
+    },
+    {
+      "name": "20260417课程记录",
+      "id": "BzyNRvn"
+    },
+    {
+      "name": "20260417分配记录",
+      "id": "TCneUCA"
+    },
+    {
+      "name": "20260417通话记录",
+      "id": "CRt22gO"
+    },
+    {
+      "name": "20260417订单记录",
+      "id": "9l6BE9X"
+    },
+    {
+      "name": "20260420订单记录",
+      "id": "tqs1HOA"
+    },
+    {
+      "name": "20260420课程记录",
+      "id": "x31eUZu"
+    },
+    {
+      "name": "20260420分配记录",
+      "id": "CoyvIYo"
+    },
+    {
+      "name": "20260420通话记录",
+      "id": "RiWfmFV"
+    },
+    {
+      "name": "20260421分配记录",
+      "id": "g0nMx8o"
+    },
+    {
+      "name": "20260421课程记录",
+      "id": "EFJVu4f"
+    },
+    {
+      "name": "20260421通话记录",
+      "id": "4vgWLeN"
+    },
+    {
+      "name": "20260421订单记录",
+      "id": "kSI8bkt"
+    }
+  ]
+}
+===== DEBUG SHEET MAP =====
+{
+  "销售id对应名字表": "4FUUDnF",
+  "20260408分配记录": "PTUH2yg",
+  "20260408课程记录": "3hg61RU",
+  "20260408订单记录": "LffMIpG",
+  "20260407分配记录": "5ELvTmo",
+  "20260407课程记录": "pVTLMMr",
+  "20260410订单记录": "fhBcaQC",
+  "20260410分配记录": "UeIZhSp",
+  "20260410课程记录": "BoEJ2cc",
+  "20260411分配记录": "K2lDNYr",
+  "20260411订单记录": "DV7lwiS",
+  "20260411课程记录": "X6vvKoj",
+  "20260413课程记录": "V75jxA0",
+  "20260413订单记录": "Ryg8Heh",
+  "20260413分配记录": "LJ0FaeB",
+  "20260412课程记录": "iiOIKUM",
+  "20260412分配记录": "XWYaFU0",
+  "20260412订单记录": "wkBmrc2",
+  "20260414订单记录": "PQU3TRK",
+  "20260414课程记录": "N4LlqdO",
+  "20260414分配记录": "tOBhyTZ",
+  "20260414通话记录": "9bkzJsv",
+  "20260415订单记录": "pvnF7Ve",
+  "20260415通话记录": "NxewF7b",
+  "20260415分配记录": "lW4WM56",
+  "20260415课程记录": "epdoGJB",
+  "20260416课程记录": "uSGz5oi",
+  "20260416分配记录": "659h0mQ",
+  "20260416通话记录": "mum881c",
+  "20260416订单记录": "Dmsj8HA",
+  "20260419订单记录": "SCvtu5O",
+  "20260419分配记录": "X4Grh2f",
+  "20260419课程记录": "YJYDUaN",
+  "20260419通话记录": "vDIml35",
+  "20260418订单记录": "I1sJQvu",
+  "20260418通话记录": "xDBtpp4",
+  "20260418课程记录": "VcswTOB",
+  "20260418分配记录": "P5Zmi1W",
+  "20260417课程记录": "BzyNRvn",
+  "20260417分配记录": "TCneUCA",
+  "20260417通话记录": "CRt22gO",
+  "20260417订单记录": "9l6BE9X",
+  "20260420订单记录": "tqs1HOA",
+  "20260420课程记录": "x31eUZu",
+  "20260420分配记录": "CoyvIYo",
+  "20260420通话记录": "RiWfmFV",
+  "20260421分配记录": "g0nMx8o",
+  "20260421课程记录": "EFJVu4f",
+  "20260421通话记录": "4vgWLeN",
+  "20260421订单记录": "kSI8bkt"
+}
+===== DEBUG PICKED SHEETS =====
+{
+  "分配记录": [
+    {
+      "date": "2026-04-08",
+      "name": "20260408分配记录",
+      "id": "PTUH2yg"
+    },
+    {
+      "date": "2026-04-10",
+      "name": "20260410分配记录",
+      "id": "UeIZhSp"
+    },
+    {
+      "date": "2026-04-11",
+      "name": "20260411分配记录",
+      "id": "K2lDNYr"
+    },
+    {
+      "date": "2026-04-12",
+      "name": "20260412分配记录",
+      "id": "XWYaFU0"
+    },
+    {
+      "date": "2026-04-13",
+      "name": "20260413分配记录",
+      "id": "LJ0FaeB"
+    },
+    {
+      "date": "2026-04-14",
+      "name": "20260414分配记录",
+      "id": "tOBhyTZ"
+    },
+    {
+      "date": "2026-04-15",
+      "name": "20260415分配记录",
+      "id": "lW4WM56"
+    },
+    {
+      "date": "2026-04-16",
+      "name": "20260416分配记录",
+      "id": "659h0mQ"
+    },
+    {
+      "date": "2026-04-17",
+      "name": "20260417分配记录",
+      "id": "TCneUCA"
+    },
+    {
+      "date": "2026-04-18",
+      "name": "20260418分配记录",
+      "id": "P5Zmi1W"
+    },
+    {
+      "date": "2026-04-19",
+      "name": "20260419分配记录",
+      "id": "X4Grh2f"
+    },
+    {
+      "date": "2026-04-20",
+      "name": "20260420分配记录",
+      "id": "CoyvIYo"
+    },
+    {
+      "date": "2026-04-21",
+      "name": "20260421分配记录",
+      "id": "g0nMx8o"
+    }
+  ],
+  "课程记录": [
+    {
+      "date": "2026-04-08",
+      "name": "20260408课程记录",
+      "id": "3hg61RU"
+    },
+    {
+      "date": "2026-04-10",
+      "name": "20260410课程记录",
+      "id": "BoEJ2cc"
+    },
+    {
+      "date": "2026-04-11",
+      "name": "20260411课程记录",
+      "id": "X6vvKoj"
+    },
+    {
+      "date": "2026-04-12",
+      "name": "20260412课程记录",
+      "id": "iiOIKUM"
+    },
+    {
+      "date": "2026-04-13",
+      "name": "20260413课程记录",
+      "id": "V75jxA0"
+    },
+    {
+      "date": "2026-04-14",
+      "name": "20260414课程记录",
+      "id": "N4LlqdO"
+    },
+    {
+      "date": "2026-04-15",
+      "name": "20260415课程记录",
+      "id": "epdoGJB"
+    },
+    {
+      "date": "2026-04-16",
+      "name": "20260416课程记录",
+      "id": "uSGz5oi"
+    },
+    {
+      "date": "2026-04-17",
+      "name": "20260417课程记录",
+      "id": "BzyNRvn"
+    },
+    {
+      "date": "2026-04-18",
+      "name": "20260418课程记录",
+      "id": "VcswTOB"
+    },
+    {
+      "date": "2026-04-19",
+      "name": "20260419课程记录",
+      "id": "YJYDUaN"
+    },
+    {
+      "date": "2026-04-20",
+      "name": "20260420课程记录",
+      "id": "x31eUZu"
+    },
+    {
+      "date": "2026-04-21",
+      "name": "20260421课程记录",
+      "id": "EFJVu4f"
+    }
+  ],
+  "通话记录": [
+    {
+      "date": "2026-04-14",
+      "name": "20260414通话记录",
+      "id": "9bkzJsv"
+    },
+    {
+      "date": "2026-04-15",
+      "name": "20260415通话记录",
+      "id": "NxewF7b"
+    },
+    {
+      "date": "2026-04-16",
+      "name": "20260416通话记录",
+      "id": "mum881c"
+    },
+    {
+      "date": "2026-04-17",
+      "name": "20260417通话记录",
+      "id": "CRt22gO"
+    },
+    {
+      "date": "2026-04-18",
+      "name": "20260418通话记录",
+      "id": "xDBtpp4"
+    },
+    {
+      "date": "2026-04-19",
+      "name": "20260419通话记录",
+      "id": "vDIml35"
+    },
+    {
+      "date": "2026-04-20",
+      "name": "20260420通话记录",
+      "id": "RiWfmFV"
+    },
+    {
+      "date": "2026-04-21",
+      "name": "20260421通话记录",
+      "id": "4vgWLeN"
+    }
+  ],
+  "订单记录": [
+    {
+      "date": "2026-04-08",
+      "name": "20260408订单记录",
+      "id": "LffMIpG"
+    },
+    {
+      "date": "2026-04-10",
+      "name": "20260410订单记录",
+      "id": "fhBcaQC"
+    },
+    {
+      "date": "2026-04-11",
+      "name": "20260411订单记录",
+      "id": "DV7lwiS"
+    },
+    {
+      "date": "2026-04-12",
+      "name": "20260412订单记录",
+      "id": "wkBmrc2"
+    },
+    {
+      "date": "2026-04-13",
+      "name": "20260413订单记录",
+      "id": "Ryg8Heh"
+    },
+    {
+      "date": "2026-04-14",
+      "name": "20260414订单记录",
+      "id": "PQU3TRK"
+    },
+    {
+      "date": "2026-04-15",
+      "name": "20260415订单记录",
+      "id": "pvnF7Ve"
+    },
+    {
+      "date": "2026-04-16",
+      "name": "20260416订单记录",
+      "id": "Dmsj8HA"
+    },
+    {
+      "date": "2026-04-17",
+      "name": "20260417订单记录",
+      "id": "9l6BE9X"
+    },
+    {
+      "date": "2026-04-18",
+      "name": "20260418订单记录",
+      "id": "I1sJQvu"
+    },
+    {
+      "date": "2026-04-19",
+      "name": "20260419订单记录",
+      "id": "SCvtu5O"
+    },
+    {
+      "date": "2026-04-20",
+      "name": "20260420订单记录",
+      "id": "tqs1HOA"
+    },
+    {
+      "date": "2026-04-21",
+      "name": "20260421订单记录",
+      "id": "kSI8bkt"
+    }
+  ]
+}
+--- loading 20260408分配记录 (PTUH2yg) ---
+===== DEBUG RECORDS PTUH2yg =====
+status_code: 200
+{
+  "records": [
+    {
+      "lastModifiedTime": 1775705661000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1775671260000,
+      "id": "0nNGDs0NfH",
+      "fields": {
+        "stu_id": "62882783",
+        "add_time": 1775616540000,
+        "new_admin_id": "4123059",
+        "desc": "中东成人高中生分配"
+      }
+    },
+    {
+      "lastModifiedTime": 1775705661000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1775671260000,
+      "id": "2YmMQ42F9j",
+      "fields": {
+        "stu_id": "62881630",
+        "add_time": 1775585220000,
+        "new_admin_id": "4121807",
+        "desc": "转介绍分配cc"
+      }
+    },
+    {
+      "lastModifiedTime": 1775705661000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1775671260000,
+      "id": "2dgEy42Xjq",
+      "fields": {
+        "stu_id": "62881334",
+        "add_time": 1775583660000,
+        "new_admin_id": "4123059",
+        "desc": "中东成人高中生分配"
+      }
+    },
+    {
+      "lastModifiedTime": 1775705661000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1775671260000,
+      "id": "3wCbIZM2SI",
+      "fields": {
+        "stu_id": "62887552",
+        "add_time": 1775657460000,
+        "new_admin_id": "4121807",
+        "desc": "CC人工改派"
+      }
+    },
+    {
+      "lastModifiedTime": 1775705661000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1775671260000,
+      "id": "7VrPipB
+--- loading 20260410分配记录 (UeIZhSp) ---
+===== DEBUG RECORDS UeIZhSp =====
+status_code: 200
+{
+  "records": [
+    {
+      "lastModifiedTime": 1775865902000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1775865902000,
+      "id": "2IZ1vjxiRv",
+      "fields": {
+        "stu_id": "62903434",
+        "add_time": "2026-04-10T22:50:53+08:00",
+        "new_admin_id": "4123057",
+        "desc": "中东成人高中生分配"
+      }
+    },
+    {
+      "lastModifiedTime": 1775865902000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1775865902000,
+      "id": "2Owmq0qSG5",
+      "fields": {
+        "stu_id": "62899299",
+        "add_time": "2026-04-10T12:22:22+08:00",
+        "new_admin_id": "4124168",
+        "desc": "中东成人高中生分配"
+      }
+    },
+    {
+      "lastModifiedTime": 1775865902000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1775865902000,
+      "id": "5KBx2xzeFF",
+      "fields": {
+        "stu_id": "62903915",
+        "add_time": "2026-04-10T23:09:49+08:00",
+        "new_admin_id": "4123060",
+        "desc": "中东成人高中生分配"
+      }
+    },
+    {
+      "lastModifiedTime": 1775865902000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1775865902000,
+      "id": "7fVlcQyObJ",
+      "fields": {
+        "stu_id": "62900711",
+        "add_time": "2026-04-10T14:59:56+08:00",
+        "new_admin_id": "4121807",
+        "desc": "中东成人高中生分配"
+      }
+    },
+    {
+      "lastModifiedTime": 1775865902000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+    
+--- loading 20260411分配记录 (K2lDNYr) ---
+===== DEBUG RECORDS K2lDNYr =====
+status_code: 200
+{
+  "records": [
+    {
+      "lastModifiedTime": 1775993691000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1775993691000,
+      "id": "3wKJqsHGfq",
+      "fields": {
+        "stu_id": "62905360",
+        "add_time": "2026-04-11T12:24:28+08:00",
+        "new_admin_id": "4124168",
+        "desc": "中东成人高中生分配"
+      }
+    },
+    {
+      "lastModifiedTime": 1775993691000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1775993691000,
+      "id": "5J5Tc4s7Tp",
+      "fields": {
+        "stu_id": "62905014",
+        "add_time": "2026-04-11T11:52:21+08:00",
+        "new_admin_id": "4123061",
+        "desc": "中东成人高中生分配"
+      }
+    },
+    {
+      "lastModifiedTime": 1775993691000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1775993691000,
+      "id": "9LtDrN0jF7",
+      "fields": {
+        "stu_id": "62911279",
+        "add_time": "2026-04-11T23:34:29+08:00",
+        "new_admin_id": "4123057",
+        "desc": "中东成人高中生分配"
+      }
+    },
+    {
+      "lastModifiedTime": 1775993691000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1775993691000,
+      "id": "9sh5I5GzlI",
+      "fields": {
+        "stu_id": "62905364",
+        "add_time": "2026-04-11T12:16:54+08:00",
+        "new_admin_id": "4123059",
+        "desc": "中东成人高中生分配"
+      }
+    },
+    {
+      "lastModifiedTime": 1775993691000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+    
+--- loading 20260412分配记录 (XWYaFU0) ---
+===== DEBUG RECORDS XWYaFU0 =====
+status_code: 200
+{
+  "records": [
+    {
+      "lastModifiedTime": 1776149245000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776149245000,
+      "id": "2WYvGbYvsQ",
+      "fields": {
+        "stu_id": "62909419",
+        "add_time": "2026-04-11T18:47:38+08:00",
+        "new_admin_id": "4123061",
+        "desc": "中东成人高中生分配"
+      }
+    },
+    {
+      "lastModifiedTime": 1776149245000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776149245000,
+      "id": "4badsXcacU",
+      "fields": {
+        "stu_id": "62904608",
+        "add_time": "2026-04-11T03:30:57+08:00",
+        "new_admin_id": "4123059",
+        "desc": "中东成人高中生分配"
+      }
+    },
+    {
+      "lastModifiedTime": 1776149245000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776149245000,
+      "id": "5QDYSvnl1S",
+      "fields": {
+        "stu_id": "62904749",
+        "add_time": "2026-04-11T05:27:58+08:00",
+        "new_admin_id": "4123061",
+        "desc": "中东成人高中生分配"
+      }
+    },
+    {
+      "lastModifiedTime": 1776149245000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776149245000,
+      "id": "684X8xiS30",
+      "fields": {
+        "stu_id": "62906237",
+        "add_time": "2026-04-11T11:27:40+08:00",
+        "new_admin_id": "4123057",
+        "desc": "中东成人高中生分配"
+      }
+    },
+    {
+      "lastModifiedTime": 1776149245000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+    
+--- loading 20260413分配记录 (LJ0FaeB) ---
+===== DEBUG RECORDS LJ0FaeB =====
+status_code: 200
+{
+  "records": [
+    {
+      "lastModifiedTime": 1776168454000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776168454000,
+      "id": "1LetACFIe0",
+      "fields": {
+        "stu_id": "62920733",
+        "add_time": "2026-04-13T06:10:42+08:00",
+        "new_admin_id": "4123059",
+        "desc": "中东成人高中生分配"
+      }
+    },
+    {
+      "lastModifiedTime": 1776168451000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776168451000,
+      "id": "1Y9EoJ1QBQ",
+      "fields": {
+        "stu_id": "62924338",
+        "add_time": "2026-04-13T18:20:05+08:00",
+        "new_admin_id": "4121807",
+        "desc": "中东成人高中生分配"
+      }
+    },
+    {
+      "lastModifiedTime": 1776168451000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776168451000,
+      "id": "27127ODmfI",
+      "fields": {
+        "stu_id": "62911099",
+        "add_time": "2026-04-13T18:41:17+08:00",
+        "new_admin_id": "4121807",
+        "desc": "CC人工改派"
+      }
+    },
+    {
+      "lastModifiedTime": 1776168451000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776168451000,
+      "id": "2XfpWm9ZG2",
+      "fields": {
+        "stu_id": "62900348",
+        "add_time": "2026-04-13T18:42:55+08:00",
+        "new_admin_id": "4123057",
+        "desc": "CC人工改派"
+      }
+    },
+    {
+      "lastModifiedTime": 1776168454000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+ 
+--- loading 20260414分配记录 (tOBhyTZ) ---
+===== DEBUG RECORDS tOBhyTZ =====
+status_code: 200
+{
+  "records": [
+    {
+      "lastModifiedTime": 1776218441000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776218441000,
+      "id": "0m3moZq1X6",
+      "fields": {
+        "stu_id": "62927838",
+        "add_time": "2026-04-14T03:23:25+08:00",
+        "new_admin_id": "4121807",
+        "desc": "中东成人高中生分配"
+      }
+    },
+    {
+      "lastModifiedTime": 1776218442000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776218442000,
+      "id": "0nJD0eTqz5",
+      "fields": {
+        "stu_id": "62927903",
+        "add_time": "2026-04-14T02:58:16+08:00",
+        "new_admin_id": "4122734",
+        "desc": "中东成人高中生分配"
+      }
+    },
+    {
+      "lastModifiedTime": 1776218441000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776218441000,
+      "id": "17vI5AfkFt",
+      "fields": {
+        "stu_id": "62928040",
+        "add_time": "2026-04-14T17:37:44+08:00",
+        "new_admin_id": "4123060",
+        "desc": "CC人工改派"
+      }
+    },
+    {
+      "lastModifiedTime": 1776218441000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776218441000,
+      "id": "1vou4g0LZx",
+      "fields": {
+        "stu_id": "62855945",
+        "add_time": "2026-04-14T16:33:51+08:00",
+        "new_admin_id": "4121807",
+        "desc": "CC人工改派"
+      }
+    },
+    {
+      "lastModifiedTime": 1776218441000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+ 
+--- loading 20260415分配记录 (lW4WM56) ---
+===== DEBUG RECORDS lW4WM56 =====
+status_code: 200
+{
+  "records": [
+    {
+      "lastModifiedTime": 1776305286000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776305286000,
+      "id": "0OUzKnHV42",
+      "fields": {
+        "stu_id": "62714758",
+        "add_time": "2026-04-15T17:16:18+08:00",
+        "new_admin_id": "4121807",
+        "desc": "CC人工改派"
+      }
+    },
+    {
+      "lastModifiedTime": 1776305282000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776305282000,
+      "id": "0R4nkfdgxo",
+      "fields": {
+        "stu_id": "62935738",
+        "add_time": "2026-04-15T18:15:23+08:00",
+        "new_admin_id": "4123060",
+        "desc": "CC人工改派"
+      }
+    },
+    {
+      "lastModifiedTime": 1776305286000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776305286000,
+      "id": "0jzGwvhUCN",
+      "fields": {
+        "stu_id": "62936517",
+        "add_time": "2026-04-15T10:43:51+08:00",
+        "new_admin_id": "4123057",
+        "desc": "中东成人高中生分配"
+      }
+    },
+    {
+      "lastModifiedTime": 1776305286000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776305286000,
+      "id": "1WEXFjs6IB",
+      "fields": {
+        "stu_id": "62935577",
+        "add_time": "2026-04-15T07:08:26+08:00",
+        "new_admin_id": "4123061",
+        "desc": "中东成人高中生分配"
+      }
+    },
+    {
+      "lastModifiedTime": 1776305282000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+ 
+--- loading 20260416分配记录 (659h0mQ) ---
+===== DEBUG RECORDS 659h0mQ =====
+status_code: 200
+{
+  "records": [
+    {
+      "lastModifiedTime": 1776396891000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776396891000,
+      "id": "0urVAlNJZt",
+      "fields": {
+        "stu_id": "62944944",
+        "add_time": "2026-04-16T16:06:06+08:00",
+        "new_admin_id": "4123056",
+        "desc": "中东academy_en分配"
+      }
+    },
+    {
+      "lastModifiedTime": 1776396891000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776396891000,
+      "id": "1wZxzdICx3",
+      "fields": {
+        "stu_id": "62942525",
+        "add_time": "2026-04-16T04:37:38+08:00",
+        "new_admin_id": "4123056",
+        "desc": "中东academy_en分配"
+      }
+    },
+    {
+      "lastModifiedTime": 1776396891000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776396891000,
+      "id": "2Qt3x3PxtM",
+      "fields": {
+        "stu_id": "62944944",
+        "add_time": "2026-04-16T22:41:49+08:00",
+        "new_admin_id": "4121807",
+        "desc": "CC人工改派"
+      }
+    },
+    {
+      "lastModifiedTime": 1776396893000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776396893000,
+      "id": "2vXPhb3edx",
+      "fields": {
+        "stu_id": "62942303",
+        "add_time": "2026-04-16T03:30:08+08:00",
+        "new_admin_id": "4124168",
+        "desc": "中东academy_en分配"
+      }
+    },
+    {
+      "lastModifiedTime": 1776396893000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68
+--- loading 20260417分配记录 (TCneUCA) ---
+===== DEBUG RECORDS TCneUCA =====
+status_code: 200
+{
+  "records": [
+    {
+      "lastModifiedTime": 1776655630000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776655630000,
+      "id": "1hoTfPCxJG",
+      "fields": {
+        "stu_id": "62951377",
+        "add_time": "2026-04-17T13:54:00+08:00",
+        "new_admin_id": "4123059",
+        "desc": "中东成人高中生分配"
+      }
+    },
+    {
+      "lastModifiedTime": 1776655630000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776655630000,
+      "id": "25jqC9TVad",
+      "fields": {
+        "stu_id": "62949424",
+        "add_time": "2026-04-17T04:42:30+08:00",
+        "new_admin_id": "4123056",
+        "desc": "中东成人高中生分配"
+      }
+    },
+    {
+      "lastModifiedTime": 1776655630000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776655630000,
+      "id": "5qrl7tfxVt",
+      "fields": {
+        "stu_id": "62949212",
+        "add_time": "2026-04-17T03:09:57+08:00",
+        "new_admin_id": "4124168",
+        "desc": "中东成人高中生分配"
+      }
+    },
+    {
+      "lastModifiedTime": 1776655630000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776655630000,
+      "id": "7Vr5Y9cYdX",
+      "fields": {
+        "stu_id": "62952352",
+        "add_time": "2026-04-17T15:54:40+08:00",
+        "new_admin_id": "4121807",
+        "desc": "中东成人高中生分配"
+      }
+    },
+    {
+      "lastModifiedTime": 1776655630000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+    
+--- loading 20260418分配记录 (P5Zmi1W) ---
+===== DEBUG RECORDS P5Zmi1W =====
+status_code: 200
+{
+  "records": [
+    {
+      "lastModifiedTime": 1776655582000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776655582000,
+      "id": "1gEHjhwiiI",
+      "fields": {
+        "stu_id": "62951377",
+        "add_time": "2026-04-18T18:58:53+08:00",
+        "new_admin_id": "4123061",
+        "desc": "CC人工改派"
+      }
+    },
+    {
+      "lastModifiedTime": 1776655582000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776655582000,
+      "id": "1iMFKHmTbN",
+      "fields": {
+        "stu_id": "62956960",
+        "add_time": "2026-04-18T18:59:11+08:00",
+        "new_admin_id": "4123060",
+        "desc": "CC人工改派"
+      }
+    },
+    {
+      "lastModifiedTime": 1776655582000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776655582000,
+      "id": "3kdlOqfM61",
+      "fields": {
+        "stu_id": "62961649",
+        "add_time": "2026-04-18T21:16:09+08:00",
+        "new_admin_id": "4124168",
+        "desc": "中东成人高中生分配"
+      }
+    },
+    {
+      "lastModifiedTime": 1776655582000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776655582000,
+      "id": "41WkZCgewd",
+      "fields": {
+        "stu_id": "62956120",
+        "add_time": "2026-04-18T04:24:16+08:00",
+        "new_admin_id": "4121807",
+        "desc": "中东成人高中生分配"
+      }
+    },
+    {
+      "lastModifiedTime": 1776655583000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+ 
+--- loading 20260419分配记录 (X4Grh2f) ---
+===== DEBUG RECORDS X4Grh2f =====
+status_code: 200
+{
+  "records": [
+    {
+      "lastModifiedTime": 1776653526000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776653526000,
+      "id": "0vYmpqHCxA",
+      "fields": {
+        "stu_id": "62970160",
+        "add_time": "2026-04-19T22:27:54+08:00",
+        "new_admin_id": "4123061",
+        "desc": "中东成人高中生分配"
+      }
+    },
+    {
+      "lastModifiedTime": 1776653526000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776653526000,
+      "id": "1HrJserhRb",
+      "fields": {
+        "stu_id": "62963453",
+        "add_time": "2026-04-19T01:14:09+08:00",
+        "new_admin_id": "4122734",
+        "desc": "中东成人高中生分配"
+      }
+    },
+    {
+      "lastModifiedTime": 1776653526000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776653526000,
+      "id": "4507UxgWN0",
+      "fields": {
+        "stu_id": "62969756",
+        "add_time": "2026-04-19T21:47:43+08:00",
+        "new_admin_id": "4123060",
+        "desc": "中东成人高中生分配"
+      }
+    },
+    {
+      "lastModifiedTime": 1776653526000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776653526000,
+      "id": "Bhj8WPAGqs",
+      "fields": {
+        "stu_id": "62967845",
+        "add_time": "2026-04-19T17:56:10+08:00",
+        "new_admin_id": "4122734",
+        "desc": "中东成人高中生分配"
+      }
+    },
+    {
+      "lastModifiedTime": 1776653526000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+    
+--- loading 20260420分配记录 (CoyvIYo) ---
+===== DEBUG RECORDS CoyvIYo =====
+status_code: 200
+{
+  "records": [
+    {
+      "lastModifiedTime": 1776737582000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776737582000,
+      "id": "09S4jRgeUr",
+      "fields": {
+        "stu_id": "62973267",
+        "add_time": "4123057",
+        "new_admin_id": "2026-04-20T08:29:40+08:00",
+        "desc": "中东成人高中生分配"
+      }
+    },
+    {
+      "lastModifiedTime": 1776737581000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776737581000,
+      "id": "0jj95hTj61",
+      "fields": {
+        "stu_id": "62977361",
+        "add_time": "4123061",
+        "new_admin_id": "2026-04-20T20:40:21+08:00",
+        "desc": "CC人工改派"
+      }
+    },
+    {
+      "lastModifiedTime": 1776737581000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776737581000,
+      "id": "11Qb4LK5fi",
+      "fields": {
+        "stu_id": "62897764",
+        "add_time": "4121807",
+        "new_admin_id": "2026-04-20T22:53:30+08:00",
+        "desc": "CC人工改派"
+      }
+    },
+    {
+      "lastModifiedTime": 1776737582000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776737582000,
+      "id": "1YXulhkvyO",
+      "fields": {
+        "stu_id": "62971832",
+        "add_time": "4121807",
+        "new_admin_id": "2026-04-20T02:03:56+08:00",
+        "desc": "中东成人高中生分配"
+      }
+    },
+    {
+      "lastModifiedTime": 1776737582000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+ 
+--- loading 20260421分配记录 (g0nMx8o) ---
+===== DEBUG RECORDS g0nMx8o =====
+status_code: 200
+{
+  "records": [
+    {
+      "lastModifiedTime": 1776820179000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776820179000,
+      "id": "197xO989dN",
+      "fields": {
+        "stu_id": "62981167",
+        "add_time": "2026-04-21T19:01:40+08:00",
+        "new_admin_id": "4123060",
+        "desc": "CC人工改派"
+      }
+    },
+    {
+      "lastModifiedTime": 1776820180000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776820180000,
+      "id": "25ALmjZU0H",
+      "fields": {
+        "stu_id": "62979979",
+        "add_time": "2026-04-21T03:20:19+08:00",
+        "new_admin_id": "4123061",
+        "desc": "中东academy_en分配"
+      }
+    },
+    {
+      "lastModifiedTime": 1776820181000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776820181000,
+      "id": "2V2M7QSthj",
+      "fields": {
+        "stu_id": "62979667",
+        "add_time": "2026-04-21T01:44:32+08:00",
+        "new_admin_id": "4123056",
+        "desc": "中东academy_en分配"
+      }
+    },
+    {
+      "lastModifiedTime": 1776820180000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776820180000,
+      "id": "3Ap9pHzjv9",
+      "fields": {
+        "stu_id": "62345051",
+        "add_time": "2026-04-21T17:09:57+08:00",
+        "new_admin_id": "4121807",
+        "desc": "CC人工改派"
+      }
+    },
+    {
+      "lastModifiedTime": 1776820180000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+
+--- loading 20260408课程记录 (3hg61RU) ---
+===== DEBUG RECORDS 3hg61RU =====
+status_code: 200
+{
+  "records": [
+    {
+      "lastModifiedTime": 1775733512000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1775733512000,
+      "id": "1FtiEQ4E9e",
+      "fields": {
+        "上课时间（北京）": "2026-04-08 00:30 ~ 01:00",
+        "课程类型": "free",
+        "课程状态": "s_absent",
+        "课程名称": "student-culture and interests-Make Orders in a Coffee Shop-",
+        "预约上课教材": "culture and interests-Make Orders in a Coffee Shop",
+        "预约类型": "自约",
+        "是否成交": "free",
+        "merithubId": "d79046srtl0v7lvunfl0",
+        "老师名称": "Fatma Essam",
+        "上课时间（沙特）": "2026-04-07 19:30 ~ 20:00",
+        "学生名称": "student",
+        "老师id": "6813744",
+        "销售ID": "4121806",
+        "51talk预约id": "526007678",
+        "学生id": "62861347",
+        "约课时间": "2026-04-05 14:32:54",
+        "ID": "3234"
+      }
+    },
+    {
+      "lastModifiedTime": 1775733395000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1775733395000,
+      "id": "1bpjDpFmCK",
+      "fields": {
+        "上课时间（北京）": "2026-04-08 21:30 ~ 22:00",
+        "课程类型": "free",
+        "课程状态": "end",
+        "课程名称": "student-culture and interests-A day of yours-Mai Waheed",
+        "预约上课教材": "culture and interests-A day of yours",
+        "预约类型": "代约",
+        "是否成交": "free",
+        "merithubId": "d78f4dsrtl0v7lvtf3ig",
+        "老师名称": "Manar A.Gomaa",
+        "上课时间（沙特）": "2026-04-08 16:30 ~ 17:00",
+        "实际上课教材": "related to exams you are facing now-Vocabulary skills",
+        "学生名称": "student",
+        "老师id": "6850374",
+        "销售ID": "4123060",
+        "51talk预约id": "525877632",
+        "学生id": "62846992",
+        "约课时间": "2026-04-04 19:12:50",
+        "ID": "3206"
+      }
+    },
+    {
+      "lastModifiedTime": 1775733319000,
+      "createdBy": {
+   
+--- loading 20260410课程记录 (BoEJ2cc) ---
+===== DEBUG RECORDS BoEJ2cc =====
+status_code: 200
+{
+  "records": [
+    {
+      "lastModifiedTime": 1775880214000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1775880214000,
+      "id": "3p8xkrxhDX",
+      "fields": {
+        "上课时间（北京）": "2026-04-10 02:30 ~ 03:00",
+        "课程类型": "free",
+        "课程状态": "s_absent",
+        "课程名称": "student-related to exams you are facing now-Reading exam skills -Eman Amr",
+        "预约上课教材": "related to exams you are facing now-Reading exam skills ",
+        "预约类型": "自约",
+        "是否成交": "free",
+        "merithubId": "d7b6tvkrtl0hca9ngnlg",
+        "老师名称": "Manar A.Gomaa",
+        "上课时间（沙特）": "2026-04-09 21:30 ~ 22:00",
+        "销售ID": "4123057",
+        "学生名称": "student",
+        "老师id": "6850374",
+        "51talk预约id": "526588125",
+        "学生id": "62888390",
+        "约课时间": "2026-04-08 01:45:20",
+        "ID": "3380"
+      }
+    },
+    {
+      "lastModifiedTime": 1775880276000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1775880276000,
+      "id": "7kijhxvFb4",
+      "fields": {
+        "上课时间（北京）": "2026-04-10 00:00 ~ 00:30",
+        "课程类型": "free",
+        "课程状态": "s_absent",
+        "课程名称": "student-related to exams you are facing now-Vocabulary skills -",
+        "预约上课教材": "related to exams you are facing now-Vocabulary skills ",
+        "预约类型": "自约",
+        "是否成交": "free",
+        "merithubId": "d7a9r2srtl0islaecs7g",
+        "老师名称": "Manar A.Gomaa",
+        "上课时间（沙特）": "2026-04-09 19:00 ~ 19:30",
+        "销售ID": "4121806",
+        "学生名称": "student",
+        "老师id": "6850374",
+        "51talk预约id": "526361278",
+        "学生id": "62876502",
+        "约课时间": "2026-04-07 14:00:38",
+        "ID": "3321"
+      }
+    },
+    {
+      "lastModifiedTime": 1775880276000,
+      "createdBy": {
+        "unionId": "Lz0sS
+--- loading 20260411课程记录 (X6vvKoj) ---
+===== DEBUG RECORDS X6vvKoj =====
+status_code: 200
+{
+  "records": [
+    {
+      "lastModifiedTime": 1775994120000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1775994120000,
+      "id": "4lOhQub3jI",
+      "fields": {
+        "上课时间（北京）": "2026-04-11 20:30 ~ 21:00",
+        "课程类型": "free",
+        "课程状态": "cancel",
+        "课程名称": "student-related to exams you are facing now-Vocabulary skills -",
+        "预约上课教材": "related to exams you are facing now-Vocabulary skills ",
+        "预约类型": "自约",
+        "merithubId": "d7b3lq4rtl0hjaq52n1g",
+        "是否成交": "free",
+        "上课时间（沙特）": "2026-04-11 15:30 ~ 16:00",
+        "销售ID": "4121806",
+        "老师id": "0",
+        "学生名称": "student",
+        "51talk预约id": "526559843",
+        "学生id": "62886165",
+        "约课时间": "2026-04-08 19:24:19",
+        "ID": "3359"
+      }
+    },
+    {
+      "lastModifiedTime": 1775994120000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1775994120000,
+      "id": "AtQTjvlQ34",
+      "fields": {
+        "上课时间（北京）": "2026-04-11 21:30 ~ 22:00",
+        "课程类型": "free",
+        "课程状态": "s_absent",
+        "课程名称": "student-culture and interests-A day of yours-",
+        "预约上课教材": "culture and interests-A day of yours",
+        "预约类型": "自约",
+        "merithubId": "d7as3t4rtl0islagnl5g",
+        "是否成交": "free",
+        "老师名称": "Gehad",
+        "上课时间（沙特）": "2026-04-11 16:30 ~ 17:00",
+        "销售ID": "4122734",
+        "老师id": "6902661",
+        "学生名称": "student",
+        "51talk预约id": "526509380",
+        "学生id": "62882783",
+        "约课时间": "2026-04-08 10:48:15",
+        "ID": "3351"
+      }
+    },
+    {
+      "lastModifiedTime": 1775994120000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq6
+--- loading 20260412课程记录 (iiOIKUM) ---
+===== DEBUG RECORDS iiOIKUM =====
+status_code: 200
+{
+  "records": [
+    {
+      "lastModifiedTime": 1776149255000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776149255000,
+      "id": "2xNASeScXb",
+      "fields": {
+        "上课时间（北京）": "2026-04-12 21:00 ~ 21:30",
+        "课程类型": "free",
+        "课程状态": "cancel",
+        "课程名称": "student-culture and interests-A day of yours-",
+        "预约上课教材": "culture and interests-A day of yours",
+        "预约类型": "自约",
+        "merithubId": "d7b83v4rtl0p857ldgu0",
+        "上课时间（沙特）": "2026-04-12 16:00 ~ 16:30",
+        "学生名称": "student",
+        "老师id": "0",
+        "51talk预约id": "526602393",
+        "学生id": "61135074",
+        "ID": "3387"
+      }
+    },
+    {
+      "lastModifiedTime": 1776149255000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776149255000,
+      "id": "48JV0AKSll",
+      "fields": {
+        "上课时间（北京）": "2026-04-12 22:30 ~ 23:00",
+        "课程类型": "free",
+        "课程状态": "s_absent",
+        "课程名称": "student-culture and interests-Make Orders in a Coffee Shop-",
+        "预约上课教材": "culture and interests-Make Orders in a Coffee Shop",
+        "预约类型": "自约",
+        "merithubId": "d7bgemkrtl0g97lau1k0",
+        "上课时间（沙特）": "2026-04-12 17:30 ~ 18:00",
+        "老师名称": "Gehad",
+        "学生名称": "student",
+        "老师id": "6902661",
+        "51talk预约id": "526658178",
+        "学生id": "62638491",
+        "ID": "3403"
+      }
+    },
+    {
+      "lastModifiedTime": 1776149255000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776149255000,
+      "id": "4MrHNPIYfK",
+      "fields": {
+        "上课时间（北京）": "2026-04-12 23:00 ~ 23:30",
+        "课程类型": "free",
+        "课程状态": "s
+--- loading 20260413课程记录 (V75jxA0) ---
+===== DEBUG RECORDS V75jxA0 =====
+status_code: 200
+{
+  "records": [
+    {
+      "lastModifiedTime": 1776166154000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776166154000,
+      "id": "0RlmG8bLov",
+      "fields": {
+        "上课时间（北京）": "2026-04-13 01:00 ~ 01:30",
+        "课程类型": "free",
+        "课程状态": "s_absent",
+        "课程名称": "student-culture and interests-A day of yours-",
+        "预约上课教材": "culture and interests-A day of yours",
+        "预约类型": "自约",
+        "merithubId": "d7bg92srtl0g97latfj0",
+        "老师名称": "Hadir Elnaggar",
+        "上课时间（沙特）": "2026-04-12 20:00 ~ 20:30",
+        "老师id": "6783916",
+        "学生名称": "student",
+        "51talk预约id": "526658232",
+        "学生id": "62890730",
+        "ID": "3402"
+      }
+    },
+    {
+      "lastModifiedTime": 1776166154000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776166154000,
+      "id": "3JPyPf4NTc",
+      "fields": {
+        "上课时间（北京）": "2026-04-13 02:30 ~ 03:00",
+        "课程类型": "free",
+        "课程状态": "s_absent",
+        "课程名称": "student-culture and interests-A day of yours-",
+        "预约上课教材": "culture and interests-A day of yours",
+        "预约类型": "自约",
+        "merithubId": "d7d41rkrtl0h0es3cvrg",
+        "老师名称": "Sara Olama",
+        "上课时间（沙特）": "2026-04-12 21:30 ~ 22:00",
+        "老师id": "6850344",
+        "学生名称": "student",
+        "51talk预约id": "527000367",
+        "学生id": "62910320",
+        "ID": "3472"
+      }
+    },
+    {
+      "lastModifiedTime": 1776166154000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776166154000,
+      "id": "3clFfDy3RT",
+      "fields": {
+        "上课时间（北京）": "2026-04-13 21:00 ~ 21:30",
+        "课程类型": "free",
+--- loading 20260414课程记录 (N4LlqdO) ---
+===== DEBUG RECORDS N4LlqdO =====
+status_code: 200
+{
+  "records": [
+    {
+      "lastModifiedTime": 1776217990000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776217990000,
+      "id": "0cw2PrsVdH",
+      "fields": {
+        "上课时间（北京）": "2026-04-14 01:00 ~ 01:30",
+        "课程类型": "free",
+        "课程状态": "end",
+        "课程名称": "student-culture and interests-A day of yours-",
+        "预约上课教材": "culture and interests-A day of yours",
+        "预约类型": "自约",
+        "merithubId": "d7e51vsrtl0h0es7ud3g",
+        "实际上课教材": "culture and interests-A day of yours",
+        "老师名称": "Soad",
+        "上课时间（沙特）": "2026-04-13 20:00 ~ 20:30",
+        "学生名称": "student",
+        "老师id": "6772855",
+        "51talk预约id": "527273061",
+        "学生id": "62921610",
+        "ID": "3512"
+      }
+    },
+    {
+      "lastModifiedTime": 1776217990000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776217990000,
+      "id": "0tNrP9HLJk",
+      "fields": {
+        "上课时间（北京）": "2026-04-14 21:00 ~ 21:30",
+        "课程类型": "free",
+        "课程状态": "cancel",
+        "课程名称": "student-culture and interests-A day of yours-",
+        "预约上课教材": "culture and interests-A day of yours",
+        "预约类型": "自约",
+        "merithubId": "d7d445krtl0h0es3ded0",
+        "上课时间（沙特）": "2026-04-14 16:00 ~ 16:30",
+        "学生名称": "student",
+        "老师id": "0",
+        "51talk预约id": "527000880",
+        "学生id": "62910326",
+        "ID": "3473"
+      }
+    },
+    {
+      "lastModifiedTime": 1776217990000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776217990000,
+      "id": "2B1rOKmKXO",
+      "fields": {
+        "上课时间（北京）": "2026-04-14 21:30 ~ 22:00",
+        "merithubI
+--- loading 20260415课程记录 (epdoGJB) ---
+===== DEBUG RECORDS epdoGJB =====
+status_code: 200
+{
+  "records": [
+    {
+      "lastModifiedTime": 1776306575000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776306575000,
+      "id": "0oOoTJgO7N",
+      "fields": {
+        "上课时间（北京）": "2026-04-15 19:30 ~ 20:00",
+        "课程类型": "free",
+        "课程状态": "s_absent",
+        "课程名称": "student-culture and interests-A day of yours-",
+        "预约上课教材": "culture and interests-A day of yours",
+        "预约类型": "自约",
+        "merithubId": "d7e89ccrtl0h0es894lg",
+        "老师名称": "Dalia Bassam",
+        "上课时间（沙特）": "2026-04-15 14:30 ~ 15:00",
+        "学生名称": "student",
+        "老师id": "6813745",
+        "51talk预约id": "527289102",
+        "学生id": "62922552",
+        "ID": "3538"
+      }
+    },
+    {
+      "lastModifiedTime": 1776306575000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776306575000,
+      "id": "19I69oWgnd",
+      "fields": {
+        "上课时间（北京）": "2026-04-15 21:00 ~ 21:30",
+        "merithubId": "d7e9dlsrtl0h0es8i5b0",
+        "课程类型": "free",
+        "上课时间（沙特）": "2026-04-15 16:00 ~ 16:30",
+        "学生名称": "student",
+        "老师id": "0",
+        "课程状态": "cancel",
+        "51talk预约id": "527294323",
+        "课程名称": "student--",
+        "学生id": "62922398",
+        "ID": "3550",
+        "预约类型": "自约"
+      }
+    },
+    {
+      "lastModifiedTime": 1776306575000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776306575000,
+      "id": "2tzajd6vDr",
+      "fields": {
+        "上课时间（北京）": "2026-04-15 20:00 ~ 20:30",
+        "课程类型": "free",
+        "课程状态": "cancel",
+        "课程名称": "student-culture and interests-A day of yours-Mahmoud Badawy",
+        "预约上课教材": "culture a
+--- loading 20260416课程记录 (uSGz5oi) ---
+===== DEBUG RECORDS uSGz5oi =====
+status_code: 200
+{
+  "records": [
+    {
+      "lastModifiedTime": 1776396905000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776396905000,
+      "id": "1SWLPN1ScH",
+      "fields": {
+        "上课时间（北京）": "2026-04-16 02:00 ~ 02:30",
+        "merithubId": "d7e8vo4rtl0h0es8f1pg",
+        "课程类型": "free",
+        "上课时间（沙特）": "2026-04-15 21:00 ~ 21:30",
+        "老师id": "0",
+        "学生名称": "student",
+        "课程状态": "cancel",
+        "51talk预约id": "527291592",
+        "课程名称": "student--",
+        "学生id": "62922576",
+        "ID": "3545",
+        "预约类型": "自约"
+      }
+    },
+    {
+      "lastModifiedTime": 1776396905000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776396905000,
+      "id": "2p8QSDDIjl",
+      "fields": {
+        "上课时间（北京）": "2026-04-16 01:00 ~ 01:30",
+        "merithubId": "d7e9e8srtl0h0es8i6s0",
+        "课程类型": "free",
+        "上课时间（沙特）": "2026-04-15 20:00 ~ 20:30",
+        "老师id": "0",
+        "学生名称": "student",
+        "课程状态": "cancel",
+        "51talk预约id": "527294162",
+        "课程名称": "student--user808254",
+        "学生id": "62922397",
+        "ID": "3551",
+        "预约类型": "自约"
+      }
+    },
+    {
+      "lastModifiedTime": 1776396905000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776396905000,
+      "id": "384dgFyh6N",
+      "fields": {
+        "上课时间（北京）": "2026-04-16 01:00 ~ 01:30",
+        "merithubId": "d7e8m14rtl0h0es8bb6g",
+        "课程类型": "free",
+        "上课时间（沙特）": "2026-04-15 20:00 ~ 20:30",
+        "老师id": "0",
+        "学生名称": "ilker",
+        "课程状态": "cancel",
+        "51talk预约id": "527290727",
+        "课程名称": "ilker--",
+        "学生id": "61418424",
+ 
+--- loading 20260417课程记录 (BzyNRvn) ---
+===== DEBUG RECORDS BzyNRvn =====
+status_code: 200
+{
+  "records": [
+    {
+      "lastModifiedTime": 1776655634000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776655634000,
+      "id": "0FEbaMylDX",
+      "fields": {
+        "上课时间（北京）": "2026-04-17 01:30 ~ 02:00",
+        "课程类型": "free",
+        "课程状态": "end",
+        "课程名称": "student-related to exams you are facing now-phonetic-",
+        "预约上课教材": "related to exams you are facing now-phonetic",
+        "预约类型": "自约",
+        "merithubId": "d7ge2g4rtl0svueihl90",
+        "老师名称": "Soad",
+        "实际上课教材": "culture and interests-Make Orders in a Coffee Shop",
+        "上课时间（沙特）": "2026-04-16 20:30 ~ 21:00",
+        "学生名称": "student",
+        "老师id": "6772855",
+        "51talk预约id": "527783235",
+        "学生id": "62946700",
+        "ID": "3726"
+      }
+    },
+    {
+      "lastModifiedTime": 1776655634000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776655634000,
+      "id": "30HVVnmAEH",
+      "fields": {
+        "上课时间（北京）": "2026-04-17 01:00 ~ 01:30",
+        "课程类型": "free",
+        "课程状态": "end",
+        "课程名称": "student-related to exams you are facing now-Vocabulary skills -Eman Amr",
+        "预约上课教材": "related to exams you are facing now-Vocabulary skills ",
+        "预约类型": "自约",
+        "merithubId": "d7gdbucrtl0svueibtog",
+        "老师名称": "Gehad",
+        "实际上课教材": "related to exams you are facing now-Vocabulary skills",
+        "上课时间（沙特）": "2026-04-16 20:00 ~ 20:30",
+        "学生名称": "student",
+        "老师id": "6902661",
+        "51talk预约id": "527777091",
+        "学生id": "62946734",
+        "ID": "3724"
+      }
+    },
+    {
+      "lastModifiedTime": 1776655634000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW
+--- loading 20260418课程记录 (VcswTOB) ---
+===== DEBUG RECORDS VcswTOB =====
+status_code: 200
+{
+  "records": [
+    {
+      "lastModifiedTime": 1776655585000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776655585000,
+      "id": "1b8QtbWP5x",
+      "fields": {
+        "上课时间（北京）": "2026-04-18 20:00 ~ 20:30",
+        "课程类型": "free",
+        "课程状态": "cancel",
+        "课程名称": "student-related to exams you are facing now-Reading exam skills -",
+        "预约上课教材": "related to exams you are facing now-Reading exam skills ",
+        "预约类型": "自约",
+        "merithubId": "d7gg2gcrtl0svuej3ko0",
+        "上课时间（沙特）": "2026-04-18 15:00 ~ 15:30",
+        "学生名称": "student",
+        "老师id": "0",
+        "51talk预约id": "527795270",
+        "学生id": "62948045",
+        "ID": "3730"
+      }
+    },
+    {
+      "lastModifiedTime": 1776655585000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776655585000,
+      "id": "DPiBpOF1Hq",
+      "fields": {
+        "上课时间（北京）": "2026-04-18 22:30 ~ 23:00",
+        "课程类型": "free",
+        "课程状态": "end",
+        "课程名称": "student-culture and interests-A day of yours-Mai Waheed",
+        "预约上课教材": "culture and interests-A day of yours",
+        "预约类型": "代约",
+        "merithubId": "d7ggi6crtl0svuej8650",
+        "实际上课教材": "related to exams you are facing now-Vocabulary skills",
+        "老师名称": "Sara Olama",
+        "上课时间（沙特）": "2026-04-18 17:30 ~ 18:00",
+        "学生名称": "student",
+        "老师id": "6850344",
+        "51talk预约id": "527796452",
+        "学生id": "62941914",
+        "ID": "3732"
+      }
+    },
+    {
+      "lastModifiedTime": 1776655585000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776655585000,
+      "id": "Jm56VbQBe5",
+      "fiel
+--- loading 20260419课程记录 (YJYDUaN) ---
+===== DEBUG RECORDS YJYDUaN =====
+status_code: 200
+{
+  "records": [
+    {
+      "lastModifiedTime": 1776653470000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776653470000,
+      "id": "4r0MdPXM34",
+      "fields": {
+        "上课时间（北京）": "2026-04-19 23:00 ~ 23:30",
+        "课程类型": "free",
+        "课程状态": "cancel",
+        "课程名称": "student-related to exams you are facing now-Vocabulary skills -",
+        "预约上课教材": "related to exams you are facing now-Vocabulary skills ",
+        "预约类型": "自约",
+        "merithubId": "d7gofj4rtl0svuekaph0",
+        "上课时间（沙特）": "2026-04-19 18:00 ~ 18:30",
+        "学生名称": "student",
+        "老师id": "0",
+        "51talk预约id": "527851772",
+        "学生id": "62949797",
+        "ID": "3746"
+      }
+    },
+    {
+      "lastModifiedTime": 1776653470000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776653470000,
+      "id": "76clEpHpW2",
+      "fields": {
+        "上课时间（北京）": "2026-04-19 23:00 ~ 23:30",
+        "课程类型": "free",
+        "课程状态": "s_absent",
+        "课程名称": "student-culture and interests-A day of yours-",
+        "预约上课教材": "culture and interests-A day of yours",
+        "预约类型": "自约",
+        "merithubId": "d7gcfn4rtl0svuei5bm0",
+        "老师名称": "Nada Hasan",
+        "上课时间（沙特）": "2026-04-19 18:00 ~ 18:30",
+        "学生名称": "student",
+        "老师id": "6755745",
+        "51talk预约id": "527769345",
+        "学生id": "62946418",
+        "ID": "3722"
+      }
+    },
+    {
+      "lastModifiedTime": 1776653470000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776653470000,
+      "id": "7QzashJKKe",
+      "fields": {
+        "上课时间（北京）": "2026-04-19 23:30 ~ 00:00",
+        "课程类型": "free",
+     
+--- loading 20260420课程记录 (x31eUZu) ---
+===== DEBUG RECORDS x31eUZu =====
+status_code: 200
+{
+  "records": [
+    {
+      "lastModifiedTime": 1776737587000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776737587000,
+      "id": "00H99BkdES",
+      "fields": {
+        "上课时间（北京）": "2026-04-20 20:00 ~ 20:30",
+        "merithubId": "d7j0lkcrtl0svuets5t0",
+        "课程类型": "free",
+        "上课时间（沙特）": "2026-04-20 15:00 ~ 15:30",
+        "老师id": "0",
+        "学生名称": "student",
+        "课程状态": "cancel",
+        "51talk预约id": "528382360",
+        "课程名称": "student--",
+        "学生id": "62976850",
+        "ID": "3862",
+        "预约类型": "自约"
+      }
+    },
+    {
+      "lastModifiedTime": 1776737587000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776737587000,
+      "id": "0FFKyozqkn",
+      "fields": {
+        "上课时间（北京）": "2026-04-20 02:00 ~ 02:30",
+        "课程类型": "free",
+        "课程状态": "s_absent",
+        "课程名称": "student-culture and interests-Make Orders in a Coffee Shop-",
+        "预约上课教材": "culture and interests-Make Orders in a Coffee Shop",
+        "预约类型": "自约",
+        "merithubId": "d7h7nvkrtl0svuemou0g",
+        "上课时间（沙特）": "2026-04-19 21:00 ~ 21:30",
+        "老师名称": "Soad",
+        "老师id": "6772855",
+        "学生名称": "student",
+        "51talk预约id": "527946770",
+        "学生id": "62823742",
+        "ID": "3768"
+      }
+    },
+    {
+      "lastModifiedTime": 1776737587000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776737587000,
+      "id": "0lIi9agtUv",
+      "fields": {
+        "上课时间（北京）": "2026-04-20 21:30 ~ 22:00",
+        "课程类型": "free",
+        "课程状态": "end",
+        "课程名称": "student-culture and interests-A day of yours-",
+        "预约上课教材": "cultur
+--- loading 20260421课程记录 (EFJVu4f) ---
+===== DEBUG RECORDS EFJVu4f =====
+status_code: 200
+{
+  "records": [
+    {
+      "lastModifiedTime": 1776820231000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776820231000,
+      "id": "0movwg4xYs",
+      "fields": {
+        "上课时间（北京）": "2026-04-21 01:00 ~ 01:30",
+        "课程类型": "free",
+        "课程状态": "s_absent",
+        "课程名称": "student-culture and interests-A day of yours-",
+        "预约上课教材": "culture and interests-A day of yours",
+        "预约类型": "自约",
+        "merithubId": "d7j3mlcrtl0svueumpd0",
+        "上课时间（沙特）": "2026-04-20 20:00 ~ 20:30",
+        "学生名称": "student",
+        "老师id": "0",
+        "51talk预约id": "528411738",
+        "学生id": "62978456",
+        "ID": "3881"
+      }
+    },
+    {
+      "lastModifiedTime": 1776820231000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776820231000,
+      "id": "19oClz2nl6",
+      "fields": {
+        "上课时间（北京）": "2026-04-21 02:00 ~ 02:30",
+        "课程类型": "free",
+        "课程状态": "s_absent",
+        "课程名称": "student-related to exams you are facing now-Vocabulary skills -",
+        "预约上课教材": "related to exams you are facing now-Vocabulary skills ",
+        "预约类型": "自约",
+        "merithubId": "d7ihu7srtl0svuesbttg",
+        "上课时间（沙特）": "2026-04-20 21:00 ~ 21:30",
+        "学生名称": "student",
+        "老师id": "0",
+        "51talk预约id": "528270727",
+        "学生id": "62971764",
+        "ID": "3839"
+      }
+    },
+    {
+      "lastModifiedTime": 1776820231000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776820231000,
+      "id": "4qOfWGdTB5",
+      "fields": {
+        "上课时间（北京）": "2026-04-21 02:30 ~ 03:00",
+        "课程类型": "free",
+        "课程状态": "cancel",
+        "课程名称
+--- loading 20260414通话记录 (9bkzJsv) ---
+===== DEBUG RECORDS 9bkzJsv =====
+status_code: 200
+{
+  "records": [
+    {
+      "lastModifiedTime": 1776228898000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776228898000,
+      "id": "00aAwwNd9I",
+      "fields": {
+        "录音": "  ",
+        "销售名称": "EGCC-fatmamohamed",
+        "学员ID": "student (62847403)",
+        "group_id": "5978",
+        "通话时长": "00:00:00",
+        "接听状态": "用户忙",
+        "响铃时长": "00:00:00",
+        "坐席号": "2310(Maqsam)",
+        "客户电话": "966****5867",
+        "外呼时间": "2026-04-14 21:16:20"
+      }
+    },
+    {
+      "lastModifiedTime": 1776228896000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776228896000,
+      "id": "0TMWYGsbqm",
+      "fields": {
+        "录音": "  ",
+        "销售名称": "EGCC-eman.amr",
+        "学员ID": "student (62888977)",
+        "group_id": "5977",
+        "通话时长": "00:00:00",
+        "接听状态": "用户忙",
+        "响铃时长": "00:00:00",
+        "坐席号": "2289(Maqsam)",
+        "客户电话": "966****9771",
+        "外呼时间": "2026-04-14 21:12:41"
+      }
+    },
+    {
+      "lastModifiedTime": 1776228901000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776228901000,
+      "id": "0UKy2UzbhV",
+      "fields": {
+        "录音": "   ",
+        "双方接听时间": "2026-04-14 00:47:19",
+        "销售名称": "EGCC-fatmamohamed",
+        "学员ID": "student (62866060)",
+        "group_id": "5978",
+        "通话时长": "00:00:02\n\n(To. 00:00:02)",
+        "接听状态": "双方接通",
+        "响铃时长": "00:00:00",
+        "坐席号": "2310(Maqsam)",
+        "客户电话": "966****2779",
+        "外呼时间": "2026-04-14 00:47:19"
+      }
+    },
+    {
+      "lastModifiedTime": 1776228899000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASz
+--- loading 20260415通话记录 (NxewF7b) ---
+===== DEBUG RECORDS NxewF7b =====
+status_code: 200
+{
+  "records": [
+    {
+      "lastModifiedTime": 1776304947000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776304947000,
+      "id": "0I8PJkKVHX",
+      "fields": {
+        "录音": "   ",
+        "双方接听时间": "2026-04-15 18:05:22",
+        "销售名称": "EGCC-maiwaheed",
+        "学员ID": "Abdulrahman (60626989)",
+        "group_id": "5978",
+        "接听状态": "Both parties connected",
+        "通话时长": "00:01:31\n\n(To. 00:01:31)",
+        "响铃时长": "00:00:00",
+        "坐席号": "2313(Maqsam)",
+        "客户电话": "966****1131",
+        "外呼时间": "2026-04-15 18:05:22"
+      }
+    },
+    {
+      "lastModifiedTime": 1776304945000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776304945000,
+      "id": "0MjOEkpkuN",
+      "fields": {
+        "录音": "   ",
+        "双方接听时间": "2026-04-15 21:00:21",
+        "销售名称": "EGCC-fatmamohamed",
+        "学员ID": "student (62935577)",
+        "group_id": "5978",
+        "接听状态": "Both parties connected",
+        "通话时长": "00:11:55\n\n(To. 00:11:55)",
+        "响铃时长": "00:00:00",
+        "坐席号": "2310(Maqsam)",
+        "客户电话": "966****2306",
+        "外呼时间": "2026-04-15 21:00:21"
+      }
+    },
+    {
+      "lastModifiedTime": 1776304950000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776304950000,
+      "id": "0ybtEBcQ5m",
+      "fields": {
+        "录音": "  ",
+        "销售名称": "EGCC-maiwaheed",
+        "学员ID": "student (62825978)",
+        "group_id": "5978",
+        "接听状态": "in_progress",
+        "通话时长": "00:00:00",
+        "响铃时长": "00:00:00",
+        "坐席号": "2313(Maqsam)",
+        "客户电话": "966****3684",
+        "外呼时间": "2026-04-15 01:32:34"
+      }
+    }
+--- loading 20260416通话记录 (mum881c) ---
+===== DEBUG RECORDS mum881c =====
+status_code: 200
+{
+  "records": [
+    {
+      "lastModifiedTime": 1776396908000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776396908000,
+      "id": "0JbqTKBzhh",
+      "fields": {
+        "录音": "  ",
+        "销售名称": "EGCC-fatmamohamed",
+        "group_id": "5978",
+        "学员ID": "student (62945475)",
+        "接听状态": "Customer did not answer",
+        "通话时长": "00:00:00",
+        "响铃时长": "00:00:00",
+        "坐席号": "2310(Maqsam)",
+        "客户电话": "966****6119",
+        "外呼时间": "2026-04-16 18:28:07"
+      }
+    },
+    {
+      "lastModifiedTime": 1776396902000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776396902000,
+      "id": "0WCBdNSoG3",
+      "fields": {
+        "录音": "  ",
+        "销售名称": "51nadamuhammad",
+        "group_id": "5978",
+        "学员ID": "student (62936517)",
+        "接听状态": "prepped",
+        "通话时长": "00:00:00",
+        "响铃时长": "00:00:00",
+        "坐席号": "2245(Maqsam)",
+        "客户电话": "966****1899",
+        "外呼时间": "2026-04-16 22:56:23"
+      }
+    },
+    {
+      "lastModifiedTime": 1776396913000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776396913000,
+      "id": "0WTL8aG3vu",
+      "fields": {
+        "录音": "  ",
+        "销售名称": "51nadamuhammad",
+        "group_id": "5978",
+        "学员ID": "student (0)",
+        "接听状态": "Customer did not answer",
+        "通话时长": "00:00:00",
+        "响铃时长": "00:00:00",
+        "坐席号": "2245(Maqsam)",
+        "客户电话": "966****5858",
+        "外呼时间": "2026-04-16 00:55:48"
+      }
+    },
+    {
+      "lastModifiedTime": 1776396900000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      
+--- loading 20260417通话记录 (CRt22gO) ---
+===== DEBUG RECORDS CRt22gO =====
+status_code: 200
+{
+  "records": [
+    {
+      "lastModifiedTime": 1776655634000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776655634000,
+      "id": "0MgJ7zk3HB",
+      "fields": {
+        "录音": "  ",
+        "销售名称": "51habiba.hassan",
+        "group_id": "5977",
+        "学员ID": "student (62858053)",
+        "接听状态": "in_progress",
+        "通话时长": "00:00:00",
+        "响铃时长": "00:00:00",
+        "坐席号": "2244(Maqsam)",
+        "客户电话": "966****0501",
+        "外呼时间": "2026-04-17 00:18:05"
+      }
+    },
+    {
+      "lastModifiedTime": 1776655634000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776655634000,
+      "id": "1Z378SAboP",
+      "fields": {
+        "录音": "   ",
+        "双方接听时间": "2026-04-17 00:14:08",
+        "销售名称": "51habiba.hassan",
+        "group_id": "5977",
+        "学员ID": "student (59140650)",
+        "接听状态": "双方接通",
+        "通话时长": "00:01:09\n\n(To. 00:01:09)",
+        "响铃时长": "00:00:00",
+        "坐席号": "2244(Maqsam)",
+        "客户电话": "966****9617",
+        "外呼时间": "2026-04-17 00:14:08"
+      }
+    },
+    {
+      "lastModifiedTime": 1776655636000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776655636000,
+      "id": "1ckCCMR4nu",
+      "fields": {
+        "录音": "   ",
+        "双方接听时间": "2026-04-17 01:36:24",
+        "销售名称": "51nadamuhammad",
+        "group_id": "5978",
+        "学员ID": "student (62935303)",
+        "接听状态": "双方接通",
+        "通话时长": "00:17:21\n\n(To. 00:17:21)",
+        "响铃时长": "00:00:00",
+        "坐席号": "2245(Maqsam)",
+        "客户电话": "966****8147",
+        "外呼时间": "2026-04-17 01:36:24"
+      }
+    },
+    {
+      "lastModifiedTime": 1776655
+--- loading 20260418通话记录 (xDBtpp4) ---
+===== DEBUG RECORDS xDBtpp4 =====
+status_code: 200
+{
+  "records": [
+    {
+      "lastModifiedTime": 1776655556000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776655556000,
+      "id": "0GQ4H5HC9c",
+      "fields": {
+        "录音": "  ",
+        "销售名称": "51habiba.hassan",
+        "group_id": "5977",
+        "学员ID": "student (62956218)",
+        "接听状态": "用户忙",
+        "通话时长": "00:00:00",
+        "响铃时长": "00:00:00",
+        "坐席号": "2244(Maqsam)",
+        "客户电话": "966****3651",
+        "外呼时间": "2026-04-18 21:02:15"
+      }
+    },
+    {
+      "lastModifiedTime": 1776655556000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776655556000,
+      "id": "0VbAVTr2ZH",
+      "fields": {
+        "录音": "  ",
+        "销售名称": "EGCC-tasneemmahmoud",
+        "group_id": "5978",
+        "学员ID": "student (62958497)",
+        "接听状态": "用户忙",
+        "通话时长": "00:00:00",
+        "响铃时长": "00:00:00",
+        "坐席号": "2311(Maqsam)",
+        "客户电话": "966****0582",
+        "外呼时间": "2026-04-18 21:21:45"
+      }
+    },
+    {
+      "lastModifiedTime": 1776655556000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776655556000,
+      "id": "0Y5cwnRRB2",
+      "fields": {
+        "录音": "  ",
+        "销售名称": "EGCC-maiwaheed",
+        "group_id": "5978",
+        "学员ID": "student (62958806)",
+        "接听状态": "用户忙",
+        "通话时长": "00:00:00",
+        "响铃时长": "00:00:00",
+        "坐席号": "2313(Maqsam)",
+        "客户电话": "966****7642",
+        "外呼时间": "2026-04-18 21:08:52"
+      }
+    },
+    {
+      "lastModifiedTime": 1776655556000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "union
+--- loading 20260419通话记录 (vDIml35) ---
+===== DEBUG RECORDS vDIml35 =====
+status_code: 200
+{
+  "records": [
+    {
+      "lastModifiedTime": 1776653500000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776653500000,
+      "id": "0DGvNvEOXB",
+      "fields": {
+        "录音": "   ",
+        "双方接听时间": "2026-04-19 20:12:08",
+        "销售名称": "EGCC-tasneemmahmoud",
+        "学员ID": "student (62942340)",
+        "group_id": "5978",
+        "通话时长": "00:07:20\n\n(To. 00:07:20)",
+        "接听状态": "双方接通",
+        "响铃时长": "00:00:00",
+        "坐席号": "2311(Maqsam)",
+        "客户电话": "966****5090",
+        "外呼时间": "2026-04-19 20:12:08"
+      }
+    },
+    {
+      "lastModifiedTime": 1776653494000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776653494000,
+      "id": "0DhHgAJ1LQ",
+      "fields": {
+        "录音": "   ",
+        "双方接听时间": "2026-04-19 21:40:14",
+        "销售名称": "EGCC-eman.amr",
+        "学员ID": "student (0)",
+        "group_id": "5977",
+        "通话时长": "00:00:08\n\n(To. 00:00:08)",
+        "接听状态": "双方接通",
+        "响铃时长": "00:00:00",
+        "坐席号": "2289(Maqsam)",
+        "客户电话": "966****6070",
+        "外呼时间": "2026-04-19 21:40:14"
+      }
+    },
+    {
+      "lastModifiedTime": 1776653499000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776653499000,
+      "id": "0FSX1am6RQ",
+      "fields": {
+        "录音": "   ",
+        "双方接听时间": "2026-04-19 21:03:25",
+        "销售名称": "EGCC-fatmamohamed",
+        "学员ID": "student (62939637)",
+        "group_id": "5978",
+        "通话时长": "00:00:05\n\n(To. 00:00:05)",
+        "接听状态": "双方接通",
+        "响铃时长": "00:00:00",
+        "坐席号": "2310(Maqsam)",
+        "客户电话": "966****5175",
+        "外呼时间": "2026-04-19 21:03:25"
+   
+--- loading 20260420通话记录 (RiWfmFV) ---
+===== DEBUG RECORDS RiWfmFV =====
+status_code: 200
+{
+  "records": [
+    {
+      "lastModifiedTime": 1776737630000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776737630000,
+      "id": "0CMqpMUChj",
+      "fields": {
+        "录音": "   ",
+        "双方接听时间": "2026-04-20 02:18:12",
+        "销售名称": "51nadamuhammad",
+        "group_id": "5978",
+        "学员ID": "student (61627762)",
+        "通话时长": "00:01:56\n\n(To. 00:01:56)",
+        "接听状态": "Both parties connected",
+        "响铃时长": "00:00:00",
+        "坐席号": "2245(Maqsam)",
+        "客户电话": "966****1202",
+        "外呼时间": "2026-04-20 02:18:12"
+      }
+    },
+    {
+      "lastModifiedTime": 1776737626000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776737626000,
+      "id": "0PFbUku7ED",
+      "fields": {
+        "录音": "  ",
+        "销售名称": "EGCC-eman.amr",
+        "group_id": "5977",
+        "学员ID": "student (62894024)",
+        "通话时长": "00:00:00",
+        "接听状态": "User busy",
+        "响铃时长": "00:00:00",
+        "坐席号": "2289(Maqsam)",
+        "客户电话": "966****7146",
+        "外呼时间": "2026-04-20 00:03:35"
+      }
+    },
+    {
+      "lastModifiedTime": 1776737628000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776737628000,
+      "id": "0TcpzkzBHL",
+      "fields": {
+        "录音": "  ",
+        "销售名称": "EGCC-maiwaheed",
+        "group_id": "5978",
+        "学员ID": "student (62971813)",
+        "通话时长": "00:00:00",
+        "接听状态": "Customer did not answer",
+        "响铃时长": "00:00:00",
+        "坐席号": "2313(Maqsam)",
+        "客户电话": "966****5267",
+        "外呼时间": "2026-04-20 20:18:53"
+      }
+    },
+    {
+      "lastModifiedTime": 1776737626000,
+      "createdBy": {
+--- loading 20260421通话记录 (4vgWLeN) ---
+===== DEBUG RECORDS 4vgWLeN =====
+status_code: 200
+{
+  "records": [
+    {
+      "lastModifiedTime": 1776820243000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776820243000,
+      "id": "0OUaRXH5gT",
+      "fields": {
+        "录音": "  ",
+        "销售名称": "EGCC-fatmamohamed",
+        "学员ID": "student (62979732)",
+        "group_id": "5978",
+        "接听状态": "客户未接听",
+        "通话时长": "00:00:00",
+        "响铃时长": "00:00:00",
+        "坐席号": "2310(Maqsam)",
+        "客户电话": "966****2379",
+        "外呼时间": "2026-04-21 01:54:54"
+      }
+    },
+    {
+      "lastModifiedTime": 1776820243000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776820243000,
+      "id": "0WmHIa52hr",
+      "fields": {
+        "录音": "  ",
+        "销售名称": "51nadamuhammad",
+        "学员ID": "student (0)",
+        "group_id": "5978",
+        "接听状态": "in_progress",
+        "通话时长": "00:00:00",
+        "响铃时长": "00:00:00",
+        "坐席号": "2245(Maqsam)",
+        "客户电话": "966****5779",
+        "外呼时间": "2026-04-21 02:02:45"
+      }
+    },
+    {
+      "lastModifiedTime": 1776820243000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776820243000,
+      "id": "0atg7Q1gfU",
+      "fields": {
+        "录音": "   ",
+        "双方接听时间": "2026-04-21 01:45:50",
+        "销售名称": "51nadamuhammad",
+        "学员ID": "student (0)",
+        "group_id": "5978",
+        "接听状态": "双方接通",
+        "通话时长": "00:03:46\n\n(To. 00:03:46)",
+        "响铃时长": "00:00:00",
+        "坐席号": "2245(Maqsam)",
+        "客户电话": "966****7721",
+        "外呼时间": "2026-04-21 01:45:50"
+      }
+    },
+    {
+      "lastModifiedTime": 1776820245000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68Pgi
+--- loading 20260408订单记录 (LffMIpG) ---
+===== DEBUG RECORDS LffMIpG =====
+status_code: 200
+{
+  "records": [
+    {
+      "lastModifiedTime": 1775861141000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1775861141000,
+      "id": "PWI4VbZ8jd",
+      "fields": {
+        "用户": "student",
+        "业绩归属销售组": "前端销售部002组",
+        "学员ID": "61151298",
+        "支付币种": "SAR",
+        "套餐内容": "Ramadan Special Offer-Comprehensive Learning Course-45",
+        "定价币种支付金额": "840.00(USD)",
+        "业绩归属销售": "51nadamuhammad",
+        "订单时间": "2026-03-28 20:17:58",
+        "优惠金额(支付币种优惠金额)": "3150.00(SAR)",
+        "订单号": "32415449",
+        "处理时间": "2026-04-07 01:48:16",
+        "总金额(套餐定价币种)": "1680.00(USD)",
+        "订单状态": "已成功"
+      }
+    },
+    {
+      "lastModifiedTime": 1775814868000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1775814868000,
+      "id": "hBuLYG48E3",
+      "fields": {
+        "用户": "student",
+        "业绩归属销售组": "前端销售部002组",
+        "学员ID": "62880592",
+        "支付币种": "USD",
+        "套餐内容": "成人开口提速站(6N2S)2课时(40分钟)",
+        "定价币种支付金额": "599.00",
+        "支付方式": "alipay",
+        "业绩归属销售": "EGCC-fatmamohamed",
+        "订单时间": "2026-04-08 15:30:00",
+        "优惠金额(支付币种优惠金额)": "0.00",
+        "订单号": "32454070",
+        "优惠方式": "无优惠",
+        "处理时间": "2026-04-08 15:39:00",
+        "总金额(套餐定价币种)": "599.00",
+        "订单状态": "已完成付款"
+      }
+    },
+    {
+      "lastModifiedTime": 1775822769000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1775822769000,
+      "id": "oPuXobc1jd",
+      "fields": {
+        "用户": "student",
+        "业绩归属销售组": "前端销售部002组",
+        "学员ID": "62880592",
+        "支付币种": "SAR",
+        "套餐内容": "Ramadan Special Offer-Super foreign tea
+--- loading 20260410订单记录 (fhBcaQC) ---
+===== DEBUG RECORDS fhBcaQC =====
+status_code: 200
+{
+  "records": [
+    {
+      "lastModifiedTime": 1775865295000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1775865295000,
+      "id": "1jiYfvUFoF",
+      "fields": {
+        "业绩归属销售组": "前端销售部001组",
+        "用户": "student",
+        "学员ID": "62870529",
+        "支付币种": "SAR",
+        "定价币种支付金额": "840.00(USD)",
+        "套餐内容": "Ramadan Special Offer-Comprehensive Learning Course-45",
+        "业绩归属销售": "51habiba.hassan",
+        "订单时间": "2026-04-10 01:41:45",
+        "订单号": "32460893",
+        "优惠金额(支付币种优惠金额)": "3150.00(SAR)",
+        "处理时间": "2026-04-10 01:46:35",
+        "总金额(套餐定价币种)": "1680.00(USD)",
+        "订单状态": "已成功"
+      }
+    },
+    {
+      "lastModifiedTime": 1775865295000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1775865295000,
+      "id": "EDub36fodU",
+      "fields": {
+        "业绩归属销售组": "前端销售部001组",
+        "用户": "student",
+        "学员ID": "62870455",
+        "支付币种": "SAR",
+        "定价币种支付金额": "1900.00(USD)",
+        "套餐内容": "Advanced Use Package (100)",
+        "业绩归属销售": "51habiba.hassan",
+        "订单时间": "2026-04-09 23:30:50",
+        "订单号": "32460820",
+        "优惠金额(支付币种优惠金额)": "10845.00(SAR)",
+        "处理时间": "2026-04-10 01:12:08",
+        "总金额(套餐定价币种)": "4792.00(USD)",
+        "订单状态": "已成功"
+      }
+    }
+  ],
+  "nextToken": "",
+  "hasMore": false
+}
+--- loading 20260411订单记录 (DV7lwiS) ---
+===== DEBUG RECORDS DV7lwiS =====
+status_code: 200
+{
+  "records": [],
+  "nextToken": "",
+  "hasMore": false
+}
+--- loading 20260412订单记录 (wkBmrc2) ---
+===== DEBUG RECORDS wkBmrc2 =====
+status_code: 200
+{
+  "records": [],
+  "nextToken": "",
+  "hasMore": false
+}
+--- loading 20260413订单记录 (Ryg8Heh) ---
+===== DEBUG RECORDS Ryg8Heh =====
+status_code: 200
+{
+  "records": [],
+  "nextToken": "",
+  "hasMore": false
+}
+--- loading 20260414订单记录 (PQU3TRK) ---
+===== DEBUG RECORDS PQU3TRK =====
+status_code: 200
+{
+  "records": [],
+  "nextToken": "",
+  "hasMore": false
+}
+--- loading 20260415订单记录 (pvnF7Ve) ---
+===== DEBUG RECORDS pvnF7Ve =====
+status_code: 200
+{
+  "records": [
+    {
+      "lastModifiedTime": 1776303969000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776303969000,
+      "id": "HUiMKZtBGl",
+      "fields": {
+        "用户": "Hoor",
+        "业绩归属销售组": "前端销售部002组",
+        "学员ID": "62897615",
+        "支付币种": "SAR",
+        "定价币种支付金额": "599.00(USD)",
+        "套餐内容": "Ramadan Special Offer-Super foreign teacher course package-50",
+        "业绩归属销售": "51nadamuhammad",
+        "订单时间": "2026-04-14 23:14:52",
+        "订单号": "32477197",
+        "优惠金额(支付币种优惠金额)": "2246.00(SAR)",
+        "处理时间": "2026-04-15 01:51:40",
+        "总金额(套餐定价币种)": "1198.00(USD)",
+        "订单状态": "已成功"
+      }
+    }
+  ],
+  "nextToken": "",
+  "hasMore": false
+}
+--- loading 20260416订单记录 (Dmsj8HA) ---
+===== DEBUG RECORDS Dmsj8HA =====
+status_code: 200
+{
+  "records": [],
+  "nextToken": "",
+  "hasMore": false
+}
+--- loading 20260417订单记录 (9l6BE9X) ---
+===== DEBUG RECORDS 9l6BE9X =====
+status_code: 200
+{
+  "records": [],
+  "nextToken": "",
+  "hasMore": false
+}
+--- loading 20260418订单记录 (I1sJQvu) ---
+===== DEBUG RECORDS I1sJQvu =====
+status_code: 200
+{
+  "records": [],
+  "nextToken": "",
+  "hasMore": false
+}
+--- loading 20260419订单记录 (SCvtu5O) ---
+===== DEBUG RECORDS SCvtu5O =====
+status_code: 200
+{
+  "records": [
+    {
+      "lastModifiedTime": 1776654040000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776654040000,
+      "id": "3M0No61uPD",
+      "fields": {
+        "业绩归属销售组": "前端销售部001组",
+        "用户": "student",
+        "学员ID": "62942855",
+        "支付币种": "SAR",
+        "套餐内容": "Ramadan Special Offer-Comprehensive Learning Course-45",
+        "定价币种支付金额": "840.00(USD)",
+        "业绩归属销售": "51habiba.hassan",
+        "订单时间": "2026-04-19 18:21:44",
+        "优惠金额(支付币种优惠金额)": "3150.00(SAR)",
+        "订单号": "32494107",
+        "处理时间": "2026-04-19 18:25:15",
+        "总金额(套餐定价币种)": "1680.00(USD)",
+        "订单状态": "已成功"
+      }
+    },
+    {
+      "lastModifiedTime": 1776654040000,
+      "createdBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "lastModifiedBy": {
+        "unionId": "Lz0sSW60QbeS15ASzq68PgiEiE"
+      },
+      "createdTime": 1776654040000,
+      "id": "K7D5iX7RGs",
+      "fields": {
+        "业绩归属销售组": "前端销售部001组",
+        "用户": "student",
+        "学员ID": "62970298",
+        "支付币种": "SAR",
+        "套餐内容": "Ramadan Special Offer-Comprehensive Learning Course-45",
+        "定价币种支付金额": "840.00(USD)",
+        "业绩归属销售": "EGCC-eman.amr",
+        "订单时间": "2026-04-19 17:58:36",
+        "优惠金额(支付币种优惠金额)": "3150.00(SAR)",
+        "订单号": "32493669",
+        "处理时间": "2026-04-19 18:07:43",
+        "总金额(套餐定价币种)": "1680.00(USD)",
+        "订单状态": "已成功"
+      }
+    }
+  ],
+  "nextToken": "",
+  "hasMore": false
+}
+--- loading 20260420订单记录 (tqs1HOA) ---
+===== DEBUG RECORDS tqs1HOA =====
+status_code: 200
+{
+  "records": [],
+  "nextToken": "",
+  "hasMore": false
+}
+--- loading 20260421订单记录 (kSI8bkt) ---
+===== DEBUG RECORDS kSI8bkt =====
+status_code: 200
+{
+  "records": [],
+  "nextToken": "",
+  "hasMore": false
+}
+===== DEBUG FINAL SHAPES =====
+{'leads': (581, 5), 'trials': (566, 18), 'calls': (583, 12), 'orders': (7, 16)}
+✅ Sync done
+========================================
+🦞 Sales Engine Unified Runner Started
+Mode : daily
+Report Date: 2026-04-21
+Repo Root : /home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0
+========================================
+
+=== Step 1: Sync GitHub latest main ===
+
+▶ git fetch origin main
+From github.com:yarayan327-hash/Sales_bi_dashboard_v1.0
+ * branch            main       -> FETCH_HEAD
+
+▶ git checkout main
+Already on 'main'
+M	.gitignore
+M	ai-reports/scripts/run_daily_and_push.sh
+M	public/data/fact_calls.csv
+M	public/data/fact_leads.csv
+M	public/data/fact_orders.csv
+M	public/data/fact_trials.csv
+Your branch is up to date with 'origin/main'.
+
+▶ git reset --hard origin/main
+HEAD is now at 4b2905f Auto daily report update: 2026-04-21
+
+Latest commit:
+
+▶ git log -1 --oneline
+4b2905f Auto daily report update: 2026-04-21
+
+=== Step 2: Check required CSV files ===
+✅ Required CSV files exist
+
+=== Step 3: Prepare npm dependencies ===
+
+▶ npm install
+
+up to date, audited 8 packages in 451ms
+
+2 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+=== Step 4A: Generate Daily Reports ===
+
+▶ npm run generate:report -- 2026-04-21
+
+> sales-bi-dashboard-ai-reports@1.0.0 generate:report
+> tsx scripts/generateDailyMetrics.ts 2026-04-21
+
+Duplicate headers found and renamed.
+✅ Daily metrics generated for 2026-04-21
+
+▶ npm run generate:daily-text -- 2026-04-21
+
+> sales-bi-dashboard-ai-reports@1.0.0 generate:daily-text
+> tsx scripts/generateDailyReportText.ts 2026-04-21
+
+✅ Daily report generated
+
+▶ npm run generate:action -- 2026-04-21
+
+> sales-bi-dashboard-ai-reports@1.0.0 generate:action
+> tsx scripts/generateActionEngine.ts 2026-04-21
+
+✅ Action engine generated for 2026-04-21
+
+=== Step 5: Validate latest outputs ===
+
+▶ npm run validate:latest -- 2026-04-21
+
+> sales-bi-dashboard-ai-reports@1.0.0 validate:latest
+> tsx scripts/validateLatestData.ts 2026-04-21
+
+=== Latest Data Validation ===
+reportDate: 2026-04-21
+ok: YES
+No issues found.
+
+=== Step 6: Check output/latest ===
+
+Files in output/latest:
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/action_payload.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/daily_metrics.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/daily_report_cn.txt
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/daily_report_en.txt
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/daily_report.txt
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/group_mentions.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_diagnosis_2026-03-31.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_diagnosis.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_payload_2026-03-31.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_payload.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_report_2026-03-31.txt
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_report.txt
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/mtd_gap.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/postclass_unfollowed.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/preclass_unfollowed.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/report_payload.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/sales_followup.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/sales_todo.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/team_pk.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/unreached_leads.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/validation_result.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/weekly_diagnosis.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/weekly_payload.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/weekly_report.txt
+
+Key files preview:
+--- monthly_report.txt (first 30 lines) ---
+📊 Sales Engine 月报
+报告日期：2026-04-07
+数据范围：2026-04-01 ~ 2026-04-30
+
+一、本月核心经营数据总览（业务全量）
+- 线索：322
+- 预约：316
+- 出席：88
+- 成交：8
+- GMV：7,139
+- 预约率：98.1%
+- 出席率：27.8%
+- 出席转化率：9.1%
+- 线索转化率：2.5%
+- 客单价：892.375
+
+二、本月管理口径核心经营数据（仅归属销售）
+- 线索：322
+- 预约：258
+- 出席：84
+- 成交：8
+- GMV：7,139
+- 预约率：80.1%
+- 出席率：32.6%
+- 出席转化率：9.5%
+- 线索转化率：2.5%
+- 客单价：892.375
+
+三、本月目标达成与上月对比
+- 月目标达成结果：undefined
+
+--- monthly_payload.json (summary) ---
+{
+  "orders": 8,
+  "gmv": 7139
+}
+
+========================================
+✅ Sales Engine Unified Runner Completed
+Mode : daily
+Report Date: 2026-04-21
+========================================
+[main c822d4c] Auto sync data + daily report: 2026-04-21
+ 5 files changed, 5 insertions(+), 5 deletions(-)
+To github.com:yarayan327-hash/Sales_bi_dashboard_v1.0.git
+   4b2905f..c822d4c  main -> main
+✅ Data and daily output pushed to GitHub
+========================================
+✅ Daily automation completed
+========================================

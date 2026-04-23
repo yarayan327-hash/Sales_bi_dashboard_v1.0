@@ -1,0 +1,134 @@
+{
+  "summary": {
+    "core_problem": "转化",
+    "severity": 95,
+    "core_reason": "出席转化率仅 5.2%，低于健康值 18.0%。",
+    "problem_type": "系统性问题",
+    "rhythm": "严重落后",
+    "feasibility": "不可达",
+    "executive_summary": "当前管理口径 GMV 仅完成 9.0%，远低于时间进度 96.8%，节奏已严重落后，按当前速度本月目标不可自然达成，必须立刻调整策略。",
+    "management_judgement": "当前最优先的不是补线索，而是止血转化浪费。先修复出席后的跟进和关单能力，再考虑扩量。",
+    "completion_rate": 0.08967701863354037,
+    "time_progress": 0.967741935483871,
+    "remaining_target": 73281,
+    "remaining_days": 1,
+    "current_daily_gmv": 240.63333333333333,
+    "current_daily_orders": 0.26666666666666666,
+    "daily_gmv_needed": 73281,
+    "daily_orders_needed": 81.20903172184514
+  },
+  "diagnosis": {
+    "conversion": {
+      "ok": false,
+      "value": 0.05228758169934641,
+      "threshold": 0.18
+    },
+    "attendance": {
+      "ok": false,
+      "value": 0.3713592233009709,
+      "threshold": 0.45
+    },
+    "booking": {
+      "ok": false,
+      "value": 0.4655367231638418,
+      "threshold": 0.5
+    },
+    "lead_conversion": {
+      "value": 0.00903954802259887
+    }
+  },
+  "focus": {
+    "best_team": {
+      "sales_group": "002",
+      "leads": 500,
+      "booked": 255,
+      "attended": 83,
+      "orders": 5,
+      "gmv": 5179,
+      "booking_rate": 0.51,
+      "attendance_rate": 0.3254901960784314,
+      "attended_conversion_rate": 0.060240963855421686,
+      "lead_conversion_rate": 0.01,
+      "aov": 1035.8
+    },
+    "weakest_team": {
+      "sales_group": "001",
+      "leads": 385,
+      "booked": 157,
+      "attended": 70,
+      "orders": 3,
+      "gmv": 2040,
+      "booking_rate": 0.4077922077922078,
+      "attendance_rate": 0.445859872611465,
+      "attended_conversion_rate": 0.04285714285714286,
+      "lead_conversion_rate": 0.007792207792207792,
+      "aov": 680
+    },
+    "best_source": {
+      "lead_source": "转介绍分配cc",
+      "leads": 19,
+      "booked": 6,
+      "attended": 3,
+      "orders": 3,
+      "gmv": 3739,
+      "booking_rate": 0.3157894736842105,
+      "attendance_rate": 0.5,
+      "attended_conversion_rate": 1,
+      "lead_conversion_rate": 0.15789473684210525,
+      "aov": 1246.3333333333333
+    },
+    "weakest_source": {
+      "lead_source": "CC人工改派",
+      "leads": 399,
+      "booked": 117,
+      "attended": 42,
+      "orders": 0,
+      "gmv": 0,
+      "booking_rate": 0.2932330827067669,
+      "attendance_rate": 0.358974358974359,
+      "attended_conversion_rate": 0,
+      "lead_conversion_rate": 0,
+      "aov": 0
+    },
+    "exception_pool": {
+      "booked": 94,
+      "attended": 3,
+      "orders": 0,
+      "gmv": 0,
+      "booked_share_of_all": 0.1857707509881423,
+      "attended_share_of_all": 0.019230769230769232
+    },
+    "overall_all": {
+      "leads": 885,
+      "booked": 506,
+      "attended": 156,
+      "orders": 8,
+      "gmv": 7219,
+      "booking_rate": 0.5717514124293785,
+      "attendance_rate": 0.308300395256917,
+      "attended_conversion_rate": 0.05128205128205128,
+      "lead_conversion_rate": 0.00903954802259887,
+      "aov": 902.375
+    }
+  },
+  "next_week_actions": [
+    {
+      "priority": "P0",
+      "target": "低转化销售",
+      "action": "优先补课后 6h 跟进，并逐个复盘出席未转化客户的录音与跟进记录",
+      "why": "直接影响下周订单"
+    },
+    {
+      "priority": "P1",
+      "target": "Team001",
+      "action": "对最弱团队做转化链路专项复盘，重点盯出席后 24h 内的动作完成率",
+      "why": "修复团队短板"
+    },
+    {
+      "priority": "P2",
+      "target": "管理层",
+      "action": "按当前差距，重新拆解下周日均目标：至少 81.2 单 / 日，至少 73,281 GMV / 日",
+      "why": "让团队对目标有明确节奏感"
+    }
+  ]
+}

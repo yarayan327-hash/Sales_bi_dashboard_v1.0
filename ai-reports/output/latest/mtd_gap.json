@@ -4,9 +4,9 @@
     "sales_name": "51habiba.hassan",
     "sales_group": "001",
     "target": 4000,
-    "gmv": 5260,
-    "orders": 5,
-    "gap": -1260
+    "gmv": 0,
+    "orders": 0,
+    "gap": 4000
   },
   {
     "sales_id": "4124168",
@@ -22,9 +22,9 @@
     "sales_name": "EGCC-eman.amr",
     "sales_group": "001",
     "target": 4000,
-    "gmv": 840,
-    "orders": 1,
-    "gap": 3160
+    "gmv": 0,
+    "orders": 0,
+    "gap": 4000
   },
   {
     "sales_id": "4123059",
@@ -40,18 +40,18 @@
     "sales_name": "51nadamuhammad",
     "sales_group": "002",
     "target": 4000,
-    "gmv": 1439,
-    "orders": 2,
-    "gap": 2561
+    "gmv": 0,
+    "orders": 0,
+    "gap": 4000
   },
   {
     "sales_id": "4123061",
     "sales_name": "EGCC-fatmamohamed",
     "sales_group": "002",
     "target": 4000,
-    "gmv": 1679,
-    "orders": 2,
-    "gap": 2321
+    "gmv": 0,
+    "orders": 0,
+    "gap": 4000
   },
   {
     "sales_id": "4123056",
@@ -67,17 +67,17 @@
     "sales_name": "EGCC-maiwaheed",
     "sales_group": "002",
     "target": 4000,
-    "gmv": 840,
-    "orders": 1,
-    "gap": 3160
+    "gmv": 0,
+    "orders": 0,
+    "gap": 4000
   },
   {
     "sales_id": "4123057",
     "sales_name": "EGCC-tasneemmahmoud",
     "sales_group": "002",
     "target": 4000,
-    "gmv": 2100,
-    "orders": 2,
-    "gap": 1900
+    "gmv": 0,
+    "orders": 0,
+    "gap": 4000
   }
 ]

@@ -1,0 +1,718 @@
+========================================
+🚀 Daily automation started
+Run time   : 2026-04-21 13:53:35 +03
+Report date: 2026-04-20
+========================================
+========================================
+🦞 Sales Engine Unified Runner Started
+Mode : daily
+Report Date: 2026-04-20
+Repo Root : /home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0
+========================================
+
+=== Step 1: Sync GitHub latest main ===
+
+▶ git fetch origin main
+From https://github.com/yarayan327-hash/Sales_bi_dashboard_v1.0
+ * branch            main       -> FETCH_HEAD
+
+▶ git checkout main
+Already on 'main'
+M	ai-reports/output/latest/action_payload.json
+M	ai-reports/output/latest/daily_metrics.json
+M	ai-reports/output/latest/daily_report_cn.txt
+M	ai-reports/output/latest/daily_report_en.txt
+M	ai-reports/output/latest/group_mentions.json
+M	ai-reports/output/latest/mtd_gap.json
+M	ai-reports/output/latest/postclass_unfollowed.json
+M	ai-reports/output/latest/preclass_unfollowed.json
+M	ai-reports/output/latest/report_payload.json
+M	ai-reports/output/latest/sales_followup.json
+M	ai-reports/output/latest/sales_todo.json
+M	ai-reports/output/latest/team_pk.json
+M	ai-reports/output/latest/unreached_leads.json
+Your branch is up to date with 'origin/main'.
+
+▶ git reset --hard origin/main
+HEAD is now at b2c6a41 Update validateLatestData.ts
+
+Latest commit:
+
+▶ git log -1 --oneline
+b2c6a41 Update validateLatestData.ts
+
+=== Step 2: Check required CSV files ===
+✅ Required CSV files exist
+
+=== Step 3: Prepare npm dependencies ===
+
+▶ npm install
+
+up to date, audited 8 packages in 436ms
+
+2 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+=== Step 4A: Generate Daily Reports ===
+
+▶ npm run generate:report -- 2026-04-20
+
+> sales-bi-dashboard-ai-reports@1.0.0 generate:report
+> tsx scripts/generateDailyMetrics.ts 2026-04-20
+
+Duplicate headers found and renamed.
+✅ Daily metrics generated for 2026-04-20
+
+▶ npm run generate:daily-text -- 2026-04-20
+
+> sales-bi-dashboard-ai-reports@1.0.0 generate:daily-text
+> tsx scripts/generateDailyReportText.ts 2026-04-20
+
+✅ Daily report generated
+
+▶ npm run generate:action -- 2026-04-20
+
+> sales-bi-dashboard-ai-reports@1.0.0 generate:action
+> tsx scripts/generateActionEngine.ts 2026-04-20
+
+✅ Action engine generated for 2026-04-20
+
+=== Step 5: Validate latest outputs ===
+
+▶ npm run validate:latest -- 2026-04-20
+
+> sales-bi-dashboard-ai-reports@1.0.0 validate:latest
+> tsx scripts/validateLatestData.ts 2026-04-20
+
+=== Latest Data Validation ===
+reportDate: 2026-04-20
+ok: YES
+No issues found.
+
+=== Step 6: Check output/latest ===
+
+Files in output/latest:
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/action_payload.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/daily_metrics.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/daily_report_cn.txt
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/daily_report_en.txt
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/daily_report.txt
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/daily_report_v3.txt
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/group_mentions.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_diagnosis_2026-03-31.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_diagnosis.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_payload_2026-03-31.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_payload.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_report_2026-03-31.txt
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_report.txt
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/mtd_gap.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/postclass_unfollowed.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/preclass_unfollowed.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/report_payload.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/sales_followup.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/sales_todo.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/team_pk.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/unreached_leads.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/validation_result.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/weekly_diagnosis.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/weekly_payload.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/weekly_report.txt
+
+Key files preview:
+--- monthly_report.txt (first 30 lines) ---
+📊 Sales Engine 月报
+报告日期：2026-04-07
+数据范围：2026-04-01 ~ 2026-04-30
+
+一、本月核心经营数据总览（业务全量）
+- 线索：322
+- 预约：316
+- 出席：88
+- 成交：8
+- GMV：7,139
+- 预约率：98.1%
+- 出席率：27.8%
+- 出席转化率：9.1%
+- 线索转化率：2.5%
+- 客单价：892.375
+
+二、本月管理口径核心经营数据（仅归属销售）
+- 线索：322
+- 预约：258
+- 出席：84
+- 成交：8
+- GMV：7,139
+- 预约率：80.1%
+- 出席率：32.6%
+- 出席转化率：9.5%
+- 线索转化率：2.5%
+- 客单价：892.375
+
+三、本月目标达成与上月对比
+- 月目标达成结果：undefined
+
+--- monthly_payload.json (summary) ---
+{
+  "orders": 8,
+  "gmv": 7139
+}
+
+========================================
+✅ Sales Engine Unified Runner Completed
+Mode : daily
+Report Date: 2026-04-20
+========================================
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'admin@iZ0xi3sk0ghvcsa94epo86Z.(none)')
+========================================
+🚀 Daily automation started
+Run time   : 2026-04-21 13:57:15 +03
+Report date: 2026-04-20
+========================================
+========================================
+🦞 Sales Engine Unified Runner Started
+Mode : daily
+Report Date: 2026-04-20
+Repo Root : /home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0
+========================================
+
+=== Step 1: Sync GitHub latest main ===
+
+▶ git fetch origin main
+From https://github.com/yarayan327-hash/Sales_bi_dashboard_v1.0
+ * branch            main       -> FETCH_HEAD
+
+▶ git checkout main
+Already on 'main'
+A	ai-reports/output/action_payload_2026-04-20.json
+A	ai-reports/output/daily_metrics_2026-04-20.json
+A	ai-reports/output/group_mentions_2026-04-20.json
+M	ai-reports/output/latest/action_payload.json
+M	ai-reports/output/latest/daily_metrics.json
+M	ai-reports/output/latest/daily_report_cn.txt
+M	ai-reports/output/latest/daily_report_en.txt
+A	ai-reports/output/latest/daily_report_v3.txt
+M	ai-reports/output/latest/group_mentions.json
+M	ai-reports/output/latest/mtd_gap.json
+M	ai-reports/output/latest/postclass_unfollowed.json
+M	ai-reports/output/latest/preclass_unfollowed.json
+M	ai-reports/output/latest/report_payload.json
+M	ai-reports/output/latest/sales_followup.json
+M	ai-reports/output/latest/sales_todo.json
+M	ai-reports/output/latest/team_pk.json
+M	ai-reports/output/latest/unreached_leads.json
+A	ai-reports/output/latest/validation_result.json
+A	ai-reports/output/mtd_gap_2026-04-20.json
+A	ai-reports/output/postclass_unfollowed_2026-04-20.json
+A	ai-reports/output/preclass_unfollowed_2026-04-20.json
+A	ai-reports/output/report_payload_2026-04-20.json
+A	ai-reports/output/sales_followup_2026-04-20.json
+A	ai-reports/output/sales_todo_2026-04-20.json
+A	ai-reports/output/team_pk_2026-04-20.json
+A	ai-reports/output/unreached_leads_2026-04-20.json
+Your branch is up to date with 'origin/main'.
+
+▶ git reset --hard origin/main
+HEAD is now at b2c6a41 Update validateLatestData.ts
+
+Latest commit:
+
+▶ git log -1 --oneline
+b2c6a41 Update validateLatestData.ts
+
+=== Step 2: Check required CSV files ===
+✅ Required CSV files exist
+
+=== Step 3: Prepare npm dependencies ===
+
+▶ npm install
+
+up to date, audited 8 packages in 423ms
+
+2 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+=== Step 4A: Generate Daily Reports ===
+
+▶ npm run generate:report -- 2026-04-20
+
+> sales-bi-dashboard-ai-reports@1.0.0 generate:report
+> tsx scripts/generateDailyMetrics.ts 2026-04-20
+
+Duplicate headers found and renamed.
+✅ Daily metrics generated for 2026-04-20
+
+▶ npm run generate:daily-text -- 2026-04-20
+
+> sales-bi-dashboard-ai-reports@1.0.0 generate:daily-text
+> tsx scripts/generateDailyReportText.ts 2026-04-20
+
+✅ Daily report generated
+
+▶ npm run generate:action -- 2026-04-20
+
+> sales-bi-dashboard-ai-reports@1.0.0 generate:action
+> tsx scripts/generateActionEngine.ts 2026-04-20
+
+✅ Action engine generated for 2026-04-20
+
+=== Step 5: Validate latest outputs ===
+
+▶ npm run validate:latest -- 2026-04-20
+
+> sales-bi-dashboard-ai-reports@1.0.0 validate:latest
+> tsx scripts/validateLatestData.ts 2026-04-20
+
+=== Latest Data Validation ===
+reportDate: 2026-04-20
+ok: YES
+No issues found.
+
+=== Step 6: Check output/latest ===
+
+Files in output/latest:
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/action_payload.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/daily_metrics.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/daily_report_cn.txt
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/daily_report_en.txt
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/daily_report.txt
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/group_mentions.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_diagnosis_2026-03-31.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_diagnosis.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_payload_2026-03-31.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_payload.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_report_2026-03-31.txt
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_report.txt
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/mtd_gap.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/postclass_unfollowed.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/preclass_unfollowed.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/report_payload.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/sales_followup.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/sales_todo.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/team_pk.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/unreached_leads.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/validation_result.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/weekly_diagnosis.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/weekly_payload.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/weekly_report.txt
+
+Key files preview:
+--- monthly_report.txt (first 30 lines) ---
+📊 Sales Engine 月报
+报告日期：2026-04-07
+数据范围：2026-04-01 ~ 2026-04-30
+
+一、本月核心经营数据总览（业务全量）
+- 线索：322
+- 预约：316
+- 出席：88
+- 成交：8
+- GMV：7,139
+- 预约率：98.1%
+- 出席率：27.8%
+- 出席转化率：9.1%
+- 线索转化率：2.5%
+- 客单价：892.375
+
+二、本月管理口径核心经营数据（仅归属销售）
+- 线索：322
+- 预约：258
+- 出席：84
+- 成交：8
+- GMV：7,139
+- 预约率：80.1%
+- 出席率：32.6%
+- 出席转化率：9.5%
+- 线索转化率：2.5%
+- 客单价：892.375
+
+三、本月目标达成与上月对比
+- 月目标达成结果：undefined
+
+--- monthly_payload.json (summary) ---
+{
+  "orders": 8,
+  "gmv": 7139
+}
+
+========================================
+✅ Sales Engine Unified Runner Completed
+Mode : daily
+Report Date: 2026-04-20
+========================================
+fatal: pathspec 'ai-reports/output/latest/daily_report_v3.txt' did not match any files
+No output changes to commit.
+========================================
+✅ Daily automation completed
+========================================
+========================================
+🚀 Daily automation started
+Run time   : 2026-04-21 14:31:41 +03
+Report date: 2026-04-20
+========================================
+========================================
+🦞 Sales Engine Unified Runner Started
+Mode : daily
+Report Date: 2026-04-20
+Repo Root : /home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0
+========================================
+
+=== Step 1: Sync GitHub latest main ===
+
+▶ git fetch origin main
+From https://github.com/yarayan327-hash/Sales_bi_dashboard_v1.0
+ * branch            main       -> FETCH_HEAD
+
+▶ git checkout main
+Already on 'main'
+M	ai-reports/output/latest/action_payload.json
+M	ai-reports/output/latest/daily_metrics.json
+M	ai-reports/output/latest/daily_report_cn.txt
+M	ai-reports/output/latest/daily_report_en.txt
+M	ai-reports/output/latest/group_mentions.json
+M	ai-reports/output/latest/mtd_gap.json
+M	ai-reports/output/latest/postclass_unfollowed.json
+M	ai-reports/output/latest/preclass_unfollowed.json
+M	ai-reports/output/latest/report_payload.json
+M	ai-reports/output/latest/sales_followup.json
+M	ai-reports/output/latest/sales_todo.json
+M	ai-reports/output/latest/team_pk.json
+M	ai-reports/output/latest/unreached_leads.json
+Your branch is up to date with 'origin/main'.
+
+▶ git reset --hard origin/main
+HEAD is now at b2c6a41 Update validateLatestData.ts
+
+Latest commit:
+
+▶ git log -1 --oneline
+b2c6a41 Update validateLatestData.ts
+
+=== Step 2: Check required CSV files ===
+✅ Required CSV files exist
+
+=== Step 3: Prepare npm dependencies ===
+
+▶ npm install
+
+up to date, audited 8 packages in 405ms
+
+2 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+=== Step 4A: Generate Daily Reports ===
+
+▶ npm run generate:report -- 2026-04-20
+
+> sales-bi-dashboard-ai-reports@1.0.0 generate:report
+> tsx scripts/generateDailyMetrics.ts 2026-04-20
+
+Duplicate headers found and renamed.
+✅ Daily metrics generated for 2026-04-20
+
+▶ npm run generate:daily-text -- 2026-04-20
+
+> sales-bi-dashboard-ai-reports@1.0.0 generate:daily-text
+> tsx scripts/generateDailyReportText.ts 2026-04-20
+
+✅ Daily report generated
+
+▶ npm run generate:action -- 2026-04-20
+
+> sales-bi-dashboard-ai-reports@1.0.0 generate:action
+> tsx scripts/generateActionEngine.ts 2026-04-20
+
+✅ Action engine generated for 2026-04-20
+
+=== Step 5: Validate latest outputs ===
+
+▶ npm run validate:latest -- 2026-04-20
+
+> sales-bi-dashboard-ai-reports@1.0.0 validate:latest
+> tsx scripts/validateLatestData.ts 2026-04-20
+
+=== Latest Data Validation ===
+reportDate: 2026-04-20
+ok: YES
+No issues found.
+
+=== Step 6: Check output/latest ===
+
+Files in output/latest:
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/action_payload.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/daily_metrics.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/daily_report_cn.txt
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/daily_report_en.txt
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/daily_report.txt
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/group_mentions.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_diagnosis_2026-03-31.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_diagnosis.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_payload_2026-03-31.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_payload.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_report_2026-03-31.txt
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_report.txt
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/mtd_gap.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/postclass_unfollowed.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/preclass_unfollowed.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/report_payload.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/sales_followup.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/sales_todo.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/team_pk.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/unreached_leads.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/validation_result.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/weekly_diagnosis.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/weekly_payload.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/weekly_report.txt
+
+Key files preview:
+--- monthly_report.txt (first 30 lines) ---
+📊 Sales Engine 月报
+报告日期：2026-04-07
+数据范围：2026-04-01 ~ 2026-04-30
+
+一、本月核心经营数据总览（业务全量）
+- 线索：322
+- 预约：316
+- 出席：88
+- 成交：8
+- GMV：7,139
+- 预约率：98.1%
+- 出席率：27.8%
+- 出席转化率：9.1%
+- 线索转化率：2.5%
+- 客单价：892.375
+
+二、本月管理口径核心经营数据（仅归属销售）
+- 线索：322
+- 预约：258
+- 出席：84
+- 成交：8
+- GMV：7,139
+- 预约率：80.1%
+- 出席率：32.6%
+- 出席转化率：9.5%
+- 线索转化率：2.5%
+- 客单价：892.375
+
+三、本月目标达成与上月对比
+- 月目标达成结果：undefined
+
+--- monthly_payload.json (summary) ---
+{
+  "orders": 8,
+  "gmv": 7139
+}
+
+========================================
+✅ Sales Engine Unified Runner Completed
+Mode : daily
+Report Date: 2026-04-20
+========================================
+[main 0c81b55] Auto daily report update: 2026-04-20
+ 25 files changed, 62667 insertions(+), 290956 deletions(-)
+ create mode 100644 ai-reports/output/action_payload_2026-04-20.json
+ create mode 100644 ai-reports/output/daily_metrics_2026-04-20.json
+ create mode 100644 ai-reports/output/group_mentions_2026-04-20.json
+ create mode 100644 ai-reports/output/latest/validation_result.json
+ create mode 100644 ai-reports/output/mtd_gap_2026-04-20.json
+ create mode 100644 ai-reports/output/postclass_unfollowed_2026-04-20.json
+ create mode 100644 ai-reports/output/preclass_unfollowed_2026-04-20.json
+ create mode 100644 ai-reports/output/report_payload_2026-04-20.json
+ create mode 100644 ai-reports/output/sales_followup_2026-04-20.json
+ create mode 100644 ai-reports/output/sales_todo_2026-04-20.json
+ create mode 100644 ai-reports/output/team_pk_2026-04-20.json
+ create mode 100644 ai-reports/output/unreached_leads_2026-04-20.json
+remote: Invalid username or token. Password authentication is not supported for Git operations.
+fatal: Authentication failed for 'https://github.com/yarayan327-hash/Sales_bi_dashboard_v1.0.git/'
+========================================
+🚀 Daily automation started
+Run time   : 2026-04-21 14:58:42 +03
+Report date: 2026-04-20
+========================================
+========================================
+🦞 Sales Engine Unified Runner Started
+Mode : daily
+Report Date: 2026-04-20
+Repo Root : /home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0
+========================================
+
+=== Step 1: Sync GitHub latest main ===
+
+▶ git fetch origin main
+Warning: Permanently added the ECDSA host key for IP address '140.82.112.3' to the list of known hosts.
+From github.com:yarayan327-hash/Sales_bi_dashboard_v1.0
+ * branch            main       -> FETCH_HEAD
+
+▶ git checkout main
+Already on 'main'
+Your branch is up to date with 'origin/main'.
+
+▶ git reset --hard origin/main
+HEAD is now at 0c81b55 Auto daily report update: 2026-04-20
+
+Latest commit:
+
+▶ git log -1 --oneline
+0c81b55 Auto daily report update: 2026-04-20
+
+=== Step 2: Check required CSV files ===
+✅ Required CSV files exist
+
+=== Step 3: Prepare npm dependencies ===
+
+▶ npm install
+
+up to date, audited 8 packages in 453ms
+
+2 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+=== Step 4A: Generate Daily Reports ===
+
+▶ npm run generate:report -- 2026-04-20
+
+> sales-bi-dashboard-ai-reports@1.0.0 generate:report
+> tsx scripts/generateDailyMetrics.ts 2026-04-20
+
+Duplicate headers found and renamed.
+✅ Daily metrics generated for 2026-04-20
+
+▶ npm run generate:daily-text -- 2026-04-20
+
+> sales-bi-dashboard-ai-reports@1.0.0 generate:daily-text
+> tsx scripts/generateDailyReportText.ts 2026-04-20
+
+✅ Daily report generated
+
+▶ npm run generate:action -- 2026-04-20
+
+> sales-bi-dashboard-ai-reports@1.0.0 generate:action
+> tsx scripts/generateActionEngine.ts 2026-04-20
+
+✅ Action engine generated for 2026-04-20
+
+=== Step 5: Validate latest outputs ===
+
+▶ npm run validate:latest -- 2026-04-20
+
+> sales-bi-dashboard-ai-reports@1.0.0 validate:latest
+> tsx scripts/validateLatestData.ts 2026-04-20
+
+=== Latest Data Validation ===
+reportDate: 2026-04-20
+ok: YES
+No issues found.
+
+=== Step 6: Check output/latest ===
+
+Files in output/latest:
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/action_payload.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/daily_metrics.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/daily_report_cn.txt
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/daily_report_en.txt
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/daily_report.txt
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/group_mentions.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_diagnosis_2026-03-31.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_diagnosis.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_payload_2026-03-31.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_payload.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_report_2026-03-31.txt
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/monthly_report.txt
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/mtd_gap.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/postclass_unfollowed.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/preclass_unfollowed.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/report_payload.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/sales_followup.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/sales_todo.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/team_pk.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/unreached_leads.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/validation_result.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/weekly_diagnosis.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/weekly_payload.json
+/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/weekly_report.txt
+
+Key files preview:
+--- monthly_report.txt (first 30 lines) ---
+📊 Sales Engine 月报
+报告日期：2026-04-07
+数据范围：2026-04-01 ~ 2026-04-30
+
+一、本月核心经营数据总览（业务全量）
+- 线索：322
+- 预约：316
+- 出席：88
+- 成交：8
+- GMV：7,139
+- 预约率：98.1%
+- 出席率：27.8%
+- 出席转化率：9.1%
+- 线索转化率：2.5%
+- 客单价：892.375
+
+二、本月管理口径核心经营数据（仅归属销售）
+- 线索：322
+- 预约：258
+- 出席：84
+- 成交：8
+- GMV：7,139
+- 预约率：80.1%
+- 出席率：32.6%
+- 出席转化率：9.5%
+- 线索转化率：2.5%
+- 客单价：892.375
+
+三、本月目标达成与上月对比
+- 月目标达成结果：undefined
+
+--- monthly_payload.json (summary) ---
+{
+  "orders": 8,
+  "gmv": 7139
+}
+
+========================================
+✅ Sales Engine Unified Runner Completed
+Mode : daily
+Report Date: 2026-04-20
+========================================
+[main b8c9b5d] Auto daily report update: 2026-04-20
+ 5 files changed, 5 insertions(+), 5 deletions(-)
+To github.com:yarayan327-hash/Sales_bi_dashboard_v1.0.git
+   0c81b55..b8c9b5d  main -> main
+✅ Daily output pushed to GitHub
+========================================
+✅ Daily automation completed
+========================================
+========================================
+🚀 Daily automation started
+Run time   : 2026-04-21 20:02:43 +03
+Report date: 2026-04-20
+========================================
+🚀 Start sync from DingTalk
+Traceback (most recent call last):
+  File "scripts/sync_dingtalk_data.py", line 88, in <module>
+    main()
+  File "scripts/sync_dingtalk_data.py", line 65, in main
+    leads = fetch_sheet("分配记录")
+  File "scripts/sync_dingtalk_data.py", line 35, in fetch_sheet
+    df = pd.DataFrame(rows[1:], columns=rows[0])
+IndexError: list index out of range

@@ -1,0 +1,12 @@
+[
+  {
+    "sales_group": "001",
+    "orders": 2,
+    "gmv": 1680
+  },
+  {
+    "sales_group": "002",
+    "orders": 3,
+    "gmv": 2940
+  }
+]

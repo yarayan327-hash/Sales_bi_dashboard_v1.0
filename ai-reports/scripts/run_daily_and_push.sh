@@ -66,6 +66,7 @@ LOG_FILE="$LOG_DIR/daily_${REPORT_DATE}.log"
   else
     git commit -m "Auto daily report update: $REPORT_DATE"
     git push origin main
+    python3 /home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/scripts/dingtalk_push.py
     echo "✅ Daily output pushed to GitHub"
   fi
 

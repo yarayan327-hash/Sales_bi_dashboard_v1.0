@@ -1,0 +1,136 @@
+{
+  "summary": {
+    "core_problem": "转化",
+    "severity": 95,
+    "core_reason": "出席转化率仅 9.5%，低于健康值 18.0%。",
+    "problem_type": "系统性问题",
+    "completion_rate": 0.10198571428571429,
+    "time_progress": 1,
+    "remaining_target": 62861,
+    "remaining_days": 0,
+    "current_daily_gmv": 237.96666666666667,
+    "daily_gmv_needed": 62861,
+    "pressure_multiple": 999,
+    "executive_summary": "当前管理口径 GMV 仅完成 10.2%，必须切换为能力修复模式。",
+    "management_judgement": "当前最优先的不是补线索，而是止血转化浪费。先修复出席后的跟进和关单能力，再考虑扩量。"
+  },
+  "diagnosis": {
+    "conversion": {
+      "ok": false,
+      "value": 0.09523809523809523,
+      "threshold": 0.18
+    },
+    "attendance": {
+      "ok": false,
+      "value": 0.32558139534883723,
+      "threshold": 0.45
+    },
+    "booking": {
+      "ok": true,
+      "value": 0.8012422360248447,
+      "threshold": 0.5
+    },
+    "lead_conversion": {
+      "value": 0.024844720496894408
+    }
+  },
+  "failure_type": {
+    "type": "转化型失败",
+    "reasoning": "预约率达标，出席率达标，但转化率严重不足",
+    "conclusion": "做了但浪费了"
+  },
+  "focus": {
+    "best_team": {
+      "sales_group": "002",
+      "leads": 201,
+      "booked": 171,
+      "attended": 60,
+      "orders": 6,
+      "gmv": 5459,
+      "booking_rate": 0.8507462686567164,
+      "attendance_rate": 0.3508771929824561,
+      "attended_conversion_rate": 0.1,
+      "lead_conversion_rate": 0.029850746268656716,
+      "aov": 909.8333333333334
+    },
+    "weakest_team": {
+      "sales_group": "001",
+      "leads": 121,
+      "booked": 87,
+      "attended": 24,
+      "orders": 2,
+      "gmv": 1680,
+      "booking_rate": 0.71900826446281,
+      "attendance_rate": 0.27586206896551724,
+      "attended_conversion_rate": 0.08333333333333333,
+      "lead_conversion_rate": 0.01652892561983471,
+      "aov": 840
+    },
+    "best_source": {
+      "lead_source": "unknown",
+      "leads": 0,
+      "booked": 130,
+      "attended": 30,
+      "orders": 4,
+      "gmv": 3360,
+      "booking_rate": 0,
+      "attendance_rate": 0.23076923076923078,
+      "attended_conversion_rate": 0.13333333333333333,
+      "lead_conversion_rate": 0,
+      "aov": 840
+    },
+    "weakest_source": {
+      "lead_source": "CC人工改派",
+      "leads": 120,
+      "booked": 75,
+      "attended": 25,
+      "orders": 0,
+      "gmv": 0,
+      "booking_rate": 0.625,
+      "attendance_rate": 0.3333333333333333,
+      "attended_conversion_rate": 0,
+      "lead_conversion_rate": 0,
+      "aov": 0
+    },
+    "exception_pool": {
+      "booked": 58,
+      "attended": 4,
+      "orders": 0,
+      "gmv": 0,
+      "booked_share_of_all": 0.18354430379746836,
+      "attended_share_of_all": 0.045454545454545456,
+      "severity": "高"
+    }
+  },
+  "next_month_actions": [
+    {
+      "priority": "P0",
+      "target": "低转化销售",
+      "action": "建立课后 6h/24h 强制跟进机制 + 复盘机制 + 抽检机制",
+      "why": "直接影响下月订单"
+    },
+    {
+      "priority": "P0",
+      "target": "零业绩销售",
+      "action": "1 对 1 辅导 + 每日业绩通报 + 末位约谈机制",
+      "why": "破零是底线"
+    },
+    {
+      "priority": "P1",
+      "target": "客服团队",
+      "action": "课前确认 SOP 建立 + 自动提醒机制 + 确认率考核",
+      "why": "提升出席率"
+    },
+    {
+      "priority": "P2",
+      "target": "管理层",
+      "action": "运行模式切换评估 + 扩量许可审批",
+      "why": "避免用错误模式误导团队行为"
+    }
+  ],
+  "operating_mode": {
+    "mode": "修复模式（Repair）",
+    "allow_expansion": false,
+    "reasoning": "转化率低于 18% 健康阈值，必须进入修复模式"
+  }
+}
