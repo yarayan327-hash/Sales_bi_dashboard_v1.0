@@ -1,51 +1,50 @@
 import requests
 import os
+import json
 
-# 使用已经验证成功、能抓到数据的这组 Key 来获取 Token
-APP_KEY_TOKEN = "dingkoqj2dtylufjjyok"
-APP_SECRET_TOKEN = "TcOcTzs77TAtj07YEp4Xx2pFqgY73V5IQ496iPUoWLpFrplF2aGAFd3bFfn3sCyN"
-
-# 消息接收方的配置 (保持不变)
-USER_ID = "yanjin03"
+# === 【应用 B】负责发送日报 ===
+APP_KEY = "dingzqjextvcbu3uiftv"
+APP_SECRET = "SCbsVO7G_GF_T7L9-fys76HcKkh" 
 AGENT_ID = "4349679935"
+USER_ID = "yanjin03"
 
 REPORT_PATH = "/home/admin/.openclaw/workspace/Sales_bi_dashboard_v1.0/ai-reports/output/latest/daily_report.txt"
 
 def run():
-    print("--- 启动推送补丁版 ---")
+    print("--- 启动应用 B 推送程序 ---")
     
-    # 1. 获取 Token
-    token_url = "https://oapi.dingtalk.com/gettoken?appkey=" + APP_KEY_TOKEN + "&appsecret=" + APP_SECRET_TOKEN
-    res = requests.get(token_url).json()
-    token = res.get("access_token")
+    # 1. 获取应用 B 的 Token
+    token_url = "https://oapi.dingtalk.com/gettoken?appkey=" + APP_KEY + "&appsecret=" + APP_SECRET
+    r_token = requests.get(token_url).json()
+    token = r_token.get("access_token")
     
     if not token:
-        print("❌ 获取 Token 失败: " + str(res))
+        print("❌ 应用 B Token 获取失败，请确认 Secret 是否复制完整: " + str(r_token))
         return
 
-    # 2. 读取报表内容
+    # 2. 读取报表
     if os.path.exists(REPORT_PATH):
         with open(REPORT_PATH, 'r', encoding='utf-8') as f:
             content = f.read()
     else:
-        content = "📊 报表已生成，请在服务器查看详情。"
+        content = "📊 报表已生成，详情请查看看板。"
 
-    # 3. 发送消息
+    # 3. 发送工作通知
     url = "https://oapi.dingtalk.com/topapi/message/corpconversation/asyncsend_v2?access_token=" + token
-    data = {
+    payload = {
         "agent_id": int(AGENT_ID),
         "userid_list": USER_ID,
         "msg": {
             "msgtype": "markdown",
             "markdown": {
-                "title": "📊 销售正式日报",
-                "text": "## 📊 销售正式日报\n\n" + content.replace('\n', '\n\n')
+                "title": "📊 销售深度分析日报",
+                "text": "## 📊 销售深度分析日报\n\n" + content.replace('\n', '\n\n')
             }
         }
     }
     
-    send_res = requests.post(url, json=data).json()
-    print("📢 推送结果: " + str(send_res))
+    res = requests.post(url, json=payload).json()
+    print("📢 最终推送结果: " + str(res))
 
 if __name__ == "__main__":
     run()
