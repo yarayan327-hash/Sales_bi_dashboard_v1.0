@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sales Engine 周报 - 2026-04-08</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      min-height: 100vh;
+      padding: 40px 20px;
+      color: #e0e0e0;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid #00d4ff;
+    }
+    .header h1 {
+      font-size: 2.5em;
+      color: #00d4ff;
+      margin-bottom: 10px;
+      font-weight: 300;
+      letter-spacing: 2px;
+    }
+    .header .subtitle {
+      font-size: 1.1em;
+      color: #888;
+    }
+    .header .date {
+      font-size: 0.95em;
+      color: #666;
+      margin-top: 8px;
+    }
+    .section {
+      background: rgba(255,255,255,0.03);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 20px;
+      border-left: 3px solid #00d4ff;
+    }
+    .section-title {
+      font-size: 1.3em;
+      color: #00d4ff;
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .metric-card {
+      background: rgba(0,212,255,0.05);
+      border-radius: 8px;
+      padding: 16px;
+      text-align: center;
+      border: 1px solid rgba(0,212,255,0.1);
+    }
+    .metric-value {
+      font-size: 2em;
+      font-weight: 600;
+      color: #00d4ff;
+      line-height: 1.2;
+    }
+    .metric-label {
+      font-size: 0.85em;
+      color: #888;
+      margin-top: 6px;
+    }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+    }
+    .data-table th,
+    .data-table td {
+      padding: 12px 10px;
+      text-align: left;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .data-table th {
+      background: rgba(0,212,255,0.1);
+      color: #00d4ff;
+      font-weight: 500;
+      font-size: 0.9em;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .data-table tr:hover {
+      background: rgba(0,212,255,0.03);
+    }
+    .data-table td:last-child {
+      text-align: right;
+    }
+    .alert-box {
+      background: rgba(255,82,82,0.1);
+      border: 1px solid rgba(255,82,82,0.3);
+      border-radius: 8px;
+      padding: 16px;
+      margin-top: 12px;
+    }
+    .alert-box.critical {
+      background: rgba(255,82,82,0.15);
+      border-color: rgba(255,82,82,0.5);
+    }
+    .alert-box.warning {
+      background: rgba(255,193,7,0.1);
+      border-color: rgba(255,193,7,0.3);
+    }
+    .alert-title {
+      font-weight: 600;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .alert-title.critical { color: #ff5252; }
+    .alert-title.warning { color: #ffc107; }
+    .alert-title.success { color: #4caf50; }
+    .alert-content {
+      font-size: 0.95em;
+      color: #bbb;
+      line-height: 1.6;
+    }
+    .action-list {
+      list-style: none;
+    }
+    .action-list li {
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      display: flex;
+      gap: 12px;
+    }
+    .action-list li:last-child {
+      border-bottom: none;
+    }
+    .priority-badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 4px;
+      font-size: 0.8em;
+      font-weight: 600;
+      min-width: 40px;
+      text-align: center;
+    }
+    .priority-p0 {
+      background: rgba(255,82,82,0.2);
+      color: #ff5252;
+    }
+    .priority-p1 {
+      background: rgba(255,193,7,0.2);
+      color: #ffc107;
+    }
+    .priority-p2 {
+      background: rgba(0,212,255,0.2);
+      color: #00d4ff;
+    }
+    .summary-box {
+      background: linear-gradient(135deg, rgba(0,212,255,0.1) 0%, rgba(0,212,255,0.02) 100%);
+      border: 2px solid #00d4ff;
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+    }
+    .summary-text {
+      font-size: 1.15em;
+      line-height: 1.7;
+      color: #e0e0e0;
+    }
+    .trend-indicator {
+      display: inline-block;
+      margin-left: 6px;
+      font-size: 0.9em;
+    }
+    .trend-up { color: #4caf50; }
+    .trend-down { color: #ff5252; }
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      color: #666;
+      font-size: 0.85em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>📊 Sales Engine 周报</h1>
+      <div class="subtitle">管理层经营数据报告</div>
+      <div class="date">报告日期：2026-04-08 | 数据范围：MTD 2026-04-01 ~ 2026-04-08</div>
+    </div>
+
+    <!-- 核心经营数据 -->
+    <div class="section">
+      <div class="section-title">一、MTD 核心经营数据总览（管理口径）</div>
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-value">322</div>
+          <div class="metric-label">线索</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">179</div>
+          <div class="metric-label">预约</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">84</div>
+          <div class="metric-label">出席</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">8</div>
+          <div class="metric-label">成交</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">7,139</div>
+          <div class="metric-label">GMV</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">892</div>
+          <div class="metric-label">客单价</div>
+        </div>
+      </div>
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-value">55.6%</div>
+          <div class="metric-label">预约率</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">46.9%</div>
+          <div class="metric-label">出席率</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">9.5%</div>
+          <div class="metric-label">出席转化率</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">2.5%</div>
+          <div class="metric-label">线索转化率</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 节奏判断 -->
+    <div class="section">
+      <div class="section-title">二、MTD 节奏判断</div>
+      <div class="alert-box critical">
+        <div class="alert-title critical">⚠️ 严重落后 - 能力修复模式</div>
+        <div class="alert-content">
+          当前完成率 <strong>6.8%</strong> vs 时间进度 <strong>26.7%</strong> | 
+          目标可达性：<strong>不可达</strong> | 
+          目标压力倍数：<strong>5.0x</strong><br>
+          剩余目标：98,361 | 剩余天数：22 | 
+          需达成：日均 5.0 单 / 4,471 GMV（当前日均：1 单 / 892 GMV）
+        </div>
+      </div>
+    </div>
+
+    <!-- 核心问题 -->
+    <div class="section">
+      <div class="section-title">三、核心问题诊断</div>
+      <div class="alert-box warning">
+        <div class="alert-title warning">🎯 核心问题：转化链路</div>
+        <div class="alert-content">
+          出席转化率仅 <strong>9.5%</strong>，低于健康值 18.0%（差距 47%）<br>
+          <strong>管理结论：</strong>当前最优先的不是补线索，而是止血转化浪费。先修复出席后的跟进和关单能力，再考虑扩量。
+        </div>
+      </div>
+    </div>
+
+    <!-- 团队拆解 -->
+    <div class="section">
+      <div class="section-title">四、团队业绩拆解</div>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>团队</th>
+            <th>线索</th>
+            <th>预约</th>
+            <th>出席</th>
+            <th>成交</th>
+            <th>GMV</th>
+            <th>出席率</th>
+            <th>转化率</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Team002</strong></td>
+            <td>201</td>
+            <td>121</td>
+            <td>60</td>
+            <td>6</td>
+            <td>5,459</td>
+            <td>49.6%</td>
+            <td>10.0%</td>
+          </tr>
+          <tr>
+            <td><strong>Team001</strong></td>
+            <td>121</td>
+            <td>58</td>
+            <td>24</td>
+            <td>2</td>
+            <td>1,680</td>
+            <td>41.4%</td>
+            <td>8.3%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 来源拆解 -->
+    <div class="section">
+      <div class="section-title">五、线索来源拆解（业务口径）</div>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>来源</th>
+            <th>线索</th>
+            <th>预约</th>
+            <th>出席</th>
+            <th>成交</th>
+            <th>GMV</th>
+            <th>出席率</th>
+            <th>转化率</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>中东成人高中生分配</td>
+            <td>191</td>
+            <td>77</td>
+            <td>33</td>
+            <td>1</td>
+            <td>599</td>
+            <td>42.9%</td>
+            <td>3.0%</td>
+          </tr>
+          <tr>
+            <td>CC 人工改派</td>
+            <td>120</td>
+            <td>56</td>
+            <td>25</td>
+            <td>0</td>
+            <td>0</td>
+            <td>44.6%</td>
+            <td>0.0%</td>
+          </tr>
+          <tr>
+            <td>转介绍分配 cc</td>
+            <td>11</td>
+            <td>2</td>
+            <td>0</td>
+            <td>3</td>
+            <td>3,180</td>
+            <td>0.0%</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>unknown</td>
+            <td>0</td>
+            <td>92</td>
+            <td>30</td>
+            <td>4</td>
+            <td>3,360</td>
+            <td>32.6%</td>
+            <td>13.3%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 数据异常 -->
+    <div class="section">
+      <div class="section-title">六、数据异常监控</div>
+      <div class="alert-box warning">
+        <div class="alert-title warning">⚠️ 未归属预约池风险</div>
+        <div class="alert-content">
+          未归属预约：<strong>48</strong>（占总预约 21.1%）| 
+          未归属出席：<strong>4</strong>（占总出席 4.5%）<br>
+          <strong>风险等级：高</strong> — 未归属数据不参与团队 PK 与管理动作判断，会导致团队分析与追责失真
+        </div>
+      </div>
+    </div>
+
+    <!-- 行动计划 -->
+    <div class="section">
+      <div class="section-title">七、下周行动计划</div>
+      <ul class="action-list">
+        <li>
+          <span class="priority-badge priority-p0">P0</span>
+          <span><strong>低转化销售专项：</strong>优先补课后 6h 跟进，并逐个复盘出席未转化客户的录音与跟进记录</span>
+        </li>
+        <li>
+          <span class="priority-badge priority-p1">P1</span>
+          <span><strong>Team001 转化链路复盘：</strong>对最弱团队做转化链路专项复盘，重点盯出席后 24h 内的动作完成率</span>
+        </li>
+        <li>
+          <span class="priority-badge priority-p1">P1</span>
+          <span><strong>数据归属修复：</strong>优先修复未归属预约池（目前 21.1%），否则团队分析与追责会持续失真</span>
+        </li>
+        <li>
+          <span class="priority-badge priority-p2">P2</span>
+          <span><strong>管理层策略调整：</strong>本周将目标切换为能力修复：优先提升转化率与出席率，不再按当前月目标做硬冲拆解</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 管理层总结 -->
+    <div class="section">
+      <div class="summary-box">
+        <div class="summary-text">
+          <strong>管理层一句话总结：</strong><br>
+          当前管理口径 GMV 仅完成 6.8%，远低于时间进度 26.7%，节奏已严重落后，按当前速度本月目标不可自然达成，必须立刻调整策略。
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      🦞 Sales Engine Weekly Report V1.1 | Generated by Sales Engine System
+    </div>
+  </div>
+</body>
+</html>
