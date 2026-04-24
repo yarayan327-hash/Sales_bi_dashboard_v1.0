@@ -3,10 +3,7 @@ name: DingTalk Auto Sync
 on:
   schedule:
     - cron: '0 1,9 * * *'
-  workflow_dispatch:      # 必须手动触发来测试
-
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  workflow_dispatch: 
 
 permissions:
   contents: write
@@ -36,7 +33,13 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # 调试：在日志里列出文件，确保真的生成了
+          ls -lh public/data/
+          
           git add public/data/*.csv
-          # 强制创建一个提交，哪怕 Git 觉得内容没变
-          git commit --allow-empty -m "auto: 强制刷新钉钉最新数据 [skip ci]"
+          git add public/data/last_sync.txt
+          
+          # 哪怕数据没变，也要强制 Commit
+          git commit --allow-empty -m "auto: 物理同步钉钉数据 [skip ci]"
           git push origin main
