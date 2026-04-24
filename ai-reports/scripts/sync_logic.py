@@ -108,7 +108,7 @@ def list_records(token, sid, sheet_name):
     while True:
         body = {
             "operatorId": OPERATOR_ID,
-            "maxResults": 500,
+            "maxResults": 100,
         }
         if page_token:
             body["pageToken"] = page_token
