@@ -10,9 +10,9 @@ from datetime import datetime, timedelta
 APP_KEY = os.getenv("DING_APP_KEY")
 APP_SECRET = os.getenv("DING_APP_SECRET")
 BASE_ID = "QPGYqjpJYr7qjAzGiojwj6jD8akx1Z5N"
-OPERATOR_ID = os.getenv("DING_OPERATOR_ID") # 这里就是你说的 UnionID/UserID
+OPERATOR_ID = os.getenv("DING_OPERATOR_ID") 
 
-# GitHub 环境下的输出目录
+# 重要：在 GitHub 环境中使用相对路径
 OUTPUT_DIR = "public/data"
 LOOKBACK_DAYS = 15
 
@@ -32,14 +32,12 @@ def get_all_sheets(token: str):
     res = requests.get(url, headers=headers, params=params, timeout=30)
     data = res.json()
     
-    # 兼容各种返回格式
-    keys = ["sheets", "items", "value"]
-    for k in keys:
-        if k in data: return data[k]
+    # 兼容处理返回格式
+    if "sheets" in data: return data["sheets"]
+    if "value" in data: return data["value"]
     if "data" in data and isinstance(data["data"], dict):
-        for k in keys:
-            if k in data["data"]: return data["data"][k]
-    raise RuntimeError("未找到 sheets 数据，请检查权限或配置")
+        return data["data"].get("sheets", data["data"].get("value", []))
+    return []
 
 def list_records(token: str, sheet_id: str):
     url = f"https://api.dingtalk.com/v1.0/notable/bases/{BASE_ID}/sheets/{sheet_id}/records/list"
@@ -53,11 +51,11 @@ def list_records(token: str, sheet_id: str):
         data = res.json()
         
         # 兼容处理 records 字段
+        records = []
         if "records" in data: records = data["records"]
         elif "value" in data: records = data["value"]
         elif "data" in data and isinstance(data["data"], dict):
             records = data["data"].get("records", data["data"].get("value", []))
-        else: records = []
         
         all_rows.extend(records)
         next_page_token = data.get("nextPageToken") or (data.get("data", {}).get("nextPageToken") if isinstance(data.get("data"), dict) else None)
@@ -74,19 +72,16 @@ def parse_sheet_name(name: str):
     return dt, m.group(2)
 
 def main():
-    print(f"🚀 开始同步 | 环境: GitHub Actions | 时间: {datetime.now()}")
-    if not os.path.exists(OUTPUT_DIR): os.makedirs(OUTPUT_DIR)
+    print(f"🚀 GitHub 同步启动 | 时间: {datetime.now()}")
+    if not os.path.exists(OUTPUT_DIR): 
+        os.makedirs(OUTPUT_DIR)
+        print(f"创建目录: {OUTPUT_DIR}")
     
     token = get_token()
     sheets = get_all_sheets(token)
     
-    sheet_map = {}
-    for s in sheets:
-        sid = s.get("id") or s.get("sheetId") or s.get("sheet_id")
-        sname = s.get("name") or s.get("sheetName") or s.get("sheet_name")
-        if sid and sname: sheet_map[sname] = sid
+    sheet_map = {s.get("name") or s.get("sheetName"): s.get("id") or s.get("sheetId") for s in sheets if (s.get("name") or s.get("sheetName"))}
 
-    # 日期回溯筛选
     today = datetime.now().date()
     start_date = today - timedelta(days=LOOKBACK_DAYS - 1)
     picked = {"分配记录": [], "课程记录": [], "通话记录": [], "订单记录": []}
@@ -96,12 +91,17 @@ def main():
         if dt and kind and start_date <= dt <= today:
             picked[kind].append((dt, name, sid))
 
-    # 执行抓取与保存
-    for kind, filename in [("分配记录", "fact_leads.csv"), ("课程记录", "fact_trials.csv"), 
-                          ("通话记录", "fact_calls.csv"), ("订单记录", "fact_orders.csv")]:
+    mapping = {
+        "分配记录": "fact_leads.csv",
+        "课程记录": "fact_trials.csv",
+        "通话记录": "fact_calls.csv",
+        "订单记录": "fact_orders.csv"
+    }
+
+    for kind, filename in mapping.items():
         items = sorted(picked[kind], key=lambda x: x[0])
         if not items:
-            print(f"⚠️ 警告: 最近 {LOOKBACK_DAYS} 天未找到 {kind}")
+            print(f"⚠️ 找不到最近 {LOOKBACK_DAYS} 天的 {kind}")
             continue
         
         dfs = []
@@ -114,10 +114,17 @@ def main():
         
         if dfs:
             res_df = pd.concat(dfs, ignore_index=True)
-            # 这里可以保留你之前的去重逻辑(dedupe_leads等)，为了演示先直接去重
             res_df = res_df.drop_duplicates()
-            res_df.to_csv(f"{OUTPUT_DIR}/{filename}", index=False, encoding='utf-8-sig')
-            print(f"✅ {filename} 保存成功: {res_df.shape}")
+            # 关键：加入物理同步时间，确保文件一定会发生变动被 Git 检测到
+            res_df["_last_sync"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            
+            save_path = os.path.join(OUTPUT_DIR, filename)
+            res_df.to_csv(save_path, index=False, encoding='utf-8-sig')
+            print(f"✅ {filename} 落地成功，行数: {len(res_df)}")
+
+    # 同时写一个时间戳文件作为双重保险
+    with open(os.path.join(OUTPUT_DIR, "last_sync.txt"), "w") as f:
+        f.write(f"Updated at: {datetime.now()}")
 
 if __name__ == "__main__":
     main()
