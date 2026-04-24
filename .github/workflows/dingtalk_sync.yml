@@ -2,8 +2,8 @@ name: DingTalk Auto Sync
 
 on:
   schedule:
-    - cron: '0 1,9 * * *' # 北京时间 9:00 和 17:00
-  workflow_dispatch:      # 允许手动触发
+    - cron: '0 1,9 * * *' # 每天北京时间 9:00 和 17:00
+  workflow_dispatch:      # 支持手动触发
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # 完整拉取历史，防止推送冲突
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -39,18 +39,11 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           
-          # 1. 强制添加所有 CSV，无视之前的索引状态
+          # 强制标记 CSV 文件为已修改
           git add -f public/data/*.csv
           
-          # 2. 检查是否有实质变化
-          if git diff --staged --quiet; then
-            echo "⚠️ 数据内容无变化，为了强制刷新，我们将触碰一下文件"
-            date > public/data/last_sync.txt
-            git add public/data/last_sync.txt
-            git commit -m "auto: 强制触碰刷新数据状态 [skip ci]"
-          else
-            git commit -m "auto: 自动更新业务数据 [skip ci]"
-          fi
+          # 即使内容一模一样也强制生成提交
+          git commit --allow-empty -m "auto: 物理覆盖最新业务数据 [skip ci]"
           
-          # 3. 强制推送，确保覆盖所有之前的混乱
+          # 强制推送到主分支
           git push origin main
