@@ -292,6 +292,22 @@ def normalize_columns(df):
     return df
 
 
+def collapse_duplicate_columns(df):
+    df = df.copy()
+
+    duplicated_cols = df.columns[df.columns.duplicated()].unique()
+
+    for col in duplicated_cols:
+        same_cols = df.loc[:, df.columns == col]
+        merged = same_cols.bfill(axis=1).iloc[:, 0]
+
+        keep_cols = [c for c in df.columns if c != col]
+        df = df.loc[:, keep_cols]
+        df[col] = merged
+
+    return df
+
+
 def parse_sheet_name(name):
     name = str(name).strip()
     m = re.match(r"^(\d{8})(分配记录|课程记录|通话记录|订单记录)$", name)
@@ -328,8 +344,15 @@ def pick_target_sheet(sheets, keyword):
 
 
 def to_clean_str(value):
+    if isinstance(value, pd.Series):
+        value = value.dropna()
+        if value.empty:
+            return ""
+        value = value.iloc[0]
+
     if pd.isna(value):
         return ""
+
     return str(value).strip()
 
 
@@ -362,6 +385,7 @@ def read_existing_csv(file_name, columns):
         df = pd.read_csv(path, dtype=str)
 
     df = normalize_columns(df)
+    df = collapse_duplicate_columns(df)
 
     for col in columns:
         if col not in df.columns:
@@ -416,6 +440,7 @@ def load_sales_map_from_sheets(token, sheets):
     }
 
     df = df.rename(columns={k: v for k, v in rename_map.items() if k in df.columns})
+    df = collapse_duplicate_columns(df)
 
     for col in ["sales_id", "sales_group", "sales_name"]:
         if col not in df.columns:
@@ -458,6 +483,7 @@ def dedup_by_latest(df, subset, time_col=None):
         return df
 
     df = df.copy()
+    df = collapse_duplicate_columns(df)
 
     for col in subset:
         if col not in df.columns:
@@ -500,6 +526,7 @@ def transform_leads(full_df, sales_map):
     }
 
     df = df.rename(columns={k: v for k, v in rename_map.items() if k in df.columns})
+    df = collapse_duplicate_columns(df)
 
     for col in ["user_id", "sales_id", "assigned_time", "lead_source"]:
         if col not in df.columns:
@@ -511,6 +538,7 @@ def transform_leads(full_df, sales_map):
     df["lead_source"] = df["lead_source"].apply(to_clean_str)
 
     df = add_sales_name(df, sales_map, id_col="sales_id")
+    df = collapse_duplicate_columns(df)
 
     for col in ["sales_name", "sales_group"]:
         if col not in df.columns:
@@ -530,6 +558,7 @@ def final_dedup_leads(df):
         return pd.DataFrame(columns=final_cols)
 
     df = df.copy()
+    df = collapse_duplicate_columns(df)
 
     for col in final_cols:
         if col not in df.columns:
@@ -619,6 +648,7 @@ def transform_trials(full_df, sales_map):
     }
 
     df = df.rename(columns={k: v for k, v in rename_map.items() if k in df.columns})
+    df = collapse_duplicate_columns(df)
 
     if "实际上课教材" in df.columns:
         df = df.drop(columns=["实际上课教材"])
@@ -663,6 +693,7 @@ def transform_orders(full_df):
     }
 
     df = df.rename(columns={k: v for k, v in rename_map.items() if k in df.columns})
+    df = collapse_duplicate_columns(df)
 
     for col in final_cols:
         if col not in df.columns:
@@ -715,26 +746,35 @@ def transform_calls(full_df):
         "客户信息": "customer_raw",
         "用户": "customer_raw",
         "学员": "customer_raw",
+
         "销售名称": "sales_name",
         "坐席": "sales_name",
         "销售": "sales_name",
+
         "坐席号": "seat_id",
         "坐席工号": "seat_id",
+
         "外呼时间": "outbound_time",
-        "双方接听时间": "outbound_time",
         "通话时间": "outbound_time",
         "拨打时间": "outbound_time",
+
+        # 不再映射到 outbound_time，避免和“外呼时间”重复列冲突
+        "双方接听时间": "answered_time",
+
         "接听状态": "call_status",
         "接通状态": "call_status",
         "通话状态": "call_status",
+
         "通话时长": "call_duration_sec",
         "响铃时长": "ring_duration_sec",
         "接通时长": "connect_time_sec",
+
         "录音": "recording_url",
         "录音链接": "recording_url",
     }
 
     df = df.rename(columns={k: v for k, v in rename_map.items() if k in df.columns})
+    df = collapse_duplicate_columns(df)
 
     if "customer_raw" in df.columns:
         parsed = df["customer_raw"].apply(split_call_user)
@@ -758,6 +798,7 @@ def apply_final_dedup(keyword, df):
         return df
 
     df = df.copy()
+    df = collapse_duplicate_columns(df)
 
     if keyword == "分配记录":
         return final_dedup_leads(df)
@@ -784,6 +825,7 @@ def merge_existing_and_new(keyword, new_df):
         return pd.DataFrame(columns=final_cols)
 
     combined = pd.concat([old_df, new_df], ignore_index=True)
+    combined = collapse_duplicate_columns(combined)
 
     for col in final_cols:
         if col not in combined.columns:
