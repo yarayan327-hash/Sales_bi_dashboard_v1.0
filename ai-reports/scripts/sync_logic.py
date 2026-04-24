@@ -20,58 +20,67 @@ def list_records(token, sid):
     all_rows = []
     page_token = None
     while True:
-        body = {"operatorId": OPERATOR_ID, "maxResults": 500, "pageToken": page_token}
-        res = requests.post(url, headers=headers, json=body).json()
-        data = res.get("data", res)
-        records = data.get("records", data.get("value", []))
+        res = requests.post(url, headers=headers, json={"operatorId": OPERATOR_ID, "maxResults": 500, "pageToken": page_token}).json()
+        data = res.json() if hasattr(res, 'json') else res
+        
+        # 100% 还原阿里云的原版安全解析逻辑
+        records = []
+        if "records" in data:
+            records = data["records"]
+        elif "value" in data:
+            records = data["value"]
+        elif "data" in data and isinstance(data["data"], dict):
+            records = data["data"].get("records", data["data"].get("value", []))
+            
         for r in records:
-            # 兼容处理字段结构
             all_rows.append(r.get("fields", r) if isinstance(r, dict) else r)
-        page_token = data.get("nextPageToken")
+            
+        page_token = data.get("nextPageToken") or (data.get("data", {}).get("nextPageToken") if isinstance(data.get("data"), dict) else None)
         if not page_token: break
     return pd.DataFrame(all_rows)
 
 def main():
-    print(f"🚀 开始同步真实数据...")
     token = get_token()
-    if not token: raise Exception("获取Token失败")
-
-    # 获取所有子表
+    
+    # 解析 sheets 列表也是同理，还原最稳妥的做法
     sheets_res = requests.get(f"https://api.dingtalk.com/v1.0/notable/bases/{BASE_ID}/sheets", 
-                              headers={"x-acs-dingtalk-access-token": token}, 
-                              params={"operatorId": OPERATOR_ID}).json()
-    sheets = sheets_res.get("sheets", sheets_res.get("value", []))
+                              headers={"x-acs-dingtalk-access-token": token}, params={"operatorId": OPERATOR_ID}).json()
+    
+    sheets = []
+    if "sheets" in sheets_res: sheets = sheets_res["sheets"]
+    elif "data" in sheets_res and isinstance(sheets_res["data"], dict): sheets = sheets_res["data"].get("sheets", [])
 
-    # 任务配置：关键词 -> 输出文件名 -> 字段映射
     tasks = {
-        "分配记录": {"file": "fact_leads.csv", "map": {"学员ID": "user_id", "分配时间": "assigned_time", "负责人": "manager_name", "线索状态": "status"}},
-        "课程记录": {"file": "fact_trials.csv", "map": {"学员ID": "user_id", "上课时间": "trial_time", "是否出勤": "is_attended"}},
-        "通话记录": {"file": "fact_calls.csv", "map": {"学员ID": "user_id", "外呼时间": "outbound_time", "通话时长(秒)": "connect_time_sec"}},
-        "订单记录": {"file": "fact_orders.csv", "map": {"订单号": "order_id", "学员ID": "user_id", "实付金额": "amount"}}
+        "分配记录": {"file": "fact_leads.csv", "cols": {"学员ID": "user_id", "分配时间": "assigned_time", "负责人": "manager_name", "线索状态": "status"}},
+        "课程记录": {"file": "fact_trials.csv", "cols": {"学员ID": "user_id", "上课时间": "trial_time", "是否出勤": "is_attended"}},
+        "通话记录": {"file": "fact_calls.csv", "cols": {"学员ID": "user_id", "外呼时间": "outbound_time", "通话时长(秒)": "connect_time_sec"}},
+        "订单记录": {"file": "fact_orders.csv", "cols": {"订单号": "order_id", "学员ID": "user_id", "实付金额": "amount"}}
     }
 
-    for keyword, config in tasks.items():
-        targets = [s for s in sheets if keyword in s.get('name', '')]
-        if not targets: continue
+    if not os.path.exists(OUTPUT_DIR):
+        os.makedirs(OUTPUT_DIR)
+
+    for keyword, cfg in tasks.items():
+        targets = [s for s in sheets if keyword in str(s.get('name'))]
+        dfs = [list_records(token, s['id']) for s in targets]
         
-        dfs = []
-        for s in targets:
-            df = list_records(token, s['id'])
-            if not df.empty: dfs.append(df)
-        
-        if dfs:
-            final_df = pd.concat(dfs, ignore_index=True)
-            # 强制映射字段，不存在的列会被忽略
-            final_df = final_df.rename(columns=config["map"])
-            # 只保留看板需要的列
-            keep_cols = [c for c in config["map"].values() if c in final_df.columns]
-            final_df = final_df[keep_cols]
+        full_df = pd.concat([d for d in dfs if not d.empty], ignore_index=True) if dfs else pd.DataFrame()
+
+        # 无论数据是否为空，强制洗掉中文列名
+        if not full_df.empty:
+            full_df = full_df.rename(columns=cfg["cols"])
+            keep = [c for c in cfg["cols"].values() if c in full_df.columns]
+            final = full_df[keep].drop_duplicates()
+        else:
+            # 如果没抓到数，强制创建一个只有英文表头的空文件，彻底证明旧数据被抹掉了
+            final = pd.DataFrame(columns=list(cfg["cols"].values()))
             
-            final_df.to_csv(os.path.join(OUTPUT_DIR, config["file"]), index=False, encoding='utf-8-sig')
-            print(f"✅ {config['file']} 真正写入了 {len(final_df)} 行真实数据")
+        # 强制写入，绝不跳过！
+        final.to_csv(os.path.join(OUTPUT_DIR, cfg["file"]), index=False, encoding='utf-8-sig')
+        print(f"📊 {cfg['file']} 物理写入成功，行数: {len(final)}")
 
     with open(f"{OUTPUT_DIR}/last_sync.txt", "w") as f:
-        f.write(f"Sync Success: {datetime.now()}")
+        f.write(f"Updated: {datetime.now()}")
 
 if __name__ == "__main__":
     main()
