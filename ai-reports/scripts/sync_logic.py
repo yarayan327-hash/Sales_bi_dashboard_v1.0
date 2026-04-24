@@ -3,21 +3,45 @@ import pandas as pd
 import os
 from datetime import datetime
 
-# === 安全配置 (从 GitHub Secrets 读取) ===
+# === 配置 ===
 APP_KEY = os.getenv("DING_APP_KEY")
 APP_SECRET = os.getenv("DING_APP_SECRET")
 BASE_ID = "QPGYqjpJYr7qjAzGiojwj6jD8akx1Z5N"
 OPERATOR_ID = os.getenv("DING_OPERATOR_ID")
 DATA_DIR = "public/data"
 
+# === 字段映射器 (将钉钉中文映射为看板英文) ===
+FIELD_MAPS = {
+    "fact_leads.csv": {
+        "学员ID": "user_id",
+        "分配时间": "assigned_time",
+        "负责人": "manager_name",
+        "线索状态": "status"
+    },
+    "fact_calls.csv": {
+        "学员ID": "user_id",
+        "外呼时间": "outbound_time",
+        "通话时长(秒)": "connect_time_sec",
+        "通话状态": "call_status"
+    },
+    "fact_trials.csv": {
+        "学员ID": "user_id",
+        "上课时间": "trial_time",
+        "课程名称": "course_name",
+        "是否出勤": "is_attended"
+    },
+    "fact_orders.csv": {
+        "订单号": "order_id",
+        "学员ID": "user_id",
+        "实付金额": "amount",
+        "付款时间": "order_time"
+    }
+}
+
 def get_token():
     url = "https://oapi.dingtalk.com/gettoken"
-    try:
-        res = requests.get(url, params={"appkey": APP_KEY, "appsecret": APP_SECRET}, timeout=20).json()
-        return res.get("access_token")
-    except Exception as e:
-        print(f"❌ 获取 Token 失败: {e}")
-        return None
+    res = requests.get(url, params={"appkey": APP_KEY, "appsecret": APP_SECRET}).json()
+    return res.get("access_token")
 
 def fetch_records(token, tid):
     url = f"https://api.dingtalk.com/v1.0/notable/bases/{BASE_ID}/sheets/{tid}/records/list"
@@ -36,22 +60,17 @@ def fetch_records(token, tid):
             page_token = data.get("nextPageToken")
             if not page_token: break
         return pd.DataFrame(all_rows)
-    except Exception as e:
-        print(f"   ⚠️ 读取表 {tid} 异常: {e}")
-        return pd.DataFrame()
+    except: return pd.DataFrame()
 
 def main():
-    print(f"🚀 同步开始 | 当前时间: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-    if not os.path.exists(DATA_DIR): os.makedirs(DATA_DIR)
-
     token = get_token()
     if not token: return
-
-    # 获取所有 Sheet 清单
-    url = f"https://api.dingtalk.com/v1.0/notable/bases/{BASE_ID}/sheets"
-    res = requests.get(url, headers={"x-acs-dingtalk-access-token": token}, params={"operatorId": OPERATOR_ID}).json()
-    sheets = res.get("sheets", res.get("value", []))
     
+    res = requests.get(f"https://api.github.com/repos/yarayan327-hash/Sales_bi_dashboard_v1.0/contents/public/data", headers={}).json() # 占位
+    
+    url = f"https://api.dingtalk.com/v1.0/notable/bases/{BASE_ID}/sheets"
+    sheets = requests.get(url, headers={"x-acs-dingtalk-access-token": token}, params={"operatorId": OPERATOR_ID}).json().get("sheets", [])
+
     tasks = {
         "fact_leads.csv": "分配记录",
         "fact_orders.csv": "订单记录",
@@ -60,30 +79,27 @@ def main():
     }
 
     for filename, keyword in tasks.items():
-        # 匹配包含关键字的表
-        target_sheets = [s for s in sheets if keyword in str(s.get('name'))]
-        print(f"📡 任务 [{keyword}]: 发现 {len(target_sheets)} 张表")
-        
+        target_ids = [s['id'] for s in sheets if keyword in str(s.get('name'))]
         dfs = []
-        for s in target_sheets:
-            tid = s.get('id')
-            tname = s.get('name')
+        for tid in target_ids:
             df = fetch_records(token, tid)
-            if not df.empty:
-                print(f"   📥 已提取: {tname} ({len(df)} 行)")
-                dfs.append(df)
+            if not df.empty: dfs.append(df)
         
         if dfs:
-            final_df = pd.concat(dfs, ignore_index=True, sort=False)
+            raw_df = pd.concat(dfs, ignore_index=True, sort=False)
             
-            # --- 核心改进：添加强制更新时间戳，确保 Git 每次都能检测到文件内容发生了变化 ---
-            final_df['github_sync_at'] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            # 1. 自动重命名列 (映射中文到英文)
+            mapper = FIELD_MAPS.get(filename, {})
+            # 只保留映射表中存在的列，并重命名
+            final_df = raw_df[list(mapper.keys())].rename(columns=mapper)
             
+            # 2. 强制添加同步时间戳 (确保 Git 推送)
+            final_df['last_sync_at'] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            
+            # 3. 落地保存
             save_path = os.path.join(DATA_DIR, filename)
             final_df.to_csv(save_path, index=False, encoding='utf-8-sig')
-            print(f"✅ {filename} 写入完成 | 共 {len(final_df)} 行")
-        else:
-            print(f"⚠️ {filename} 未找到有效数据")
+            print(f"✅ {filename} 映射完成，写入 {len(final_df)} 行")
 
 if __name__ == "__main__":
     main()
