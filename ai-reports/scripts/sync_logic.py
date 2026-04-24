@@ -4,6 +4,7 @@ import re
 import os
 import json
 import traceback
+import time
 from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
 
@@ -18,6 +19,79 @@ MAX_RESULTS = 100
 SYNC_TZ = os.getenv("SYNC_TZ", "Asia/Riyadh")
 
 
+OUTPUT_FILES = {
+    "分配记录": "fact_leads.csv",
+    "课程记录": "fact_trials.csv",
+    "订单记录": "fact_orders.csv",
+    "通话记录": "fact_calls.csv",
+}
+
+
+FINAL_COLS = {
+    "分配记录": [
+        "user_id",
+        "sales_id",
+        "sales_name",
+        "sales_group",
+        "assigned_time",
+        "lead_source",
+        "assign_count",
+        "is_reassigned",
+        "first_assigned_time",
+        "latest_assigned_time",
+        "reassign_sequence",
+    ],
+    "课程记录": [
+        "id",
+        "course_name",
+        "start_time_bj",
+        "class_start_ksa",
+        "booking_type",
+        "course_type",
+        "teacher_name",
+        "teacher_id",
+        "student_name",
+        "user_id",
+        "booking_id_51",
+        "merithub_id",
+        "class_status",
+        "textbook",
+        "booked_at",
+        "agent_id",
+        "duration_minutes",
+        "is_ordered",
+    ],
+    "订单记录": [
+        "order_id",
+        "user_name",
+        "user_id",
+        "sales_name_raw",
+        "sales_group",
+        "original_price",
+        "paid_amount",
+        "package_name",
+        "order_time",
+        "payment_method",
+        "pay_currency",
+        "discount_amount",
+        "order_status",
+        "processed_time",
+        "search_keyword",
+    ],
+    "通话记录": [
+        "user_id",
+        "sales_name",
+        "seat_id",
+        "outbound_time",
+        "connect_time_sec",
+        "call_duration_sec",
+        "ring_duration_sec",
+        "call_status",
+        "recording_url",
+    ],
+}
+
+
 def log(msg):
     print(msg)
     os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -30,6 +104,17 @@ def pretty(obj, limit=4000):
         return json.dumps(obj, ensure_ascii=False, indent=2)[:limit]
     except Exception:
         return str(obj)[:limit]
+
+
+def safe_response_json(resp, context=""):
+    try:
+        return resp.json()
+    except Exception:
+        text = resp.text[:1200] if resp.text else ""
+        raise RuntimeError(
+            f"Response is not JSON. context={context}, "
+            f"status_code={resp.status_code}, text={text}"
+        )
 
 
 def check_env():
@@ -57,7 +142,7 @@ def get_token():
         params={"appkey": APP_KEY, "appsecret": APP_SECRET},
         timeout=30,
     )
-    res = resp.json()
+    res = safe_response_json(resp, context="get_token")
 
     log("===== TOKEN RESPONSE =====")
     log(pretty(res))
@@ -75,7 +160,7 @@ def get_sheets(token):
     params = {"operatorId": OPERATOR_ID}
 
     resp = requests.get(url, headers=headers, params=params, timeout=30)
-    res = resp.json()
+    res = safe_response_json(resp, context="get_sheets")
 
     log("===== SHEETS RESPONSE =====")
     log(f"status_code={resp.status_code}")
@@ -120,8 +205,28 @@ def list_records(token, sid, sheet_name):
         if page_token:
             body["pageToken"] = page_token
 
-        resp = requests.post(url, headers=headers, json=body, timeout=30)
-        res = resp.json()
+        resp = None
+        res = None
+        last_error = None
+
+        for attempt in range(1, 4):
+            try:
+                resp = requests.post(url, headers=headers, json=body, timeout=60)
+                res = safe_response_json(
+                    resp,
+                    context=f"{sheet_name} page={page} attempt={attempt}"
+                )
+                break
+            except Exception as e:
+                last_error = e
+                log(
+                    f"Retry list_records: sheet={sheet_name}, "
+                    f"page={page}, attempt={attempt}, error={e}"
+                )
+                time.sleep(2 * attempt)
+
+                if attempt >= 3:
+                    raise last_error
 
         log(f"===== RECORDS RESPONSE: {sheet_name} page={page} =====")
         log(f"status_code={resp.status_code}")
@@ -286,6 +391,9 @@ def load_sales_map_from_sheets(token, sheets):
         "销售组": "sales_group",
         "销售名称": "sales_name",
         "销售姓名": "sales_name",
+        "新销售ID": "sales_id",
+        "组别": "sales_group",
+        "姓名": "sales_name",
     }
 
     df = df.rename(columns={k: v for k, v in rename_map.items() if k in df.columns})
@@ -359,13 +467,17 @@ def transform_leads(full_df, sales_map):
         "stu_id": "user_id",
         "学员ID": "user_id",
         "学生id": "user_id",
+        "学生ID": "user_id",
         "用户ID": "user_id",
+
         "new_admin_id": "sales_id",
         "销售ID": "sales_id",
         "负责人": "sales_id",
         "admin_id": "sales_id",
+
         "add_time": "assigned_time",
         "分配时间": "assigned_time",
+
         "desc": "lead_source",
         "线索来源": "lead_source",
         "线索状态": "lead_source",
@@ -478,6 +590,8 @@ def transform_trials(full_df, sales_map):
         "老师id": "teacher_id",
         "学生名称": "student_name",
         "学生id": "user_id",
+        "学生ID": "user_id",
+        "学员ID": "user_id",
         "51talk预约id": "booking_id_51",
         "merithubId": "merithub_id",
         "课程状态": "class_status",
@@ -516,6 +630,8 @@ def transform_orders(full_df):
         "订单号": "order_id",
         "用户": "user_name",
         "学员ID": "user_id",
+        "学生ID": "user_id",
+        "学生id": "user_id",
         "业绩归属销售": "sales_name_raw",
         "业绩归属销售组": "sales_group",
         "总金额(套餐定价币种)": "original_price",
@@ -576,21 +692,34 @@ def transform_calls(full_df):
     df = normalize_columns(full_df)
 
     rename_map = {
+        "学员ID": "customer_raw",
+        "学生ID": "customer_raw",
+        "学生id": "customer_raw",
         "客户": "customer_raw",
         "客户信息": "customer_raw",
         "用户": "customer_raw",
         "学员": "customer_raw",
+
+        "销售名称": "sales_name",
         "坐席": "sales_name",
         "销售": "sales_name",
+
+        "坐席号": "seat_id",
         "坐席工号": "seat_id",
+
         "外呼时间": "outbound_time",
+        "双方接听时间": "outbound_time",
         "通话时间": "outbound_time",
         "拨打时间": "outbound_time",
-        "接通时长": "connect_time_sec",
-        "通话时长": "call_duration_sec",
-        "振铃时长": "ring_duration_sec",
+
+        "接听状态": "call_status",
         "接通状态": "call_status",
         "通话状态": "call_status",
+
+        "通话时长": "call_duration_sec",
+        "响铃时长": "ring_duration_sec",
+        "接通时长": "connect_time_sec",
+
         "录音": "recording_url",
         "录音链接": "recording_url",
     }
@@ -612,79 +741,6 @@ def transform_calls(full_df):
         df[col] = df[col].apply(parse_duration_to_sec)
 
     return df[final_cols].fillna("").astype(str)
-
-
-OUTPUT_FILES = {
-    "分配记录": "fact_leads.csv",
-    "课程记录": "fact_trials.csv",
-    "订单记录": "fact_orders.csv",
-    "通话记录": "fact_calls.csv",
-}
-
-
-FINAL_COLS = {
-    "分配记录": [
-        "user_id",
-        "sales_id",
-        "sales_name",
-        "sales_group",
-        "assigned_time",
-        "lead_source",
-        "assign_count",
-        "is_reassigned",
-        "first_assigned_time",
-        "latest_assigned_time",
-        "reassign_sequence",
-    ],
-    "课程记录": [
-        "id",
-        "course_name",
-        "start_time_bj",
-        "class_start_ksa",
-        "booking_type",
-        "course_type",
-        "teacher_name",
-        "teacher_id",
-        "student_name",
-        "user_id",
-        "booking_id_51",
-        "merithub_id",
-        "class_status",
-        "textbook",
-        "booked_at",
-        "agent_id",
-        "duration_minutes",
-        "is_ordered",
-    ],
-    "订单记录": [
-        "order_id",
-        "user_name",
-        "user_id",
-        "sales_name_raw",
-        "sales_group",
-        "original_price",
-        "paid_amount",
-        "package_name",
-        "order_time",
-        "payment_method",
-        "pay_currency",
-        "discount_amount",
-        "order_status",
-        "processed_time",
-        "search_keyword",
-    ],
-    "通话记录": [
-        "user_id",
-        "sales_name",
-        "seat_id",
-        "outbound_time",
-        "connect_time_sec",
-        "call_duration_sec",
-        "ring_duration_sec",
-        "call_status",
-        "recording_url",
-    ],
-}
 
 
 def apply_final_dedup(keyword, df):
