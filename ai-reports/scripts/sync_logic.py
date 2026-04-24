@@ -5,6 +5,7 @@ import os
 import json
 import traceback
 from datetime import datetime, timedelta
+from zoneinfo import ZoneInfo
 
 APP_KEY = os.getenv("DING_APP_KEY")
 APP_SECRET = os.getenv("DING_APP_SECRET")
@@ -12,8 +13,9 @@ BASE_ID = "QPGYqjpJYr7qjAzGiojwj6jD8akx1Z5N"
 OPERATOR_ID = os.getenv("DING_OPERATOR_ID")
 
 OUTPUT_DIR = "public/data"
-LOOKBACK_DAYS = 15
 DEBUG_LOG = os.path.join(OUTPUT_DIR, "sync_debug.log")
+MAX_RESULTS = 100
+SYNC_TZ = os.getenv("SYNC_TZ", "Asia/Riyadh")
 
 
 def log(msg):
@@ -42,6 +44,10 @@ def check_env():
 
     if missing:
         raise RuntimeError(f"Missing GitHub Secrets / env vars: {missing}")
+
+
+def get_target_date():
+    return datetime.now(ZoneInfo(SYNC_TZ)).date() - timedelta(days=1)
 
 
 def get_token():
@@ -108,7 +114,7 @@ def list_records(token, sid, sheet_name):
     while True:
         body = {
             "operatorId": OPERATOR_ID,
-            "maxResults": 100,
+            "maxResults": MAX_RESULTS,
         }
 
         if page_token:
@@ -174,11 +180,10 @@ def parse_sheet_name(name):
     return dt, kind
 
 
-def pick_targets(sheets, keyword):
-    today = datetime.now().date()
-    start_date = today - timedelta(days=LOOKBACK_DAYS - 1)
+def pick_target_sheet(sheets, keyword):
+    target_date = get_target_date()
 
-    targets = []
+    matched = []
 
     for s in sheets:
         name = str(s.get("name", "")).strip()
@@ -186,28 +191,17 @@ def pick_targets(sheets, keyword):
 
         dt, kind = parse_sheet_name(name)
 
-        if dt and kind == keyword and start_date <= dt <= today:
-            targets.append({
+        if dt == target_date and kind == keyword:
+            matched.append({
                 "date": dt,
                 "name": name,
                 "id": sid,
             })
 
-    targets = sorted(targets, key=lambda x: x["date"])
+    log(f"===== TARGET SHEET {keyword} / {target_date} =====")
+    log(pretty(matched))
 
-    log(f"===== TARGETS {keyword} =====")
-    log(pretty(targets))
-
-    return targets
-
-
-def safe_concat(dfs):
-    valid = [df for df in dfs if df is not None and not df.empty]
-
-    if not valid:
-        return pd.DataFrame()
-
-    return pd.concat(valid, ignore_index=True)
+    return matched
 
 
 def to_clean_str(value):
@@ -235,6 +229,34 @@ def normalize_user_id(value):
 
 def parse_dt(value):
     return pd.to_datetime(value, errors="coerce")
+
+
+def read_existing_csv(file_name, columns):
+    path = os.path.join(OUTPUT_DIR, file_name)
+
+    if not os.path.exists(path):
+        return pd.DataFrame(columns=columns)
+
+    try:
+        df = pd.read_csv(path, dtype=str, encoding="utf-8-sig")
+    except Exception:
+        df = pd.read_csv(path, dtype=str)
+
+    df = normalize_columns(df)
+
+    for col in columns:
+        if col not in df.columns:
+            df[col] = ""
+
+    return df[columns].fillna("").astype(str)
+
+
+def save_csv(df, file_name):
+    path = os.path.join(OUTPUT_DIR, file_name)
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    df.to_csv(path, index=False, encoding="utf-8-sig")
+    log(f"Saved -> {path}, rows={len(df)}, cols={list(df.columns)}")
+    return path
 
 
 def load_sales_map_from_sheets(token, sheets):
@@ -309,6 +331,27 @@ def add_sales_name(df, sales_map, id_col="sales_id"):
     return df
 
 
+def dedup_by_latest(df, subset, time_col=None):
+    if df.empty:
+        return df
+
+    df = df.copy()
+
+    for col in subset:
+        if col not in df.columns:
+            df[col] = ""
+
+    if time_col and time_col in df.columns:
+        df["_dedup_dt"] = pd.to_datetime(df[time_col], errors="coerce")
+        df = df.sort_values("_dedup_dt", ascending=True, na_position="first")
+        df = df.drop_duplicates(subset=subset, keep="last")
+        df = df.drop(columns=["_dedup_dt"], errors="ignore")
+    else:
+        df = df.drop_duplicates(subset=subset, keep="last")
+
+    return df
+
+
 def transform_leads(full_df, sales_map):
     final_cols = [
         "user_id",
@@ -334,15 +377,12 @@ def transform_leads(full_df, sales_map):
         "学员ID": "user_id",
         "学生id": "user_id",
         "用户ID": "user_id",
-
         "new_admin_id": "sales_id",
         "销售ID": "sales_id",
         "负责人": "sales_id",
         "admin_id": "sales_id",
-
         "add_time": "assigned_time",
         "分配时间": "assigned_time",
-
         "desc": "lead_source",
         "线索来源": "lead_source",
         "线索状态": "lead_source",
@@ -362,10 +402,9 @@ def transform_leads(full_df, sales_map):
 
     df = add_sales_name(df, sales_map, id_col="sales_id")
 
-    if "sales_name" not in df.columns:
-        df["sales_name"] = ""
-    if "sales_group" not in df.columns:
-        df["sales_group"] = ""
+    for col in ["sales_name", "sales_group"]:
+        if col not in df.columns:
+            df[col] = ""
 
     df = df.sort_values(
         by=["user_id", "_assigned_dt"],
@@ -419,8 +458,6 @@ def transform_trials(full_df, sales_map):
         "textbook",
         "booked_at",
         "agent_id",
-        "sales_name",
-        "sales_group",
         "duration_minutes",
         "is_ordered",
     ]
@@ -432,6 +469,7 @@ def transform_trials(full_df, sales_map):
 
     rename_map = {
         "ID": "id",
+        "id": "id",
         "课程名称": "course_name",
         "上课时间（北京）": "start_time_bj",
         "上课时间（沙特）": "class_start_ksa",
@@ -460,14 +498,9 @@ def transform_trials(full_df, sales_map):
         if col not in df.columns:
             df[col] = ""
 
+    df["id"] = df["id"].apply(to_clean_str)
     df["user_id"] = df["user_id"].apply(normalize_user_id)
     df["agent_id"] = df["agent_id"].apply(to_clean_str)
-
-    df = add_sales_name(df, sales_map, id_col="agent_id")
-
-    for col in final_cols:
-        if col not in df.columns:
-            df[col] = ""
 
     return df[final_cols].fillna("").astype(str)
 
@@ -485,11 +518,9 @@ def transform_orders(full_df):
         "order_time",
         "payment_method",
         "pay_currency",
-        "discount_type",
         "discount_amount",
         "order_status",
         "processed_time",
-        "processed_by",
         "search_keyword",
     ]
 
@@ -510,11 +541,9 @@ def transform_orders(full_df):
         "订单时间": "order_time",
         "支付方式": "payment_method",
         "支付币种": "pay_currency",
-        "优惠方式": "discount_type",
         "优惠金额(支付币种优惠金额)": "discount_amount",
         "订单状态": "order_status",
         "处理时间": "processed_time",
-        "处理人": "processed_by",
         "搜索词": "search_keyword",
     }
 
@@ -524,6 +553,7 @@ def transform_orders(full_df):
         if col not in df.columns:
             df[col] = ""
 
+    df["order_id"] = df["order_id"].apply(to_clean_str)
     df["user_id"] = df["user_id"].apply(normalize_user_id)
 
     return df[final_cols].fillna("").astype(str)
@@ -532,6 +562,7 @@ def transform_orders(full_df):
 def split_call_user(value):
     text = to_clean_str(value)
     m = re.match(r"^(.*?)\s*\((\d+)\)", text)
+
     if m:
         return m.group(1).strip(), m.group(2).strip()
 
@@ -547,7 +578,7 @@ def parse_duration_to_sec(value):
 
     m = re.search(r"(\d{1,2}):(\d{2}):(\d{2})", text)
     if not m:
-        return ""
+        return text
 
     h, mi, s = map(int, m.groups())
     return str(h * 3600 + mi * 60 + s)
@@ -555,17 +586,14 @@ def parse_duration_to_sec(value):
 
 def transform_calls(full_df):
     final_cols = [
-        "user_name",
         "user_id",
-        "phone",
         "sales_name",
         "seat_id",
-        "channel",
         "outbound_time",
-        "call_status",
         "connect_time_sec",
         "call_duration_sec",
         "ring_duration_sec",
+        "call_status",
         "recording_url",
     ]
 
@@ -579,63 +607,38 @@ def transform_calls(full_df):
         "客户信息": "customer_raw",
         "用户": "customer_raw",
         "学员": "customer_raw",
-
-        "手机号": "phone",
-        "手机": "phone",
-
-        "坐席": "seat_id",
-        "坐席工号": "seat_id",
+        "坐席": "sales_name",
         "销售": "sales_name",
-
-        "外呼渠道": "channel",
-        "渠道": "channel",
-
+        "坐席工号": "seat_id",
         "外呼时间": "outbound_time",
         "通话时间": "outbound_time",
         "拨打时间": "outbound_time",
-
-        "接通状态": "call_status",
-        "通话状态": "call_status",
-
         "接通时长": "connect_time_sec",
         "通话时长": "call_duration_sec",
         "振铃时长": "ring_duration_sec",
-
+        "接通状态": "call_status",
+        "通话状态": "call_status",
         "录音": "recording_url",
         "录音链接": "recording_url",
-        "recording_url": "recording_url",
     }
 
     df = df.rename(columns={k: v for k, v in rename_map.items() if k in df.columns})
 
     if "customer_raw" in df.columns:
         parsed = df["customer_raw"].apply(split_call_user)
-        df["user_name"] = parsed.apply(lambda x: x[0])
         df["user_id"] = parsed.apply(lambda x: x[1])
-
-    # 兼容一些导出时直接已有英文列的情况
-    if "user_id" in df.columns:
-        df["user_id"] = df["user_id"].apply(normalize_user_id)
 
     for col in final_cols:
         if col not in df.columns:
             df[col] = ""
 
-    # 如果时长字段是 0:00:00，统一转秒；如果已经是数字，保留
+    df["user_id"] = df["user_id"].apply(normalize_user_id)
+    df["outbound_time"] = df["outbound_time"].apply(to_clean_str)
+
     for col in ["connect_time_sec", "call_duration_sec", "ring_duration_sec"]:
-        df[col] = df[col].apply(
-            lambda x: parse_duration_to_sec(x) if ":" in to_clean_str(x) else to_clean_str(x)
-        )
+        df[col] = df[col].apply(parse_duration_to_sec)
 
     return df[final_cols].fillna("").astype(str)
-
-
-TRANSFORMERS = {
-    "分配记录": transform_leads,
-    "课程记录": transform_trials,
-    "订单记录": transform_orders,
-    "通话记录": transform_calls,
-}
 
 
 OUTPUT_FILES = {
@@ -646,46 +649,163 @@ OUTPUT_FILES = {
 }
 
 
+FINAL_COLS = {
+    "分配记录": [
+        "user_id",
+        "sales_id",
+        "sales_name",
+        "sales_group",
+        "assigned_time",
+        "lead_source",
+        "assign_count",
+        "is_reassigned",
+        "first_assigned_time",
+        "latest_assigned_time",
+        "reassign_sequence",
+    ],
+    "课程记录": [
+        "id",
+        "course_name",
+        "start_time_bj",
+        "class_start_ksa",
+        "booking_type",
+        "course_type",
+        "teacher_name",
+        "teacher_id",
+        "student_name",
+        "user_id",
+        "booking_id_51",
+        "merithub_id",
+        "class_status",
+        "textbook",
+        "booked_at",
+        "agent_id",
+        "duration_minutes",
+        "is_ordered",
+    ],
+    "订单记录": [
+        "order_id",
+        "user_name",
+        "user_id",
+        "sales_name_raw",
+        "sales_group",
+        "original_price",
+        "paid_amount",
+        "package_name",
+        "order_time",
+        "payment_method",
+        "pay_currency",
+        "discount_amount",
+        "order_status",
+        "processed_time",
+        "search_keyword",
+    ],
+    "通话记录": [
+        "user_id",
+        "sales_name",
+        "seat_id",
+        "outbound_time",
+        "connect_time_sec",
+        "call_duration_sec",
+        "ring_duration_sec",
+        "call_status",
+        "recording_url",
+    ],
+}
+
+
+def apply_final_dedup(keyword, df):
+    if df.empty:
+        return df
+
+    df = df.copy()
+
+    if keyword == "分配记录":
+        return transform_leads(df, pd.DataFrame(columns=["sales_id", "sales_group", "sales_name"]))
+
+    if keyword == "订单记录":
+        return dedup_by_latest(df, subset=["order_id"], time_col="order_time")
+
+    if keyword == "通话记录":
+        return dedup_by_latest(df, subset=["user_id", "outbound_time"], time_col="outbound_time")
+
+    if keyword == "课程记录":
+        return dedup_by_latest(df, subset=["id"], time_col="booked_at")
+
+    return df
+
+
+def merge_existing_and_new(keyword, new_df):
+    file_name = OUTPUT_FILES[keyword]
+    final_cols = FINAL_COLS[keyword]
+
+    old_df = read_existing_csv(file_name, final_cols)
+
+    if new_df.empty and old_df.empty:
+        return pd.DataFrame(columns=final_cols)
+
+    combined = pd.concat([old_df, new_df], ignore_index=True)
+
+    for col in final_cols:
+        if col not in combined.columns:
+            combined[col] = ""
+
+    combined = combined[final_cols].fillna("").astype(str)
+
+    final = apply_final_dedup(keyword, combined)
+
+    for col in final_cols:
+        if col not in final.columns:
+            final[col] = ""
+
+    return final[final_cols].fillna("").astype(str)
+
+
 def sync_one(token, sheets, keyword, sales_map):
     log(f"\n\n========== START SYNC {keyword} ==========")
 
-    targets = pick_targets(sheets, keyword)
-    dfs = []
+    targets = pick_target_sheet(sheets, keyword)
 
     if not targets:
-        log(f"No target sheets found for {keyword}")
+        log(f"No T-1 target sheet found for {keyword}. Keep existing CSV unchanged.")
+        existing = read_existing_csv(OUTPUT_FILES[keyword], FINAL_COLS[keyword])
+        save_csv(existing, OUTPUT_FILES[keyword])
+        return os.path.join(OUTPUT_DIR, OUTPUT_FILES[keyword])
+
+    dfs = []
+
+    for t in targets:
+        sid = t.get("id")
+        name = t.get("name")
+
+        if not sid:
+            log(f"Skip sheet without id: {t}")
+            continue
+
+        df = list_records(token, sid, name)
+
+        if not df.empty:
+            df["_source_sheet"] = name
+            df["_source_date"] = str(t.get("date"))
+
+        dfs.append(df)
+
+    full_df = pd.concat([df for df in dfs if df is not None and not df.empty], ignore_index=True) if dfs else pd.DataFrame()
+
+    if keyword == "分配记录":
+        new_df = transform_leads(full_df, sales_map)
+    elif keyword == "课程记录":
+        new_df = transform_trials(full_df, sales_map)
+    elif keyword == "订单记录":
+        new_df = transform_orders(full_df)
+    elif keyword == "通话记录":
+        new_df = transform_calls(full_df)
     else:
-        for t in targets:
-            sid = t.get("id")
-            name = t.get("name")
+        raise RuntimeError(f"Unknown keyword: {keyword}")
 
-            if not sid:
-                log(f"Skip sheet without id: {t}")
-                continue
+    final = merge_existing_and_new(keyword, new_df)
 
-            df = list_records(token, sid, name)
-
-            if not df.empty:
-                df["_source_sheet"] = name
-                df["_source_date"] = str(t.get("date"))
-
-            dfs.append(df)
-
-    full_df = safe_concat(dfs)
-
-    if keyword in ["分配记录", "课程记录"]:
-        final = TRANSFORMERS[keyword](full_df, sales_map)
-    else:
-        final = TRANSFORMERS[keyword](full_df)
-
-    output_path = os.path.join(OUTPUT_DIR, OUTPUT_FILES[keyword])
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
-
-    final.to_csv(output_path, index=False, encoding="utf-8-sig")
-
-    log(f"Saved {keyword} -> {output_path}, rows={len(final)}")
-    log(f"Columns: {list(final.columns)}")
-
+    output_path = save_csv(final, OUTPUT_FILES[keyword])
     return output_path
 
 
@@ -693,7 +813,9 @@ def main():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
     with open(DEBUG_LOG, "w", encoding="utf-8") as f:
-        f.write(f"Sync started at {datetime.now()}\n")
+        f.write(f"Sync started at {datetime.now(ZoneInfo(SYNC_TZ))}\n")
+        f.write(f"SYNC_TZ={SYNC_TZ}\n")
+        f.write(f"TARGET_DATE={get_target_date()}\n")
 
     check_env()
 
