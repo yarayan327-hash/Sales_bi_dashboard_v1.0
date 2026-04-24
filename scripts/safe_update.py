@@ -1,0 +1,1 @@
+user_id,sales_name,seat_id,outbound_time,connect_time_sec,call_duration_sec,ring_duration_sec,call_status,recording_url
