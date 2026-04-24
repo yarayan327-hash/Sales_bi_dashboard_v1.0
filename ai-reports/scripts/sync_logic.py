@@ -182,7 +182,6 @@ def parse_sheet_name(name):
 
 def pick_target_sheet(sheets, keyword):
     target_date = get_target_date()
-
     matched = []
 
     for s in sheets:
@@ -225,10 +224,6 @@ def normalize_user_id(value):
         return m.group(0)
 
     return text
-
-
-def parse_dt(value):
-    return pd.to_datetime(value, errors="coerce")
 
 
 def read_existing_csv(file_name, columns):
@@ -353,19 +348,7 @@ def dedup_by_latest(df, subset, time_col=None):
 
 
 def transform_leads(full_df, sales_map):
-    final_cols = [
-        "user_id",
-        "sales_id",
-        "sales_name",
-        "sales_group",
-        "assigned_time",
-        "lead_source",
-        "assign_count",
-        "is_reassigned",
-        "first_assigned_time",
-        "latest_assigned_time",
-        "reassign_sequence",
-    ]
+    final_cols = FINAL_COLS["分配记录"]
 
     if full_df.empty:
         return pd.DataFrame(columns=final_cols)
@@ -398,7 +381,6 @@ def transform_leads(full_df, sales_map):
     df["sales_id"] = df["sales_id"].apply(to_clean_str)
     df["assigned_time"] = df["assigned_time"].apply(to_clean_str)
     df["lead_source"] = df["lead_source"].apply(to_clean_str)
-    df["_assigned_dt"] = parse_dt(df["assigned_time"])
 
     df = add_sales_name(df, sales_map, id_col="sales_id")
 
@@ -406,10 +388,35 @@ def transform_leads(full_df, sales_map):
         if col not in df.columns:
             df[col] = ""
 
+    for col in final_cols:
+        if col not in df.columns:
+            df[col] = ""
+
+    return df[final_cols].fillna("").astype(str)
+
+
+def final_dedup_leads(df):
+    final_cols = FINAL_COLS["分配记录"]
+
+    if df.empty:
+        return pd.DataFrame(columns=final_cols)
+
+    df = df.copy()
+
+    for col in final_cols:
+        if col not in df.columns:
+            df[col] = ""
+
+    df = df[final_cols].fillna("").astype(str)
+
+    df["user_id"] = df["user_id"].apply(normalize_user_id)
+    df["assigned_time"] = df["assigned_time"].apply(to_clean_str)
+    df["_assigned_dt"] = pd.to_datetime(df["assigned_time"], errors="coerce")
+
     df = df.sort_values(
         by=["user_id", "_assigned_dt"],
         ascending=[True, True],
-        na_position="last",
+        na_position="first",
     )
 
     df["reassign_sequence"] = df.groupby("user_id", dropna=False).cumcount() + 1
@@ -426,7 +433,18 @@ def transform_leads(full_df, sales_map):
 
     stat["is_reassigned"] = stat["assign_count"] > 1
 
-    latest = df.drop_duplicates(subset=["user_id"], keep="last").copy()
+    base_cols = [
+        c for c in df.columns
+        if c not in [
+            "assign_count",
+            "is_reassigned",
+            "first_assigned_time",
+            "latest_assigned_time",
+            "_assigned_dt",
+        ]
+    ]
+
+    latest = df[base_cols].drop_duplicates(subset=["user_id"], keep="last")
     latest = latest.merge(stat, on="user_id", how="left")
 
     latest["first_assigned_time"] = latest["first_assigned_time"].astype(str).replace("NaT", "")
@@ -441,26 +459,7 @@ def transform_leads(full_df, sales_map):
 
 
 def transform_trials(full_df, sales_map):
-    final_cols = [
-        "id",
-        "course_name",
-        "start_time_bj",
-        "class_start_ksa",
-        "booking_type",
-        "course_type",
-        "teacher_name",
-        "teacher_id",
-        "student_name",
-        "user_id",
-        "booking_id_51",
-        "merithub_id",
-        "class_status",
-        "textbook",
-        "booked_at",
-        "agent_id",
-        "duration_minutes",
-        "is_ordered",
-    ]
+    final_cols = FINAL_COLS["课程记录"]
 
     if full_df.empty:
         return pd.DataFrame(columns=final_cols)
@@ -506,23 +505,7 @@ def transform_trials(full_df, sales_map):
 
 
 def transform_orders(full_df):
-    final_cols = [
-        "order_id",
-        "user_name",
-        "user_id",
-        "sales_name_raw",
-        "sales_group",
-        "original_price",
-        "paid_amount",
-        "package_name",
-        "order_time",
-        "payment_method",
-        "pay_currency",
-        "discount_amount",
-        "order_status",
-        "processed_time",
-        "search_keyword",
-    ]
+    final_cols = FINAL_COLS["订单记录"]
 
     if full_df.empty:
         return pd.DataFrame(columns=final_cols)
@@ -585,17 +568,7 @@ def parse_duration_to_sec(value):
 
 
 def transform_calls(full_df):
-    final_cols = [
-        "user_id",
-        "sales_name",
-        "seat_id",
-        "outbound_time",
-        "connect_time_sec",
-        "call_duration_sec",
-        "ring_duration_sec",
-        "call_status",
-        "recording_url",
-    ]
+    final_cols = FINAL_COLS["通话记录"]
 
     if full_df.empty:
         return pd.DataFrame(columns=final_cols)
@@ -721,7 +694,7 @@ def apply_final_dedup(keyword, df):
     df = df.copy()
 
     if keyword == "分配记录":
-        return transform_leads(df, pd.DataFrame(columns=["sales_id", "sales_group", "sales_name"]))
+        return final_dedup_leads(df)
 
     if keyword == "订单记录":
         return dedup_by_latest(df, subset=["order_id"], time_col="order_time")
@@ -790,7 +763,8 @@ def sync_one(token, sheets, keyword, sales_map):
 
         dfs.append(df)
 
-    full_df = pd.concat([df for df in dfs if df is not None and not df.empty], ignore_index=True) if dfs else pd.DataFrame()
+    valid_dfs = [df for df in dfs if df is not None and not df.empty]
+    full_df = pd.concat(valid_dfs, ignore_index=True) if valid_dfs else pd.DataFrame()
 
     if keyword == "分配记录":
         new_df = transform_leads(full_df, sales_map)
