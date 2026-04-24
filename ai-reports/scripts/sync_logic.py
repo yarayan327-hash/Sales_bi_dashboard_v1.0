@@ -17,7 +17,7 @@ OUTPUT_DIR = "public/data"
 DEBUG_LOG = os.path.join(OUTPUT_DIR, "sync_debug.log")
 MAX_RESULTS = 100
 SYNC_TZ = os.getenv("SYNC_TZ", "Asia/Riyadh")
-
+MAX_PAGES_PER_SHEET = 50
 
 OUTPUT_FILES = {
     "分配记录": "fact_leads.csv",
@@ -25,7 +25,6 @@ OUTPUT_FILES = {
     "订单记录": "fact_orders.csv",
     "通话记录": "fact_calls.csv",
 }
-
 
 FINAL_COLS = {
     "分配记录": [
@@ -99,7 +98,7 @@ def log(msg):
         f.write(str(msg) + "\n")
 
 
-def pretty(obj, limit=4000):
+def pretty(obj, limit=1200):
     try:
         return json.dumps(obj, ensure_ascii=False, indent=2)[:limit]
     except Exception:
@@ -195,8 +194,15 @@ def list_records(token, sid, sheet_name):
     all_rows = []
     page_token = None
     page = 1
+    seen_tokens = set()
 
     while True:
+        if page > MAX_PAGES_PER_SHEET:
+            raise RuntimeError(
+                f"Pagination exceeded MAX_PAGES_PER_SHEET={MAX_PAGES_PER_SHEET}. "
+                f"sheet={sheet_name}, last_page_token={page_token}"
+            )
+
         body = {
             "operatorId": OPERATOR_ID,
             "maxResults": MAX_RESULTS,
@@ -230,12 +236,13 @@ def list_records(token, sid, sheet_name):
 
         log(f"===== RECORDS RESPONSE: {sheet_name} page={page} =====")
         log(f"status_code={resp.status_code}")
-        log(pretty(res, limit=2500))
+        log(pretty(res, limit=800))
 
         if resp.status_code >= 400:
             raise RuntimeError(f"list_records failed for {sheet_name}: {res}")
 
         data = res.get("data", res)
+
         records = (
             data.get("records")
             or data.get("value")
@@ -251,15 +258,27 @@ def list_records(token, sid, sheet_name):
             else:
                 all_rows.append({"_raw": r})
 
-        page_token = (
-            data.get("nextPageToken")
-            or data.get("nextToken")
-            or data.get("pageToken")
-        )
+        next_token = data.get("nextPageToken") or data.get("nextToken")
 
-        if not page_token:
+        if not next_token:
             break
 
+        if next_token == page_token:
+            log(
+                f"Stop pagination because next token did not change. "
+                f"sheet={sheet_name}, page={page}, token={next_token}"
+            )
+            break
+
+        if next_token in seen_tokens:
+            log(
+                f"Stop pagination because next token was already seen. "
+                f"sheet={sheet_name}, page={page}, token={next_token}"
+            )
+            break
+
+        seen_tokens.add(next_token)
+        page_token = next_token
         page += 1
 
     df = pd.DataFrame(all_rows)
@@ -469,15 +488,12 @@ def transform_leads(full_df, sales_map):
         "学生id": "user_id",
         "学生ID": "user_id",
         "用户ID": "user_id",
-
         "new_admin_id": "sales_id",
         "销售ID": "sales_id",
         "负责人": "sales_id",
         "admin_id": "sales_id",
-
         "add_time": "assigned_time",
         "分配时间": "assigned_time",
-
         "desc": "lead_source",
         "线索来源": "lead_source",
         "线索状态": "lead_source",
@@ -699,27 +715,21 @@ def transform_calls(full_df):
         "客户信息": "customer_raw",
         "用户": "customer_raw",
         "学员": "customer_raw",
-
         "销售名称": "sales_name",
         "坐席": "sales_name",
         "销售": "sales_name",
-
         "坐席号": "seat_id",
         "坐席工号": "seat_id",
-
         "外呼时间": "outbound_time",
         "双方接听时间": "outbound_time",
         "通话时间": "outbound_time",
         "拨打时间": "outbound_time",
-
         "接听状态": "call_status",
         "接通状态": "call_status",
         "通话状态": "call_status",
-
         "通话时长": "call_duration_sec",
         "响铃时长": "ring_duration_sec",
         "接通时长": "connect_time_sec",
-
         "录音": "recording_url",
         "录音链接": "recording_url",
     }
