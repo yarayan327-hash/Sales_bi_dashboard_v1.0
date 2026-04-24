@@ -242,7 +242,6 @@ def list_records(token, sid, sheet_name):
             raise RuntimeError(f"list_records failed for {sheet_name}: {res}")
 
         data = res.get("data", res)
-
         records = (
             data.get("records")
             or data.get("value")
@@ -294,7 +293,6 @@ def normalize_columns(df):
 
 def collapse_duplicate_columns(df):
     df = df.copy()
-
     duplicated_cols = df.columns[df.columns.duplicated()].unique()
 
     for col in duplicated_cols:
@@ -400,6 +398,18 @@ def save_csv(df, file_name):
     df.to_csv(path, index=False, encoding="utf-8-sig")
     log(f"Saved -> {path}, rows={len(df)}, cols={list(df.columns)}")
     return path
+
+
+def write_last_sync():
+    path = os.path.join(OUTPUT_DIR, "last_sync.txt")
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+
+    with open(path, "w", encoding="utf-8") as f:
+        f.write(f"last_sync_at={datetime.now(ZoneInfo(SYNC_TZ)).isoformat()}\n")
+        f.write(f"sync_tz={SYNC_TZ}\n")
+        f.write(f"target_date={get_target_date()}\n")
+
+    log(f"Saved -> {path}")
 
 
 def load_sales_map_from_sheets(token, sheets):
@@ -746,29 +756,21 @@ def transform_calls(full_df):
         "客户信息": "customer_raw",
         "用户": "customer_raw",
         "学员": "customer_raw",
-
         "销售名称": "sales_name",
         "坐席": "sales_name",
         "销售": "sales_name",
-
         "坐席号": "seat_id",
         "坐席工号": "seat_id",
-
         "外呼时间": "outbound_time",
         "通话时间": "outbound_time",
         "拨打时间": "outbound_time",
-
-        # 不再映射到 outbound_time，避免和“外呼时间”重复列冲突
         "双方接听时间": "answered_time",
-
         "接听状态": "call_status",
         "接通状态": "call_status",
         "通话状态": "call_status",
-
         "通话时长": "call_duration_sec",
         "响铃时长": "ring_duration_sec",
         "接通时长": "connect_time_sec",
-
         "录音": "recording_url",
         "录音链接": "recording_url",
     }
@@ -911,6 +913,8 @@ def main():
     for keyword in ["分配记录", "课程记录", "订单记录", "通话记录"]:
         output = sync_one(token, sheets, keyword, sales_map)
         outputs.append(output)
+
+    write_last_sync()
 
     log("\n========== SYNC DONE ==========")
     log(pretty(outputs))
