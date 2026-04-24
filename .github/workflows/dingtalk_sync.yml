@@ -5,7 +5,9 @@ on:
     - cron: '0 1,9 * * *' # 北京时间 9:00 和 17:00
   workflow_dispatch:      # 允许手动触发
 
-# 关键：赋予 Action 写入仓库的权限
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 permissions:
   contents: write
 
@@ -13,33 +15,42 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # 升级至 v4 以解决 Node.js 20 弃用警告
-      - uses: actions/checkout@v4 
-      
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # 完整拉取历史，防止推送冲突
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.9'
-          
+
       - name: Install dependencies
         run: pip install requests pandas
-        
+
       - name: Run sync logic
         env:
           DING_APP_KEY: ${{ secrets.DING_APP_KEY }}
           DING_APP_SECRET: ${{ secrets.DING_APP_SECRET }}
           DING_OPERATOR_ID: ${{ secrets.DING_OPERATOR_ID }}
         run: python ai-reports/scripts/sync_logic.py
-        
-      - name: Commit and Push
+
+      - name: Force Commit and Push
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add public/data/*.csv
-          # 检查是否有变化，没变化就不提交
+          
+          # 1. 强制添加所有 CSV，无视之前的索引状态
+          git add -f public/data/*.csv
+          
+          # 2. 检查是否有实质变化
           if git diff --staged --quiet; then
-            echo "No changes to commit"
+            echo "⚠️ 数据内容无变化，为了强制刷新，我们将触碰一下文件"
+            date > public/data/last_sync.txt
+            git add public/data/last_sync.txt
+            git commit -m "auto: 强制触碰刷新数据状态 [skip ci]"
           else
-            git commit -m "auto: 自动同步业务数据 [skip ci]"
-            git push
+            git commit -m "auto: 自动更新业务数据 [skip ci]"
           fi
+          
+          # 3. 强制推送，确保覆盖所有之前的混乱
+          git push origin main
