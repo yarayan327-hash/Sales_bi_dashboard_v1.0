@@ -2,8 +2,8 @@ name: DingTalk Auto Sync
 
 on:
   schedule:
-    - cron: '0 1,9 * * *' # 每天北京时间 9:00 和 17:00
-  workflow_dispatch:      # 支持手动触发
+    - cron: '0 1,9 * * *'
+  workflow_dispatch:      # 必须手动触发来测试
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -16,8 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -34,16 +32,11 @@ jobs:
           DING_OPERATOR_ID: ${{ secrets.DING_OPERATOR_ID }}
         run: python ai-reports/scripts/sync_logic.py
 
-      - name: Force Commit and Push
+      - name: Commit and Push
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          
-          # 强制标记 CSV 文件为已修改
-          git add -f public/data/*.csv
-          
-          # 即使内容一模一样也强制生成提交
-          git commit --allow-empty -m "auto: 物理覆盖最新业务数据 [skip ci]"
-          
-          # 强制推送到主分支
+          git add public/data/*.csv
+          # 强制创建一个提交，哪怕 Git 觉得内容没变
+          git commit --allow-empty -m "auto: 强制刷新钉钉最新数据 [skip ci]"
           git push origin main
