@@ -1,0 +1,32 @@
+name: DingTalk Auto Sync
+
+on:
+  schedule:
+    - cron: '0 1,9 * * *' # 北京时间 9:00 和 17:00 自动跑
+  workflow_dispatch:      # 允许你在 GitHub 页面上点按钮手动执行一次
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3 # 检出代码
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - name: Install dependencies
+        run: pip install requests pandas
+      - name: Run sync logic
+        env:
+          DING_APP_KEY: ${{ secrets.DING_APP_KEY }}
+          DING_APP_SECRET: ${{ secrets.DING_APP_SECRET }}
+          DING_OPERATOR_ID: ${{ secrets.DING_OPERATOR_ID }}
+        # 核心：精准指引到 ai-reports 下的脚本
+        run: python ai-reports/scripts/sync_logic.py
+      - name: Commit and Push
+        run: |
+          git config --global user.name "GitHub Action Bot"
+          git config --global user.email "action@github.com"
+          git add public/data/*.csv
+          git commit -m "auto: 自动同步业务数据至 public/data" || echo "No changes"
+          git push
