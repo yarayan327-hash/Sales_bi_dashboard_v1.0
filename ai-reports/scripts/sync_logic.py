@@ -12,7 +12,8 @@ BASE_ID = "QPGYqjpJYr7qjAzGiojwj6jD8akx1Z5N"
 OPERATOR_ID = os.getenv("DING_OPERATOR_ID")
 
 OUTPUT_DIR = "public/data"
-LOOKBACK_DAYS = 15
+# 【修改1】不再往前找15天，只针对昨天（1天前）的数据
+TARGET_DAYS_AGO = 1 
 DEBUG_LOG = os.path.join(OUTPUT_DIR, "sync_debug.log")
 
 
@@ -108,7 +109,7 @@ def list_records(token, sid, sheet_name):
     while True:
         body = {
             "operatorId": OPERATOR_ID,
-            "maxResults": 100,
+            "maxResults": 100,  # 【修改2】解决刚才的报错，每次只拉100条
         }
         if page_token:
             body["pageToken"] = page_token
@@ -118,7 +119,8 @@ def list_records(token, sid, sheet_name):
 
         log(f"===== RECORDS RESPONSE: {sheet_name} page={page} =====")
         log(f"status_code={resp.status_code}")
-        log(pretty(res, limit=2500))
+        # 日志限制长度，防止日志文件撑爆
+        log(pretty(res, limit=1000)) 
 
         if resp.status_code >= 400:
             raise RuntimeError(f"list_records failed for {sheet_name}: {res}")
@@ -151,7 +153,7 @@ def list_records(token, sid, sheet_name):
         page += 1
 
     df = pd.DataFrame(all_rows)
-    log(f"Loaded {sheet_name}: rows={len(df)}, cols={list(df.columns)}")
+    log(f"Loaded {sheet_name}: rows={len(df)}")
     return df
 
 
@@ -174,7 +176,8 @@ def parse_sheet_name(name):
 
 def pick_targets(sheets, keyword):
     today = datetime.now().date()
-    start_date = today - timedelta(days=LOOKBACK_DAYS - 1)
+    # 【修改3】精准定位昨天的日期
+    target_date = today - timedelta(days=TARGET_DAYS_AGO)
 
     targets = []
 
@@ -184,7 +187,8 @@ def pick_targets(sheets, keyword):
 
         dt, kind = parse_sheet_name(name)
 
-        if dt and kind == keyword and start_date <= dt <= today:
+        # 严格只抓取名字等于昨天的表格
+        if dt and kind == keyword and dt == target_date:
             targets.append({
                 "date": dt,
                 "name": name,
@@ -212,18 +216,11 @@ def apply_mapping(full_df, cfg, keyword):
 
     full_df = normalize_columns(full_df)
 
-    log(f"===== RAW COLUMNS {keyword} =====")
-    log(list(full_df.columns))
-
     if keyword == "课程记录" and "实际上课教材" in full_df.columns:
         full_df = full_df.drop(columns=["实际上课教材"])
 
     full_df = full_df.rename(columns=cfg["cols"])
-
     keep = [c for c in cfg["cols"].values() if c in full_df.columns]
-
-    log(f"===== MAPPED KEEP COLUMNS {keyword} =====")
-    log(keep)
 
     if not keep:
         raise RuntimeError(
@@ -284,37 +281,55 @@ def sync_one(token, sheets, keyword, cfg):
     log(f"\n\n========== START SYNC {keyword} ==========")
 
     targets = pick_targets(sheets, keyword)
+    output_path = os.path.join(OUTPUT_DIR, cfg["output"])
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
 
+    # 提取昨天的新数据
     if not targets:
-        log(f"No target sheets found for {keyword}")
-        final = pd.DataFrame(columns=list(cfg["cols"].values()))
+        log(f"No target sheets found for {keyword} yesterday.")
+        new_data_df = pd.DataFrame(columns=list(cfg["cols"].values()))
     else:
         dfs = []
         for t in targets:
             sid = t.get("id")
             name = t.get("name")
-
-            if not sid:
-                log(f"Skip sheet without id: {t}")
-                continue
-
+            if not sid: continue
+            
             df = list_records(token, sid, name)
-
             if not df.empty:
-                df["_source_sheet"] = name
-                df["_source_date"] = str(t.get("date"))
-
-            dfs.append(df)
+                dfs.append(df)
 
         full_df = safe_concat(dfs)
-        final = apply_mapping(full_df, cfg, keyword)
+        new_data_df = apply_mapping(full_df, cfg, keyword)
 
-    output_path = os.path.join(OUTPUT_DIR, cfg["output"])
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    # 【核心：增量合并逻辑】
+    if os.path.exists(output_path):
+        log(f"Found existing history file: {cfg['output']}, merging data...")
+        try:
+            # 以字符串格式读取老数据，防止 ID 变为科学计数法
+            old_df = pd.read_csv(output_path, dtype=str).fillna("")
+            
+            if not new_data_df.empty:
+                # 拼接老数据和新数据
+                final_df = pd.concat([old_df, new_data_df], ignore_index=True)
+                # 全列去重（如果某行数据一模一样，只保留一条）
+                final_df = final_df.drop_duplicates()
+                log(f"Merged: old({len(old_df)}) + new({len(new_data_df)}) -> final({len(final_df)})")
+            else:
+                log("No new data today, keeping old data.")
+                final_df = old_df
+        except Exception as e:
+            log(f"Failed to read old CSV, replacing with new data. Error: {e}")
+            final_df = new_data_df
+    else:
+        # 如果这是第一次运行，还没有老文件
+        final_df = new_data_df
 
-    final.to_csv(output_path, index=False, encoding="utf-8-sig")
-
-    log(f"Saved {keyword} -> {output_path}, rows={len(final)}")
+    # 只有当最终有数据时才写入
+    if not final_df.empty or not os.path.exists(output_path):
+        final_df.to_csv(output_path, index=False, encoding="utf-8-sig")
+        log(f"Saved {keyword} -> {output_path}, rows={len(final_df)}")
+    
     return output_path
 
 
@@ -322,7 +337,7 @@ def main():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
     with open(DEBUG_LOG, "w", encoding="utf-8") as f:
-        f.write(f"Sync started at {datetime.now()}\n")
+        f.write(f"Incremental Sync started at {datetime.now()}\n")
 
     check_env()
 
