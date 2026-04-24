@@ -5,6 +5,10 @@ on:
     - cron: '0 1,9 * * *'
   workflow_dispatch: 
 
+# 解决 Node 24 警告的关键环境变量
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 permissions:
   contents: write
 
@@ -33,13 +37,8 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          
-          # 调试：在日志里列出文件，确保真的生成了
-          ls -lh public/data/
-          
           git add public/data/*.csv
           git add public/data/last_sync.txt
-          
-          # 哪怕数据没变，也要强制 Commit
-          git commit --allow-empty -m "auto: 物理同步钉钉数据 [skip ci]"
+          # 强制创建一个提交，绕过 Git 的缓存判断
+          git commit --allow-empty -m "auto: 解决Node版本警告并刷新真实数据 [skip ci]"
           git push origin main
