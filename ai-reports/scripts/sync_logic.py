@@ -28,65 +28,30 @@ OUTPUT_FILES = {
 
 FINAL_COLS = {
     "分配记录": [
-        "user_id",
-        "sales_id",
-        "sales_name",
-        "sales_group",
-        "assigned_time",
-        "lead_source",
-        "assign_count",
-        "is_reassigned",
-        "first_assigned_time",
-        "latest_assigned_time",
+        "user_id", "sales_id", "sales_name", "sales_group",
+        "assigned_time", "lead_source",
+        "assign_count", "is_reassigned",
+        "first_assigned_time", "latest_assigned_time",
         "reassign_sequence",
     ],
     "课程记录": [
-        "id",
-        "course_name",
-        "start_time_bj",
-        "class_start_ksa",
-        "booking_type",
-        "course_type",
-        "teacher_name",
-        "teacher_id",
-        "student_name",
-        "user_id",
-        "booking_id_51",
-        "merithub_id",
-        "class_status",
-        "textbook",
-        "booked_at",
-        "agent_id",
-        "duration_minutes",
-        "is_ordered",
+        "id", "course_name", "start_time_bj", "class_start_ksa",
+        "booking_type", "course_type", "teacher_name", "teacher_id",
+        "student_name", "user_id", "booking_id_51", "merithub_id",
+        "class_status", "textbook", "booked_at", "agent_id",
+        "duration_minutes", "is_ordered",
     ],
     "订单记录": [
-        "order_id",
-        "user_name",
-        "user_id",
-        "sales_name_raw",
-        "sales_group",
-        "original_price",
-        "paid_amount",
-        "package_name",
-        "order_time",
-        "payment_method",
-        "pay_currency",
-        "discount_amount",
-        "order_status",
-        "processed_time",
+        "order_id", "user_name", "user_id", "sales_name_raw",
+        "sales_group", "original_price", "paid_amount", "package_name",
+        "order_time", "payment_method", "pay_currency",
+        "discount_amount", "order_status", "processed_time",
         "search_keyword",
     ],
     "通话记录": [
-        "user_id",
-        "sales_name",
-        "seat_id",
-        "outbound_time",
-        "connect_time_sec",
-        "call_duration_sec",
-        "ring_duration_sec",
-        "call_status",
-        "recording_url",
+        "user_id", "sales_name", "seat_id", "outbound_time",
+        "connect_time_sec", "call_duration_sec", "ring_duration_sec",
+        "call_status", "recording_url",
     ],
 }
 
@@ -158,30 +123,48 @@ def get_sheets(token):
     headers = {"x-acs-dingtalk-access-token": token}
     params = {"operatorId": OPERATOR_ID}
 
-    resp = requests.get(url, headers=headers, params=params, timeout=30)
-    res = safe_response_json(resp, context="get_sheets")
+    last_error = None
 
-    log("===== SHEETS RESPONSE =====")
-    log(f"status_code={resp.status_code}")
-    log(pretty(res))
+    for attempt in range(1, 6):
+        try:
+            resp = requests.get(url, headers=headers, params=params, timeout=60)
+            res = safe_response_json(resp, context=f"get_sheets attempt={attempt}")
 
-    if resp.status_code >= 400:
-        raise RuntimeError(f"get_sheets failed: {res}")
+            log("===== SHEETS RESPONSE =====")
+            log(f"attempt={attempt}")
+            log(f"status_code={resp.status_code}")
+            log(pretty(res))
 
-    sheets = (
-        res.get("value")
-        or res.get("sheets")
-        or res.get("items")
-        or res.get("data", {}).get("value")
-        or res.get("data", {}).get("sheets")
-        or res.get("data", {}).get("items")
-        or []
-    )
+            if resp.status_code in [429, 500, 502, 503, 504]:
+                last_error = RuntimeError(f"get_sheets temporary failed: {res}")
+                log(f"Retry get_sheets because temporary error: {res}")
+                time.sleep(3 * attempt)
+                continue
 
-    if not sheets:
-        raise RuntimeError(f"No sheets found. Raw response: {res}")
+            if resp.status_code >= 400:
+                raise RuntimeError(f"get_sheets failed: {res}")
 
-    return sheets
+            sheets = (
+                res.get("value")
+                or res.get("sheets")
+                or res.get("items")
+                or res.get("data", {}).get("value")
+                or res.get("data", {}).get("sheets")
+                or res.get("data", {}).get("items")
+                or []
+            )
+
+            if not sheets:
+                raise RuntimeError(f"No sheets found. Raw response: {res}")
+
+            return sheets
+
+        except Exception as e:
+            last_error = e
+            log(f"Retry get_sheets: attempt={attempt}, error={e}")
+            time.sleep(3 * attempt)
+
+    raise RuntimeError(f"get_sheets failed after retries: {last_error}")
 
 
 def list_records(token, sid, sheet_name):
@@ -298,7 +281,6 @@ def collapse_duplicate_columns(df):
     for col in duplicated_cols:
         same_cols = df.loc[:, df.columns == col]
         merged = same_cols.bfill(axis=1).iloc[:, 0]
-
         keep_cols = [c for c in df.columns if c != col]
         df = df.loc[:, keep_cols]
         df[col] = merged
@@ -823,8 +805,9 @@ def merge_existing_and_new(keyword, new_df):
 
     old_df = read_existing_csv(file_name, final_cols)
 
-    if new_df.empty and old_df.empty:
-        return pd.DataFrame(columns=final_cols)
+    if new_df.empty:
+        log(f"New data is empty for {keyword}. Keep existing CSV.")
+        return old_df
 
     combined = pd.concat([old_df, new_df], ignore_index=True)
     combined = collapse_duplicate_columns(combined)
@@ -837,6 +820,10 @@ def merge_existing_and_new(keyword, new_df):
 
     final = apply_final_dedup(keyword, combined)
 
+    if final.empty and not old_df.empty:
+        log(f"Final data became empty for {keyword}. Keep existing CSV to prevent data loss.")
+        return old_df
+
     for col in final_cols:
         if col not in final.columns:
             final[col] = ""
@@ -847,12 +834,12 @@ def merge_existing_and_new(keyword, new_df):
 def sync_one(token, sheets, keyword, sales_map):
     log(f"\n\n========== START SYNC {keyword} ==========")
 
+    old_df = read_existing_csv(OUTPUT_FILES[keyword], FINAL_COLS[keyword])
     targets = pick_target_sheet(sheets, keyword)
 
     if not targets:
         log(f"No T-1 target sheet found for {keyword}. Keep existing CSV unchanged.")
-        existing = read_existing_csv(OUTPUT_FILES[keyword], FINAL_COLS[keyword])
-        save_csv(existing, OUTPUT_FILES[keyword])
+        save_csv(old_df, OUTPUT_FILES[keyword])
         return os.path.join(OUTPUT_DIR, OUTPUT_FILES[keyword])
 
     dfs = []
@@ -876,6 +863,11 @@ def sync_one(token, sheets, keyword, sales_map):
     valid_dfs = [df for df in dfs if df is not None and not df.empty]
     full_df = pd.concat(valid_dfs, ignore_index=True) if valid_dfs else pd.DataFrame()
 
+    if full_df.empty:
+        log(f"Raw data is empty for {keyword}. Keep existing CSV and skip overwrite.")
+        save_csv(old_df, OUTPUT_FILES[keyword])
+        return os.path.join(OUTPUT_DIR, OUTPUT_FILES[keyword])
+
     if keyword == "分配记录":
         new_df = transform_leads(full_df, sales_map)
     elif keyword == "课程记录":
@@ -887,7 +879,17 @@ def sync_one(token, sheets, keyword, sales_map):
     else:
         raise RuntimeError(f"Unknown keyword: {keyword}")
 
+    if new_df.empty:
+        log(f"Mapped data is empty for {keyword}. Keep existing CSV and skip overwrite.")
+        save_csv(old_df, OUTPUT_FILES[keyword])
+        return os.path.join(OUTPUT_DIR, OUTPUT_FILES[keyword])
+
     final = merge_existing_and_new(keyword, new_df)
+
+    if final.empty and not old_df.empty:
+        log(f"Final data became empty for {keyword}. Keep existing CSV to prevent data loss.")
+        save_csv(old_df, OUTPUT_FILES[keyword])
+        return os.path.join(OUTPUT_DIR, OUTPUT_FILES[keyword])
 
     output_path = save_csv(final, OUTPUT_FILES[keyword])
     return output_path
