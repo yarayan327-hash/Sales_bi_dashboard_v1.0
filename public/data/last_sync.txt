@@ -1,3 +1,3 @@
-last_sync_at=2026-04-26T07:23:29.680213+03:00
+last_sync_at=2026-04-26T12:48:28.760571+03:00
 sync_tz=Asia/Riyadh
 target_date=2026-04-25
