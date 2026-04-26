@@ -1,4 +1,4 @@
-id,course_name,start_time_bj,class_start_ksa,booking_type,course_type,teacher_name,teacher_id,student_name,user_id,booking_id_51,merithub_id,class_status,textbook,booked_at,agent_id,duration_minutes,is_ordered
+﻿id,course_name,start_time_bj,class_start_ksa,booking_type,course_type,teacher_name,teacher_id,student_name,user_id,booking_id_51,merithub_id,class_status,textbook,booked_at,agent_id,duration_minutes,is_ordered
 4225,student-culture and interests-A day of yours-,2026-04-28 20:00 ~ 20:30,2026-04-28 15:00 ~ 15:30,自约,free,,0,student,63022670,529250492,d7mrh4krtl0pvidl74sg,on,culture and interests-A day of yours,2026-04-26 15:02:37,4123057,,free
 4237,student--,2026-04-28 20:00 ~ 20:30,2026-04-28 15:00 ~ 15:30,自约,free,,0,student,63025662,529289940,d7mvrj4rtl0pvidli3a0,on,related to exams you are facing now-phonetic,2026-04-26 19:57:59,4123056,,free
 4224,student-culture and interests-A day of yours-,2026-04-28 19:00 ~ 19:30,2026-04-28 14:00 ~ 14:30,自约,free,,0,student,63022465,529246098,d7mqpf4rtl0pvidl49j0,cancel,culture and interests-A day of yours,2026-04-26 14:12:06,4121807,,free
