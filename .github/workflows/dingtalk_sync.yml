@@ -41,4 +41,5 @@ jobs:
           git add public/data/last_sync.txt
           # 强制创建一个提交，绕过 Git 的缓存判断
           git commit --allow-empty -m "auto: 解决Node版本警告并刷新真实数据 [skip ci]"
-          git push origin main
+          git pull --rebase origin main
+          git push origin main origin main
