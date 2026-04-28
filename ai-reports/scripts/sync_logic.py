@@ -5,8 +5,7 @@ import os
 import json
 import traceback
 import time
-from datetime import datetime, timedelta
-from zoneinfo import ZoneInfo
+from datetime import datetime, timedelta, timezone
 
 APP_KEY = os.getenv("DING_APP_KEY")
 APP_SECRET = os.getenv("DING_APP_SECRET")
@@ -17,7 +16,8 @@ OUTPUT_DIR = "public/data"
 DEBUG_LOG = os.path.join(OUTPUT_DIR, "sync_debug.log")
 MAX_RESULTS = 100
 SYNC_TZ = os.getenv("SYNC_TZ", "Asia/Riyadh")
-MAX_PAGES_PER_SHEET = 50
+SYNC_FIXED_TZ = timezone(timedelta(hours=int(os.getenv("SYNC_TZ_OFFSET_HOURS", "3"))))
+MAX_PAGES_PER_SHEET = 300
 
 OUTPUT_FILES = {
     "分配记录": "fact_leads.csv",
@@ -96,7 +96,7 @@ def check_env():
 
 
 def get_target_date():
-    return datetime.now(ZoneInfo(SYNC_TZ)).date() - timedelta(days=1)
+    return datetime.now(SYNC_FIXED_TZ).date() - timedelta(days=1)
 
 
 def get_token():
@@ -120,7 +120,10 @@ def get_token():
 
 def get_sheets(token):
     url = f"https://api.dingtalk.com/v1.0/notable/bases/{BASE_ID}/sheets"
-    headers = {"x-acs-dingtalk-access-token": token}
+    headers = {
+        "x-acs-dingtalk-access-token": token,
+        "x-acs-dingtalk-impersonate-id": os.getenv("DING_IMPERSONATE_ID", os.getenv("DING_OPERATOR_ID", "")),
+    }
     params = {"operatorId": OPERATOR_ID}
 
     last_error = None
@@ -181,10 +184,11 @@ def list_records(token, sid, sheet_name):
 
     while True:
         if page > MAX_PAGES_PER_SHEET:
-            raise RuntimeError(
-                f"Pagination exceeded MAX_PAGES_PER_SHEET={MAX_PAGES_PER_SHEET}. "
+            log(
+                f"Stop pagination because page exceeded MAX_PAGES_PER_SHEET={MAX_PAGES_PER_SHEET}. "
                 f"sheet={sheet_name}, last_page_token={page_token}"
             )
+            break
 
         body = {
             "operatorId": OPERATOR_ID,
@@ -387,7 +391,7 @@ def write_last_sync():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
     with open(path, "w", encoding="utf-8") as f:
-        f.write(f"last_sync_at={datetime.now(ZoneInfo(SYNC_TZ)).isoformat()}\n")
+        f.write(f"last_sync_at={datetime.now(SYNC_FIXED_TZ).isoformat()}\n")
         f.write(f"sync_tz={SYNC_TZ}\n")
         f.write(f"target_date={get_target_date()}\n")
 
@@ -899,7 +903,7 @@ def main():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
     with open(DEBUG_LOG, "w", encoding="utf-8") as f:
-        f.write(f"Sync started at {datetime.now(ZoneInfo(SYNC_TZ))}\n")
+        f.write(f"Sync started at {datetime.now(SYNC_FIXED_TZ)}\n")
         f.write(f"SYNC_TZ={SYNC_TZ}\n")
         f.write(f"TARGET_DATE={get_target_date()}\n")
 
