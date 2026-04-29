@@ -1,5 +1,7 @@
 ﻿order_id,user_name,user_id,sales_name_raw,sales_group,original_price,paid_amount,package_name,order_time,payment_method,pay_currency,discount_amount,order_status,processed_time,search_keyword
-32521681,Isaac,63019360,EGCC-tasneemmahmoud,前端销售部002组,2396.00(USD),1080.00(USD),Development Package (50),2026-04-27 22:33:34,,SAR,4935.00(SAR),已成功,2026-04-27 23:08:38,
+<<<<<<< HEAD,,,,,,,,,,,,,,
+=======,,,,,,,,,,,,,,
+>>>>>>> aa20e3a (manual: add offline bank transfer order 32524657),,,,,,,,,,,,,,
 31797188,student,60216099,51habiba.hassan,前端销售部001组,319,319,,2025/10/13 18:56,网银支付,SAR,0.00(SAR),网银支付,2025/10/13 19:27,
 3758029,Sadeem,60821059,51habiba.hassan,前端销售部001组,599,599,,2025/10/29 3:33,,SAR,,,2025/10/29 4:31,
 31864686,student,60289426,51habiba.hassan,前端销售部001组,319,319,,2025/10/30 17:39,,SAR,,,2025/10/30 20:02,
@@ -80,8 +82,8 @@
 32284432,student,62528617,EGCC-maiwaheed,前端销售部002组,1198.00(USD),599,Ramadan Special Offer-Super foreign teacher course package-50,2026/2/15 17:50,,SAR,2246.00(SAR),已成功,2026/2/15 17:55,
 32285712,Fatima,60404017,51habiba.hassan,前端销售部001组,1198.00(USD),600,Basics Package (25),2026/2/16 15:46,,SAR,2243.00(SAR),已成功,2026/2/16 23:13,
 32287335,Raghad,62432506,EGCC-eman.amr,前端销售部001组,1680.00(USD),840,Ramadan Special Offer-Comprehensive Learning Course-45,2026/2/17 18:27,,SAR,3150.00(SAR),已成功,2026/2/17 18:29,
-32287811,student,62527178,51nadamuhammad,前端销售部002组,1198.00(USD),599,Ramadan Special Offer-Super foreign teacher course package-50,2026/2/17 20:14,,SAR,2246.00(SAR),已成功,2026/2/17 20:19,
 32287556,student,62540026,51habiba.hassan,前端销售部001组,1680.00(USD),840,Ramadan Special Offer-Comprehensive Learning Course-45,2026/2/17 20:14,拆单支付,SAR,3150.00(SAR),未处理,2026/2/18 23:12,
+32287811,student,62527178,51nadamuhammad,前端销售部002组,1198.00(USD),599,Ramadan Special Offer-Super foreign teacher course package-50,2026/2/17 20:14,,SAR,2246.00(SAR),已成功,2026/2/17 20:19,
 32287863,student,62511461,51hassan02,前端销售部001组,1198.00(USD),600,Basics Package (25),2026/2/17 21:48,,SAR,2243.00(SAR),已成功,2026/2/17 22:04,
 32288066,student,62510997,51hassan02,前端销售部001组,1198.00(USD),600,Basics Package (25),2026/2/18 14:39,,SAR,2243.00(SAR),已成功,2026/2/18 15:06,
 32288726,student,62544022,EGCC-maiwaheed,前端销售部002组,1198.00(USD),600,Basics Package (25),2026/2/18 17:23,,SAR,2243.00(SAR),已成功,2026/2/22 23:18,
@@ -111,8 +113,5 @@
 32477197,Hoor,62897615,51nadamuhammad,前端销售部002组,1198.00(USD),599,Ramadan Special Offer-Super foreign teacher course package-50,2026/4/14 18:14,,SAR,2246.00(SAR),已成功,2026/4/14 20:51,
 32493669,student,62970298,EGCC-eman.amr,前端销售部001组,1680.00(USD),840,Ramadan Special Offer-Comprehensive Learning Course-45,2026/4/19 18:58,,SAR,3150.00(SAR),已成功,2026/4/19 19:07,
 32494107,student,62942855,51habiba.hassan,前端销售部001组,1680.00(USD),840,Ramadan Special Offer-Comprehensive Learning Course-45,2026/4/19 19:21,,SAR,3150.00(SAR),已成功,2026/4/19 19:25,
-<<<<<<< HEAD,,,,,,,,,,,,,,
-=======,,,,,,,,,,,,,,
 32521681,Isaac,63019360,EGCC-tasneemmahmoud,前端销售部002组,2396.00(USD),1080.00(USD),Development Package (50),2026-04-27 22:33:34,,SAR,4935.00(SAR),已成功,2026-04-27 23:08:38,
->>>>>>> aa20e3a (manual: add offline bank transfer order 32524657),,,,,,,,,,,,,,
 32524657,student,63037442,EGCC-fatmamohamed,前端销售部002组,1198.00(USD),600,Basics Package (25),2026/4/28 16:25,银行汇款,SAR,2243.00(SAR),处理中,2026/4/28 16:39,offline_bank_transfer
