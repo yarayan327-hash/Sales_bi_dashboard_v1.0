@@ -2,8 +2,8 @@ name: DingTalk Auto Sync
 
 on:
   schedule:
-    # Egypt time Sun-Thu 23:00 = UTC 20:00
-    - cron: "0 20 * * 0-4"
+    # Egypt time Sun-Thu 22:30 = UTC 19:30
+    - cron: "30 19 * * 0-4"
   workflow_dispatch: 
 
 # 解决 Node 24 警告的关键环境变量
