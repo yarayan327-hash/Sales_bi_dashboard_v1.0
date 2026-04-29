@@ -116,11 +116,7 @@ function pickTime(r: any, keys: string[]): string {
 }
 
 function toTimeMs(v: any): number {
-  const s = String(v ?? "").trim();
-  if (!s) return 0;
-  const d = new Date(s.replace(/\//g, "-"));
-  const t = d.getTime();
-  return Number.isFinite(t) ? t : 0;
+  return parseDateTimeMs(v);
 }
 
 function num(v: any): number {
@@ -129,26 +125,54 @@ function num(v: any): number {
   return Number.isFinite(n) ? n : 0;
 }
 
+function bool01(v: boolean): string {
+  return v ? "1" : "0";
+}
+
+function parseDateTimeMs(v: any): number {
+  const s = String(v ?? "").trim();
+  if (!s) return 0;
+
+  const m = s.match(/(\d{4})[-/](\d{1,2})[-/](\d{1,2})(?:[ T](\d{1,2}):(\d{2})(?::(\d{2}))?)?/);
+  if (!m) return 0;
+
+  const y = Number(m[1]);
+  const mo = Number(m[2]) - 1;
+  const d = Number(m[3]);
+  const h = Number(m[4] ?? 0);
+  const mi = Number(m[5] ?? 0);
+  const sec = Number(m[6] ?? 0);
+
+  // 按本地业务时间解析，不使用 JS Date 自动时区漂移
+  return new Date(y, mo, d, h, mi, sec).getTime();
+}
+
 function isConnectedCall(r: any): boolean {
-  const status = pick(r, ["call_status", "接听状态", "answered_status"]).toLowerCase();
-  const duration = num(pick(r, ["call_duration_sec", "通话时长", "call_duration"]));
+  const status = getCallStatus(r).toLowerCase();
+  const duration = callDuration(r);
   return status.includes("双方接通") || status.includes("connected") || duration > 0;
 }
 
 function callDuration(r: any): number {
-  const raw = pick(r, ["call_duration_sec", "通话时长", "call_duration"]);
+  const raw = getCallDurationRaw(r);
   const s = String(raw ?? "").trim();
 
   if (!s) return 0;
 
-  const hms = s.match(/^(\d{1,2}):(\d{2}):(\d{2})$/);
-  if (hms) {
-    const h = Number(hms[1]);
-    const m = Number(hms[2]);
-    const sec = Number(hms[3]);
-    return h * 3600 + m * 60 + sec;
+  // 拒绝日期时间，避免把 2026/4/1 20:29 误解析成通话时长
+  if (/\d{4}[-/]\d{1,2}[-/]\d{1,2}/.test(s)) return 0;
+
+  // 只接受明确的时长格式：00:03:49 或 00:03:49(To. 00:03:49)
+  const embedded = s.match(/(?:^|\s)(\d{1,2}):(\d{2}):(\d{2})(?:\(To\.|\s|$)/);
+  if (embedded) {
+    const h = Number(embedded[1]);
+    const m = Number(embedded[2]);
+    const sec = Number(embedded[3]);
+    const total = h * 3600 + m * 60 + sec;
+    if (total >= 0 && total <= 24 * 3600) return total;
   }
 
+  // 只接受纯数字秒数
   if (/^\d+(\.\d+)?$/.test(s)) {
     const n = Number(s);
     if (Number.isFinite(n) && n >= 0 && n <= 24 * 3600) return n;
@@ -164,6 +188,27 @@ function callSlot(ms: number): string {
   if (h >= 12 && h < 17) return "afternoon";
   if (h >= 17 && h < 22) return "evening";
   return "late";
+}
+
+function getCallTime(r: any): string {
+  // 正常字段：outbound_time
+  // 当前 fact_calls.csv 存在错位：真实外呼时间落在 connect_time_sec
+  return pickTime(r, ["outbound_time", "外呼时间", "通话时间"]) ||
+    pickTime(r, ["connect_time_sec"]);
+}
+
+function getCallStatus(r: any): string {
+  // 正常字段：call_status
+  // 当前错位：真实状态落在 ring_duration_sec
+  return pick(r, ["call_status", "接听状态", "answered_status"]) ||
+    pick(r, ["ring_duration_sec"]);
+}
+
+function getCallDurationRaw(r: any): string {
+  // 正常字段：call_duration_sec
+  // 当前错位：真实通话时长落在 call_status，例如 00:03:49(To. 00:03:49)
+  return pick(r, ["call_duration_sec", "通话时长", "call_duration"]) ||
+    pick(r, ["call_status"]);
 }
 
 function mergeOrders(factOrders: any[], manualOrders: any[]) {
@@ -257,7 +302,7 @@ function main() {
     );
 
     const userCalls = (callMap.get(userId) || []).sort(
-      (a, b) => toTimeMs(pickTime(a, ["outbound_time", "外呼时间", "通话时间"])) - toTimeMs(pickTime(b, ["outbound_time", "外呼时间", "通话时间"]))
+      (a, b) => toTimeMs(getCallTime(a)) - toTimeMs(getCallTime(b))
     );
 
     const userOrders = (orderMap.get(userId) || []).sort(
@@ -292,11 +337,11 @@ function main() {
     const totalConnectedDurationSec = connectedCalls.reduce((sum, r) => sum + callDuration(r), 0);
 
     const callDays = new Set(
-      userCalls.map((r) => normalizeDate(pickTime(r, ["outbound_time", "外呼时间", "通话时间"]))).filter(Boolean)
+      userCalls.map((r) => normalizeDate(getCallTime(r))).filter(Boolean)
     );
 
     const callSlots = new Set(
-      userCalls.map((r) => callSlot(toTimeMs(pickTime(r, ["outbound_time", "外呼时间", "通话时间"])))).filter(Boolean)
+      userCalls.map((r) => callSlot(toTimeMs(getCallTime(r)))).filter(Boolean)
     );
 
     const attendedTimeMs = attendedTrials.length
@@ -304,16 +349,16 @@ function main() {
       : 0;
 
     const postClassEffectiveCalls = attendedTimeMs
-      ? effectiveCalls.filter((r) => toTimeMs(pickTime(r, ["outbound_time", "外呼时间", "通话时间"])) > attendedTimeMs)
+      ? effectiveCalls.filter((r) => toTimeMs(getCallTime(r)) > attendedTimeMs)
       : [];
 
     const postWithin6h = postClassEffectiveCalls.some((r) => {
-      const t = toTimeMs(pickTime(r, ["outbound_time", "外呼时间", "通话时间"]));
+      const t = toTimeMs(getCallTime(r));
       return t > attendedTimeMs && t <= attendedTimeMs + 6 * 3600 * 1000;
     });
 
     const postAfter6h = postClassEffectiveCalls.some((r) => {
-      const t = toTimeMs(pickTime(r, ["outbound_time", "外呼时间", "通话时间"]));
+      const t = toTimeMs(getCallTime(r));
       return t > attendedTimeMs + 6 * 3600 * 1000;
     });
 
@@ -321,7 +366,11 @@ function main() {
     let leadQualityReason = "data_missing_or_insufficient";
     let leadQualityConfidence = "low";
 
-    if (userCalls.length >= 5 && callSlots.size >= 3 && effectiveCalls.length === 0) {
+    if (userOrders.length > 0 || attendedTrials.length > 0 || effectiveCalls.length > 0) {
+      leadQualityCategory = "valid_lead";
+      leadQualityReason = "has_order_attendance_or_effective_call";
+      leadQualityConfidence = "medium";
+    } else if (userCalls.length >= 5 && callSlots.size >= 3 && effectiveCalls.length === 0) {
       leadQualityCategory = "low_quality_lead";
       leadQualityReason = "no_answer_multiple_time_slots";
       leadQualityConfidence = "medium";
@@ -329,10 +378,10 @@ function main() {
       leadQualityCategory = "unknown";
       leadQualityReason = "insufficient_contact_attempts";
       leadQualityConfidence = "low";
-    } else if (effectiveCalls.length > 0 || userTrials.length > 0 || userOrders.length > 0) {
+    } else if (userTrials.length > 0) {
       leadQualityCategory = "valid_lead";
-      leadQualityReason = "has_engagement_or_conversion_signal";
-      leadQualityConfidence = "medium";
+      leadQualityReason = "has_booking_signal";
+      leadQualityConfidence = "low";
     }
 
     const isOrdered = userOrders.length > 0;
@@ -358,17 +407,17 @@ function main() {
       first_assigned_time: pick(firstLead, ["assigned_time", "add_time", "分配时间"]),
 
       assign_count: userLeads.length,
-      is_reassigned: userLeads.length > 1 ? "TRUE" : "FALSE",
+      is_reassigned: bool01(userLeads.length > 1),
       lead_source_raw: pick(currentLead, ["lead_source", "desc", "线索来源", "线索状态"]),
 
-      has_trial_booked: userTrials.length > 0 ? "TRUE" : "FALSE",
+      has_trial_booked: bool01(userTrials.length > 0),
       trial_count: userTrials.length,
       first_trial_time: pick(userTrials[0] || {}, ["class_start_ksa", "start_time_bj", "上课时间（沙特）", "上课时间（北京）"]),
       latest_trial_time: pick(latestTrial, ["class_start_ksa", "start_time_bj", "上课时间（沙特）", "上课时间（北京）"]),
       latest_trial_status: pick(latestTrial, ["class_status", "课程状态"]),
-      is_cancelled: cancelledTrials.length > 0 ? "TRUE" : "FALSE",
-      is_absent: absentTrials.length > 0 ? "TRUE" : "FALSE",
-      is_attended: attendedTrials.length > 0 ? "TRUE" : "FALSE",
+      is_cancelled: bool01(cancelledTrials.length > 0),
+      is_absent: bool01(absentTrials.length > 0),
+      is_attended: bool01(attendedTrials.length > 0),
 
       outbound_call_count: userCalls.length,
       connected_call_count: connectedCalls.length,
@@ -377,14 +426,14 @@ function main() {
       total_connected_duration_sec: totalConnectedDurationSec,
       distinct_call_days: callDays.size,
       distinct_call_time_slots: callSlots.size,
-      first_call_time: pickTime(userCalls[0] || {}, ["outbound_time", "外呼时间", "通话时间"]),
-      last_call_time: pickTime(userCalls[userCalls.length - 1] || {}, ["outbound_time", "外呼时间", "通话时间"]),
+      first_call_time: getCallTime(userCalls[0] || {}),
+      last_call_time: getCallTime(userCalls[userCalls.length - 1] || {}),
       last_call_duration_sec: callDuration(userCalls[userCalls.length - 1] || {}),
 
-      post_class_call_within_6h: postWithin6h ? "TRUE" : "FALSE",
-      post_class_call_after_6h: postAfter6h ? "TRUE" : "FALSE",
+      post_class_call_within_6h: bool01(postWithin6h),
+      post_class_call_after_6h: bool01(postAfter6h),
 
-      is_ordered: isOrdered ? "TRUE" : "FALSE",
+      is_ordered: bool01(isOrdered),
       order_id: pick(latestOrder, ["order_id", "订单号"]),
       order_time: pick(latestOrder, ["order_time", "订单时间"]),
       processed_time: pick(latestOrder, ["processed_time", "处理时间"]),
