@@ -803,11 +803,39 @@ def apply_final_dedup(keyword, df):
     return df
 
 
-def merge_existing_and_new(keyword, new_df):
+def read_existing_for_keyword(keyword, sales_map=None):
     file_name = OUTPUT_FILES[keyword]
+    path = os.path.join(OUTPUT_DIR, file_name)
     final_cols = FINAL_COLS[keyword]
 
-    old_df = read_existing_csv(file_name, final_cols)
+    if not os.path.exists(path):
+        return pd.DataFrame(columns=final_cols)
+
+    try:
+        raw = pd.read_csv(path, dtype=str, encoding="utf-8-sig").fillna("")
+    except Exception:
+        raw = pd.read_csv(path, dtype=str).fillna("")
+
+    raw = normalize_columns(raw)
+    raw = collapse_duplicate_columns(raw)
+
+    # leads 可能是原始钉钉格式：stu_id,new_admin_id,add_time,desc
+    # 也可能是标准看板格式：user_id,sales_id,assigned_time,lead_source
+    # 这里统一走 transform_leads，避免历史底表被 read_existing_csv 丢字段洗空。
+    if keyword == "分配记录":
+        sm = sales_map if sales_map is not None else pd.DataFrame(columns=["sales_id", "sales_group", "sales_name"])
+        return transform_leads(raw, sm)
+
+    for col in final_cols:
+        if col not in raw.columns:
+            raw[col] = ""
+
+    return raw[final_cols].fillna("").astype(str)
+
+
+def merge_existing_and_new(keyword, new_df, sales_map=None):
+    final_cols = FINAL_COLS[keyword]
+    old_df = read_existing_for_keyword(keyword, sales_map=sales_map)
 
     if new_df.empty:
         log(f"New data is empty for {keyword}. Keep existing CSV.")
@@ -888,7 +916,7 @@ def sync_one(token, sheets, keyword, sales_map):
         save_csv(old_df, OUTPUT_FILES[keyword])
         return os.path.join(OUTPUT_DIR, OUTPUT_FILES[keyword])
 
-    final = merge_existing_and_new(keyword, new_df)
+    final = merge_existing_and_new(keyword, new_df, sales_map=sales_map)
 
     if final.empty and not old_df.empty:
         log(f"Final data became empty for {keyword}. Keep existing CSV to prevent data loss.")
