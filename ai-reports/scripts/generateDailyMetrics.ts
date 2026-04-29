@@ -102,6 +102,32 @@ function rate(a: number, b: number): number {
   return Number((a / b).toFixed(4));
 }
 
+function buildTeamPk(mtdOrders: any[]) {
+  const map = new Map<string, { sales_group: string; orders: number; gmv: number }>();
+
+  for (const r of mtdOrders) {
+    const group =
+      pick(r, ["sales_group", "业绩归属销售组", "销售组"]) ||
+      "unknown";
+
+    const gmv = normalizeNum(pick(r, ["paid_amount", "定价币种支付金额"]));
+
+    if (!map.has(group)) {
+      map.set(group, {
+        sales_group: group,
+        orders: 0,
+        gmv: 0,
+      });
+    }
+
+    const item = map.get(group)!;
+    item.orders += 1;
+    item.gmv += gmv;
+  }
+
+  return Array.from(map.values()).sort((a, b) => b.gmv - a.gmv);
+}
+
 async function run(queryDate: string) {
   const reportDate = normalizeDate(queryDate);
   const monthStart = `${reportDate.slice(0, 7)}-01`;
@@ -148,7 +174,7 @@ async function run(queryDate: string) {
     0
   );
 
-  const payload = {
+  const dailyMetrics = {
     report_date: reportDate,
     yesterday: {
       leads: yLeads.length,
@@ -197,23 +223,48 @@ async function run(queryDate: string) {
     },
   };
 
+  const reportPayload = {
+    report_date: reportDate,
+    daily_metrics: dailyMetrics,
+    sales_followup: {
+      booking_type_analysis: [],
+      sales_behavior_ranking: [],
+      sales_followup_summary: {},
+      risk_items: [],
+    },
+    team_pk: buildTeamPk(mtdOrders),
+    mtd_gap: {},
+    action_payload: {},
+  };
+
   fs.mkdirSync(OUTPUT_DIR, { recursive: true });
   fs.mkdirSync(LATEST_DIR, { recursive: true });
 
   fs.writeFileSync(
     path.join(OUTPUT_DIR, `daily_metrics_${reportDate}.json`),
-    JSON.stringify(payload, null, 2)
+    JSON.stringify(dailyMetrics, null, 2)
   );
 
   fs.writeFileSync(
     path.join(LATEST_DIR, "daily_metrics.json"),
-    JSON.stringify(payload, null, 2)
+    JSON.stringify(dailyMetrics, null, 2)
+  );
+
+  fs.writeFileSync(
+    path.join(OUTPUT_DIR, `report_payload_${reportDate}.json`),
+    JSON.stringify(reportPayload, null, 2)
+  );
+
+  fs.writeFileSync(
+    path.join(LATEST_DIR, "report_payload.json"),
+    JSON.stringify(reportPayload, null, 2)
   );
 
   console.log(`✅ daily_metrics generated: ${reportDate}`);
   console.log(
-    `MTD leads=${payload.mtd.leads}, trials=${payload.mtd.booked}, attended=${payload.mtd.attended}, orders=${payload.mtd.orders}, gmv=${payload.mtd.gmv}`
+    `MTD leads=${dailyMetrics.mtd.leads}, trials=${dailyMetrics.mtd.booked}, attended=${dailyMetrics.mtd.attended}, orders=${dailyMetrics.mtd.orders}, gmv=${dailyMetrics.mtd.gmv}`
   );
+  console.log(`Team PK groups=${reportPayload.team_pk.length}`);
 }
 
 const target =
