@@ -183,6 +183,12 @@ function mergeOrders(factOrders: any[], manualOrders: any[]) {
 }
 
 function main() {
+  const reportDate = process.argv[2] || new Date().toISOString().slice(0, 10);
+  const monthStart = `${reportDate.slice(0, 7)}-01`;
+  const monthEnd = reportDate;
+
+  const inMonth = (d: string) => d >= monthStart && d <= monthEnd;
+
   const leads = loadCsv("fact_leads.csv");
   const trials = loadCsv("fact_trials.csv");
   const calls = loadCsv("fact_calls.csv");
@@ -236,6 +242,15 @@ function main() {
 
     const firstLead = userLeads[0] || {};
     const currentLead = userLeads[userLeads.length - 1] || {};
+
+    const currentAssignedTime = pick(currentLead, ["assigned_time", "add_time", "分配时间"]);
+    const currentAssignedDate = normalizeDate(currentAssignedTime);
+
+    // 生命周期主表只输出当月进入/分配的线索。
+    // 没有 leads 记录的 user_id 不进入主表，避免 trial/call/order 孤儿数据污染 cohort。
+    if (!currentAssignedDate || !inMonth(currentAssignedDate)) {
+      continue;
+    }
 
     const userTrials = (trialMap.get(userId) || []).sort(
       (a, b) => toTimeMs(pick(a, ["class_start_ksa", "start_time_bj", "上课时间（沙特）", "上课时间（北京）"])) - toTimeMs(pick(b, ["class_start_ksa", "start_time_bj", "上课时间（沙特）", "上课时间（北京）"]))
@@ -329,6 +344,8 @@ function main() {
     else finalStatus = "no_booking";
 
     rows.push({
+      report_date: reportDate,
+      report_month: reportDate.slice(0, 7),
       user_id: userId,
 
       current_cc_id: pick(currentLead, ["sales_id", "new_admin_id", "销售ID"]),
@@ -392,9 +409,8 @@ function main() {
     });
   }
 
-  const today = new Date().toISOString().slice(0, 10);
   const latestPath = path.join(DATA_DIR, "lead_lifecycle_latest.csv");
-  const datedPath = path.join(DATA_DIR, `lead_lifecycle_${today}.csv`);
+  const datedPath = path.join(DATA_DIR, `lead_lifecycle_${reportDate}.csv`);
 
   writeCsv(latestPath, rows);
   writeCsv(datedPath, rows);
