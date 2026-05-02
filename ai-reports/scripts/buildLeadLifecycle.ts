@@ -198,17 +198,28 @@ function getCallTime(r: any): string {
 }
 
 function getCallStatus(r: any): string {
-  // 正常字段：call_status
-  // 当前错位：真实状态落在 ring_duration_sec
-  return pick(r, ["call_status", "接听状态", "answered_status"]) ||
-    pick(r, ["ring_duration_sec"]);
+  // 当前 fact_calls.csv 存在错位：真实状态优先落在 ring_duration_sec
+  const shiftedStatus = pick(r, ["ring_duration_sec"]);
+  if (shiftedStatus && !/^\d{1,2}:\d{2}:\d{2}/.test(shiftedStatus)) {
+    return shiftedStatus;
+  }
+
+  return pick(r, ["call_status", "接听状态", "answered_status"]);
 }
 
 function getCallDurationRaw(r: any): string {
-  // 正常字段：call_duration_sec
-  // 当前错位：真实通话时长落在 call_status，例如 00:03:49(To. 00:03:49)
-  return pick(r, ["call_duration_sec", "通话时长", "call_duration"]) ||
-    pick(r, ["call_status"]);
+  // 当前 fact_calls.csv 存在错位：真实通话时长优先落在 call_status
+  const shiftedDuration = pick(r, ["call_status"]);
+  if (/\d{1,2}:\d{2}:\d{2}/.test(shiftedDuration)) {
+    return shiftedDuration;
+  }
+
+  const normalDuration = pick(r, ["call_duration_sec", "通话时长", "call_duration"]);
+  if (/\d{1,2}:\d{2}:\d{2}/.test(normalDuration) || /^\d+(\.\d+)?$/.test(normalDuration)) {
+    return normalDuration;
+  }
+
+  return "";
 }
 
 function mergeOrders(factOrders: any[], manualOrders: any[]) {
