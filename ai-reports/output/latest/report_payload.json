@@ -1,30 +1,30 @@
 {
-  "report_date": "2026-04-30",
+  "report_date": "2026-05-04",
   "daily_metrics": {
-    "report_date": "2026-04-30",
+    "report_date": "2026-05-04",
     "yesterday": {
       "leads": 0,
-      "booked": 0,
-      "attended": 0,
-      "orders": 1,
-      "gmv": 599,
+      "booked": 64,
+      "attended": 31,
+      "orders": 0,
+      "gmv": 0,
       "booking_rate": 0,
-      "attendance_rate": 0,
+      "attendance_rate": 0.4844,
       "attended_conversion_rate": 0,
       "lead_conversion_rate": 0,
-      "aov": 599
+      "aov": 0
     },
     "mtd": {
-      "leads": 1166,
-      "booked": 1414,
-      "attended": 289,
-      "orders": 19,
-      "gmv": 16716,
-      "booking_rate": 1.2127,
-      "attendance_rate": 0.2044,
-      "attended_conversion_rate": 0.0657,
-      "lead_conversion_rate": 0.0163,
-      "aov": 880
+      "leads": 0,
+      "booked": 153,
+      "attended": 54,
+      "orders": 0,
+      "gmv": 0,
+      "booking_rate": 0,
+      "attendance_rate": 0.3529,
+      "attended_conversion_rate": 0,
+      "lead_conversion_rate": 0,
+      "aov": 0
     },
     "vs_last_month_same_period": {
       "leads_delta": 0,
@@ -36,14 +36,14 @@
     "debug": {
       "source_rows": {
         "leads": 8364,
-        "trials": 4259,
-        "orders": 117
+        "trials": 4437,
+        "orders": 116
       },
       "ranges": {
-        "yesterday": "2026-04-30",
+        "yesterday": "2026-05-04",
         "mtd": {
-          "start": "2026-04-01",
-          "end": "2026-04-30"
+          "start": "2026-05-01",
+          "end": "2026-05-04"
         }
       }
     }
@@ -54,18 +54,7 @@
     "sales_followup_summary": {},
     "risk_items": []
   },
-  "team_pk": [
-    {
-      "sales_group": "前端销售部002组",
-      "orders": 12,
-      "gmv": 9536
-    },
-    {
-      "sales_group": "前端销售部001组",
-      "orders": 7,
-      "gmv": 7180
-    }
-  ],
+  "team_pk": [],
   "mtd_gap": {},
   "action_payload": {}
 }

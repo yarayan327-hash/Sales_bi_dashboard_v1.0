@@ -1,0 +1,97 @@
+{
+  "sync_date_ksa": "2026-05-04",
+  "sync_time_ksa": "2026-05-04 14:33:31",
+  "status": "warning",
+  "bad_count": 4,
+  "checks": [
+    {
+      "table": "public/data/fact_leads.csv",
+      "status": "warning",
+      "reason": "no_current_month_rows_2026-05",
+      "rows": 8364,
+      "month_rows": 0,
+      "columns": [
+        "stu_id",
+        "new_admin_id",
+        "add_time",
+        "desc"
+      ]
+    },
+    {
+      "table": "public/data/fact_trials.csv",
+      "status": "ok",
+      "reason": "",
+      "rows": 4437,
+      "month_rows": 178,
+      "columns": [
+        "id",
+        "course_name",
+        "start_time_bj",
+        "class_start_ksa",
+        "booking_type",
+        "course_type",
+        "teacher_name",
+        "teacher_id",
+        "student_name",
+        "user_id",
+        "booking_id_51",
+        "merithub_id",
+        "class_status",
+        "textbook",
+        "booked_at",
+        "agent_id",
+        "duration_minutes",
+        "is_ordered"
+      ]
+    },
+    {
+      "table": "public/data/fact_orders.csv",
+      "status": "warning",
+      "reason": "no_current_month_rows_2026-05",
+      "rows": 116,
+      "month_rows": 0,
+      "columns": [
+        "order_id",
+        "user_name",
+        "user_id",
+        "sales_name_raw",
+        "sales_group",
+        "original_price",
+        "paid_amount",
+        "package_name",
+        "order_time",
+        "payment_method",
+        "pay_currency",
+        "discount_amount",
+        "order_status",
+        "processed_time",
+        "search_keyword"
+      ]
+    },
+    {
+      "table": "public/data/fact_calls.csv",
+      "status": "warning",
+      "reason": "no_current_month_rows_2026-05",
+      "rows": 5165,
+      "month_rows": 0,
+      "columns": [
+        "user_id",
+        "sales_name",
+        "seat_id",
+        "outbound_time",
+        "connect_time_sec",
+        "call_duration_sec",
+        "ring_duration_sec",
+        "call_status",
+        "recording_url"
+      ]
+    },
+    {
+      "table": "public/data/fact_lead_source.csv",
+      "status": "missing",
+      "reason": "file_not_found",
+      "rows": 0,
+      "month_rows": 0
+    }
+  ]
+}

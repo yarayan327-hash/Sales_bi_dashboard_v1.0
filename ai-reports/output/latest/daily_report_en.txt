@@ -1,27 +1,25 @@
 📊 Daily Sales Report
 
 【MTD Performance】
-Leads: 1166
-Bookings: 1414
-Attendance: 289
-Orders: 19
-GMV: 16716
-Attendance Rate: 20.4%
-Conversion Rate: 6.6%
+Leads: 0
+Bookings: 153
+Attendance: 54
+Orders: 0
+GMV: 0
+Attendance Rate: 35.3%
+Conversion Rate: 0.0%
 
 【Key Diagnosis】
-当前首要问题为：出席不足、转化不足
+当前首要问题为：转化不足、出席不足
 
-1. 出席不足
-MTD 出席率 20.4%，低于健康值 45%。
-- MTD出席 289 / 预约 1414
-- 出席率 20.4%
+1. 转化不足
+MTD 出席转化率 0.0%，低于健康值 18%。
+- MTD订单 0 / 出席 54
+- 出席转化率 0.0%
 
-2. 转化不足
-MTD 出席转化率 6.6%，低于健康值 18%。
-- MTD订单 19 / 出席 289
-- 出席转化率 6.6%
+2. 出席不足
+MTD 出席率 35.3%，低于健康值 45%。
+- MTD出席 54 / 预约 153
+- 出席率 35.3%
 
 【Team PK】
-Team前端销售部002组: 12 orders / GMV 9536
-Team前端销售部001组: 7 orders / GMV 7180

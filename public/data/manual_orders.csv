@@ -1,0 +1,3 @@
+order_id,user_name,user_id,sales_name_raw,sales_group,original_price,paid_amount,package_name,order_time,payment_method,pay_currency,discount_amount,order_status,processed_time,search_keyword
+32526594,student,62528617,EGCC-maiwaheed,前端销售部002组,1198.00(USD),599,Ramadan Special Offer-Super foreign teacher course package-50,2026/4/29 12:07,,SAR,2247,已成功,2026/4/29 20:02,manual_2026_04
+32531982,student,62528617,EGCC-maiwaheed,前端销售部002组,1198.00(USD),599,Ramadan Special Offer-Super foreign teacher course package-50,2026/4/30 13:01,,SAR,2247,已成功,2026/4/30 13:10,manual_2026_04
