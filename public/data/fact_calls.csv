@@ -1,4 +1,4 @@
-﻿user_id,sales_name,seat_id,outbound_time,connect_time_sec,call_duration_sec,ring_duration_sec,call_status,recording_url
+user_id,sales_name,seat_id,outbound_time,connect_time_sec,call_duration_sec,ring_duration_sec,call_status,recording_url
 student (62133156),966****1141,51habiba.hassan,2244(Maqsam),07/02/2026 21:40,,客户未接听,0:00:00,0:00:00
 student (62442011),966****2417,51habiba.hassan,2244(Maqsam),07/02/2026 21:31,,客户未接听,0:00:00,0:00:00
 ZIAD (62232709),966****7118,EGCC-nadahassan,2314(Maqsam),03/02/2026 22:31,03/02/2026 22:31,双方接通,00:03:49(To. 00:03:49),0:00:00
@@ -4964,203 +4964,1093 @@ student (59140650),966****9617,EGCC-tasneemmahmoud,2311(Maqsam),2026/4/20 0:43,2
 student (62953391),966****8340,EGCC-tasneemmahmoud,2311(Maqsam),2026/4/20 0:35,2026/4/20 0:35,双方接通,00:07:20(To. 00:07:20),0:00:00
 student (62944434),966****6731,EGCC-fatmamohamed,2310(Maqsam),2026/4/20 0:34,2026/4/20 0:34,双方接通,00:07:00(To. 00:07:00),0:00:00
 student (62969756),966****3649,EGCC-maiwaheed,2313(Maqsam),2026/4/20 0:34,,用户忙,0:00:00,0:00:00
-58825899,51nadamuhammad,2245(Maqsam),2026-04-26 16:48:52,,0,0,客户未接听,  
-63018161,EGCC-maiwaheed,2313(Maqsam),2026-04-26 16:56:56,,11,0,双方接通,   
-63021235,EGCC-maiwaheed,2313(Maqsam),2026-04-26 16:59:00,,0,0,客户未接听,  
-63010824,EGCC-fatmamohamed,2310(Maqsam),2026-04-26 17:11:00,,0,0,客户未接听,  
-62908828,EGCC-fatmamohamed,2310(Maqsam),2026-04-26 17:11:53,,0,0,in_progress,  
-63010824,EGCC-fatmamohamed,2310(Maqsam),2026-04-26 17:13:13,,0,0,用户忙,  
-63010478,EGCC-eman.amr,2289(Maqsam),2026-04-26 17:20:54,,0,0,客户未接听,  
-63020240,EGCC-eman.amr,2289(Maqsam),2026-04-26 17:23:23,,0,0,in_progress,  
-63021540,51habiba.hassan,2244(Maqsam),2026-04-26 17:24:52,,0,0,用户忙,  
-63021540,51habiba.hassan,2244(Maqsam),2026-04-26 17:25:15,,0,0,用户忙,  
-63021540,51habiba.hassan,2244(Maqsam),2026-04-26 17:25:23,,0,0,用户忙,  
-59371568,51nadamuhammad,2245(Maqsam),2026-04-26 17:27:58,,0,0,客户未接听,  
-62949543,EGCC-maiwaheed,2313(Maqsam),2026-04-26 17:29:24,,0,0,用户忙,  
-63019535,51nadamuhammad,2245(Maqsam),2026-04-26 17:33:22,,0,0,客户未接听,  
-63004253,EGCC-eman.amr,2289(Maqsam),2026-04-26 17:34:28,,0,0,客户未接听,  
-63021173,EGCC-fatmamohamed,2310(Maqsam),2026-04-26 17:42:49,,0,0,用户忙,  
-63018216,EGCC-fatmamohamed,2310(Maqsam),2026-04-26 17:50:45,,0,0,客户未接听,  
-63019691,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-26 17:52:39,,0,0,客户未接听,  
-63024271,EGCC-maiwaheed,2313(Maqsam),2026-04-26 17:54:49,,0,0,用户忙,  
-63019080,EGCC-fatmamohamed,2310(Maqsam),2026-04-26 17:55:39,,1516,0,双方接通,   
-63010926,EGCC-eman.amr,2289(Maqsam),2026-04-26 17:56:23,,0,0,in_progress,  
-63018385,EGCC-maiwaheed,2313(Maqsam),2026-04-26 17:58:21,,0,0,用户忙,  
-63018385,EGCC-maiwaheed,2313(Maqsam),2026-04-26 18:08:16,,0,0,用户忙,  
-63019360,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-26 18:15:41,,117,0,双方接通,   
-63008438,EGCC-maiwaheed,2313(Maqsam),2026-04-26 18:15:56,,0,0,用户忙,  
-63008438,EGCC-maiwaheed,2313(Maqsam),2026-04-26 18:16:08,,0,0,客户未接听,  
-63011276,51habiba.hassan,2244(Maqsam),2026-04-26 18:22:34,,0,0,用户忙,  
-63011276,51habiba.hassan,2244(Maqsam),2026-04-26 18:22:43,,0,0,用户忙,  
-63011276,51habiba.hassan,2244(Maqsam),2026-04-26 18:23:11,,0,0,用户忙,  
-63011276,51habiba.hassan,2244(Maqsam),2026-04-26 18:23:58,,0,0,用户忙,  
-63011276,51habiba.hassan,2244(Maqsam),2026-04-26 18:24:07,,0,0,用户忙,  
-63010164,EGCC-maiwaheed,2313(Maqsam),2026-04-26 18:26:18,,91,0,双方接通,   
-62998129,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-26 18:39:14,,0,0,in_progress,  
-0,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-26 18:42:19,,0,0,客户未接听,  
-58490406,51habiba.hassan,2244(Maqsam),2026-04-26 18:45:45,,0,0,客户未接听,  
-0,51habiba.hassan,2244(Maqsam),2026-04-26 18:51:24,,1583,0,双方接通,   
-62828643,EGCC-maiwaheed,2313(Maqsam),2026-04-26 18:55:53,,0,0,客户未接听,  
-62828643,EGCC-maiwaheed,2313(Maqsam),2026-04-26 18:57:06,,0,0,in_progress,  
-63022458,51nadamuhammad,2245(Maqsam),2026-04-26 19:10:02,,0,0,in_progress,  
-62994994,EGCC-fatmamohamed,2310(Maqsam),2026-04-26 19:10:40,,0,0,客户未接听,  
-63022458,51nadamuhammad,2245(Maqsam),2026-04-26 19:12:21,,0,0,客户未接听,  
-63017073,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-26 19:12:53,,80,0,双方接通,   
-63010645,EGCC-fatmamohamed,2310(Maqsam),2026-04-26 19:13:59,,372,0,双方接通,   
-63024840,EGCC-fatmamohamed,2310(Maqsam),2026-04-26 19:22:15,,0,0,客户未接听,  
-63019691,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-26 19:24:35,,0,0,用户忙,  
-63013257,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-26 19:27:28,,56,0,双方接通,   
-62825978,EGCC-maiwaheed,2313(Maqsam),2026-04-26 19:28:58,,0,0,用户忙,  
-63024774,51habiba.hassan,2244(Maqsam),2026-04-26 19:28:59,,27,0,双方接通,   
-62825978,EGCC-maiwaheed,2313(Maqsam),2026-04-26 19:29:07,,0,0,用户忙,  
-0,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-26 19:29:13,,0,0,用户忙,  
-0,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-26 19:29:57,,0,0,用户忙,  
-63010693,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-26 19:33:31,,332,0,双方接通,   
-62804390,EGCC-maiwaheed,2313(Maqsam),2026-04-26 19:37:59,,0,0,客户未接听,  
-62804390,EGCC-maiwaheed,2313(Maqsam),2026-04-26 19:42:38,,0,0,用户忙,  
-63008438,EGCC-maiwaheed,2313(Maqsam),2026-04-26 19:46:00,,0,0,用户忙,  
-63011175,51habiba.hassan,2244(Maqsam),2026-04-26 19:47:05,,90,0,双方接通,   
-63008471,EGCC-fatmamohamed,2310(Maqsam),2026-04-26 19:47:10,,279,0,双方接通,   
-63024986,EGCC-eman.amr,2289(Maqsam),2026-04-26 19:51:07,,0,0,in_progress,  
-63010723,EGCC-eman.amr,2289(Maqsam),2026-04-26 19:52:39,,0,0,用户忙,  
-58516189,EGCC-maiwaheed,2313(Maqsam),2026-04-26 20:02:14,,0,0,in_progress,  
-63010824,EGCC-fatmamohamed,2310(Maqsam),2026-04-26 20:15:44,,0,0,客户未接听,  
-63024974,51nadamuhammad,2245(Maqsam),2026-04-26 20:23:01,,183,0,双方接通,   
-63004300,51habiba.hassan,2244(Maqsam),2026-04-26 20:34:35,,0,0,客户未接听,  
-63004300,51habiba.hassan,2244(Maqsam),2026-04-26 20:35:18,,58,0,双方接通,   
-63018583,EGCC-fatmamohamed,2310(Maqsam),2026-04-26 20:40:49,,0,0,客户未接听,  
-58490406,51habiba.hassan,2244(Maqsam),2026-04-26 20:42:29,,0,0,客户未接听,  
-63008471,EGCC-fatmamohamed,2310(Maqsam),2026-04-26 20:44:47,,145,0,双方接通,   
-63010643,51habiba.hassan,2244(Maqsam),2026-04-26 20:50:22,,6,0,双方接通,   
-62796982,EGCC-maiwaheed,2313(Maqsam),2026-04-26 20:53:09,,0,0,用户忙,  
-63024986,EGCC-eman.amr,2289(Maqsam),2026-04-26 21:05:32,,703,0,双方接通,   
-63004300,51habiba.hassan,2244(Maqsam),2026-04-26 21:19:24,,450,0,双方接通,   
-63010778,EGCC-maiwaheed,2313(Maqsam),2026-04-26 21:22:21,,20,0,双方接通,   
-62886329,EGCC-fatmamohamed,2310(Maqsam),2026-04-26 21:22:31,,0,0,客户未接听,  
-63005460,EGCC-eman.amr,2289(Maqsam),2026-04-26 21:23:48,,0,0,in_progress,  
-63004300,51habiba.hassan,2244(Maqsam),2026-04-26 21:28:44,,31,0,双方接通,   
-63019310,51nadamuhammad,2245(Maqsam),2026-04-26 21:29:48,,0,0,用户忙,  
-62819557,EGCC-fatmamohamed,2310(Maqsam),2026-04-26 21:35:06,,0,0,客户未接听,  
-63017170,51nadamuhammad,2245(Maqsam),2026-04-26 21:35:07,,8,0,双方接通,   
-62858053,EGCC-eman.amr,2289(Maqsam),2026-04-26 21:42:37,,0,0,用户忙,  
-63007779,51nadamuhammad,2245(Maqsam),2026-04-26 21:43:35,,0,0,用户忙,  
-63007779,51nadamuhammad,2245(Maqsam),2026-04-26 21:44:15,,410,0,双方接通,   
-63010778,EGCC-maiwaheed,2313(Maqsam),2026-04-26 21:54:55,,114,0,双方接通,   
-63018579,EGCC-maiwaheed,2313(Maqsam),2026-04-26 21:58:26,,0,0,客户未接听,  
-0,51nadamuhammad,2245(Maqsam),2026-04-26 22:25:57,,0,0,用户忙,  
-63026872,EGCC-maiwaheed,2313(Maqsam),2026-04-26 22:50:28,,32,0,双方接通,   
-63019691,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-26 23:10:27,,0,0,客户未接听,  
-63010073,EGCC-fatmamohamed,2310(Maqsam),2026-04-26 23:19:30,,0,0,in_progress,  
-63007789,51habiba.hassan,2244(Maqsam),2026-04-26 23:20:08,,0,0,prepped,  
-63010073,EGCC-fatmamohamed,2310(Maqsam),2026-04-26 23:21:21,,0,0,客户未接听,  
-63028040,EGCC-eman.amr,2289(Maqsam),2026-04-26 23:26:30,,0,0,用户忙,  
-63019612,EGCC-fatmamohamed,2310(Maqsam),2026-04-26 23:27:20,,0,0,用户忙,  
-63019429,EGCC-eman.amr,2289(Maqsam),2026-04-26 23:29:28,,76,0,双方接通,   
-63019360,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-26 23:31:33,,404,0,双方接通,   
-63021173,EGCC-fatmamohamed,2310(Maqsam),2026-04-26 23:32:17,,0,0,客户未接听,  
-63014285,EGCC-fatmamohamed,2310(Maqsam),2026-04-26 23:34:27,,0,0,用户忙,  
-63010824,EGCC-fatmamohamed,2310(Maqsam),2026-04-26 23:36:03,,291,0,双方接通,   
-63022670,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-26 23:44:02,,0,0,客户未接听,  
-63014247,EGCC-maiwaheed,2313(Maqsam),2026-04-26 23:49:09,,337,0,双方接通,   
-63004275,EGCC-fatmamohamed,2310(Maqsam),2026-04-26 23:53:55,,0,0,in_progress,  
-63000215,EGCC-fatmamohamed,2310(Maqsam),2026-04-26 23:57:03,,0,0,in_progress,  
-63019251,EGCC-maiwaheed,2313(Maqsam),2026-04-27 00:04:15,,792,0,双方接通,   
-62987400,EGCC-fatmamohamed,2310(Maqsam),2026-04-27 00:08:36,,0,0,in_progress,  
-63021540,51habiba.hassan,2244(Maqsam),2026-04-27 00:18:03,,0,0,用户忙,  
-63018161,EGCC-maiwaheed,2313(Maqsam),2026-04-27 00:19:13,,41,0,双方接通,   
-63002094,EGCC-eman.amr,2289(Maqsam),2026-04-27 00:20:52,,0,0,用户忙,  
-63018896,51habiba.hassan,2244(Maqsam),2026-04-27 00:21:38,,0,0,客户未接听,  
-63008794,EGCC-eman.amr,2289(Maqsam),2026-04-27 00:23:09,,7,0,双方接通,   
-0,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-27 00:25:14,,0,0,客户未接听,  
-62996251,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-27 00:38:12,,0,0,用户忙,  
-62955623,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-27 00:50:35,,0,0,in_progress,  
-63003354,EGCC-eman.amr,2289(Maqsam),2026-04-27 01:00:37,,0,0,客户未接听,  
-62959478,EGCC-fatmamohamed,2310(Maqsam),2026-04-27 01:01:00,,0,0,客户未接听,  
-63011060,EGCC-eman.amr,2289(Maqsam),2026-04-27 01:03:19,,0,0,用户忙,  
-0,51nadamuhammad,2245(Maqsam),2026-04-27 01:10:49,,0,0,用户忙,  
-63019080,EGCC-fatmamohamed,2310(Maqsam),2026-04-27 01:13:13,,0,0,用户忙,  
-63010692,51habiba.hassan,2244(Maqsam),2026-04-27 01:14:47,,0,0,客户未接听,  
-63010894,51habiba.hassan,2244(Maqsam),2026-04-27 01:15:24,,1509,0,双方接通,   
-63029212,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-27 01:23:22,,0,0,用户忙,  
-62985046,EGCC-eman.amr,2289(Maqsam),2026-04-27 01:27:38,,0,0,用户忙,  
-63000763,EGCC-eman.amr,2289(Maqsam),2026-04-27 01:35:54,,0,0,用户忙,  
-63008130,51nadamuhammad,2245(Maqsam),2026-04-27 01:36:36,,0,0,客户未接听,  
-63019512,51habiba.hassan,2244(Maqsam),2026-04-27 01:48:28,,568,0,双方接通,   
-0,51nadamuhammad,2245(Maqsam),2026-04-27 01:50:00,,0,0,in_progress,  
-62997497,EGCC-eman.amr,2289(Maqsam),2026-04-27 01:52:36,,20,0,双方接通,   
-0,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-27 16:44:07,,0,0,客户未接听,  
-0,EGCC-fatmamohamed,2310(Maqsam),2026-04-27 16:49:23,,41,0,双方接通,   
-63029212,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-27 16:56:12,,0,0,用户忙,  
-62332272,EGCC-maiwaheed,2313(Maqsam),2026-04-27 16:59:17,,0,0,用户忙,  
-0,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-27 17:05:05,,7,0,双方接通,   
-62919304,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-27 17:06:24,,0,0,用户忙,  
-63016187,51nadamuhammad,2245(Maqsam),2026-04-27 17:12:27,,933,0,双方接通,   
-63033196,EGCC-fatmamohamed,2310(Maqsam),2026-04-27 17:14:10,,0,0,客户未接听,  
-63019612,EGCC-fatmamohamed,2310(Maqsam),2026-04-27 17:17:28,,0,0,in_progress,  
-63030310,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-27 17:19:08,,16,0,双方接通,   
-63030413,EGCC-maiwaheed,2313(Maqsam),2026-04-27 17:27:48,,5,0,双方接通,   
-63016187,51nadamuhammad,2245(Maqsam),2026-04-27 17:28:25,,111,0,双方接通,   
-0,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-27 17:31:35,,71,0,双方接通,   
-63018161,EGCC-maiwaheed,2313(Maqsam),2026-04-27 17:33:36,,9,0,双方接通,   
-61451414,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-27 17:38:05,,0,0,客户未接听,  
-62349541,EGCC-maiwaheed,2313(Maqsam),2026-04-27 17:46:07,,0,0,客户未接听,  
-0,51nadamuhammad,2245(Maqsam),2026-04-27 17:50:08,,0,0,in_progress,  
-62538531,EGCC-maiwaheed,2313(Maqsam),2026-04-27 17:51:43,,0,0,客户未接听,  
-0,51nadamuhammad,2245(Maqsam),2026-04-27 17:59:30,,0,0,用户忙,  
-60982598,51nadamuhammad,2245(Maqsam),2026-04-27 18:01:58,,0,0,客户未接听,  
-63029212,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-27 18:27:09,,0,0,用户忙,  
-63032027,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-27 18:29:55,,0,0,用户忙,  
-63018807,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-27 18:34:10,,0,0,客户未接听,  
-63030743,EGCC-maiwaheed,2313(Maqsam),2026-04-27 18:34:55,,0,0,客户未接听,  
-63029907,EGCC-fatmamohamed,2310(Maqsam),2026-04-27 18:40:45,,0,0,客户未接听,  
-63028698,EGCC-maiwaheed,2313(Maqsam),2026-04-27 19:01:48,,0,0,客户未接听,  
-63025662,51nadamuhammad,2245(Maqsam),2026-04-27 19:06:33,,4,0,双方接通,   
-63016187,51habiba.hassan,2244(Maqsam),2026-04-27 19:09:03,,0,0,in_progress,  
-63019472,EGCC-maiwaheed,2313(Maqsam),2026-04-27 19:16:14,,0,0,呼叫失败,  
-63019472,EGCC-maiwaheed,2313(Maqsam),2026-04-27 19:17:17,,0,0,in_progress,  
-63021235,EGCC-maiwaheed,2313(Maqsam),2026-04-27 19:18:37,,0,0,客户未接听,  
-63029290,EGCC-fatmamohamed,2310(Maqsam),2026-04-27 19:29:21,,0,0,客户未接听,  
-63028923,51habiba.hassan,2244(Maqsam),2026-04-27 19:30:16,,13,0,双方接通,   
-61271360,EGCC-maiwaheed,2313(Maqsam),2026-04-27 19:34:46,,0,0,客户未接听,  
-63021173,EGCC-fatmamohamed,2310(Maqsam),2026-04-27 19:47:23,,0,0,用户忙,  
-63029290,EGCC-fatmamohamed,2310(Maqsam),2026-04-27 19:48:47,,0,0,客户未接听,  
-62811897,EGCC-maiwaheed,2313(Maqsam),2026-04-27 20:05:37,,75,0,双方接通,   
-62986235,EGCC-maiwaheed,2313(Maqsam),2026-04-27 20:10:55,,0,0,客户未接听,  
-62986235,EGCC-maiwaheed,2313(Maqsam),2026-04-27 20:12:13,,0,0,prepped,  
-62949543,EGCC-maiwaheed,2313(Maqsam),2026-04-27 20:20:35,,0,0,用户忙,  
-62284941,EGCC-maiwaheed,2313(Maqsam),2026-04-27 20:37:08,,0,0,客户未接听,  
-63019100,51habiba.hassan,2244(Maqsam),2026-04-27 20:38:00,,419,0,双方接通,   
-63018161,EGCC-maiwaheed,2313(Maqsam),2026-04-27 20:38:18,,4,0,双方接通,   
-0,51nadamuhammad,2245(Maqsam),2026-04-27 20:51:27,,0,0,用户忙,  
-63029094,51nadamuhammad,2245(Maqsam),2026-04-27 20:53:03,,0,0,用户忙,  
-63026872,EGCC-maiwaheed,2313(Maqsam),2026-04-27 20:53:48,,17,0,双方接通,   
-63003421,EGCC-fatmamohamed,2310(Maqsam),2026-04-27 20:54:35,,0,0,客户未接听,  
-63035930,EGCC-maiwaheed,2313(Maqsam),2026-04-27 20:57:45,,77,0,双方接通,   
-62997529,EGCC-fatmamohamed,2310(Maqsam),2026-04-27 20:59:53,,0,0,客户未接听,  
-62994212,51nadamuhammad,2245(Maqsam),2026-04-27 21:06:17,,51,0,双方接通,   
-63029290,EGCC-fatmamohamed,2310(Maqsam),2026-04-27 21:17:11,,21,0,双方接通,   
-63029769,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-27 21:18:30,,0,0,客户未接听,  
-63013494,EGCC-fatmamohamed,2310(Maqsam),2026-04-27 21:22:03,,0,0,用户忙,  
-63021942,51habiba.hassan,2244(Maqsam),2026-04-27 21:26:44,,0,0,用户忙,  
-63010958,51habiba.hassan,2244(Maqsam),2026-04-27 21:27:26,,0,0,客户未接听,  
-63010958,51habiba.hassan,2244(Maqsam),2026-04-27 21:27:38,,0,0,客户未接听,  
-63018161,EGCC-maiwaheed,2313(Maqsam),2026-04-27 21:40:53,,9,0,双方接通,   
-62986235,EGCC-maiwaheed,2313(Maqsam),2026-04-27 21:42:01,,0,0,in_progress,  
-62979732,EGCC-fatmamohamed,2310(Maqsam),2026-04-27 21:50:17,,0,0,in_progress,  
-0,EGCC-fatmamohamed,2310(Maqsam),2026-04-27 21:51:48,,386,0,双方接通,   
-63018161,EGCC-maiwaheed,2313(Maqsam),2026-04-27 22:26:20,,1,0,双方接通,   
-62370655,EGCC-maiwaheed,2313(Maqsam),2026-04-27 22:30:13,,479,0,双方接通,   
-63029054,EGCC-maiwaheed,2313(Maqsam),2026-04-27 22:41:42,,0,0,用户忙,  
-63029961,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-27 23:12:02,,102,0,双方接通,   
-0,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-27 23:18:04,,52,0,双方接通,   
-58490406,51habiba.hassan,2244(Maqsam),2026-04-27 23:19:27,,0,0,in_progress,  
-62819557,EGCC-fatmamohamed,2310(Maqsam),2026-04-27 23:19:36,,312,0,双方接通,   
-0,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-27 23:19:37,,390,0,双方接通,   
-62283490,EGCC-maiwaheed,2313(Maqsam),2026-04-27 23:22:01,,0,0,用户忙,  
-62987893,51nadamuhammad,2245(Maqsam),2026-04-27 23:30:01,,269,0,双方接通,   
-61367155,EGCC-maiwaheed,2313(Maqsam),2026-04-27 23:32:51,,0,0,客户未接听,  
-62416752,EGCC-maiwaheed,2313(Maqsam),2026-04-27 23:42:05,,0,0,in_progress,  
-63028698,EGCC-maiwaheed,2313(Maqsam),2026-04-27 23:45:49,,155,0,双方接通,   
-63029700,EGCC-fatmamohamed,2310(Maqsam),2026-04-27 23:46:20,,29,0,双方接通,   
-0,51nadamuhammad,2245(Maqsam),2026-04-27 23:55:21,,0,0,客户未接听,  
-0,EGCC-maiwaheed,2313(Maqsam),2026-04-27 23:56:34,,0,0,客户未接听,  
+58825899,51nadamuhammad,2245(Maqsam),2026-04-26 16:48:52,,0,0,客户未接听, 
+63018161,EGCC-maiwaheed,2313(Maqsam),2026-04-26 16:56:56,,11,0,双方接通, 
+63021235,EGCC-maiwaheed,2313(Maqsam),2026-04-26 16:59:00,,0,0,客户未接听, 
+63010824,EGCC-fatmamohamed,2310(Maqsam),2026-04-26 17:11:00,,0,0,客户未接听, 
+62908828,EGCC-fatmamohamed,2310(Maqsam),2026-04-26 17:11:53,,0,0,in_progress, 
+63010824,EGCC-fatmamohamed,2310(Maqsam),2026-04-26 17:13:13,,0,0,用户忙, 
+63010478,EGCC-eman.amr,2289(Maqsam),2026-04-26 17:20:54,,0,0,客户未接听, 
+63020240,EGCC-eman.amr,2289(Maqsam),2026-04-26 17:23:23,,0,0,in_progress, 
+63021540,51habiba.hassan,2244(Maqsam),2026-04-26 17:24:52,,0,0,用户忙, 
+63021540,51habiba.hassan,2244(Maqsam),2026-04-26 17:25:15,,0,0,用户忙, 
+63021540,51habiba.hassan,2244(Maqsam),2026-04-26 17:25:23,,0,0,用户忙, 
+59371568,51nadamuhammad,2245(Maqsam),2026-04-26 17:27:58,,0,0,客户未接听, 
+62949543,EGCC-maiwaheed,2313(Maqsam),2026-04-26 17:29:24,,0,0,用户忙, 
+63019535,51nadamuhammad,2245(Maqsam),2026-04-26 17:33:22,,0,0,客户未接听, 
+63004253,EGCC-eman.amr,2289(Maqsam),2026-04-26 17:34:28,,0,0,客户未接听, 
+63021173,EGCC-fatmamohamed,2310(Maqsam),2026-04-26 17:42:49,,0,0,用户忙, 
+63018216,EGCC-fatmamohamed,2310(Maqsam),2026-04-26 17:50:45,,0,0,客户未接听, 
+63019691,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-26 17:52:39,,0,0,客户未接听, 
+63024271,EGCC-maiwaheed,2313(Maqsam),2026-04-26 17:54:49,,0,0,用户忙, 
+63019080,EGCC-fatmamohamed,2310(Maqsam),2026-04-26 17:55:39,,1516,0,双方接通, 
+63010926,EGCC-eman.amr,2289(Maqsam),2026-04-26 17:56:23,,0,0,in_progress, 
+63018385,EGCC-maiwaheed,2313(Maqsam),2026-04-26 17:58:21,,0,0,用户忙, 
+63018385,EGCC-maiwaheed,2313(Maqsam),2026-04-26 18:08:16,,0,0,用户忙, 
+63019360,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-26 18:15:41,,117,0,双方接通, 
+63008438,EGCC-maiwaheed,2313(Maqsam),2026-04-26 18:15:56,,0,0,用户忙, 
+63008438,EGCC-maiwaheed,2313(Maqsam),2026-04-26 18:16:08,,0,0,客户未接听, 
+63011276,51habiba.hassan,2244(Maqsam),2026-04-26 18:22:34,,0,0,用户忙, 
+63011276,51habiba.hassan,2244(Maqsam),2026-04-26 18:22:43,,0,0,用户忙, 
+63011276,51habiba.hassan,2244(Maqsam),2026-04-26 18:23:11,,0,0,用户忙, 
+63011276,51habiba.hassan,2244(Maqsam),2026-04-26 18:23:58,,0,0,用户忙, 
+63011276,51habiba.hassan,2244(Maqsam),2026-04-26 18:24:07,,0,0,用户忙, 
+63010164,EGCC-maiwaheed,2313(Maqsam),2026-04-26 18:26:18,,91,0,双方接通, 
+62998129,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-26 18:39:14,,0,0,in_progress, 
+0,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-26 18:42:19,,0,0,客户未接听, 
+58490406,51habiba.hassan,2244(Maqsam),2026-04-26 18:45:45,,0,0,客户未接听, 
+0,51habiba.hassan,2244(Maqsam),2026-04-26 18:51:24,,1583,0,双方接通, 
+62828643,EGCC-maiwaheed,2313(Maqsam),2026-04-26 18:55:53,,0,0,客户未接听, 
+62828643,EGCC-maiwaheed,2313(Maqsam),2026-04-26 18:57:06,,0,0,in_progress, 
+63022458,51nadamuhammad,2245(Maqsam),2026-04-26 19:10:02,,0,0,in_progress, 
+62994994,EGCC-fatmamohamed,2310(Maqsam),2026-04-26 19:10:40,,0,0,客户未接听, 
+63022458,51nadamuhammad,2245(Maqsam),2026-04-26 19:12:21,,0,0,客户未接听, 
+63017073,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-26 19:12:53,,80,0,双方接通, 
+63010645,EGCC-fatmamohamed,2310(Maqsam),2026-04-26 19:13:59,,372,0,双方接通, 
+63024840,EGCC-fatmamohamed,2310(Maqsam),2026-04-26 19:22:15,,0,0,客户未接听, 
+63019691,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-26 19:24:35,,0,0,用户忙, 
+63013257,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-26 19:27:28,,56,0,双方接通, 
+62825978,EGCC-maiwaheed,2313(Maqsam),2026-04-26 19:28:58,,0,0,用户忙, 
+63024774,51habiba.hassan,2244(Maqsam),2026-04-26 19:28:59,,27,0,双方接通, 
+62825978,EGCC-maiwaheed,2313(Maqsam),2026-04-26 19:29:07,,0,0,用户忙, 
+0,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-26 19:29:13,,0,0,用户忙, 
+0,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-26 19:29:57,,0,0,用户忙, 
+63010693,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-26 19:33:31,,332,0,双方接通, 
+62804390,EGCC-maiwaheed,2313(Maqsam),2026-04-26 19:37:59,,0,0,客户未接听, 
+62804390,EGCC-maiwaheed,2313(Maqsam),2026-04-26 19:42:38,,0,0,用户忙, 
+63008438,EGCC-maiwaheed,2313(Maqsam),2026-04-26 19:46:00,,0,0,用户忙, 
+63011175,51habiba.hassan,2244(Maqsam),2026-04-26 19:47:05,,90,0,双方接通, 
+63008471,EGCC-fatmamohamed,2310(Maqsam),2026-04-26 19:47:10,,279,0,双方接通, 
+63024986,EGCC-eman.amr,2289(Maqsam),2026-04-26 19:51:07,,0,0,in_progress, 
+63010723,EGCC-eman.amr,2289(Maqsam),2026-04-26 19:52:39,,0,0,用户忙, 
+58516189,EGCC-maiwaheed,2313(Maqsam),2026-04-26 20:02:14,,0,0,in_progress, 
+63010824,EGCC-fatmamohamed,2310(Maqsam),2026-04-26 20:15:44,,0,0,客户未接听, 
+63024974,51nadamuhammad,2245(Maqsam),2026-04-26 20:23:01,,183,0,双方接通, 
+63004300,51habiba.hassan,2244(Maqsam),2026-04-26 20:34:35,,0,0,客户未接听, 
+63004300,51habiba.hassan,2244(Maqsam),2026-04-26 20:35:18,,58,0,双方接通, 
+63018583,EGCC-fatmamohamed,2310(Maqsam),2026-04-26 20:40:49,,0,0,客户未接听, 
+58490406,51habiba.hassan,2244(Maqsam),2026-04-26 20:42:29,,0,0,客户未接听, 
+63008471,EGCC-fatmamohamed,2310(Maqsam),2026-04-26 20:44:47,,145,0,双方接通, 
+63010643,51habiba.hassan,2244(Maqsam),2026-04-26 20:50:22,,6,0,双方接通, 
+62796982,EGCC-maiwaheed,2313(Maqsam),2026-04-26 20:53:09,,0,0,用户忙, 
+63024986,EGCC-eman.amr,2289(Maqsam),2026-04-26 21:05:32,,703,0,双方接通, 
+63004300,51habiba.hassan,2244(Maqsam),2026-04-26 21:19:24,,450,0,双方接通, 
+63010778,EGCC-maiwaheed,2313(Maqsam),2026-04-26 21:22:21,,20,0,双方接通, 
+62886329,EGCC-fatmamohamed,2310(Maqsam),2026-04-26 21:22:31,,0,0,客户未接听, 
+63005460,EGCC-eman.amr,2289(Maqsam),2026-04-26 21:23:48,,0,0,in_progress, 
+63004300,51habiba.hassan,2244(Maqsam),2026-04-26 21:28:44,,31,0,双方接通, 
+63019310,51nadamuhammad,2245(Maqsam),2026-04-26 21:29:48,,0,0,用户忙, 
+62819557,EGCC-fatmamohamed,2310(Maqsam),2026-04-26 21:35:06,,0,0,客户未接听, 
+63017170,51nadamuhammad,2245(Maqsam),2026-04-26 21:35:07,,8,0,双方接通, 
+62858053,EGCC-eman.amr,2289(Maqsam),2026-04-26 21:42:37,,0,0,用户忙, 
+63007779,51nadamuhammad,2245(Maqsam),2026-04-26 21:43:35,,0,0,用户忙, 
+63007779,51nadamuhammad,2245(Maqsam),2026-04-26 21:44:15,,410,0,双方接通, 
+63010778,EGCC-maiwaheed,2313(Maqsam),2026-04-26 21:54:55,,114,0,双方接通, 
+63018579,EGCC-maiwaheed,2313(Maqsam),2026-04-26 21:58:26,,0,0,客户未接听, 
+0,51nadamuhammad,2245(Maqsam),2026-04-26 22:25:57,,0,0,用户忙, 
+63026872,EGCC-maiwaheed,2313(Maqsam),2026-04-26 22:50:28,,32,0,双方接通, 
+63019691,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-26 23:10:27,,0,0,客户未接听, 
+63010073,EGCC-fatmamohamed,2310(Maqsam),2026-04-26 23:19:30,,0,0,in_progress, 
+63007789,51habiba.hassan,2244(Maqsam),2026-04-26 23:20:08,,0,0,prepped, 
+63010073,EGCC-fatmamohamed,2310(Maqsam),2026-04-26 23:21:21,,0,0,客户未接听, 
+63028040,EGCC-eman.amr,2289(Maqsam),2026-04-26 23:26:30,,0,0,用户忙, 
+63019612,EGCC-fatmamohamed,2310(Maqsam),2026-04-26 23:27:20,,0,0,用户忙, 
+63019429,EGCC-eman.amr,2289(Maqsam),2026-04-26 23:29:28,,76,0,双方接通, 
+63019360,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-26 23:31:33,,404,0,双方接通, 
+63021173,EGCC-fatmamohamed,2310(Maqsam),2026-04-26 23:32:17,,0,0,客户未接听, 
+63014285,EGCC-fatmamohamed,2310(Maqsam),2026-04-26 23:34:27,,0,0,用户忙, 
+63010824,EGCC-fatmamohamed,2310(Maqsam),2026-04-26 23:36:03,,291,0,双方接通, 
+63022670,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-26 23:44:02,,0,0,客户未接听, 
+63014247,EGCC-maiwaheed,2313(Maqsam),2026-04-26 23:49:09,,337,0,双方接通, 
+63004275,EGCC-fatmamohamed,2310(Maqsam),2026-04-26 23:53:55,,0,0,in_progress, 
+63000215,EGCC-fatmamohamed,2310(Maqsam),2026-04-26 23:57:03,,0,0,in_progress, 
+63019251,EGCC-maiwaheed,2313(Maqsam),2026-04-27 00:04:15,,792,0,双方接通, 
+62987400,EGCC-fatmamohamed,2310(Maqsam),2026-04-27 00:08:36,,0,0,in_progress, 
+63021540,51habiba.hassan,2244(Maqsam),2026-04-27 00:18:03,,0,0,用户忙, 
+63018161,EGCC-maiwaheed,2313(Maqsam),2026-04-27 00:19:13,,41,0,双方接通, 
+63002094,EGCC-eman.amr,2289(Maqsam),2026-04-27 00:20:52,,0,0,用户忙, 
+63018896,51habiba.hassan,2244(Maqsam),2026-04-27 00:21:38,,0,0,客户未接听, 
+63008794,EGCC-eman.amr,2289(Maqsam),2026-04-27 00:23:09,,7,0,双方接通, 
+0,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-27 00:25:14,,0,0,客户未接听, 
+62996251,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-27 00:38:12,,0,0,用户忙, 
+62955623,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-27 00:50:35,,0,0,in_progress, 
+63003354,EGCC-eman.amr,2289(Maqsam),2026-04-27 01:00:37,,0,0,客户未接听, 
+62959478,EGCC-fatmamohamed,2310(Maqsam),2026-04-27 01:01:00,,0,0,客户未接听, 
+63011060,EGCC-eman.amr,2289(Maqsam),2026-04-27 01:03:19,,0,0,用户忙, 
+0,51nadamuhammad,2245(Maqsam),2026-04-27 01:10:49,,0,0,用户忙, 
+63019080,EGCC-fatmamohamed,2310(Maqsam),2026-04-27 01:13:13,,0,0,用户忙, 
+63010692,51habiba.hassan,2244(Maqsam),2026-04-27 01:14:47,,0,0,客户未接听, 
+63010894,51habiba.hassan,2244(Maqsam),2026-04-27 01:15:24,,1509,0,双方接通, 
+63029212,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-27 01:23:22,,0,0,用户忙, 
+62985046,EGCC-eman.amr,2289(Maqsam),2026-04-27 01:27:38,,0,0,用户忙, 
+63000763,EGCC-eman.amr,2289(Maqsam),2026-04-27 01:35:54,,0,0,用户忙, 
+63008130,51nadamuhammad,2245(Maqsam),2026-04-27 01:36:36,,0,0,客户未接听, 
+63019512,51habiba.hassan,2244(Maqsam),2026-04-27 01:48:28,,568,0,双方接通, 
+0,51nadamuhammad,2245(Maqsam),2026-04-27 01:50:00,,0,0,in_progress, 
+62997497,EGCC-eman.amr,2289(Maqsam),2026-04-27 01:52:36,,20,0,双方接通, 
+0,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-27 16:44:07,,0,0,客户未接听, 
+0,EGCC-fatmamohamed,2310(Maqsam),2026-04-27 16:49:23,,41,0,双方接通, 
+63029212,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-27 16:56:12,,0,0,用户忙, 
+62332272,EGCC-maiwaheed,2313(Maqsam),2026-04-27 16:59:17,,0,0,用户忙, 
+0,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-27 17:05:05,,7,0,双方接通, 
+62919304,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-27 17:06:24,,0,0,用户忙, 
+63016187,51nadamuhammad,2245(Maqsam),2026-04-27 17:12:27,,933,0,双方接通, 
+63033196,EGCC-fatmamohamed,2310(Maqsam),2026-04-27 17:14:10,,0,0,客户未接听, 
+63019612,EGCC-fatmamohamed,2310(Maqsam),2026-04-27 17:17:28,,0,0,in_progress, 
+63030310,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-27 17:19:08,,16,0,双方接通, 
+63030413,EGCC-maiwaheed,2313(Maqsam),2026-04-27 17:27:48,,5,0,双方接通, 
+63016187,51nadamuhammad,2245(Maqsam),2026-04-27 17:28:25,,111,0,双方接通, 
+0,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-27 17:31:35,,71,0,双方接通, 
+63018161,EGCC-maiwaheed,2313(Maqsam),2026-04-27 17:33:36,,9,0,双方接通, 
+61451414,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-27 17:38:05,,0,0,客户未接听, 
+62349541,EGCC-maiwaheed,2313(Maqsam),2026-04-27 17:46:07,,0,0,客户未接听, 
+0,51nadamuhammad,2245(Maqsam),2026-04-27 17:50:08,,0,0,in_progress, 
+62538531,EGCC-maiwaheed,2313(Maqsam),2026-04-27 17:51:43,,0,0,客户未接听, 
+0,51nadamuhammad,2245(Maqsam),2026-04-27 17:59:30,,0,0,用户忙, 
+60982598,51nadamuhammad,2245(Maqsam),2026-04-27 18:01:58,,0,0,客户未接听, 
+63029212,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-27 18:27:09,,0,0,用户忙, 
+63032027,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-27 18:29:55,,0,0,用户忙, 
+63018807,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-27 18:34:10,,0,0,客户未接听, 
+63030743,EGCC-maiwaheed,2313(Maqsam),2026-04-27 18:34:55,,0,0,客户未接听, 
+63029907,EGCC-fatmamohamed,2310(Maqsam),2026-04-27 18:40:45,,0,0,客户未接听, 
+63028698,EGCC-maiwaheed,2313(Maqsam),2026-04-27 19:01:48,,0,0,客户未接听, 
+63025662,51nadamuhammad,2245(Maqsam),2026-04-27 19:06:33,,4,0,双方接通, 
+63016187,51habiba.hassan,2244(Maqsam),2026-04-27 19:09:03,,0,0,in_progress, 
+63019472,EGCC-maiwaheed,2313(Maqsam),2026-04-27 19:16:14,,0,0,呼叫失败, 
+63019472,EGCC-maiwaheed,2313(Maqsam),2026-04-27 19:17:17,,0,0,in_progress, 
+63021235,EGCC-maiwaheed,2313(Maqsam),2026-04-27 19:18:37,,0,0,客户未接听, 
+63029290,EGCC-fatmamohamed,2310(Maqsam),2026-04-27 19:29:21,,0,0,客户未接听, 
+63028923,51habiba.hassan,2244(Maqsam),2026-04-27 19:30:16,,13,0,双方接通, 
+61271360,EGCC-maiwaheed,2313(Maqsam),2026-04-27 19:34:46,,0,0,客户未接听, 
+63021173,EGCC-fatmamohamed,2310(Maqsam),2026-04-27 19:47:23,,0,0,用户忙, 
+63029290,EGCC-fatmamohamed,2310(Maqsam),2026-04-27 19:48:47,,0,0,客户未接听, 
+62811897,EGCC-maiwaheed,2313(Maqsam),2026-04-27 20:05:37,,75,0,双方接通, 
+62986235,EGCC-maiwaheed,2313(Maqsam),2026-04-27 20:10:55,,0,0,客户未接听, 
+62986235,EGCC-maiwaheed,2313(Maqsam),2026-04-27 20:12:13,,0,0,prepped, 
+62949543,EGCC-maiwaheed,2313(Maqsam),2026-04-27 20:20:35,,0,0,用户忙, 
+62284941,EGCC-maiwaheed,2313(Maqsam),2026-04-27 20:37:08,,0,0,客户未接听, 
+63019100,51habiba.hassan,2244(Maqsam),2026-04-27 20:38:00,,419,0,双方接通, 
+63018161,EGCC-maiwaheed,2313(Maqsam),2026-04-27 20:38:18,,4,0,双方接通, 
+0,51nadamuhammad,2245(Maqsam),2026-04-27 20:51:27,,0,0,用户忙, 
+63029094,51nadamuhammad,2245(Maqsam),2026-04-27 20:53:03,,0,0,用户忙, 
+63026872,EGCC-maiwaheed,2313(Maqsam),2026-04-27 20:53:48,,17,0,双方接通, 
+63003421,EGCC-fatmamohamed,2310(Maqsam),2026-04-27 20:54:35,,0,0,客户未接听, 
+63035930,EGCC-maiwaheed,2313(Maqsam),2026-04-27 20:57:45,,77,0,双方接通, 
+62997529,EGCC-fatmamohamed,2310(Maqsam),2026-04-27 20:59:53,,0,0,客户未接听, 
+62994212,51nadamuhammad,2245(Maqsam),2026-04-27 21:06:17,,51,0,双方接通, 
+63029290,EGCC-fatmamohamed,2310(Maqsam),2026-04-27 21:17:11,,21,0,双方接通, 
+63029769,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-27 21:18:30,,0,0,客户未接听, 
+63013494,EGCC-fatmamohamed,2310(Maqsam),2026-04-27 21:22:03,,0,0,用户忙, 
+63021942,51habiba.hassan,2244(Maqsam),2026-04-27 21:26:44,,0,0,用户忙, 
+63010958,51habiba.hassan,2244(Maqsam),2026-04-27 21:27:26,,0,0,客户未接听, 
+63010958,51habiba.hassan,2244(Maqsam),2026-04-27 21:27:38,,0,0,客户未接听, 
+63018161,EGCC-maiwaheed,2313(Maqsam),2026-04-27 21:40:53,,9,0,双方接通, 
+62986235,EGCC-maiwaheed,2313(Maqsam),2026-04-27 21:42:01,,0,0,in_progress, 
+62979732,EGCC-fatmamohamed,2310(Maqsam),2026-04-27 21:50:17,,0,0,in_progress, 
+0,EGCC-fatmamohamed,2310(Maqsam),2026-04-27 21:51:48,,386,0,双方接通, 
+63018161,EGCC-maiwaheed,2313(Maqsam),2026-04-27 22:26:20,,1,0,双方接通, 
+62370655,EGCC-maiwaheed,2313(Maqsam),2026-04-27 22:30:13,,479,0,双方接通, 
+63029054,EGCC-maiwaheed,2313(Maqsam),2026-04-27 22:41:42,,0,0,用户忙, 
+63029961,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-27 23:12:02,,102,0,双方接通, 
+0,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-27 23:18:04,,52,0,双方接通, 
+58490406,51habiba.hassan,2244(Maqsam),2026-04-27 23:19:27,,0,0,in_progress, 
+62819557,EGCC-fatmamohamed,2310(Maqsam),2026-04-27 23:19:36,,312,0,双方接通, 
+0,EGCC-tasneemmahmoud,2311(Maqsam),2026-04-27 23:19:37,,390,0,双方接通, 
+62283490,EGCC-maiwaheed,2313(Maqsam),2026-04-27 23:22:01,,0,0,用户忙, 
+62987893,51nadamuhammad,2245(Maqsam),2026-04-27 23:30:01,,269,0,双方接通, 
+61367155,EGCC-maiwaheed,2313(Maqsam),2026-04-27 23:32:51,,0,0,客户未接听, 
+62416752,EGCC-maiwaheed,2313(Maqsam),2026-04-27 23:42:05,,0,0,in_progress, 
+63028698,EGCC-maiwaheed,2313(Maqsam),2026-04-27 23:45:49,,155,0,双方接通, 
+63029700,EGCC-fatmamohamed,2310(Maqsam),2026-04-27 23:46:20,,29,0,双方接通, 
+0,51nadamuhammad,2245(Maqsam),2026-04-27 23:55:21,,0,0,客户未接听, 
+0,EGCC-maiwaheed,2313(Maqsam),2026-04-27 23:56:34,,0,0,客户未接听, 
+62775647,EGCC-nadahassan,2314(Maqsam),2026-05-04 23:33:10,,,,in_progress,
+0,EGCC-nadahassan,2314(Maqsam),2026-05-04 23:32:26,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaHassan.301968032.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916174&Signature=rdQIvjTrlfmvZzCfwYUCfZqc%2BxM%3D
+63074168,EGCC-eman.amr,2289(Maqsam),2026-05-04 23:31:55,,,,用户忙,
+63067971,EGCC-eman.amr,2289(Maqsam),2026-05-04 23:27:59,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-Eman.Amr.301966726.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916175&Signature=ftFcIXMMTr2x4NIqkE7hURlgxdE%3D
+62758193,EGCC-nadahassan,2314(Maqsam),2026-05-04 23:25:44,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaHassan.301966039.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916175&Signature=p7vBZv0u%2F6cIl0QL2xPsf9RfKxc%3D
+63072901,EGCC-eman.amr,2289(Maqsam),2026-05-04 23:24:37,,,,用户忙,
+63074168,EGCC-eman.amr,2289(Maqsam),2026-05-04 23:23:54,,,,用户忙,
+63074168,EGCC-eman.amr,2289(Maqsam),2026-05-04 23:23:44,,,,用户忙,
+63074168,EGCC-eman.amr,2289(Maqsam),2026-05-04 23:23:35,,,,用户忙,
+63076670,EGCC-eman.amr,2289(Maqsam),2026-05-04 23:22:10,,,,客户未接听,
+63076670,EGCC-eman.amr,2289(Maqsam),2026-05-04 23:21:00,,,,in_progress,
+0,EGCC-nadahassan,2314(Maqsam),2026-05-04 23:20:59,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaHassan.301964628.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916176&Signature=ZpSHeMqSYXryvp8VsR05tDz1TFI%3D
+62749861,EGCC-nadahassan,2314(Maqsam),2026-05-04 23:20:26,,,,客户未接听,
+63076670,EGCC-eman.amr,2289(Maqsam),2026-05-04 23:19:51,,,,in_progress,
+62773996,EGCC-nadahassan,2314(Maqsam),2026-05-04 23:15:33,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaHassan.301963103.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916177&Signature=9U%2FArXJ6FXSgfNvwFaTpUw8mPlk%3D
+62773996,EGCC-nadahassan,2314(Maqsam),2026-05-04 23:14:58,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaHassan.301962948.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916177&Signature=JXbkgyTVlY41WUq5J9ZfK4KdGsA%3D
+63088133,EGCC-eman.amr,2289(Maqsam),2026-05-04 21:52:20,,,,用户忙,
+63088133,EGCC-eman.amr,2289(Maqsam),2026-05-04 21:52:09,,,,用户忙,
+63088133,EGCC-eman.amr,2289(Maqsam),2026-05-04 21:50:46,,,,用户忙,
+63088133,EGCC-eman.amr,2289(Maqsam),2026-05-04 21:50:28,,,,用户忙,
+63086039,EGCC-eman.amr,2289(Maqsam),2026-05-04 21:50:13,,,,客户未接听,
+63086039,EGCC-eman.amr,2289(Maqsam),2026-05-04 21:49:26,,,,prepped,
+63086039,EGCC-eman.amr,2289(Maqsam),2026-05-04 21:47:58,,,,in_progress,
+63086039,EGCC-eman.amr,2289(Maqsam),2026-05-04 21:47:38,,,,客户未接听,
+63094452,EGCC-nadahassan,2314(Maqsam),2026-05-04 21:44:47,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaHassan.301926707.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916179&Signature=2XGlj5A1ScXCJugfzIZUlyxqc0o%3D
+63093613,EGCC-eman.amr,2289(Maqsam),2026-05-04 21:43:43,,,,用户忙,
+63093613,EGCC-eman.amr,2289(Maqsam),2026-05-04 21:43:19,,,,用户忙,
+62793305,EGCC-nadahassan,2314(Maqsam),2026-05-04 21:42:57,,,,客户未接听,
+62793305,EGCC-nadahassan,2314(Maqsam),2026-05-04 21:42:23,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaHassan.301925541.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916180&Signature=EbylbGcZFkVCr6MH3pSexVF9V1Y%3D
+62793305,EGCC-nadahassan,2314(Maqsam),2026-05-04 21:42:13,,,,客户未接听,
+62980291,EGCC-eman.amr,2289(Maqsam),2026-05-04 21:40:38,,,,客户未接听,
+62980291,EGCC-eman.amr,2289(Maqsam),2026-05-04 21:39:20,,,,in_progress,
+62980291,EGCC-eman.amr,2289(Maqsam),2026-05-04 21:39:08,,,,in_progress,
+63090231,EGCC-nadahassan,2314(Maqsam),2026-05-04 21:27:36,,,,用户忙,
+63090231,EGCC-nadahassan,2314(Maqsam),2026-05-04 21:21:27,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaHassan.301915548.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916181&Signature=0Cdx9NhPfx3Lw3JFzD9pFGjBlxo%3D
+63008118,EGCC-eman.amr,2289(Maqsam),2026-05-04 21:16:05,,,,客户未接听,
+62802411,EGCC-nadahassan,2314(Maqsam),2026-05-04 20:21:22,,,,用户忙,
+62802411,EGCC-nadahassan,2314(Maqsam),2026-05-04 20:20:43,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaHassan.301889346.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916181&Signature=oe7Uw378laqjjZ3KqtGkuJYPKRM%3D
+62802411,EGCC-nadahassan,2314(Maqsam),2026-05-04 20:19:27,,,,in_progress,
+62784051,EGCC-nadahassan,2314(Maqsam),2026-05-04 20:16:03,,,,用户忙,
+62784051,EGCC-nadahassan,2314(Maqsam),2026-05-04 20:15:19,,,,用户忙,
+62655058,EGCC-eman.amr,2289(Maqsam),2026-05-04 20:15:05,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-Eman.Amr.301886699.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916182&Signature=QbSbD6lmaAz9KQAH28rlUXr3k7I%3D
+62712015,EGCC-eman.amr,2289(Maqsam),2026-05-04 20:14:46,,,,用户忙,
+62712015,EGCC-eman.amr,2289(Maqsam),2026-05-04 20:14:36,,,,用户忙,
+62803546,EGCC-nadahassan,2314(Maqsam),2026-05-04 20:13:55,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaHassan.301886128.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916183&Signature=vkUQmLKAfDurVCDh91%2FZ8VxabMQ%3D
+63081772,EGCC-eman.amr,2289(Maqsam),2026-05-04 20:13:07,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-Eman.Amr.301885776.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916183&Signature=4%2FaEAchflqLlGwCONndJ4niHraI%3D
+62809937,EGCC-nadahassan,2314(Maqsam),2026-05-04 20:12:31,,,,客户未接听,
+62809937,EGCC-nadahassan,2314(Maqsam),2026-05-04 20:12:15,,,,prepped,
+62809937,EGCC-nadahassan,2314(Maqsam),2026-05-04 20:11:02,,,,客户未接听,
+62796536,EGCC-nadahassan,2314(Maqsam),2026-05-04 20:08:46,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaHassan.301883819.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916184&Signature=%2BgDqAofpxmTGQEH9WNE7YsmoSa8%3D
+62817122,EGCC-nadahassan,2314(Maqsam),2026-05-04 20:06:08,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaHassan.301882705.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916186&Signature=hlGSzUsG8cfk3nh0%2FHCbR1A7ujg%3D
+62796994,EGCC-nadahassan,2314(Maqsam),2026-05-04 20:03:51,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaHassan.301881717.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916187&Signature=jTPCDBkCujAXhQgjo11gznLko9Y%3D
+62803934,EGCC-nadahassan,2314(Maqsam),2026-05-04 20:02:52,,,,客户未接听,
+62805415,EGCC-nadahassan,2314(Maqsam),2026-05-04 20:02:18,,,,用户忙,
+62805415,EGCC-nadahassan,2314(Maqsam),2026-05-04 20:01:47,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaHassan.301880812.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916187&Signature=PmCPyE2SjQ8a2IbcHgTCh4Z3CMY%3D
+63082004,EGCC-nadahassan,2314(Maqsam),2026-05-04 19:15:05,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaHassan.301860120.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916188&Signature=95yfchLy79y0T9qI9IG4L0HOvkQ%3D
+63082004,EGCC-nadahassan,2314(Maqsam),2026-05-04 19:08:09,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaHassan.301857037.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916188&Signature=eT2y7ppSxCoxDIGVaZDOTf%2Fmnuk%3D
+63067756,EGCC-nadahassan,2314(Maqsam),2026-05-04 19:06:05,,,,in_progress,
+63067756,EGCC-nadahassan,2314(Maqsam),2026-05-04 19:04:56,,,,用户忙,
+63073597,EGCC-nadahassan,2314(Maqsam),2026-05-04 19:02:48,,,,in_progress,
+63082186,EGCC-eman.amr,2289(Maqsam),2026-05-04 19:02:10,,,,客户未接听,
+63082186,EGCC-eman.amr,2289(Maqsam),2026-05-04 19:02:02,,,,客户未接听,
+63073597,EGCC-nadahassan,2314(Maqsam),2026-05-04 18:56:36,,,,客户未接听,
+0,EGCC-eman.amr,2289(Maqsam),2026-05-04 18:44:49,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-Eman.Amr.301847350.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916189&Signature=dpk8RZo7W%2FxvQaC4BlGYr6P5km8%3D
+63089389,EGCC-eman.amr,2289(Maqsam),2026-05-04 18:34:39,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-Eman.Amr.301843093.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916190&Signature=ghYAtlMebOVXpulhXsjHOQ%2FAxag%3D
+63080022,EGCC-nadahassan,2314(Maqsam),2026-05-04 18:22:12,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaHassan.301837448.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916190&Signature=45Vq1J3UP1xU3QNqCxtA9LpjD0I%3D
+63089389,EGCC-eman.amr,2289(Maqsam),2026-05-04 18:18:50,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-Eman.Amr.301835930.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916191&Signature=e%2B1WVy1f9GANcnmjLztyN%2FMBxZo%3D
+63081772,EGCC-eman.amr,2289(Maqsam),2026-05-04 18:03:42,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-Eman.Amr.301829294.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916191&Signature=IxF%2B14ylmqzGanJ2Iqe88ibgKHc%3D
+63082004,EGCC-nadahassan,2314(Maqsam),2026-05-04 17:38:04,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaHassan.301818095.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916191&Signature=gh%2BC08uH1wv%2BmQeFqsV1bA2xObw%3D
+63082004,EGCC-nadahassan,2314(Maqsam),2026-05-04 17:36:44,,,,客户未接听,
+63074289,EGCC-nadahassan,2314(Maqsam),2026-05-04 17:33:22,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaHassan.301815981.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916192&Signature=UnIgNn3Qw5Q9gzQqAuNIi5x3OQU%3D
+63073570,EGCC-nadahassan,2314(Maqsam),2026-05-04 17:32:38,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaHassan.301815670.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916192&Signature=52dOr0KScxSyg1fH6quMTZxD6MA%3D
+63073570,EGCC-nadahassan,2314(Maqsam),2026-05-04 17:32:09,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaHassan.301815440.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916193&Signature=3dCIpfi1BJ7rrUPolkvog8NpNiU%3D
+63081242,EGCC-nadahassan,2314(Maqsam),2026-05-04 17:30:51,,,,客户未接听,
+63076694,EGCC-nadahassan,2314(Maqsam),2026-05-04 17:29:35,,,,客户未接听,
+63076694,EGCC-nadahassan,2314(Maqsam),2026-05-04 17:29:16,,,,客户未接听,
+63082396,EGCC-nadahassan,2314(Maqsam),2026-05-04 17:26:50,,,,in_progress,
+63082396,EGCC-nadahassan,2314(Maqsam),2026-05-04 17:26:33,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaHassan.301812955.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916194&Signature=wn32xT8f%2FR%2FdDNBaxL3Tbib8yrU%3D
+63090231,EGCC-nadahassan,2314(Maqsam),2026-05-04 17:20:07,,,,in_progress,
+63090231,EGCC-nadahassan,2314(Maqsam),2026-05-04 17:19:17,,,,用户忙,
+63081772,EGCC-eman.amr,2289(Maqsam),2026-05-04 17:18:13,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-Eman.Amr.301809322.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916194&Signature=TxGHW1ozWCg9ob8YFg%2BhVkWX5j8%3D
+63081227,EGCC-eman.amr,2289(Maqsam),2026-05-04 17:17:21,,,,客户未接听,
+63087306,EGCC-nadahassan,2314(Maqsam),2026-05-04 16:57:50,,,,客户未接听,
+63087306,EGCC-nadahassan,2314(Maqsam),2026-05-04 16:56:57,,,,in_progress,
+62379777,EGCC-nadahassan,2314(Maqsam),2026-05-04 01:50:49,,,,in_progress,
+0,EGCC-nadahassan,2314(Maqsam),2026-05-04 01:43:58,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaHassan.301691638.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916195&Signature=1HSM2WrSZI2Vfed5TY1sSJxPytI%3D
+0,EGCC-nadahassan,2314(Maqsam),2026-05-04 01:43:16,,,,用户忙,
+63088133,EGCC-eman.amr,2289(Maqsam),2026-05-04 01:31:58,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-Eman.Amr.301689080.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916196&Signature=aaj%2Fus8urhHSYtGuEdOwEJ0WFNY%3D
+63088133,EGCC-eman.amr,2289(Maqsam),2026-05-04 01:23:47,,,,用户忙,
+63088133,EGCC-eman.amr,2289(Maqsam),2026-05-04 01:22:57,,,,用户忙,
+62977025,EGCC-eman.amr,2289(Maqsam),2026-05-04 01:12:55,,,,客户未接听,
+62977025,EGCC-eman.amr,2289(Maqsam),2026-05-04 01:11:50,,,,in_progress,
+63088252,EGCC-nadahassan,2314(Maqsam),2026-05-04 01:06:06,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaHassan.301683582.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916196&Signature=hy35lDtZgUeeNYN9ya88jDP26is%3D
+61756228,EGCC-nadahassan,2314(Maqsam),2026-05-04 01:01:57,,,,客户未接听,
+61756228,EGCC-nadahassan,2314(Maqsam),2026-05-04 01:00:47,,,,客户未接听,
+0,EGCC-nadahassan,2314(Maqsam),2026-05-04 00:59:32,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaHassan.301682166.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916197&Signature=AnUJkoJ4ftNM4jsFf%2FpJvLugWuA%3D
+0,EGCC-eman.amr,2289(Maqsam),2026-05-04 00:53:56,,,,in_progress,
+63073597,EGCC-nadahassan,2314(Maqsam),2026-05-04 00:52:23,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaHassan.301680552.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916199&Signature=JklYNEZ7PvXJGCjVf7ptGdhSeH8%3D
+62601163,EGCC-eman.amr,2289(Maqsam),2026-05-04 00:47:40,,,,in_progress,
+62601163,EGCC-eman.amr,2289(Maqsam),2026-05-04 00:44:28,,,,in_progress,
+63080022,EGCC-nadahassan,2314(Maqsam),2026-05-04 00:43:41,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaHassan.301678212.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916200&Signature=Fq2aMtRrJ%2BR7wmGIgp9GW3cLtLo%3D
+62601163,EGCC-eman.amr,2289(Maqsam),2026-05-04 00:43:21,,,,客户未接听,
+63081242,EGCC-nadahassan,2314(Maqsam),2026-05-04 00:40:44,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaHassan.301677366.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916200&Signature=C5%2FOk9bDNIXx7uMk1vSY%2BQY1LPI%3D
+0,EGCC-nadahassan,2314(Maqsam),2026-05-04 00:39:32,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaHassan.301677052.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916201&Signature=Ch92xQbzfYwLCTSjLU5Rs5wQrCc%3D
+62801756,EGCC-eman.amr,2289(Maqsam),2026-05-04 00:38:36,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-Eman.Amr.301676812.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916201&Signature=uhMoBq0CNf2niC6lfge7z2yGiuI%3D
+63086268,EGCC-nadahassan,2314(Maqsam),2026-05-04 00:37:21,,,,用户忙,
+63086268,EGCC-nadahassan,2314(Maqsam),2026-05-04 00:37:10,,,,用户忙,
+62770158,EGCC-nadahassan,2314(Maqsam),2026-05-04 00:30:49,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaHassan.301674958.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916202&Signature=I1TJ0iwzA7e60d1dmc53UoLzm%2FA%3D
+62854617,EGCC-eman.amr,2289(Maqsam),2026-05-04 00:30:10,,,,客户未接听,
+62758274,EGCC-eman.amr,2289(Maqsam),2026-05-04 00:28:43,,,,客户未接听,
+62196510,EGCC-nadahassan,2314(Maqsam),2026-05-04 00:28:20,,,,用户忙,
+62929082,EGCC-eman.amr,2289(Maqsam),2026-05-04 00:28:11,,,,用户忙,
+62196510,EGCC-nadahassan,2314(Maqsam),2026-05-04 00:28:10,,,,用户忙,
+62942424,EGCC-eman.amr,2289(Maqsam),2026-05-04 00:19:43,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-Eman.Amr.301672252.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916203&Signature=AKydnhfRVUaw%2FtEQdPhr%2Fw79sM8%3D
+62267373,EGCC-nadahassan,2314(Maqsam),2026-05-04 00:18:01,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaHassan.301671854.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916203&Signature=ySQDAfXom3JEUxWzuUYi%2BfELQWU%3D
+61557733,EGCC-nadahassan,2314(Maqsam),2026-05-04 00:16:48,,,,客户未接听,
+0,EGCC-eman.amr,2289(Maqsam),2026-05-04 00:15:57,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-Eman.Amr.301671374.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916204&Signature=1y%2BvZwID6f3gK4cIlCTQj%2BToniw%3D
+61557733,EGCC-nadahassan,2314(Maqsam),2026-05-04 00:15:49,,,,客户未接听,
+62985225,EGCC-eman.amr,2289(Maqsam),2026-05-04 00:14:46,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-Eman.Amr.301671071.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916204&Signature=g8oWos11GnceH4aG8cTlXJazCOo%3D
+62993396,EGCC-eman.amr,2289(Maqsam),2026-05-04 00:11:36,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-Eman.Amr.301670269.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916205&Signature=627jV2EFIkpJFrGkF5R9cic9t58%3D
+62993396,EGCC-eman.amr,2289(Maqsam),2026-05-04 00:10:26,,,,客户未接听,
+61262816,EGCC-nadahassan,2314(Maqsam),2026-05-04 00:09:35,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaHassan.301669776.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916205&Signature=g2B6iPdhZqsVORsULjt%2FxcSFD38%3D
+62160532,EGCC-nadahassan,2314(Maqsam),2026-05-04 00:06:59,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaHassan.301669119.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916206&Signature=kU4T7NQlPKt%2FyImjfpwkM%2BWYySw%3D
+62160532,EGCC-nadahassan,2314(Maqsam),2026-05-04 00:05:42,,,,in_progress,
+62513906,EGCC-nadahassan,2314(Maqsam),2026-05-04 00:05:07,,,,客户未接听,
+63011060,EGCC-eman.amr,2289(Maqsam),2026-05-04 00:04:28,,,,用户忙,
+60715459,EGCC-eman.amr,2289(Maqsam),2026-05-04 00:02:18,,,,in_progress,
+62997418,EGCC-eman.amr,2289(Maqsam),2026-05-04 00:00:49,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-Eman.Amr.301667598.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916206&Signature=mSy7WUUkjk0Pi4qakMJrjMIQolY%3D
+62379777,EGCC-nadahassan,2314(Maqsam),2026-05-04 00:00:20,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaHassan.301667478.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916207&Signature=lMVvm8H3VdPiuUC20u9CblVdZus%3D
+62379777,EGCC-nadahassan,2314(Maqsam),2026-05-04 00:00:02,,,,用户忙,
+63008118,EGCC-eman.amr,2289(Maqsam),2026-05-03 23:59:38,,,,用户忙,
+62831103,EGCC-eman.amr,2289(Maqsam),2026-05-03 23:59:15,,,,用户忙,
+62807946,EGCC-eman.amr,2289(Maqsam),2026-05-03 23:57:54,,,,客户未接听,
+63083614,EGCC-eman.amr,2289(Maqsam),2026-05-03 23:54:51,,,,客户未接听,
+63083614,EGCC-eman.amr,2289(Maqsam),2026-05-03 23:53:37,,,,in_progress,
+63083614,EGCC-eman.amr,2289(Maqsam),2026-05-03 23:52:24,,,,客户未接听,
+63086039,EGCC-eman.amr,2289(Maqsam),2026-05-03 23:47:50,,,,in_progress,
+63076670,EGCC-eman.amr,2289(Maqsam),2026-05-03 23:47:10,,,,客户未接听,
+63079645,EGCC-eman.amr,2289(Maqsam),2026-05-03 23:44:40,,,,in_progress,
+63071723,EGCC-eman.amr,2289(Maqsam),2026-05-03 23:42:56,,,,用户忙,
+63072901,EGCC-eman.amr,2289(Maqsam),2026-05-03 23:41:43,,,,用户忙,
+62055571,EGCC-nadahassan,2314(Maqsam),2026-05-03 23:41:43,,,,in_progress,
+63069237,EGCC-eman.amr,2289(Maqsam),2026-05-03 23:41:15,,,,客户未接听,
+63074168,EGCC-eman.amr,2289(Maqsam),2026-05-03 23:40:31,,,,客户未接听,
+62055571,EGCC-nadahassan,2314(Maqsam),2026-05-03 23:40:13,,,,客户未接听,
+62213650,EGCC-eman.amr,2289(Maqsam),2026-05-03 23:39:38,,,,用户忙,
+62213650,EGCC-eman.amr,2289(Maqsam),2026-05-03 23:39:28,,,,用户忙,
+63069237,EGCC-eman.amr,2289(Maqsam),2026-05-03 23:37:44,,,,客户未接听,
+63081772,EGCC-eman.amr,2289(Maqsam),2026-05-03 23:34:23,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-Eman.Amr.301660205.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916211&Signature=AYcPnAesCktZp1dXxd7pEkxrKUs%3D
+63081772,EGCC-eman.amr,2289(Maqsam),2026-05-03 23:32:53,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-Eman.Amr.301659830.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916211&Signature=bSbwWCaN3XsTZwoSqDD4PLQnelU%3D
+63082186,EGCC-eman.amr,2289(Maqsam),2026-05-03 23:31:56,,,,用户忙,
+63082186,EGCC-eman.amr,2289(Maqsam),2026-05-03 23:31:30,,,,用户忙,
+63086039,EGCC-eman.amr,2289(Maqsam),2026-05-03 23:30:02,,,,in_progress,
+63086039,EGCC-eman.amr,2289(Maqsam),2026-05-03 23:29:01,,,,用户忙,
+62517281,EGCC-nadahassan,2314(Maqsam),2026-05-03 23:27:24,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-NadaHassan.301658443.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916212&Signature=OFITvT4HrAFrAR2c0sAVoZlJKP0%3D
+63082004,EGCC-nadahassan,2314(Maqsam),2026-05-03 23:24:53,,,,客户未接听,
+63082004,EGCC-nadahassan,2314(Maqsam),2026-05-03 23:23:36,,,,in_progress,
+63082396,EGCC-nadahassan,2314(Maqsam),2026-05-03 23:22:35,,,,用户忙,
+63082396,EGCC-nadahassan,2314(Maqsam),2026-05-03 23:22:13,,,,客户未接听,
+62517281,EGCC-nadahassan,2314(Maqsam),2026-05-03 23:07:22,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-NadaHassan.301652913.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916213&Signature=S05VOKmcMiulJKbxQJz7D7P1%2BBg%3D
+62655058,EGCC-eman.amr,2289(Maqsam),2026-05-03 21:49:03,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-Eman.Amr.301627609.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916214&Signature=xZ3OfbwcVnaJV0qmR6pKw3foMIQ%3D
+63076670,EGCC-eman.amr,2289(Maqsam),2026-05-03 21:46:08,,,,用户忙,
+63081227,EGCC-eman.amr,2289(Maqsam),2026-05-03 21:43:41,,,,客户未接听,
+63086268,EGCC-nadahassan,2314(Maqsam),2026-05-03 21:32:49,,,,in_progress,
+63086268,EGCC-nadahassan,2314(Maqsam),2026-05-03 21:32:41,,,,用户忙,
+63067876,EGCC-nadahassan,2314(Maqsam),2026-05-03 21:29:21,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-NadaHassan.301620620.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916215&Signature=TZ7fVY2EH6pqZcWhBvl%2B4C7N%2Bxc%3D
+63080022,EGCC-nadahassan,2314(Maqsam),2026-05-03 21:25:02,,,,客户未接听,
+63080022,EGCC-nadahassan,2314(Maqsam),2026-05-03 21:23:35,,,,in_progress,
+63086268,EGCC-nadahassan,2314(Maqsam),2026-05-03 21:18:11,,,,in_progress,
+63086268,EGCC-nadahassan,2314(Maqsam),2026-05-03 21:17:05,,,,客户未接听,
+63086268,EGCC-nadahassan,2314(Maqsam),2026-05-03 21:16:23,,,,用户忙,
+63082004,EGCC-nadahassan,2314(Maqsam),2026-05-03 21:12:04,,,,in_progress,
+63082004,EGCC-nadahassan,2314(Maqsam),2026-05-03 21:10:52,,,,客户未接听,
+63074875,EGCC-nadahassan,2314(Maqsam),2026-05-03 21:08:35,,,,in_progress,
+63074875,EGCC-nadahassan,2314(Maqsam),2026-05-03 21:07:26,,,,客户未接听,
+0,EGCC-nadahassan,2314(Maqsam),2026-05-03 21:05:40,,,,in_progress,
+63072016,EGCC-nadahassan,2314(Maqsam),2026-05-03 20:58:22,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-NadaHassan.301609719.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916216&Signature=I7jvuV8%2B3yetijn6XrpGolQcPXs%3D
+63079645,EGCC-eman.amr,2289(Maqsam),2026-05-03 20:43:50,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-Eman.Amr.301604282.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916217&Signature=Q2UqRYXGfcsmwBwnKtEiLgDVm9w%3D
+63076670,EGCC-eman.amr,2289(Maqsam),2026-05-03 20:42:12,,,,in_progress,
+63074168,EGCC-eman.amr,2289(Maqsam),2026-05-03 20:38:49,,,,用户忙,
+63079645,EGCC-eman.amr,2289(Maqsam),2026-05-03 20:29:03,,,,客户未接听,
+63074168,EGCC-eman.amr,2289(Maqsam),2026-05-03 20:24:57,,,,用户忙,
+63072901,EGCC-eman.amr,2289(Maqsam),2026-05-03 20:23:45,,,,in_progress,
+63072901,EGCC-eman.amr,2289(Maqsam),2026-05-03 20:23:34,,,,用户忙,
+63072016,EGCC-nadahassan,2314(Maqsam),2026-05-03 20:23:21,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-NadaHassan.301596457.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916218&Signature=CZwIZdy1DDmuNaKRNBykwSljaKs%3D
+63072016,EGCC-nadahassan,2314(Maqsam),2026-05-03 20:18:19,,,,客户未接听,
+63071723,EGCC-eman.amr,2289(Maqsam),2026-05-03 20:18:16,,,,prepped,
+63072016,EGCC-nadahassan,2314(Maqsam),2026-05-03 20:16:41,,,,客户未接听,
+63081227,EGCC-eman.amr,2289(Maqsam),2026-05-03 20:02:52,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-Eman.Amr.301588434.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916218&Signature=RPN2RN7PE5wQe19mYK0GfrK3u1g%3D
+63079645,EGCC-eman.amr,2289(Maqsam),2026-05-03 20:00:51,,,,客户未接听,
+63079645,EGCC-eman.amr,2289(Maqsam),2026-05-03 20:00:13,,,,用户忙,
+63081242,EGCC-nadahassan,2314(Maqsam),2026-05-03 19:49:20,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-NadaHassan.301583127.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916219&Signature=%2FFm9dIjLzbxL%2FvSayY7wle7ggs0%3D
+63082396,EGCC-nadahassan,2314(Maqsam),2026-05-03 19:41:40,,,,用户忙,
+63082396,EGCC-nadahassan,2314(Maqsam),2026-05-03 19:40:56,,,,用户忙,
+63073597,EGCC-nadahassan,2314(Maqsam),2026-05-03 19:36:00,,,,in_progress,
+63073597,EGCC-nadahassan,2314(Maqsam),2026-05-03 19:35:11,,,,用户忙,
+63079645,EGCC-eman.amr,2289(Maqsam),2026-05-03 18:02:13,,,,客户未接听,
+63079645,EGCC-eman.amr,2289(Maqsam),2026-05-03 18:01:55,,,,客户未接听,
+63076670,EGCC-eman.amr,2289(Maqsam),2026-05-03 18:00:50,,,,客户未接听,
+63076670,EGCC-eman.amr,2289(Maqsam),2026-05-03 18:00:35,,,,客户未接听,
+63076670,EGCC-eman.amr,2289(Maqsam),2026-05-03 18:00:13,,,,prepped,
+63069237,EGCC-eman.amr,2289(Maqsam),2026-05-03 17:58:30,,,,用户忙,
+63069237,EGCC-eman.amr,2289(Maqsam),2026-05-03 17:57:55,,,,用户忙,
+63074168,EGCC-eman.amr,2289(Maqsam),2026-05-03 17:56:30,,,,用户忙,
+63074168,EGCC-eman.amr,2289(Maqsam),2026-05-03 17:56:23,,,,用户忙,
+63074168,EGCC-eman.amr,2289(Maqsam),2026-05-03 17:56:11,,,,用户忙,
+63072901,EGCC-eman.amr,2289(Maqsam),2026-05-03 17:52:42,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-Eman.Amr.301535265.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916223&Signature=WozrjVcp5LJVS7Ilj%2FsC7Axl%2Fdk%3D
+63072901,EGCC-eman.amr,2289(Maqsam),2026-05-03 17:52:33,,,,用户忙,
+63071723,EGCC-eman.amr,2289(Maqsam),2026-05-03 17:50:35,,,,in_progress,
+63062920,EGCC-eman.amr,2289(Maqsam),2026-05-03 17:48:55,,,,客户未接听,
+63062920,EGCC-eman.amr,2289(Maqsam),2026-05-03 17:47:45,,,,in_progress,
+0,EGCC-nadahassan,2314(Maqsam),2026-05-03 17:35:40,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-NadaHassan.301528203.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916224&Signature=GzTgJUcwQGnMKc2RMYRjuzY6Jbs%3D
+62770158,EGCC-nadahassan,2314(Maqsam),2026-05-02 20:53:28,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-NadaHassan.301338605.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916224&Signature=98t9lHYSCJJEqwDzHDhX1qC21PQ%3D
+62782636,EGCC-nadahassan,2314(Maqsam),2026-05-02 20:48:13,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-NadaHassan.301336866.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916224&Signature=2Wuua%2BPNoXR3YNvSyU4fGzNXx4U%3D
+62784051,EGCC-nadahassan,2314(Maqsam),2026-05-02 20:45:50,,,,客户未接听,
+62784051,EGCC-nadahassan,2314(Maqsam),2026-05-02 20:45:21,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-NadaHassan.301335932.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916225&Signature=rWP8WmuDfVP%2F18xXy2z9Wq%2FRiqQ%3D
+62789261,EGCC-nadahassan,2314(Maqsam),2026-05-02 20:29:55,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-NadaHassan.301330785.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916225&Signature=KBBgB3ddHwwZnyYGhIRBrg8XvS0%3D
+62796536,EGCC-nadahassan,2314(Maqsam),2026-05-02 20:26:09,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-NadaHassan.301329554.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916226&Signature=%2FWD96BNaAVapix8q3xHCnXCgp40%3D
+62803934,EGCC-nadahassan,2314(Maqsam),2026-05-02 20:25:07,,,,客户未接听,
+62805415,EGCC-nadahassan,2314(Maqsam),2026-05-02 20:23:13,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-NadaHassan.301328582.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916226&Signature=Mtmtc3rWFqv46dPziot%2Bm1X2%2Bkc%3D
+63028472,EGCC-nadahassan,2314(Maqsam),2026-05-02 20:11:45,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-NadaHassan.301324865.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916227&Signature=RI7cgd0XSTOQqafvlVrW1wnlOXc%3D
+63073570,EGCC-nadahassan,2314(Maqsam),2026-05-02 20:10:20,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-NadaHassan.301324409.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916227&Signature=izme9KRz5%2B4oqNWCCuDdZqYzlP8%3D
+63073570,EGCC-nadahassan,2314(Maqsam),2026-05-02 20:09:51,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-NadaHassan.301324275.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916228&Signature=NAJ9lhr24cOIkjK4xdCBrfqYmBo%3D
+63074289,EGCC-nadahassan,2314(Maqsam),2026-05-02 20:08:33,,,,in_progress,
+63074289,EGCC-nadahassan,2314(Maqsam),2026-05-02 20:07:27,,,,客户未接听,
+63074875,EGCC-nadahassan,2314(Maqsam),2026-05-02 20:06:40,,,,客户未接听,
+63074875,EGCC-nadahassan,2314(Maqsam),2026-05-02 20:05:27,,,,in_progress,
+63067756,EGCC-nadahassan,2314(Maqsam),2026-05-02 20:02:15,,,,用户忙,
+63067756,EGCC-nadahassan,2314(Maqsam),2026-05-02 20:01:38,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-NadaHassan.301321631.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916229&Signature=RS2mRHLooLDt%2FXfpLx8nQtes498%3D
+63072901,EGCC-eman.amr,2289(Maqsam),2026-05-02 19:59:18,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-Eman.Amr.301320879.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916229&Signature=ygp5Mr3alSQgyCNj4wbfJoleFxw%3D
+63072901,EGCC-eman.amr,2289(Maqsam),2026-05-02 19:59:09,,,,用户忙,
+63074168,EGCC-eman.amr,2289(Maqsam),2026-05-02 19:46:46,,,,客户未接听,
+63074168,EGCC-eman.amr,2289(Maqsam),2026-05-02 19:46:38,,,,客户未接听,
+63074168,EGCC-eman.amr,2289(Maqsam),2026-05-02 19:46:06,,,,客户未接听,
+63074168,EGCC-eman.amr,2289(Maqsam),2026-05-02 19:44:36,,,,in_progress,
+63074168,EGCC-eman.amr,2289(Maqsam),2026-05-02 19:41:38,,,,用户忙,
+60715459,EGCC-eman.amr,2289(Maqsam),2026-05-02 19:41:23,,,,客户未接听,
+63072016,EGCC-nadahassan,2314(Maqsam),2026-05-02 19:29:07,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-NadaHassan.301311566.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916230&Signature=jKHLY1JdikTzQYCCd%2BZ0d%2BUFhOc%3D
+63076670,EGCC-eman.amr,2289(Maqsam),2026-05-02 19:26:22,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-Eman.Amr.301310730.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916231&Signature=85Zn5TYUQOBmADYnlXJNHVqIrQ4%3D
+63076670,EGCC-eman.amr,2289(Maqsam),2026-05-02 19:24:46,,,,客户未接听,
+63072016,EGCC-nadahassan,2314(Maqsam),2026-05-02 19:24:37,,,,客户未接听,
+63072016,EGCC-nadahassan,2314(Maqsam),2026-05-02 19:21:50,,,,客户未接听,
+63072016,EGCC-nadahassan,2314(Maqsam),2026-05-02 19:17:49,,,,in_progress,
+63073597,EGCC-nadahassan,2314(Maqsam),2026-05-02 19:10:14,,,,用户忙,
+63073597,EGCC-nadahassan,2314(Maqsam),2026-05-02 19:09:24,,,,用户忙,
+63068786,EGCC-nadahassan,2314(Maqsam),2026-05-02 19:04:47,,,,用户忙,
+63068786,EGCC-nadahassan,2314(Maqsam),2026-05-02 19:04:10,,,,用户忙,
+63068786,EGCC-nadahassan,2314(Maqsam),2026-05-02 18:56:00,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-NadaHassan.301300377.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916233&Signature=Ld%2B6yaY9k8G2ahKIGjx%2BKV3N%2FJM%3D
+63068786,EGCC-nadahassan,2314(Maqsam),2026-05-02 18:52:39,,,,客户未接听,
+63074875,EGCC-nadahassan,2314(Maqsam),2026-05-02 18:47:53,,,,in_progress,
+63074875,EGCC-nadahassan,2314(Maqsam),2026-05-02 18:46:40,,,,客户未接听,
+63074289,EGCC-nadahassan,2314(Maqsam),2026-05-02 18:43:29,,,,客户未接听,
+63074289,EGCC-nadahassan,2314(Maqsam),2026-05-02 18:42:22,,,,客户未接听,
+63073570,EGCC-nadahassan,2314(Maqsam),2026-05-02 18:38:06,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-NadaHassan.301294199.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916234&Signature=6dmbggC1Rp%2Bm40S1NPts%2Fq0Od8g%3D
+63073570,EGCC-nadahassan,2314(Maqsam),2026-05-02 18:37:06,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-NadaHassan.301293851.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916235&Signature=xTLriHTlP9WEmAdx2S9DGY%2BkgkM%3D
+62712794,EGCC-nadahassan,2314(Maqsam),2026-05-02 18:29:07,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-NadaHassan.301291201.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916235&Signature=mDbhWsqUnVLqwV7tPPPM5llZDR0%3D
+63071723,EGCC-eman.amr,2289(Maqsam),2026-05-02 18:25:21,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-Eman.Amr.301290081.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916236&Signature=VDXwBW%2FTGtClqW%2BSqGdWIEeL5DA%3D
+62939637,EGCC-nadahassan,2314(Maqsam),2026-05-02 18:21:20,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-NadaHassan.301288940.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916236&Signature=NAfl1K19mNliyf9J%2FmL4FebDxOA%3D
+62993830,EGCC-nadahassan,2314(Maqsam),2026-05-02 18:15:07,,,,in_progress,
+63029961,EGCC-nadahassan,2314(Maqsam),2026-05-02 18:14:52,,,,客户未接听,
+63029961,EGCC-nadahassan,2314(Maqsam),2026-05-02 18:13:41,,,,客户未接听,
+63029961,EGCC-nadahassan,2314(Maqsam),2026-05-02 18:12:28,,,,客户未接听,
+63071723,EGCC-eman.amr,2289(Maqsam),2026-05-02 18:08:35,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-Eman.Amr.301285153.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916237&Signature=92QNS8wo42j6khe9f18IGLXHXxc%3D
+63072901,EGCC-eman.amr,2289(Maqsam),2026-05-02 18:06:19,,,,客户未接听,
+63072901,EGCC-eman.amr,2289(Maqsam),2026-05-02 18:05:56,,,,用户忙,
+63069237,EGCC-eman.amr,2289(Maqsam),2026-05-02 18:04:54,,,,用户忙,
+63069237,EGCC-eman.amr,2289(Maqsam),2026-05-02 18:03:05,,,,in_progress,
+62517281,EGCC-nadahassan,2314(Maqsam),2026-05-02 18:02:00,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-NadaHassan.301282941.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916238&Signature=uMg%2BCOWkEyOnwR%2BlVWJTL%2FKwEDw%3D
+63074168,EGCC-eman.amr,2289(Maqsam),2026-05-02 18:00:51,,,,客户未接听,
+63074168,EGCC-eman.amr,2289(Maqsam),2026-05-02 17:59:41,,,,in_progress,
+63074168,EGCC-eman.amr,2289(Maqsam),2026-05-02 17:58:34,,,,客户未接听,
+63074168,EGCC-eman.amr,2289(Maqsam),2026-05-02 17:58:21,,,,用户忙,
+62517281,EGCC-nadahassan,2314(Maqsam),2026-05-02 17:58:20,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-NadaHassan.301281708.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916239&Signature=qcdTDQyr9AaUCk%2FNg00By43SHjo%3D
+62517281,EGCC-nadahassan,2314(Maqsam),2026-05-02 17:57:00,,,,in_progress,
+63067971,EGCC-eman.amr,2289(Maqsam),2026-05-02 17:52:13,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-Eman.Amr.301279429.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916239&Signature=KjzMD%2Ba0JEZTqirnPHZnrwu6GM8%3D
+63069237,EGCC-eman.amr,2289(Maqsam),2026-05-02 17:50:41,,,,in_progress,
+63069237,EGCC-eman.amr,2289(Maqsam),2026-05-02 17:49:34,,,,in_progress,
+63076694,EGCC-nadahassan,2314(Maqsam),2026-05-02 17:38:04,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-NadaHassan.301273887.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916240&Signature=b%2FnloOSxdPptZoSO9rbEflbEN%2BU%3D
+63056389,EGCC-eman.amr,2289(Maqsam),2026-05-02 17:34:51,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-Eman.Amr.301272605.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916240&Signature=gJPVyN3%2B9fej43g%2FSX33e7ArSjo%3D
+63019344,51habiba.hassan,2244(Maqsam),2026-05-01 00:16:33,,,,客户未接听,
+62898375,EGCC-fatmamohamed,2310(Maqsam),2026-05-04 23:34:26,,,,客户未接听,
+62901383,EGCC-fatmamohamed,2310(Maqsam),2026-05-04 23:30:54,,,,用户忙,
+62901383,EGCC-fatmamohamed,2310(Maqsam),2026-05-04 23:30:41,,,,用户忙,
+0,51nadamuhammad,2245(Maqsam),2026-05-04 23:26:57,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaMuhammad.301966404.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916250&Signature=ewaTLRLjZ6Pz8FcBxQmeB0nhZoI%3D
+63080837,EGCC-fatmamohamed,2310(Maqsam),2026-05-04 23:22:22,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-FatmaMohamed.301965035.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916250&Signature=vqV36yCkvWg74eiyzJXpIJ%2FChAg%3D
+63080837,EGCC-fatmamohamed,2310(Maqsam),2026-05-04 23:21:02,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-FatmaMohamed.301964641.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916250&Signature=9cdHMiQGPl%2BX0QmLemOExn9tDYY%3D
+63094871,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 23:10:12,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-TasneemMahmoud.301961633.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916251&Signature=Pb24GzQbHR2YGbvjPcXlnqRPbsk%3D
+63088870,EGCC-maiwaheed,2313(Maqsam),2026-05-04 23:09:40,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-MaiWaheed.301961479.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916251&Signature=0ZEjpXEhaaLWIWJ9eLVjnT%2B7n68%3D
+0,EGCC-maiwaheed,2313(Maqsam),2026-05-04 23:09:25,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-MaiWaheed.301961419.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916252&Signature=X80snDBsK09vMJyMxWCsvp8VUe0%3D
+63091064,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 23:08:27,,,,客户未接听,
+0,EGCC-maiwaheed,2313(Maqsam),2026-05-04 23:05:09,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-MaiWaheed.301960171.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916252&Signature=nd%2F6brn%2FV8sPcHrT4GoB25kp3SI%3D
+0,EGCC-maiwaheed,2313(Maqsam),2026-05-04 23:04:50,,,,客户未接听,
+63050750,EGCC-maiwaheed,2313(Maqsam),2026-05-04 23:01:45,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-MaiWaheed.301959150.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916253&Signature=DVD4Dyd6XAPMYuqE1H01FlpxUb4%3D
+63058333,51nadamuhammad,2245(Maqsam),2026-05-04 22:45:42,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaMuhammad.301952920.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916253&Signature=0bkTV9b3hMxRg91h2Y8cWpQq1eU%3D
+63050750,EGCC-maiwaheed,2313(Maqsam),2026-05-04 22:34:47,,,,用户忙,
+63050750,EGCC-maiwaheed,2313(Maqsam),2026-05-04 22:34:27,,,,用户忙,
+63088870,EGCC-maiwaheed,2313(Maqsam),2026-05-04 22:30:45,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-MaiWaheed.301946626.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916254&Signature=mtaDhaEew6RZgxqs6V8if%2BlTNmI%3D
+63088870,EGCC-maiwaheed,2313(Maqsam),2026-05-04 22:24:14,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-MaiWaheed.301943821.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916254&Signature=%2BM%2FFxFF1RdkKyBDVNc%2B5H6IiXfc%3D
+63081802,EGCC-maiwaheed,2313(Maqsam),2026-05-04 22:23:28,,,,用户忙,
+63091064,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 21:56:24,,,,客户未接听,
+61455845,51nadamuhammad,2245(Maqsam),2026-05-04 21:48:28,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaMuhammad.301928485.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916255&Signature=krXKiuMgE2gCIc5JKBW9dn0PN2M%3D
+63078840,EGCC-maiwaheed,2313(Maqsam),2026-05-04 21:47:34,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-MaiWaheed.301928052.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916255&Signature=%2B3Ic086%2FL%2FrjABj1HNkMjBVs7ZA%3D
+63091064,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 21:44:16,,,,in_progress,
+63090460,51nadamuhammad,2245(Maqsam),2026-05-04 21:42:32,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaMuhammad.301925611.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916256&Signature=Tak1ew8qoJlO7O9xZ4N5EVRCIjw%3D
+63080870,EGCC-maiwaheed,2313(Maqsam),2026-05-04 21:42:23,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-MaiWaheed.301925542.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916256&Signature=qGpjR3xxpG8l9q5LMJSNbkKHQxo%3D
+62465851,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 21:41:36,,,,in_progress,
+0,EGCC-maiwaheed,2313(Maqsam),2026-05-04 21:41:10,,,,客户未接听,
+63079252,EGCC-fatmamohamed,2310(Maqsam),2026-05-04 21:40:38,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-FatmaMohamed.301924688.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916257&Signature=VXzkLz1QGHKMjEt6C%2BBqYL3ggbA%3D
+63082678,51nadamuhammad,2245(Maqsam),2026-05-04 21:39:13,,,,in_progress,
+0,EGCC-maiwaheed,2313(Maqsam),2026-05-04 21:38:59,,,,客户未接听,
+0,EGCC-maiwaheed,2313(Maqsam),2026-05-04 21:38:24,,,,prepped,
+62465851,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 21:37:24,,,,客户未接听,
+63081950,51nadamuhammad,2245(Maqsam),2026-05-04 21:35:43,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaMuhammad.301922430.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916258&Signature=fTcleMIeTZ3kOQcuzaX9SKxFTNU%3D
+63080870,EGCC-maiwaheed,2313(Maqsam),2026-05-04 21:35:22,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-MaiWaheed.301922289.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916258&Signature=VoaDGU1LIpFsF7fafYEHq9xsw7M%3D
+62476202,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 21:33:50,,,,用户忙,
+62476202,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 21:32:42,,,,in_progress,
+62108473,51nadamuhammad,2245(Maqsam),2026-05-04 21:31:33,,,,客户未接听,
+0,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 21:28:30,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-TasneemMahmoud.301918955.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916259&Signature=t4%2FK5SaIl%2FMJs2H37GggyfE2B4o%3D
+62108473,51nadamuhammad,2245(Maqsam),2026-05-04 21:23:18,,,,in_progress,
+62453293,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 21:15:33,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-TasneemMahmoud.301912790.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916259&Signature=Je%2BEiwTl6Hqoir%2B5t1PAMkbH1Go%3D
+0,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 21:14:10,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-TasneemMahmoud.301912238.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916260&Signature=bhbLnysaL%2FVLzR3inYcOkwTTovM%3D
+0,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 21:13:41,,,,用户忙,
+0,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 21:12:42,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-TasneemMahmoud.301911631.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916260&Signature=dsYaf41AYwLiY4irRUNwRUTSve4%3D
+0,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 21:12:08,,,,in_progress,
+63082131,EGCC-fatmamohamed,2310(Maqsam),2026-05-04 21:07:52,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-FatmaMohamed.301909745.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916261&Signature=QMqTFux%2BM4iawFyn%2B6%2FMyFpj4Ao%3D
+63087348,EGCC-maiwaheed,2313(Maqsam),2026-05-04 21:07:09,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-MaiWaheed.301909446.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916261&Signature=8xgivGwoE3eyXn60l3tTeJmEp%2Bs%3D
+63087348,EGCC-maiwaheed,2313(Maqsam),2026-05-04 21:06:40,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-MaiWaheed.301909251.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916262&Signature=Ap1FXQ9s1%2F7iwv0QGn2bakghCGQ%3D
+63065467,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 21:03:24,,,,客户未接听,
+61702293,EGCC-fatmamohamed,2310(Maqsam),2026-05-04 21:03:20,,,,客户未接听,
+63040908,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 21:02:04,,,,客户未接听,
+63040908,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 21:01:46,,,,客户未接听,
+63067657,EGCC-fatmamohamed,2310(Maqsam),2026-05-04 21:00:59,,,,客户未接听,
+62539498,EGCC-maiwaheed,2313(Maqsam),2026-05-04 21:00:41,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-MaiWaheed.301906937.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916264&Signature=KiKTLauhlGAe8wBkQcqqJ%2Bfgz5w%3D
+62108473,51nadamuhammad,2245(Maqsam),2026-05-04 20:58:48,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaMuhammad.301906165.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916265&Signature=Z4WMz5KHjSYAhChag%2F%2F3qz1xc8s%3D
+0,EGCC-maiwaheed,2313(Maqsam),2026-05-04 20:57:08,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-MaiWaheed.301905540.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916265&Signature=6lGUuPcW1lnzeRNce%2BXXNjaYz7E%3D
+0,EGCC-maiwaheed,2313(Maqsam),2026-05-04 20:55:49,,,,客户未接听,
+63022985,EGCC-fatmamohamed,2310(Maqsam),2026-05-04 20:55:35,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-FatmaMohamed.301904921.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916266&Signature=bNC%2FLUuyoMci399sSI%2Bpu2wmjzY%3D
+63086973,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 20:54:22,,,,用户忙,
+63086973,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 20:54:07,,,,用户忙,
+0,EGCC-fatmamohamed,2310(Maqsam),2026-05-04 20:53:19,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-FatmaMohamed.301903959.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916266&Signature=t5odkG5hr0Oe6LPX4ndy%2Bv2oSEY%3D
+62185208,EGCC-maiwaheed,2313(Maqsam),2026-05-04 20:45:58,,,,客户未接听,
+62185208,EGCC-maiwaheed,2313(Maqsam),2026-05-04 20:45:26,,,,客户未接听,
+0,51nadamuhammad,2245(Maqsam),2026-05-04 20:44:52,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaMuhammad.301900375.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916267&Signature=ZTcqE4CEEItdsdMKothvD3m4OEY%3D
+62185208,EGCC-maiwaheed,2313(Maqsam),2026-05-04 20:44:01,,,,客户未接听,
+62010752,51nadamuhammad,2245(Maqsam),2026-05-04 20:43:27,,,,用户忙,
+63049974,EGCC-maiwaheed,2313(Maqsam),2026-05-04 20:38:27,,,,客户未接听,
+62453200,51nadamuhammad,2245(Maqsam),2026-05-04 20:35:35,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaMuhammad.301896324.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916268&Signature=IYiAVKSQBs8GdqkVGLKNl2vMFmY%3D
+63050936,EGCC-maiwaheed,2313(Maqsam),2026-05-04 20:34:34,,,,客户未接听,
+63050936,EGCC-maiwaheed,2313(Maqsam),2026-05-04 20:33:18,,,,客户未接听,
+63050936,EGCC-maiwaheed,2313(Maqsam),2026-05-04 20:33:06,,,,用户忙,
+0,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 20:28:13,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-TasneemMahmoud.301892941.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916268&Signature=v%2FlIDZeMPbekJZXmXOEMemateYU%3D
+0,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 20:27:42,,,,客户未接听,
+0,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 20:27:19,,,,用户忙,
+63081982,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 20:25:43,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-TasneemMahmoud.301891715.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916269&Signature=q4v2C7T5PWFW7gZ08lfBEwSkFvA%3D
+0,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 20:24:11,,,,in_progress,
+63071980,EGCC-maiwaheed,2313(Maqsam),2026-05-04 20:24:02,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-MaiWaheed.301890880.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916270&Signature=kym6nVJjw9nDrE8SfT6jb2qsoUM%3D
+0,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 20:23:25,,,,客户未接听,
+63060658,EGCC-maiwaheed,2313(Maqsam),2026-05-04 20:23:19,,,,客户未接听,
+0,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 20:22:33,,,,客户未接听,
+0,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 20:21:55,,,,客户未接听,
+63059498,EGCC-maiwaheed,2313(Maqsam),2026-05-04 20:21:43,,,,客户未接听,
+63059498,EGCC-maiwaheed,2313(Maqsam),2026-05-04 20:21:24,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-MaiWaheed.301889675.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916271&Signature=iCsgsiSl62fb0Ivuma2TFucm1c4%3D
+62108473,51nadamuhammad,2245(Maqsam),2026-05-04 20:21:05,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaMuhammad.301889521.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916271&Signature=bQ%2B28he26nscaYNrWrL0lyvG%2FYk%3D
+61814075,EGCC-maiwaheed,2313(Maqsam),2026-05-04 20:18:56,,,,客户未接听,
+0,EGCC-maiwaheed,2313(Maqsam),2026-05-04 20:18:34,,,,用户忙,
+0,EGCC-maiwaheed,2313(Maqsam),2026-05-04 20:17:22,,,,in_progress,
+63054610,EGCC-fatmamohamed,2310(Maqsam),2026-05-04 20:15:01,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-FatmaMohamed.301886660.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916272&Signature=LTaJFMwjunroaOuov8X5oCYixV0%3D
+63081218,EGCC-fatmamohamed,2310(Maqsam),2026-05-04 20:14:05,,,,客户未接听,
+63081802,EGCC-maiwaheed,2313(Maqsam),2026-05-04 20:13:42,,,,客户未接听,
+63081802,EGCC-maiwaheed,2313(Maqsam),2026-05-04 20:13:22,,,,用户忙,
+61469752,51nadamuhammad,2245(Maqsam),2026-05-04 20:12:22,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaMuhammad.301885451.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916273&Signature=%2F9snUqPLieR2I2cIDv47dXsJohA%3D
+63091064,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 20:11:45,,,,in_progress,
+63081910,EGCC-fatmamohamed,2310(Maqsam),2026-05-04 20:11:34,,,,in_progress,
+63091064,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 20:10:42,,,,用户忙,
+63078840,EGCC-maiwaheed,2313(Maqsam),2026-05-04 20:10:42,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-MaiWaheed.301884685.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916273&Signature=uWQeZp0NpligXQiGiS%2FToawJI08%3D
+61469752,51nadamuhammad,2245(Maqsam),2026-05-04 20:09:55,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaMuhammad.301884337.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916274&Signature=Q%2BpTktv7btFNL%2FEqvyxMzgHuODA%3D
+63050750,EGCC-maiwaheed,2313(Maqsam),2026-05-04 20:09:30,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-MaiWaheed.301884148.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916274&Signature=HmgReD6TzuwU3p7IOyYmwhPKLZg%3D
+63081910,EGCC-fatmamohamed,2310(Maqsam),2026-05-04 20:09:14,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-FatmaMohamed.301884031.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916275&Signature=c3RCZlQuXZwqKsl9QGPHEVjF1wk%3D
+63084512,EGCC-maiwaheed,2313(Maqsam),2026-05-04 20:08:09,,,,用户忙,
+63084512,EGCC-maiwaheed,2313(Maqsam),2026-05-04 20:07:09,,,,用户忙,
+62072143,EGCC-fatmamohamed,2310(Maqsam),2026-05-04 20:06:45,,,,用户忙,
+63081984,EGCC-maiwaheed,2313(Maqsam),2026-05-04 20:05:28,,,,客户未接听,
+63081984,EGCC-maiwaheed,2313(Maqsam),2026-05-04 20:04:44,,,,客户未接听,
+60467797,51nadamuhammad,2245(Maqsam),2026-05-04 20:04:42,,,,客户未接听,
+63081982,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 20:04:00,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-TasneemMahmoud.301881768.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916277&Signature=SpLvxmx%2BZPqd85WqFPdg7sI%2FP10%3D
+63078749,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 20:03:46,,,,客户未接听,
+63082131,EGCC-fatmamohamed,2310(Maqsam),2026-05-04 20:03:30,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-FatmaMohamed.301881552.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916278&Signature=j3DgTCMlOwzGZyk1KDIF%2BnuuKM4%3D
+63081671,EGCC-maiwaheed,2313(Maqsam),2026-05-04 19:57:49,,,,客户未接听,
+63078749,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 19:37:12,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-TasneemMahmoud.301870289.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916278&Signature=yW5JODhHR5%2BObvuT4pb1xSkn%2BzA%3D
+63081982,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 19:34:18,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-TasneemMahmoud.301869027.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916279&Signature=hLpsRhlFv5x1pSYnFBj0TI4WnyQ%3D
+63081671,EGCC-maiwaheed,2313(Maqsam),2026-05-04 19:32:51,,,,in_progress,
+63081671,EGCC-maiwaheed,2313(Maqsam),2026-05-04 19:31:19,,,,客户未接听,
+63050992,EGCC-fatmamohamed,2310(Maqsam),2026-05-04 19:29:06,,,,in_progress,
+63081982,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 19:17:36,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-TasneemMahmoud.301861212.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916280&Signature=xKyIJSyXYC%2Bt8yaLI75pslvJDdY%3D
+63071980,EGCC-maiwaheed,2313(Maqsam),2026-05-04 19:17:25,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-MaiWaheed.301861138.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916280&Signature=IOd%2FjF5g3G0CAmCjDLrSu4%2B3YgY%3D
+63064560,EGCC-fatmamohamed,2310(Maqsam),2026-05-04 19:15:58,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-FatmaMohamed.301860514.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916280&Signature=kDxCvfoIsG9DH3jNbzWlgUHrVH4%3D
+63067657,EGCC-fatmamohamed,2310(Maqsam),2026-05-04 19:13:31,,,,用户忙,
+63067657,EGCC-fatmamohamed,2310(Maqsam),2026-05-04 19:13:14,,,,用户忙,
+63067657,EGCC-fatmamohamed,2310(Maqsam),2026-05-04 19:12:52,,,,用户忙,
+63067657,EGCC-fatmamohamed,2310(Maqsam),2026-05-04 19:12:42,,,,用户忙,
+63079252,EGCC-fatmamohamed,2310(Maqsam),2026-05-04 19:02:36,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-FatmaMohamed.301854669.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916281&Signature=MD2He7mXD%2Bexa65uKFUJeov6%2BAg%3D
+63088640,EGCC-maiwaheed,2313(Maqsam),2026-05-04 18:59:23,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-MaiWaheed.301853359.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916282&Signature=mLvJFd6pWjk%2Bwk0ZTB1RBWMfiZE%3D
+63088870,EGCC-maiwaheed,2313(Maqsam),2026-05-04 18:58:20,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-MaiWaheed.301852926.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916282&Signature=U2CS7nCspAX2NT5qTI5x2DFAtQc%3D
+63090460,51nadamuhammad,2245(Maqsam),2026-05-04 18:57:34,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaMuhammad.301852605.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916283&Signature=CmhSdBDQ%2BDAC6%2Bks9%2B5vfW3QfGo%3D
+62998310,51nadamuhammad,2245(Maqsam),2026-05-04 18:54:12,,,,客户未接听,
+62180951,51nadamuhammad,2245(Maqsam),2026-05-04 18:52:20,,,,客户未接听,
+63056134,EGCC-fatmamohamed,2310(Maqsam),2026-05-04 18:47:24,,,,in_progress,
+63081218,EGCC-fatmamohamed,2310(Maqsam),2026-05-04 18:46:11,,,,客户未接听,
+63054610,EGCC-fatmamohamed,2310(Maqsam),2026-05-04 18:44:19,,,,in_progress,
+63081910,EGCC-fatmamohamed,2310(Maqsam),2026-05-04 18:40:55,,,,用户忙,
+63081910,EGCC-fatmamohamed,2310(Maqsam),2026-05-04 18:40:41,,,,用户忙,
+59602801,51nadamuhammad,2245(Maqsam),2026-05-04 18:40:34,,,,用户忙,
+63092631,EGCC-fatmamohamed,2310(Maqsam),2026-05-04 18:39:09,,,,用户忙,
+63088870,EGCC-maiwaheed,2313(Maqsam),2026-05-04 18:36:43,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-MaiWaheed.301843932.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916284&Signature=7fvvKY%2F7XCWbMuD1RDHURANWdCs%3D
+59602801,51nadamuhammad,2245(Maqsam),2026-05-04 18:35:11,,,,用户忙,
+59602801,51nadamuhammad,2245(Maqsam),2026-05-04 18:33:45,,,,用户忙,
+63071980,EGCC-maiwaheed,2313(Maqsam),2026-05-04 18:31:40,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-MaiWaheed.301841818.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916285&Signature=XrQlzzmJEBuVaduWPQm2JvWQEfY%3D
+63078749,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 18:23:51,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-TasneemMahmoud.301838208.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916285&Signature=qMKB8oHI2uda5X%2BRU3Qck0EdNO8%3D
+63091389,EGCC-maiwaheed,2313(Maqsam),2026-05-04 18:22:08,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-MaiWaheed.301837418.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916285&Signature=N1I%2BETZdlGrl%2FbeR7o9vGTevgPo%3D
+63081872,EGCC-maiwaheed,2313(Maqsam),2026-05-04 18:20:08,,,,prepped,
+63081872,EGCC-maiwaheed,2313(Maqsam),2026-05-04 18:18:26,,,,客户未接听,
+63070422,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 18:15:41,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-TasneemMahmoud.301834531.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916286&Signature=EK%2FpPYEjEXts3lVBKNdDtltCPJg%3D
+63091064,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 18:15:02,,,,in_progress,
+63071611,EGCC-fatmamohamed,2310(Maqsam),2026-05-04 18:06:40,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-FatmaMohamed.301830505.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916287&Signature=kNElR1vFBAnA%2BXHE3q4EQYRA%2BcA%3D
+63071611,EGCC-fatmamohamed,2310(Maqsam),2026-05-04 18:06:30,,,,用户忙,
+63092631,EGCC-fatmamohamed,2310(Maqsam),2026-05-04 18:04:57,,,,用户忙,
+63092631,EGCC-fatmamohamed,2310(Maqsam),2026-05-04 18:04:44,,,,用户忙,
+63083261,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 17:59:18,,,,in_progress,
+63088418,51nadamuhammad,2245(Maqsam),2026-05-04 17:58:27,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaMuhammad.301827173.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916288&Signature=ZJlvd47n%2BcOKO1mDNQpoAFWQT0k%3D
+63083261,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 17:57:40,,,,客户未接听,
+63088418,51nadamuhammad,2245(Maqsam),2026-05-04 17:57:40,,,,用户忙,
+63088941,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 17:55:55,,,,用户忙,
+63088941,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 17:55:01,,,,用户忙,
+63089419,EGCC-fatmamohamed,2310(Maqsam),2026-05-04 17:53:53,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-FatmaMohamed.301825188.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916290&Signature=7o3JEf%2FczyZXztSjgDitpYnr%2BWU%3D
+63090460,51nadamuhammad,2245(Maqsam),2026-05-04 17:52:37,,,,用户忙,
+63065467,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 17:52:16,,,,客户未接听,
+63065467,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 17:51:09,,,,in_progress,
+61504669,EGCC-maiwaheed,2313(Maqsam),2026-05-04 17:50:17,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-MaiWaheed.301823665.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916291&Signature=1b9HuCTJjVeGfMVbTzJV11g2uiw%3D
+63040908,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 17:48:23,,,,客户未接听,
+63040908,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 17:47:01,,,,客户未接听,
+62544022,EGCC-maiwaheed,2313(Maqsam),2026-05-04 17:39:29,,,,用户忙,
+62544022,EGCC-maiwaheed,2313(Maqsam),2026-05-04 17:39:13,,,,用户忙,
+62544022,EGCC-maiwaheed,2313(Maqsam),2026-05-04 17:38:58,,,,用户忙,
+60467797,51nadamuhammad,2245(Maqsam),2026-05-04 17:37:44,,,,用户忙,
+63040908,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 17:37:33,,,,客户未接听,
+63071980,EGCC-maiwaheed,2313(Maqsam),2026-05-04 17:36:55,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-MaiWaheed.301817586.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916292&Signature=eSAZI64AojOqH6f%2FcHv%2FZ6y8Ppk%3D
+63086973,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 17:34:53,,,,用户忙,
+63086973,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 17:34:43,,,,用户忙,
+63086973,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 17:34:23,,,,用户忙,
+63029664,EGCC-maiwaheed,2313(Maqsam),2026-05-04 17:32:37,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-MaiWaheed.301815660.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916293&Signature=H%2B6kxAoL7bl8Bm7jRibgaODfoWU%3D
+63029664,EGCC-maiwaheed,2313(Maqsam),2026-05-04 17:31:26,,,,客户未接听,
+63091064,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 17:29:56,,,,in_progress,
+60681798,51nadamuhammad,2245(Maqsam),2026-05-04 17:29:23,,,,in_progress,
+63091064,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 17:28:44,,,,客户未接听,
+63081603,51nadamuhammad,2245(Maqsam),2026-05-04 17:27:53,,,,用户忙,
+0,EGCC-maiwaheed,2313(Maqsam),2026-05-04 17:27:14,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-MaiWaheed.301813279.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916294&Signature=uehE2EChe00oKcA1yGjl6M4AZt4%3D
+63058333,51nadamuhammad,2245(Maqsam),2026-05-04 17:25:23,,,,客户未接听,
+61504669,EGCC-maiwaheed,2313(Maqsam),2026-05-04 17:24:59,,,,客户未接听,
+63081982,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 17:24:50,,,,用户忙,
+63081982,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 17:24:33,,,,用户忙,
+63078749,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 17:23:00,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-TasneemMahmoud.301811375.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916295&Signature=tLsOS%2BotgornAXViFn4gVM6AbgM%3D
+63081950,51nadamuhammad,2245(Maqsam),2026-05-04 17:22:56,,,,客户未接听,
+63088640,EGCC-maiwaheed,2313(Maqsam),2026-05-04 17:22:11,,,,客户未接听,
+63082678,51nadamuhammad,2245(Maqsam),2026-05-04 17:20:38,,,,in_progress,
+63080837,EGCC-fatmamohamed,2310(Maqsam),2026-05-04 17:20:13,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-FatmaMohamed.301810186.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916295&Signature=Edub8GkFGlZM%2FsDt62Hz3rwWv8E%3D
+63088640,EGCC-maiwaheed,2313(Maqsam),2026-05-04 17:19:20,,,,prepped,
+63058333,51nadamuhammad,2245(Maqsam),2026-05-04 17:17:39,,,,in_progress,
+63088640,EGCC-maiwaheed,2313(Maqsam),2026-05-04 17:17:34,,,,in_progress,
+60183897,51nadamuhammad,2245(Maqsam),2026-05-04 01:57:30,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaMuhammad.301694757.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916296&Signature=22vbprgwEl%2FmMdGx5NLEsCojvC0%3D
+61845159,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 01:56:59,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-TasneemMahmoud.301694640.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916297&Signature=Ef8gM%2F7zCt%2Big99P%2ForEp%2BN0fiU%3D
+0,51nadamuhammad,2245(Maqsam),2026-05-04 01:54:54,,,,用户忙,
+0,51nadamuhammad,2245(Maqsam),2026-05-04 01:54:11,,,,in_progress,
+63070422,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 01:53:52,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-TasneemMahmoud.301693924.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916297&Signature=8g6SDw0aYxBhC8NxuLwkrsLYSRA%3D
+63039690,EGCC-maiwaheed,2313(Maqsam),2026-05-04 01:53:46,,,,客户未接听,
+62108473,51nadamuhammad,2245(Maqsam),2026-05-04 01:52:20,,,,客户未接听,
+61504669,EGCC-maiwaheed,2313(Maqsam),2026-05-04 01:49:28,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-MaiWaheed.301692935.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916298&Signature=hVLm6g%2F5ZP26b7e8K8Kv7Pe2vdA%3D
+63080254,EGCC-maiwaheed,2313(Maqsam),2026-05-04 01:48:54,,,,用户忙,
+63080254,EGCC-maiwaheed,2313(Maqsam),2026-05-04 01:48:41,,,,客户未接听,
+60467797,51nadamuhammad,2245(Maqsam),2026-05-04 01:45:04,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaMuhammad.301691883.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916298&Signature=aF0nsk9Ymadz3H1mqZj77ZvccXc%3D
+63081910,EGCC-fatmamohamed,2310(Maqsam),2026-05-04 01:41:59,,,,in_progress,
+59692404,51nadamuhammad,2245(Maqsam),2026-05-04 01:40:32,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaMuhammad.301690908.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916301&Signature=8pFH%2FxnaSoGbwcdPQxGbHKGayDI%3D
+63081218,EGCC-fatmamohamed,2310(Maqsam),2026-05-04 01:40:06,,,,in_progress,
+63029664,EGCC-maiwaheed,2313(Maqsam),2026-05-04 01:23:16,,,,in_progress,
+63071980,EGCC-maiwaheed,2313(Maqsam),2026-05-04 01:20:26,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-MaiWaheed.301686563.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916301&Signature=s4QDPIRiCq4XhDEib9OokxL97AU%3D
+63056134,EGCC-fatmamohamed,2310(Maqsam),2026-05-04 01:18:16,,,,客户未接听,
+63019612,EGCC-fatmamohamed,2310(Maqsam),2026-05-04 01:15:06,,,,in_progress,
+63019612,EGCC-fatmamohamed,2310(Maqsam),2026-05-04 01:14:15,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-FatmaMohamed.301685240.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916302&Signature=6fDMF54WBXuwN3oETZTJabvgPJc%3D
+62072143,EGCC-fatmamohamed,2310(Maqsam),2026-05-04 01:12:27,,,,客户未接听,
+62936517,51nadamuhammad,2245(Maqsam),2026-05-04 01:11:46,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaMuhammad.301684750.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916302&Signature=nxxUrc72LTpnO5pA06mad7P4Wsk%3D
+62906008,51nadamuhammad,2245(Maqsam),2026-05-04 01:11:05,,,,用户忙,
+61694375,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 01:10:26,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-TasneemMahmoud.301684487.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916303&Signature=Ukzoby2KkGT%2FhfbmmAmkrvY2%2F78%3D
+62072143,EGCC-fatmamohamed,2310(Maqsam),2026-05-04 01:09:17,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-FatmaMohamed.301684224.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916303&Signature=zDadZ3oBfFIY9WQNrlGnUarAeiA%3D
+62940330,51nadamuhammad,2245(Maqsam),2026-05-04 01:08:42,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaMuhammad.301684093.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916304&Signature=mHxF2FBQ7VcDa%2FbkuUQod04hvUI%3D
+63086292,51nadamuhammad,2245(Maqsam),2026-05-04 01:06:00,,,,in_progress,
+0,51nadamuhammad,2245(Maqsam),2026-05-04 01:04:41,,,,用户忙,
+63078373,51nadamuhammad,2245(Maqsam),2026-05-04 00:59:46,,,,用户忙,
+62283399,EGCC-maiwaheed,2313(Maqsam),2026-05-04 00:59:33,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-MaiWaheed.301682169.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916304&Signature=9A8nCbyWn9l1Ce2brSEkrNcCINI%3D
+63083261,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 00:57:33,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-TasneemMahmoud.301681758.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916305&Signature=ek2rDxFBhRb%2BjD8tQSbn82Pgifc%3D
+63070422,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 00:55:28,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-TasneemMahmoud.301681283.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916305&Signature=ewlj4%2BhXnrakAtYeqj131r49pmo%3D
+0,EGCC-maiwaheed,2313(Maqsam),2026-05-04 00:52:44,,,,用户忙,
+0,EGCC-maiwaheed,2313(Maqsam),2026-05-04 00:50:46,,,,用户忙,
+62454906,51nadamuhammad,2245(Maqsam),2026-05-04 00:50:02,,,,in_progress,
+63068131,EGCC-maiwaheed,2313(Maqsam),2026-05-04 00:48:23,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-MaiWaheed.301679509.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916306&Signature=mID5GemqbeI9P7VeberjD2VyM8c%3D
+61469752,51nadamuhammad,2245(Maqsam),2026-05-04 00:44:48,,,,prepped,
+63070422,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 00:44:43,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-TasneemMahmoud.301678511.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916307&Signature=eAlTieNh47qnI36URvej79SakcA%3D
+62998310,51nadamuhammad,2245(Maqsam),2026-05-04 00:41:42,,,,in_progress,
+63068131,EGCC-maiwaheed,2313(Maqsam),2026-05-04 00:40:53,,,,用户忙,
+61914351,51nadamuhammad,2245(Maqsam),2026-05-04 00:39:53,,,,用户忙,
+0,EGCC-maiwaheed,2313(Maqsam),2026-05-04 00:39:02,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-MaiWaheed.301676924.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916307&Signature=BPy5CINUEWtNo9VqZeL%2BIqZZi9s%3D
+62988378,51nadamuhammad,2245(Maqsam),2026-05-04 00:38:11,,,,in_progress,
+63068346,EGCC-maiwaheed,2313(Maqsam),2026-05-04 00:34:11,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-MaiWaheed.301675733.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916308&Signature=S%2FCySpoKzpax%2FmjRfx5xEGHOy1U%3D
+63078373,51nadamuhammad,2245(Maqsam),2026-05-04 00:33:06,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaMuhammad.301675466.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916308&Signature=fFM7q9oXPR6lKAy1s7jOEFqdyGo%3D
+63081872,EGCC-maiwaheed,2313(Maqsam),2026-05-04 00:21:36,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-MaiWaheed.301672680.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916309&Signature=onIi9KD62hcCTK8c8u50h0qd3jw%3D
+63087348,EGCC-maiwaheed,2313(Maqsam),2026-05-04 00:20:34,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-MaiWaheed.301672449.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916309&Signature=mwfjkLUDILUimnofWlzzsRXSOF0%3D
+63086973,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 00:20:27,,,,用户忙,
+63086973,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 00:19:37,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-TasneemMahmoud.301672221.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916310&Signature=x%2B5bRZH3jFsBvGpRllYCXmiLMDs%3D
+0,EGCC-maiwaheed,2313(Maqsam),2026-05-04 00:19:13,,,,用户忙,
+63086973,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 00:18:09,,,,in_progress,
+61814075,EGCC-maiwaheed,2313(Maqsam),2026-05-04 00:18:04,,,,in_progress,
+63039690,EGCC-maiwaheed,2313(Maqsam),2026-05-04 00:15:54,,,,用户忙,
+63087505,EGCC-fatmamohamed,2310(Maqsam),2026-05-04 00:11:34,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-FatmaMohamed.301670260.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916311&Signature=K%2BJgi8YYV5nXsKn%2Bxmj7wNh7rIY%3D
+0,EGCC-maiwaheed,2313(Maqsam),2026-05-04 00:09:48,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-MaiWaheed.301669830.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916311&Signature=5ybki2%2BH9uncfA3t1wUSThqGq90%3D
+59602801,51nadamuhammad,2245(Maqsam),2026-05-04 00:08:00,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaMuhammad.301669374.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916311&Signature=tD5xSnrSNbQV1VjlnUDp5df7loA%3D
+0,EGCC-maiwaheed,2313(Maqsam),2026-05-04 00:07:20,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-MaiWaheed.301669200.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916312&Signature=w7J6zy%2FM9JHnkVMUy5zpciPPNps%3D
+63079248,EGCC-maiwaheed,2313(Maqsam),2026-05-04 00:05:00,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-MaiWaheed.301668619.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916312&Signature=ctqAMiM5PdWF8Yb1oYrvhEqmwCc%3D
+63079248,EGCC-maiwaheed,2313(Maqsam),2026-05-04 00:04:50,,,,用户忙,
+0,51nadamuhammad,2245(Maqsam),2026-05-04 00:03:02,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-NadaMuhammad.301668145.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916313&Signature=5ul%2FAYmbycwhAYKKAxfgi7BJDQg%3D
+61513047,EGCC-maiwaheed,2313(Maqsam),2026-05-04 00:02:19,,,,客户未接听,
+61504669,EGCC-maiwaheed,2313(Maqsam),2026-05-04 00:01:12,,,,客户未接听,
+61694375,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-04 00:00:54,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-04/maqsam-TasneemMahmoud.301667619.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916313&Signature=VM2V5wyPODD1KUn9w8ji0fefYtw%3D
+61694375,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 23:58:13,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-TasneemMahmoud.301666922.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916315&Signature=wdjk19D2zPl9BTkon5hV3zvDiIQ%3D
+63075088,EGCC-maiwaheed,2313(Maqsam),2026-05-03 23:54:00,,,,用户忙,
+0,EGCC-maiwaheed,2313(Maqsam),2026-05-03 23:53:50,,,,客户未接听,
+63075088,EGCC-maiwaheed,2313(Maqsam),2026-05-03 23:52:33,,,,用户忙,
+63075088,EGCC-maiwaheed,2313(Maqsam),2026-05-03 23:52:26,,,,用户忙,
+58987546,51nadamuhammad,2245(Maqsam),2026-05-03 23:48:06,,,,in_progress,
+0,EGCC-fatmamohamed,2310(Maqsam),2026-05-03 23:45:36,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-FatmaMohamed.301663389.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916316&Signature=3V3mkmRFJg%2FPXmIXPvaGbAGC7jE%3D
+63081218,EGCC-fatmamohamed,2310(Maqsam),2026-05-03 23:42:18,,,,客户未接听,
+58987186,EGCC-fatmamohamed,2310(Maqsam),2026-05-03 23:33:33,,,,客户未接听,
+0,EGCC-fatmamohamed,2310(Maqsam),2026-05-03 23:32:05,,,,客户未接听,
+61694375,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 23:31:09,,,,用户忙,
+61694375,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 23:30:58,,,,用户忙,
+63074131,EGCC-fatmamohamed,2310(Maqsam),2026-05-03 23:30:55,,,,客户未接听,
+63083261,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 23:28:10,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-TasneemMahmoud.301658624.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916317&Signature=DsBJVqy6n7I0X5UnWlqxeGGZEwY%3D
+62777380,EGCC-fatmamohamed,2310(Maqsam),2026-05-03 23:26:51,,,,in_progress,
+62981788,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 23:21:42,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-TasneemMahmoud.301656889.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916318&Signature=XSp%2F7zbb87c9B6BntbH4%2FfH8bB4%3D
+62981788,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 23:20:18,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-TasneemMahmoud.301656521.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916318&Signature=rhQpjnsm6kXWY4ApuMHYba0YAl0%3D
+62987554,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 23:19:27,,,,用户忙,
+62987554,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 23:18:46,,,,用户忙,
+62980476,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 23:13:45,,,,客户未接听,
+62992058,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 23:13:04,,,,用户忙,
+63086292,51nadamuhammad,2245(Maqsam),2026-05-03 23:12:46,,,,客户未接听,
+62992058,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 23:12:41,,,,客户未接听,
+63087505,EGCC-fatmamohamed,2310(Maqsam),2026-05-03 23:12:31,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-FatmaMohamed.301654349.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916320&Signature=wRRPnFPlaDIcb4uk%2FoPd9IHmR7U%3D
+63008956,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 23:12:12,,,,in_progress,
+63008956,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 23:11:48,,,,客户未接听,
+59602801,51nadamuhammad,2245(Maqsam),2026-05-03 23:07:20,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-NadaMuhammad.301652901.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916320&Signature=pv%2FvVN0HSksLOb4OJyZiAQkIHbo%3D
+62924762,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 23:06:39,,,,用户忙,
+62924762,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 23:05:35,,,,in_progress,
+63084966,EGCC-fatmamohamed,2310(Maqsam),2026-05-03 23:05:32,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-FatmaMohamed.301652370.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916321&Signature=oLJAr0szwq8LLzP0lnu%2BjZFspmw%3D
+61504669,EGCC-maiwaheed,2313(Maqsam),2026-05-03 22:56:35,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-MaiWaheed.301649640.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916321&Signature=z7FeskXliaz7f0AdB2C7WH8Mpko%3D
+63086292,51nadamuhammad,2245(Maqsam),2026-05-03 22:56:24,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-NadaMuhammad.301649585.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916322&Signature=Agx7fW9dChL3rBVsZuKMEF0HKhY%3D
+63068346,EGCC-maiwaheed,2313(Maqsam),2026-05-03 22:46:49,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-MaiWaheed.301646316.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916322&Signature=6LgcEWEsDpRfRVOfkFKRNOgV6gU%3D
+61504669,EGCC-maiwaheed,2313(Maqsam),2026-05-03 22:45:35,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-MaiWaheed.301645934.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916322&Signature=HDEHIiGmvdaxDyy%2FqcmWhTw0MuQ%3D
+63074665,EGCC-fatmamohamed,2310(Maqsam),2026-05-03 22:17:29,,,,in_progress,
+63075976,EGCC-fatmamohamed,2310(Maqsam),2026-05-03 22:15:25,,,,用户忙,
+62942521,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 21:58:48,,,,客户未接听,
+62942521,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 21:57:21,,,,客户未接听,
+63071611,EGCC-fatmamohamed,2310(Maqsam),2026-05-03 21:55:56,,,,客户未接听,
+63071611,EGCC-fatmamohamed,2310(Maqsam),2026-05-03 21:55:41,,,,用户忙,
+0,51nadamuhammad,2245(Maqsam),2026-05-03 21:54:17,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-NadaMuhammad.301629457.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916324&Signature=Mksh5TatyPDaQ3tdsJbZOH%2BmMDM%3D
+62942278,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 21:53:30,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-TasneemMahmoud.301629181.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916324&Signature=t%2FkFnOys%2FoZxqqOlqRvZB5XSJ1c%3D
+0,EGCC-maiwaheed,2313(Maqsam),2026-05-03 21:53:18,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-MaiWaheed.301629110.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916324&Signature=9KSW7O27dlNxKi9jvSOZt3jwU3U%3D
+62942278,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 21:52:19,,,,客户未接听,
+62955195,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 21:51:38,,,,客户未接听,
+62955195,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 21:51:14,,,,prepped,
+63079248,EGCC-maiwaheed,2313(Maqsam),2026-05-03 21:51:10,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-MaiWaheed.301628382.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916325&Signature=Oj9OotxP%2BV05HVbjV0aBPNGhJUs%3D
+62955195,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 21:50:58,,,,客户未接听,
+62972120,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 21:50:36,,,,用户忙,
+62972120,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 21:50:05,,,,用户忙,
+62881630,51nadamuhammad,2245(Maqsam),2026-05-03 21:49:50,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-NadaMuhammad.301627905.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916328&Signature=Psl0QcZsnauGgD%2BcDMNUtfPYKPs%3D
+62972120,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 21:49:34,,,,用户忙,
+62963985,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 21:49:19,,,,客户未接听,
+62963985,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 21:49:02,,,,客户未接听,
+62963985,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 21:48:36,,,,用户忙,
+63068076,51nadamuhammad,2245(Maqsam),2026-05-03 21:40:41,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-NadaMuhammad.301624684.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916328&Signature=eMJSDcDoH5MfY%2B5uLG4xXtcjhoU%3D
+63073854,EGCC-maiwaheed,2313(Maqsam),2026-05-03 21:35:06,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-MaiWaheed.301622748.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916329&Signature=RroWCKyO3csDYC%2FklJKCeocYs4A%3D
+0,EGCC-maiwaheed,2313(Maqsam),2026-05-03 21:34:01,,,,用户忙,
+63073854,EGCC-maiwaheed,2313(Maqsam),2026-05-03 21:30:13,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-MaiWaheed.301620929.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916329&Signature=%2BzRbYhIzMBO%2BbIJ9aHm6aRaUSO8%3D
+63029208,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 21:29:23,,,,in_progress,
+63029208,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 21:27:59,,,,用户忙,
+63084966,EGCC-fatmamohamed,2310(Maqsam),2026-05-03 21:24:47,,,,客户未接听,
+61914351,51nadamuhammad,2245(Maqsam),2026-05-03 21:23:33,,,,用户忙,
+61914351,51nadamuhammad,2245(Maqsam),2026-05-03 21:23:23,,,,用户忙,
+63072501,EGCC-maiwaheed,2313(Maqsam),2026-05-03 21:18:31,,,,客户未接听,
+63072501,EGCC-maiwaheed,2313(Maqsam),2026-05-03 21:15:33,,,,客户未接听,
+63073854,EGCC-maiwaheed,2313(Maqsam),2026-05-03 21:08:54,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-MaiWaheed.301613484.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916331&Signature=eJa6VmACcNgxh1AlgoDQ7Q1e8Ac%3D
+63086292,51nadamuhammad,2245(Maqsam),2026-05-03 21:07:32,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-NadaMuhammad.301613008.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916331&Signature=QjCQpxCyD%2Fw6q9TZ0QNK6yvdH54%3D
+61519863,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 21:07:15,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-TasneemMahmoud.301612926.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916331&Signature=uJXKNKU4hqJaqp%2FJxpeRGCkAqdw%3D
+62865905,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 21:06:04,,,,in_progress,
+62851014,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 21:04:09,,,,用户忙,
+63086292,51nadamuhammad,2245(Maqsam),2026-05-03 21:03:43,,,,用户忙,
+62851014,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 21:02:54,,,,prepped,
+63073854,EGCC-maiwaheed,2313(Maqsam),2026-05-03 21:02:37,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-MaiWaheed.301611251.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916332&Signature=br%2BSF0UZLltWpzwm3EngTXfmW14%3D
+62850652,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 21:01:25,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-TasneemMahmoud.301610841.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916333&Signature=0T%2Bgx4m1VCfq0P%2B5mgokzK50KTQ%3D
+58987186,EGCC-fatmamohamed,2310(Maqsam),2026-05-03 21:00:01,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-FatmaMohamed.301610335.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916333&Signature=27yoHyP95wuwtXbx0LAazhZfQcg%3D
+62875018,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 20:59:48,,,,客户未接听,
+63073854,EGCC-maiwaheed,2313(Maqsam),2026-05-03 20:59:26,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-MaiWaheed.301610124.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916334&Signature=m%2FpHSEaU0GagLKx0ZPD%2FgvA%2F5iU%3D
+62875018,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 20:57:59,,,,客户未接听,
+63067657,EGCC-fatmamohamed,2310(Maqsam),2026-05-03 20:56:03,,,,客户未接听,
+63068131,EGCC-maiwaheed,2313(Maqsam),2026-05-03 20:55:43,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-MaiWaheed.301608810.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916334&Signature=xCG75Rbz58Vh55ziMf4Hosy4mIc%3D
+63073854,EGCC-maiwaheed,2313(Maqsam),2026-05-03 20:55:18,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-MaiWaheed.301608669.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916335&Signature=KvVPHhEOVCUWnmbW2GSu%2Fkx2CUY%3D
+63033951,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 20:55:02,,,,用户忙,
+0,51nadamuhammad,2245(Maqsam),2026-05-03 20:51:30,,,,客户未接听,
+63010693,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 20:47:42,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-TasneemMahmoud.301605793.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916335&Signature=YJVJEV8vOKV1d626XKjpqWVp6ww%3D
+0,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 20:44:46,,,,in_progress,
+62180951,51nadamuhammad,2245(Maqsam),2026-05-03 20:41:15,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-NadaMuhammad.301603288.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916336&Signature=D7D%2BymlO6S4pdauRgDEHkLRCLeQ%3D
+63017073,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 20:40:53,,,,客户未接听,
+63067657,EGCC-fatmamohamed,2310(Maqsam),2026-05-03 20:40:51,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-FatmaMohamed.301603133.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916336&Signature=5F9ETNiFn5naiiZx5LfMCWigz6Y%3D
+63017073,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 20:39:10,,,,in_progress,
+63039690,EGCC-maiwaheed,2313(Maqsam),2026-05-03 20:39:07,,,,客户未接听,
+63029769,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 20:38:31,,,,客户未接听,
+63029769,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 20:38:15,,,,客户未接听,
+63059147,EGCC-maiwaheed,2313(Maqsam),2026-05-03 20:35:08,,,,客户未接听,
+0,51nadamuhammad,2245(Maqsam),2026-05-03 20:24:33,,,,用户忙,
+0,51nadamuhammad,2245(Maqsam),2026-05-03 20:23:22,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-NadaMuhammad.301596467.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916338&Signature=eYb6ncbzYaoetbZIx6NrOrbK2ps%3D
+63081802,EGCC-maiwaheed,2313(Maqsam),2026-05-03 20:22:32,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-MaiWaheed.301596126.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916338&Signature=9kekGxRLZFSys3GTuVFeWPM0C3I%3D
+63081802,EGCC-maiwaheed,2313(Maqsam),2026-05-03 20:22:22,,,,用户忙,
+62322303,EGCC-fatmamohamed,2310(Maqsam),2026-05-03 20:22:17,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-FatmaMohamed.301596046.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916338&Signature=siiMhQEEZrp0G0I8fb5u4SeT%2B8M%3D
+63068514,EGCC-fatmamohamed,2310(Maqsam),2026-05-03 20:21:18,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-FatmaMohamed.301595675.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916339&Signature=nj9mqxLkIxs85UmLd3cPsXF2xTc%3D
+61519863,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 20:19:52,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-TasneemMahmoud.301595123.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916341&Signature=pIzGHykHKuxFNuppKhaMSgyp1g4%3D
+62998310,51nadamuhammad,2245(Maqsam),2026-05-03 20:19:13,,,,in_progress,
+63067657,EGCC-fatmamohamed,2310(Maqsam),2026-05-03 20:13:48,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-FatmaMohamed.301592834.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916341&Signature=VZ%2BXDHX%2BqJPFLQ1Dg%2FGYXgRf4vc%3D
+0,EGCC-maiwaheed,2313(Maqsam),2026-05-03 20:07:29,,,,用户忙,
+61702293,EGCC-fatmamohamed,2310(Maqsam),2026-05-03 20:06:23,,,,客户未接听,
+63029664,EGCC-maiwaheed,2313(Maqsam),2026-05-03 20:05:50,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-MaiWaheed.301589597.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916342&Signature=IvtEJ0nA%2BwrbZxeWFD6G8NGeV9E%3D
+63029664,EGCC-maiwaheed,2313(Maqsam),2026-05-03 20:05:39,,,,用户忙,
+63074131,EGCC-fatmamohamed,2310(Maqsam),2026-05-03 20:05:05,,,,客户未接听,
+61891212,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 20:05:02,,,,用户忙,
+61891212,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 20:04:15,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-TasneemMahmoud.301588977.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916343&Signature=rn6pIOc%2B0kdojJh5VEf1ZtZ1SU4%3D
+63084966,EGCC-fatmamohamed,2310(Maqsam),2026-05-03 20:04:09,,,,用户忙,
+63071980,EGCC-maiwaheed,2313(Maqsam),2026-05-03 20:04:06,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-MaiWaheed.301588909.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916343&Signature=OT50Lmq4uIDqUiqAR1UoJEErGIw%3D
+63068346,EGCC-maiwaheed,2313(Maqsam),2026-05-03 20:02:41,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-MaiWaheed.301588357.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916344&Signature=8B6N8jeewV7E9Q%2FTak%2FxuHZpCOA%3D
+63072501,EGCC-maiwaheed,2313(Maqsam),2026-05-03 20:01:31,,,,客户未接听,
+63068131,EGCC-maiwaheed,2313(Maqsam),2026-05-03 19:59:19,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-MaiWaheed.301587008.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916344&Signature=S9IIofdruZDv7Dz9V4pfczdVNzo%3D
+63081950,51nadamuhammad,2245(Maqsam),2026-05-03 19:59:01,,,,客户未接听,
+0,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 19:58:58,,,,客户未接听,
+63068131,EGCC-maiwaheed,2313(Maqsam),2026-05-03 19:58:01,,,,客户未接听,
+63081950,51nadamuhammad,2245(Maqsam),2026-05-03 19:57:49,,,,客户未接听,
+63073854,EGCC-maiwaheed,2313(Maqsam),2026-05-03 19:56:44,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-MaiWaheed.301585977.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916345&Signature=Hd%2Bvl9xSelPCYoE18cwAKBHRKTk%3D
+0,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 19:55:22,,,,客户未接听,
+63067657,EGCC-fatmamohamed,2310(Maqsam),2026-05-03 19:50:46,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-FatmaMohamed.301583702.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916346&Signature=Fpyg0XMJTtVPqv4SL%2BqhVfRU%2BYc%3D
+0,EGCC-maiwaheed,2313(Maqsam),2026-05-03 19:47:17,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-MaiWaheed.301582306.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916346&Signature=UrfAydpGKKS%2FTZeTRUbq0a%2FAZzI%3D
+0,EGCC-maiwaheed,2313(Maqsam),2026-05-03 19:46:12,,,,用户忙,
+61814075,EGCC-maiwaheed,2313(Maqsam),2026-05-03 19:45:08,,,,in_progress,
+62771093,EGCC-fatmamohamed,2310(Maqsam),2026-05-03 19:44:51,,,,in_progress,
+63084966,EGCC-fatmamohamed,2310(Maqsam),2026-05-03 19:43:32,,,,客户未接听,
+63080254,51nadamuhammad,2245(Maqsam),2026-05-03 19:43:31,,,,用户忙,
+63074131,EGCC-fatmamohamed,2310(Maqsam),2026-05-03 19:38:59,,,,客户未接听,
+61694375,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 19:38:55,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-TasneemMahmoud.301579011.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916347&Signature=J9lz5xsfR%2BCWWeuS87zvPldX1iY%3D
+63065467,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 19:35:49,,,,客户未接听,
+63071611,EGCC-fatmamohamed,2310(Maqsam),2026-05-03 19:35:06,,,,客户未接听,
+63084512,EGCC-maiwaheed,2313(Maqsam),2026-05-03 19:35:02,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-MaiWaheed.301577308.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916348&Signature=z73Yj0g%2Bi7JWnTsUoaKR3W58jwM%3D
+0,51nadamuhammad,2245(Maqsam),2026-05-03 19:34:53,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-NadaMuhammad.301577251.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916348&Signature=hD48aS3aDHxoX17OC90mr4GEgIU%3D
+63071611,EGCC-fatmamohamed,2310(Maqsam),2026-05-03 19:34:37,,,,用户忙,
+63065467,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 19:33:52,,,,客户未接听,
+63081910,EGCC-fatmamohamed,2310(Maqsam),2026-05-03 19:33:05,,,,in_progress,
+63081910,EGCC-fatmamohamed,2310(Maqsam),2026-05-03 19:32:57,,,,用户忙,
+63081218,EGCC-fatmamohamed,2310(Maqsam),2026-05-03 19:31:56,,,,客户未接听,
+63080254,51nadamuhammad,2245(Maqsam),2026-05-03 19:31:36,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-NadaMuhammad.301575606.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916349&Signature=YcYMH09AdbJUMxLd1o35O9nEqaU%3D
+0,EGCC-maiwaheed,2313(Maqsam),2026-05-03 19:31:34,,,,客户未接听,
+63080254,51nadamuhammad,2245(Maqsam),2026-05-03 19:31:10,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-NadaMuhammad.301575303.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916350&Signature=ng2wT6XMRj8FsnI2XbyHILRyEWU%3D
+63080254,51nadamuhammad,2245(Maqsam),2026-05-03 19:29:05,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-NadaMuhammad.301574345.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916350&Signature=BUqqZyGYTjUnceDtL8%2BwQemnD3c%3D
+63084512,EGCC-maiwaheed,2313(Maqsam),2026-05-03 19:28:51,,,,用户忙,
+63058489,EGCC-maiwaheed,2313(Maqsam),2026-05-03 19:24:36,,,,客户未接听,
+63080870,EGCC-maiwaheed,2313(Maqsam),2026-05-03 19:21:23,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-MaiWaheed.301570780.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916351&Signature=VZlNAvPM0321JXq3kIrAxSw3Ea8%3D
+63040908,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 19:16:12,,,,客户未接听,
+63040908,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 19:16:01,,,,客户未接听,
+63075353,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 19:05:36,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-TasneemMahmoud.301563728.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916351&Signature=7lpvvmhYKoiVwfLRLIZKah%2Blhcc%3D
+63075088,EGCC-maiwaheed,2313(Maqsam),2026-05-03 19:03:34,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-MaiWaheed.301562797.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916352&Signature=vmAOqYTFjajFzaPLdFOxFFi2ZkQ%3D
+63075088,EGCC-maiwaheed,2313(Maqsam),2026-05-03 19:03:09,,,,prepped,
+63075088,EGCC-maiwaheed,2313(Maqsam),2026-05-03 19:02:39,,,,用户忙,
+63078728,EGCC-maiwaheed,2313(Maqsam),2026-05-03 19:00:14,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-MaiWaheed.301561491.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916354&Signature=Lvy9SKSMdIDBVP0OSmIqOcwFB5o%3D
+63081603,51nadamuhammad,2245(Maqsam),2026-05-03 18:56:46,,,,in_progress,
+63078749,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 18:56:18,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-TasneemMahmoud.301559810.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916355&Signature=o3aC%2FEi%2FdYjqskHouGC9PyOWirk%3D
+63081603,51nadamuhammad,2245(Maqsam),2026-05-03 18:55:40,,,,用户忙,
+63080254,51nadamuhammad,2245(Maqsam),2026-05-03 18:54:20,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-NadaMuhammad.301558958.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916356&Signature=lE%2BDJ7NABuiPrvEUcgrlGUtsJS8%3D
+63075353,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 18:54:04,,,,in_progress,
+61677751,51nadamuhammad,2245(Maqsam),2026-05-03 18:53:36,,,,客户未接听,
+61677751,51nadamuhammad,2245(Maqsam),2026-05-03 18:53:25,,,,客户未接听,
+63082131,EGCC-fatmamohamed,2310(Maqsam),2026-05-03 18:49:38,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-FatmaMohamed.301556884.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916356&Signature=cC22fJMLWduaL4g1jYyRbLX9%2BI4%3D
+61694375,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 18:43:30,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-TasneemMahmoud.301554313.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916357&Signature=GugQiKZWk%2FLapUjVMZAOyfVImZo%3D
+63082678,51nadamuhammad,2245(Maqsam),2026-05-03 18:40:24,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-NadaMuhammad.301553095.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916357&Signature=RGn9QDarg1QDLH60tqzcYwpLrFY%3D
+63081669,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 18:36:24,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-TasneemMahmoud.301551536.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916357&Signature=iGFuiCXxR48SnJ9%2B4CxdMc8glUA%3D
+63081669,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 18:32:23,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-TasneemMahmoud.301550096.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916358&Signature=v99rjv2zauJsZ%2F90fD9aiwBdOuI%3D
+63079248,EGCC-maiwaheed,2313(Maqsam),2026-05-03 18:31:57,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-MaiWaheed.301549933.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916358&Signature=deem2vmUtqVmK2h2aaROVf5gxaY%3D
+63084966,EGCC-fatmamohamed,2310(Maqsam),2026-05-03 18:31:34,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-FatmaMohamed.301549803.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916359&Signature=n4IUyc1KuCr7LSdJp%2FkqFYDWoTQ%3D
+63084966,EGCC-fatmamohamed,2310(Maqsam),2026-05-03 18:31:23,,,,用户忙,
+63084966,EGCC-fatmamohamed,2310(Maqsam),2026-05-03 18:25:44,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-FatmaMohamed.301547629.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916359&Signature=sIz3SW7pZ%2BCt%2FBHxvzLqKuXNOQg%3D
+63084966,EGCC-fatmamohamed,2310(Maqsam),2026-05-03 18:25:24,,,,用户忙,
+63080852,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 18:23:19,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-TasneemMahmoud.301546712.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916360&Signature=ZCfC991sobAq%2FITy%2BmWrA%2FHUmEI%3D
+63058333,51nadamuhammad,2245(Maqsam),2026-05-03 18:22:14,,,,客户未接听,
+63067657,EGCC-fatmamohamed,2310(Maqsam),2026-05-03 18:14:24,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-FatmaMohamed.301543398.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916360&Signature=7SgbpZvR5r6KTdAcwNTasjiT3Lo%3D
+63079248,EGCC-maiwaheed,2313(Maqsam),2026-05-03 18:13:10,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-MaiWaheed.301542971.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916361&Signature=YmJLqttK7HZ1E%2F6Xp7PAAcdp82g%3D
+0,51nadamuhammad,2245(Maqsam),2026-05-03 18:09:54,,,,in_progress,
+61504669,EGCC-maiwaheed,2313(Maqsam),2026-05-03 18:08:42,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-MaiWaheed.301541358.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916361&Signature=QGIxXKtokGigmlsDzslsvELj%2Fl4%3D
+63075088,EGCC-maiwaheed,2313(Maqsam),2026-05-03 18:06:50,,,,用户忙,
+63075088,EGCC-maiwaheed,2313(Maqsam),2026-05-03 18:06:39,,,,用户忙,
+63081982,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 17:50:21,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-TasneemMahmoud.301534305.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916362&Signature=TM7Q3QPYnzwz5%2Ba4X%2FbJ5pKkZDI%3D
+63081671,EGCC-maiwaheed,2313(Maqsam),2026-05-03 17:47:18,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-MaiWaheed.301533118.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916362&Signature=w36Mpz610Bo9MwCH4XL%2BCO4kv94%3D
+63078749,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 17:46:27,,,,客户未接听,
+63078749,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 17:44:50,,,,in_progress,
+63080254,51nadamuhammad,2245(Maqsam),2026-05-03 17:42:00,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-NadaMuhammad.301530879.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916363&Signature=Ju%2BV6ciVEk4Euvu5Qbc2NHSzZug%3D
+63081671,EGCC-maiwaheed,2313(Maqsam),2026-05-03 17:39:44,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-MaiWaheed.301529947.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916363&Signature=9aa8SLyUrnys1fb2cjRdwICGnzM%3D
+63070422,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 17:39:13,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-TasneemMahmoud.301529731.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916364&Signature=3RoScj0j0ijhHU1u7OTGgCnWPy8%3D
+63068076,51nadamuhammad,2245(Maqsam),2026-05-03 17:36:52,,,,客户未接听,
+63068076,51nadamuhammad,2245(Maqsam),2026-05-03 17:34:22,,,,用户忙,
+63081671,EGCC-maiwaheed,2313(Maqsam),2026-05-03 17:33:13,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-MaiWaheed.301527297.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916364&Signature=x9bX3Ca7K2z2vD6oRQWs%2FYYb4fY%3D
+63079252,EGCC-fatmamohamed,2310(Maqsam),2026-05-03 17:32:50,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-FatmaMohamed.301527164.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916365&Signature=HzFrhc1gdI%2B86Z4y7SsemRpmpd4%3D
+61504669,EGCC-maiwaheed,2313(Maqsam),2026-05-03 17:29:49,,,,in_progress,
+0,51nadamuhammad,2245(Maqsam),2026-05-03 17:29:02,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-NadaMuhammad.301525991.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916365&Signature=caRnBNEQRem5shyZKLFm3890BzI%3D
+63067657,EGCC-fatmamohamed,2310(Maqsam),2026-05-03 17:27:30,,,,客户未接听,
+63083261,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 17:27:29,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-03/maqsam-TasneemMahmoud.301525517.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916366&Signature=%2BHLfirCp6PTZ6d0i0ydUiMto0Dc%3D
+63083261,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 17:12:42,,,,客户未接听,
+63067657,EGCC-fatmamohamed,2310(Maqsam),2026-05-03 17:10:45,,,,客户未接听,
+63075353,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-03 17:09:39,,,,in_progress,
+63070913,EGCC-maiwaheed,2313(Maqsam),2026-05-03 17:08:39,,,,in_progress,
+0,51nadamuhammad,2245(Maqsam),2026-05-03 17:06:41,,,,客户未接听,
+63071988,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-02 20:53:52,,,,in_progress,
+63065467,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-02 20:50:04,,,,in_progress,
+61708300,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-02 20:48:36,,,,用户忙,
+61708300,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-02 20:48:15,,,,in_progress,
+61708300,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-02 20:48:03,,,,用户忙,
+63014247,51nadamuhammad,2245(Maqsam),2026-05-02 20:42:33,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-NadaMuhammad.301334959.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916369&Signature=0iGzy6P5tWdJz6wNIrAcjLi9%2BPE%3D
+58321605,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-02 20:36:19,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-TasneemMahmoud.301332904.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916369&Signature=%2Fi96h57MBsoAL7syruqoXxmATZA%3D
+58321605,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-02 20:34:55,,,,客户未接听,
+63067657,EGCC-fatmamohamed,2310(Maqsam),2026-05-02 20:23:43,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-FatmaMohamed.301328749.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916370&Signature=Rq30v5L5C0i6nXjq81V201uJxV0%3D
+63074131,EGCC-fatmamohamed,2310(Maqsam),2026-05-02 20:22:55,,,,客户未接听,
+63029664,EGCC-maiwaheed,2313(Maqsam),2026-05-02 20:22:14,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-MaiWaheed.301328252.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916370&Signature=Pi%2BUoaWZxSqcZkSjyij7J29ggsM%3D
+63047866,51nadamuhammad,2245(Maqsam),2026-05-02 20:22:08,,,,客户未接听,
+63071611,EGCC-fatmamohamed,2310(Maqsam),2026-05-02 20:20:27,,,,用户忙,
+60694637,51nadamuhammad,2245(Maqsam),2026-05-02 20:18:51,,,,用户忙,
+63046075,EGCC-maiwaheed,2313(Maqsam),2026-05-02 20:18:28,,,,客户未接听,
+62322303,EGCC-fatmamohamed,2310(Maqsam),2026-05-02 20:17:01,,,,用户忙,
+0,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-02 20:14:59,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-TasneemMahmoud.301325892.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916371&Signature=%2BAuQEsBBKYEuIWvk8U2BFFdBqeE%3D
+58313356,51nadamuhammad,2245(Maqsam),2026-05-02 20:14:06,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-NadaMuhammad.301325617.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916372&Signature=e9ehnBN%2F8p4K9%2BMpAKJ%2BNh%2BJQSc%3D
+62379265,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-02 20:12:44,,,,客户未接听,
+63068514,EGCC-fatmamohamed,2310(Maqsam),2026-05-02 20:11:38,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-FatmaMohamed.301324839.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916372&Signature=WpQDGmfCJBGdhHeOSk9mVyf6l3M%3D
+62379265,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-02 20:11:20,,,,in_progress,
+61859893,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-02 20:08:46,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-TasneemMahmoud.301323950.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916373&Signature=IQpteTQFQmsSIzZQjXE3eScFGqU%3D
+61859893,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-02 20:08:32,,,,客户未接听,
+63068514,EGCC-fatmamohamed,2310(Maqsam),2026-05-02 20:08:17,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-FatmaMohamed.301323803.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916373&Signature=b%2BQGGH9VVyLj%2Bizz%2B07ioQIc9LE%3D
+61859893,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-02 20:06:21,,,,客户未接听,
+63068131,EGCC-maiwaheed,2313(Maqsam),2026-05-02 20:04:06,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-MaiWaheed.301322433.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916374&Signature=62f5Kjo%2FXAM5y7dlsPCmpznPxq8%3D
+63024271,EGCC-maiwaheed,2313(Maqsam),2026-05-02 20:03:14,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-MaiWaheed.301322138.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916374&Signature=OAQ7imsXp48HdpxjJTZ9GHiqFs4%3D
+63040490,EGCC-maiwaheed,2313(Maqsam),2026-05-02 20:02:01,,,,客户未接听,
+63078868,51nadamuhammad,2245(Maqsam),2026-05-02 20:01:59,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-NadaMuhammad.301321735.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916375&Signature=GF08AeE8V2sxAq1iYvFV7ReQ6EM%3D
+63075353,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-02 19:58:34,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-TasneemMahmoud.301320661.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916375&Signature=nuUkzxs6zFBa8C0r2%2F2FNCWEq08%3D
+63040490,EGCC-maiwaheed,2313(Maqsam),2026-05-02 19:57:51,,,,客户未接听,
+63056230,EGCC-maiwaheed,2313(Maqsam),2026-05-02 19:55:49,,,,客户未接听,
+63039372,EGCC-maiwaheed,2313(Maqsam),2026-05-02 19:52:36,,,,用户忙,
+63078868,51nadamuhammad,2245(Maqsam),2026-05-02 19:49:10,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-NadaMuhammad.301317852.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916376&Signature=tWHWpbJHZtPup6vCCQX4StNXLH0%3D
+61891212,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-02 19:46:20,,,,用户忙,
+61702293,EGCC-fatmamohamed,2310(Maqsam),2026-05-02 19:38:48,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-FatmaMohamed.301314679.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916377&Signature=Blj3pUVeNP5Raq0c%2FQmhdmNQzao%3D
+61891212,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-02 19:37:54,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-TasneemMahmoud.301314371.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916377&Signature=4FKOUlX4%2FuWQWoaARxmxMWoSRRc%3D
+63039372,EGCC-maiwaheed,2313(Maqsam),2026-05-02 19:35:08,,,,用户忙,
+63078373,51nadamuhammad,2245(Maqsam),2026-05-02 19:34:46,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-NadaMuhammad.301313346.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916378&Signature=8M%2BtWuMv7HSCckRR2GwaAcVBePA%3D
+0,51nadamuhammad,2245(Maqsam),2026-05-02 19:30:50,,,,客户未接听,
+63068311,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-02 19:23:03,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-TasneemMahmoud.301309600.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916378&Signature=292gK9XO3dXvcmPPiLDK1GsWeRQ%3D
+63064560,EGCC-fatmamohamed,2310(Maqsam),2026-05-02 19:22:29,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-FatmaMohamed.301309428.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916379&Signature=N%2FxdokxJSR%2Fic%2BlOJDnkbtkVAn4%3D
+63065467,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-02 19:14:23,,,,in_progress,
+0,EGCC-maiwaheed,2313(Maqsam),2026-05-02 19:10:02,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-MaiWaheed.301305190.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916379&Signature=Fdvbbz2R8oEIGon125E1%2FI%2FrGJc%3D
+63065467,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-02 19:09:07,,,,in_progress,
+0,EGCC-maiwaheed,2313(Maqsam),2026-05-02 19:06:13,,,,用户忙,
+62180951,51nadamuhammad,2245(Maqsam),2026-05-02 19:00:24,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-NadaMuhammad.301301793.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916380&Signature=TgG0ioH727kMx0og0mL8X5HV7Oc%3D
+62180951,51nadamuhammad,2245(Maqsam),2026-05-02 18:59:41,,,,用户忙,
+62180951,51nadamuhammad,2245(Maqsam),2026-05-02 18:59:29,,,,用户忙,
+63050750,EGCC-maiwaheed,2313(Maqsam),2026-05-02 18:57:58,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-MaiWaheed.301301014.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916380&Signature=hGtx8PZ3mKvDMXf1iZQrOqkBzck%3D
+63028943,51nadamuhammad,2245(Maqsam),2026-05-02 18:55:16,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-NadaMuhammad.301300164.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916381&Signature=7UiOG2GHFrtefi3jFfVs66S0AdI%3D
+63059578,EGCC-fatmamohamed,2310(Maqsam),2026-05-02 18:49:48,,,,in_progress,
+63070422,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-02 18:48:27,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-TasneemMahmoud.301297975.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916383&Signature=oNCHhpvFSACGsWO2wF751KSqvh0%3D
+63070422,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-02 18:48:11,,,,in_progress,
+63070422,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-02 18:48:00,,,,用户忙,
+61702293,EGCC-fatmamohamed,2310(Maqsam),2026-05-02 18:47:12,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-FatmaMohamed.301297526.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916383&Signature=vfuQF77zH1vap6GYhJJL4hpZS0E%3D
+62146402,EGCC-maiwaheed,2313(Maqsam),2026-05-02 18:45:39,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-MaiWaheed.301296983.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916384&Signature=6NpvyN6tZOpBaHf6%2F4QpUi4THnY%3D
+61469752,51nadamuhammad,2245(Maqsam),2026-05-02 18:41:49,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-NadaMuhammad.301295571.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916384&Signature=M9e7AW7%2BHE%2B65GD1eYTGiFlzfNM%3D
+62616235,51nadamuhammad,2245(Maqsam),2026-05-02 18:39:46,,,,in_progress,
+62616235,51nadamuhammad,2245(Maqsam),2026-05-02 18:38:28,,,,in_progress,
+0,EGCC-fatmamohamed,2310(Maqsam),2026-05-02 18:36:32,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-FatmaMohamed.301293652.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916385&Signature=qENOxpbq2lrdmRWCSinLDFcB6qk%3D
+61914351,51nadamuhammad,2245(Maqsam),2026-05-02 18:34:05,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-NadaMuhammad.301292824.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916385&Signature=2TB5HYuc9YH2Obv37bbD7Y0t0%2FE%3D
+63075353,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-02 18:33:59,,,,客户未接听,
+63075353,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-02 18:32:45,,,,in_progress,
+63073573,51nadamuhammad,2245(Maqsam),2026-05-02 18:29:54,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-NadaMuhammad.301291429.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916386&Signature=Ot76bbnK8keqExkmDADjG54xbjk%3D
+63050936,EGCC-maiwaheed,2313(Maqsam),2026-05-02 18:29:43,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-MaiWaheed.301291376.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916386&Signature=kGZfdT43j6hCUKEl8XXMb0LtwQg%3D
+63060658,EGCC-maiwaheed,2313(Maqsam),2026-05-02 18:28:12,,,,客户未接听,
+60626989,EGCC-maiwaheed,2313(Maqsam),2026-05-02 18:26:37,,,,客户未接听,
+0,EGCC-maiwaheed,2313(Maqsam),2026-05-02 18:25:19,,,,用户忙,
+62998310,51nadamuhammad,2245(Maqsam),2026-05-02 18:24:31,,,,客户未接听,
+61814075,EGCC-maiwaheed,2313(Maqsam),2026-05-02 18:24:13,,,,客户未接听,
+63068131,EGCC-maiwaheed,2313(Maqsam),2026-05-02 18:22:28,,,,用户忙,
+62988378,51nadamuhammad,2245(Maqsam),2026-05-02 18:21:43,,,,客户未接听,
+62940636,51nadamuhammad,2245(Maqsam),2026-05-02 18:19:47,,,,in_progress,
+63072131,EGCC-fatmamohamed,2310(Maqsam),2026-05-02 18:18:36,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-FatmaMohamed.301288118.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916388&Signature=oJ%2FhGUtURxm3YMhc6tpwwrUegPU%3D
+0,51nadamuhammad,2245(Maqsam),2026-05-02 18:17:57,,,,in_progress,
+63074131,EGCC-fatmamohamed,2310(Maqsam),2026-05-02 18:17:23,,,,客户未接听,
+60694637,51nadamuhammad,2245(Maqsam),2026-05-02 18:16:11,,,,客户未接听,
+63064846,51nadamuhammad,2245(Maqsam),2026-05-02 18:12:08,,,,in_progress,
+63070940,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-02 18:03:36,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-TasneemMahmoud.301283505.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916389&Signature=ByBEv%2Bb7WpSvdiNwq061vXkxLsk%3D
+58313356,51nadamuhammad,2245(Maqsam),2026-05-02 18:01:38,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-NadaMuhammad.301282834.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916389&Signature=68ejfr7WfFTPbztXK4PRjaPTlUM%3D
+62998310,51nadamuhammad,2245(Maqsam),2026-05-02 17:59:31,,,,in_progress,
+63070940,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-02 17:57:37,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-TasneemMahmoud.301281457.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916390&Signature=nUbSTjmBBFdwKso0FuFXNVANixs%3D
+63070940,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-02 17:55:56,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-TasneemMahmoud.301280861.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916390&Signature=5X3J%2FtKYHanXwLsVKKW7uPJWUt4%3D
+62180951,51nadamuhammad,2245(Maqsam),2026-05-02 17:53:41,,,,用户忙,
+63071988,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-02 17:53:00,,,,客户未接听,
+63071988,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-02 17:52:04,,,,客户未接听,
+0,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-02 17:49:35,,,,in_progress,
+63074019,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-02 17:46:54,,,,客户未接听,
+63074019,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-02 17:46:21,,,,客户未接听,
+63068346,EGCC-maiwaheed,2313(Maqsam),2026-05-02 17:46:16,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-MaiWaheed.301277220.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916391&Signature=ZSt1o2IlolhaQWB%2FWB26yP5vlBA%3D
+63074019,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-02 17:46:10,,,,客户未接听,
+63074019,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-02 17:45:53,,,,用户忙,
+63068346,EGCC-maiwaheed,2313(Maqsam),2026-05-02 17:44:50,,,,in_progress,
+63074019,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-02 17:44:23,,,,客户未接听,
+63074019,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-02 17:44:04,,,,用户忙,
+63070913,EGCC-maiwaheed,2313(Maqsam),2026-05-02 17:39:55,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-MaiWaheed.301274614.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916392&Signature=cM4qVwcJt3GhTF%2BP87rrjjU0O%2FU%3D
+63071980,EGCC-maiwaheed,2313(Maqsam),2026-05-02 17:34:01,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-MaiWaheed.301272272.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916392&Signature=zT71K3n54RM5o8L5Mn5YwB8TuwA%3D
+63073854,EGCC-maiwaheed,2313(Maqsam),2026-05-02 17:32:35,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-MaiWaheed.301271673.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916393&Signature=ptv9e5UEEhEhoesz%2BXqc4otIX1c%3D
+63066068,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-02 17:29:56,,,,in_progress,
+0,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-02 17:29:06,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-02/maqsam-TasneemMahmoud.301270276.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916393&Signature=%2FHuA1EgS3jlzqlDQu%2FF2OLy35Co%3D
+63072501,EGCC-maiwaheed,2313(Maqsam),2026-05-02 17:27:42,,,,客户未接听,
+63066068,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-02 17:26:22,,,,in_progress,
+63072501,EGCC-maiwaheed,2313(Maqsam),2026-05-02 17:26:01,,,,客户未接听,
+63075088,EGCC-maiwaheed,2313(Maqsam),2026-05-02 17:24:10,,,,prepped,
+63075088,EGCC-maiwaheed,2313(Maqsam),2026-05-02 17:22:57,,,,用户忙,
+63075088,EGCC-maiwaheed,2313(Maqsam),2026-05-02 17:22:47,,,,用户忙,
+63070700,EGCC-maiwaheed,2313(Maqsam),2026-05-02 17:20:14,,,,用户忙,
+63070700,EGCC-maiwaheed,2313(Maqsam),2026-05-02 17:20:00,,,,用户忙,
+63014247,51nadamuhammad,2245(Maqsam),2026-05-02 17:19:49,,,,in_progress,
+59855403,51nadamuhammad,2245(Maqsam),2026-05-01 02:20:49,,,,客户未接听,
+63014247,51nadamuhammad,2245(Maqsam),2026-05-01 02:19:01,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-01/maqsam-NadaMuhammad.301005561.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916397&Signature=ePdLg6NqyQ%2BlH4%2FmNVBje3Jo264%3D
+62470538,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-01 02:06:48,,,,客户未接听,
+0,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-01 02:04:21,,,,客户未接听,
+62874755,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-01 01:31:40,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-01/maqsam-TasneemMahmoud.300996998.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916397&Signature=ICmDvqlmpJShC%2Bu7eLApncuFvOM%3D
+63050750,EGCC-maiwaheed,2313(Maqsam),2026-05-01 01:23:59,,,,双方接通,
+58313356,51nadamuhammad,2245(Maqsam),2026-05-01 01:20:25,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-01/maqsam-NadaMuhammad.300994960.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916398&Signature=Aq0COd%2F3MaH9jUVcGVZq5DnT8CA%3D
+62338760,EGCC-maiwaheed,2313(Maqsam),2026-05-01 01:17:01,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-01/maqsam-MaiWaheed.300994429.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916398&Signature=lEs4pA%2B1irVdfqkj3Bw%2BEBmk8q8%3D
+63028943,51nadamuhammad,2245(Maqsam),2026-05-01 01:15:44,,,,客户未接听,
+63029769,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-01 01:08:24,,,,in_progress,
+63046589,51nadamuhammad,2245(Maqsam),2026-05-01 01:06:43,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-01/maqsam-NadaMuhammad.300992643.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916399&Signature=Dk5vW9Jbgkl7eYk8rSIkySDkm9g%3D
+62955658,51nadamuhammad,2245(Maqsam),2026-05-01 01:04:27,,,,用户忙,
+62955658,51nadamuhammad,2245(Maqsam),2026-05-01 00:56:51,,,,in_progress,
+61850055,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-01 00:56:12,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-01/maqsam-TasneemMahmoud.300990401.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916399&Signature=N%2BvsLduA7Bs5CfMIvm01G%2FJUn0w%3D
+61504669,EGCC-maiwaheed,2313(Maqsam),2026-05-01 00:55:59,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-01/maqsam-MaiWaheed.300990356.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916400&Signature=DtCtHAWmrz0rFsmYqk2AzCySQFk%3D
+61850055,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-01 00:55:58,,,,用户忙,
+62955658,51nadamuhammad,2245(Maqsam),2026-05-01 00:55:32,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-01/maqsam-NadaMuhammad.300990252.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916400&Signature=45Vs6vhEAvLcMknq236ilwC9Sv4%3D
+62371490,EGCC-maiwaheed,2313(Maqsam),2026-05-01 00:47:18,,,,in_progress,
+62998310,51nadamuhammad,2245(Maqsam),2026-05-01 00:47:02,,,,客户未接听,
+0,EGCC-maiwaheed,2313(Maqsam),2026-05-01 00:44:36,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-01/maqsam-MaiWaheed.300987743.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916401&Signature=tdBqPEbPzhEyxtwmd3SXpsaENUQ%3D
+63014247,51nadamuhammad,2245(Maqsam),2026-05-01 00:44:30,,,,in_progress,
+61814075,EGCC-maiwaheed,2313(Maqsam),2026-05-01 00:43:37,,,,客户未接听,
+63029054,EGCC-maiwaheed,2313(Maqsam),2026-05-01 00:40:48,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-01/maqsam-MaiWaheed.300986796.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916402&Signature=AFZFcdmCgN%2Fzg81coHVPpCrynXg%3D
+62470538,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-01 00:40:23,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-01/maqsam-TasneemMahmoud.300986690.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916402&Signature=O0DdVJ7hnZNo2%2FKPii%2F6%2FBkiZlI%3D
+61650695,EGCC-maiwaheed,2313(Maqsam),2026-05-01 00:39:20,,,,用户忙,
+61504669,EGCC-maiwaheed,2313(Maqsam),2026-05-01 00:38:02,,,,客户未接听,
+0,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-01 00:37:49,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-01/maqsam-TasneemMahmoud.300986078.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916403&Signature=RTqt1ObgGbl%2BFLggAHaN8ZP5g0I%3D
+0,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-01 00:37:00,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-01/maqsam-TasneemMahmoud.300985907.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916403&Signature=2X35bjkokgnwg7PK4lIkLjAfwXA%3D
+0,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-01 00:36:15,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-01/maqsam-TasneemMahmoud.300985732.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916404&Signature=tXv%2BXb5MytqLbHgaagToGaWVf64%3D
+0,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-01 00:34:33,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-01/maqsam-TasneemMahmoud.300985330.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916404&Signature=IE%2BGeL3Yz9fObnZwMffqKuBLYbM%3D
+62338760,EGCC-maiwaheed,2313(Maqsam),2026-05-01 00:34:25,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-01/maqsam-MaiWaheed.300985304.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916404&Signature=4%2B0Zn8v1LaoKGJneiBmRkh9Bz88%3D
+0,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-01 00:33:26,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-01/maqsam-TasneemMahmoud.300985059.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916405&Signature=y0fMaaN2Kx5EmCTevhjU%2BjzbbTs%3D
+62338760,EGCC-maiwaheed,2313(Maqsam),2026-05-01 00:33:10,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-01/maqsam-MaiWaheed.300984998.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916405&Signature=qWMqIqw3ZpqobQ0ES7dNcRg53qU%3D
+63026872,EGCC-maiwaheed,2313(Maqsam),2026-05-01 00:29:59,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-01/maqsam-MaiWaheed.300984234.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916406&Signature=vMODeqTUU3NEr12G2sxEh1DClbE%3D
+63051015,EGCC-maiwaheed,2313(Maqsam),2026-05-01 00:29:41,,,,客户未接听,
+63051015,EGCC-maiwaheed,2313(Maqsam),2026-05-01 00:29:25,,,,客户未接听,
+63056306,51nadamuhammad,2245(Maqsam),2026-05-01 00:27:02,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-01/maqsam-NadaMuhammad.300983531.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916406&Signature=YGdfH6DpJdB7joA5GFcH1Dam4Ak%3D
+62969756,EGCC-maiwaheed,2313(Maqsam),2026-05-01 00:23:57,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-01/maqsam-MaiWaheed.300982798.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916407&Signature=AabM%2BJNtAgDqkCbuWKH3c8gu%2B6s%3D
+62969756,EGCC-maiwaheed,2313(Maqsam),2026-05-01 00:21:57,,,,客户未接听,
+62539498,EGCC-maiwaheed,2313(Maqsam),2026-05-01 00:17:42,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-01/maqsam-MaiWaheed.300981380.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916407&Signature=kg25b%2F8PuYzJ%2F2FOI6LmeOCj%2BXs%3D
+62874755,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-01 00:17:06,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-01/maqsam-TasneemMahmoud.300981248.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916408&Signature=nfOKMUBgd1ZU%2FR6OKqPXbmNYx20%3D
+62371490,EGCC-maiwaheed,2313(Maqsam),2026-05-01 00:15:37,,,,客户未接听,
+63017073,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-01 00:14:54,,,,in_progress,
+63017073,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-01 00:13:54,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-01/maqsam-TasneemMahmoud.300980581.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916409&Signature=NsNS2SqVdr9MnfL380rCtkgT9x4%3D
+0,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-01 00:12:16,,,,客户未接听,
+61504669,EGCC-maiwaheed,2313(Maqsam),2026-05-01 00:09:58,,,,in_progress,
+62533638,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-01 00:09:51,,,,in_progress,
+62051657,EGCC-maiwaheed,2313(Maqsam),2026-05-01 00:08:50,,,,in_progress,
+0,EGCC-tasneemmahmoud,2311(Maqsam),2026-05-01 00:07:57,,,,客户未接听,
+62051657,EGCC-maiwaheed,2313(Maqsam),2026-05-01 00:07:43,,,,客户未接听,
+62174096,EGCC-maiwaheed,2313(Maqsam),2026-05-01 00:01:16,,,,双方接通,http://pd-fscall-record.oss-cn-hongkong.aliyuncs.com/2026-05-01/maqsam-MaiWaheed.300977903.mp3?OSSAccessKeyId=LTAI5t8sBUhKT5YzXBHvmGGq&Expires=1777916410&Signature=BcaQcEADXjWtsRBfddXzh2CwaBE%3D
+62544022,EGCC-maiwaheed,2313(Maqsam),2026-05-01 00:00:04,,,,in_progress,
