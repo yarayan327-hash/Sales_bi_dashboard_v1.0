@@ -1,15 +1,15 @@
 {
   "sync_date_ksa": "2026-05-05",
-  "sync_time_ksa": "2026-05-05 13:42:09",
-  "status": "warning",
-  "bad_count": 1,
+  "sync_time_ksa": "2026-05-05 17:00:56",
+  "status": "ok",
+  "bad_count": 0,
   "checks": [
     {
       "table": "public/data/fact_leads.csv",
-      "status": "warning",
-      "reason": "no_current_month_rows_2026-05",
+      "status": "ok",
+      "reason": "",
       "rows": 8364,
-      "month_rows": 0,
+      "month_rows": 8364,
       "columns": [
         "stu_id",
         "new_admin_id",
@@ -22,7 +22,7 @@
       "status": "ok",
       "reason": "",
       "rows": 4488,
-      "month_rows": 229,
+      "month_rows": 218,
       "columns": [
         "id",
         "course_name",
@@ -72,8 +72,8 @@
       "table": "public/data/fact_calls.csv",
       "status": "ok",
       "reason": "",
-      "rows": 6232,
-      "month_rows": 1067,
+      "rows": 391,
+      "month_rows": 391,
       "columns": [
         "user_id",
         "sales_name",
@@ -91,7 +91,7 @@
       "status": "ok",
       "reason": "",
       "rows": 8380,
-      "month_rows": 0,
+      "month_rows": 115,
       "columns": [
         "stu_id",
         "user_id",
