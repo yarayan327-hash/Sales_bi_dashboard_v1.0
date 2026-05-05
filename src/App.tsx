@@ -397,6 +397,56 @@ export default function App() {
   const orders = useMemo(() => transformOrders(raw.orders ?? []), [raw.orders]);
   const trials = useMemo(() => transformTrials(raw.trials ?? []), [raw.trials]);
 
+  const trialsForTab2 = useMemo(() => {
+    const agentMap = new Map<string, any>();
+
+    for (const a of agents ?? []) {
+      const ids = [
+        a.agent_id,
+        a.sales_id,
+        a.admin_id,
+        a.id,
+        a.user_id,
+      ].map((x: any) => String(x ?? "").trim()).filter(Boolean);
+
+      for (const id of ids) agentMap.set(id, a);
+    }
+
+    return (trials ?? [])
+      .map((r: any) => {
+        const agentId = String(r.agent_id ?? r.sales_id ?? "").trim();
+        if (!agentId) return null;
+
+        const a = agentMap.get(agentId);
+        if (!a) return null;
+
+        const salesAgent =
+          a.sales_agent ??
+          a.sales_name ??
+          a.agent_name ??
+          a.name ??
+          a.admin_name ??
+          "";
+
+        const salesGroup =
+          a.sales_group ??
+          a.group_name ??
+          a.team ??
+          "";
+
+        if (!String(salesAgent).trim()) return null;
+
+        return {
+          ...r,
+          sales_agent: salesAgent,
+          sales_name: salesAgent,
+          sales_group: salesGroup,
+          agent_id: agentId,
+        };
+      })
+      .filter(Boolean);
+  }, [trials, agents]);
+
   const latestLeadAssignedKsa = useMemo(() => getLatestLeadAssignedDateKSA(raw.leads ?? []), [raw.leads]);
 
   /* ---------- compute ---------- */
@@ -436,7 +486,7 @@ export default function App() {
     } catch (e: any) {
       return { error: String(e?.message ?? e ?? "Tab1 build error") } as any;
     }
-  }, [reportDate, agents, leads, trials, orders, calls]);
+  }, [reportDate, agents, leads, trialsForTab2, orders, calls]);
 
   const tab1 = useMemo(() => {
     const rawBlock: any = tab1Raw ?? {};
@@ -470,7 +520,7 @@ export default function App() {
 
   const tab2 = useMemo(() => {
     try {
-      return computeTab2({ reportDate, agents, leads, trials, orders, calls } as any);
+      return computeTab2({ reportDate, agents, leads, trials: trialsForTab2, orders, calls } as any);
     } catch (e: any) {
       return { error: String(e?.message ?? e ?? "Tab2 build error") } as any;
     }
