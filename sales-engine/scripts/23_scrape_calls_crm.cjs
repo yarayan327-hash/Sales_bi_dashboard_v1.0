@@ -24,6 +24,12 @@ function fmtDate(d) {
   return `${d.getUTCFullYear()}-${pad(d.getUTCMonth() + 1)}-${pad(d.getUTCDate())}`;
 }
 
+
+function parseLocalDateYMD(s) {
+  const m = String(s || "").match(/^(\d{4})-(\d{2})-(\d{2})/);
+  if (!m) return null;
+  return new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3]));
+}
 function monthStartEnd() {
   const now = ksaNow();
   const y = now.getUTCFullYear();
@@ -231,7 +237,11 @@ function main() {
     throw new Error(`missing scraper: ${SCRAPER}`);
   }
 
-  const { start, end } = monthStartEnd();
+  const envStart = process.env.CALL_START_DATE || process.env.CRM_CALL_START_DATE || "";
+  const envEnd = process.env.CALL_END_DATE || process.env.CRM_CALL_END_DATE || "";
+
+  const start = envStart ? new Date(envStart + "T00:00:00") : monthStartEnd().start;
+  const end = envEnd ? new Date(envEnd + "T00:00:00") : monthStartEnd().end;
 
   if (fs.existsSync(RAW_OUT)) {
     fs.copyFileSync(RAW_OUT, RAW_OUT + ".bak");
