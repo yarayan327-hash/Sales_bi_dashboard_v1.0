@@ -356,7 +356,7 @@ export default function App() {
     setErr("");
     setLoading(true);
     try {
-      const [agents, leads, calls, orders, trials] = await Promise.all([
+      const [agents, leads, calls, orders, trials, leadSourceFunnel] = await Promise.all([
         fetchTable(PATHS.agents),
         fetchTable(PATHS.leads),
         fetchTable(PATHS.calls),
