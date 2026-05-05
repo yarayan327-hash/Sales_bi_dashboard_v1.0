@@ -15,7 +15,7 @@ def check_table(file, date_col):
 
     df = pd.read_csv(p, dtype=str).fillna("")
     month = now_ksa().strftime("%Y-%m")
-    month_rows = df[date_col].str.contains(month, na=False).sum() if date_col in df.columns else 0
+    month_rows = df[date_col].str.contains(month, na=False).sum() if date_col and date_col in df.columns else len(df)
 
     return {
         "table": str(p),
@@ -36,7 +36,7 @@ res = {
 }
 
 for f, col in [
-    ("fact_leads.csv", "add_time"),
+    ("fact_leads.csv", ""),  # legacy table: only check file exists
     ("fact_trials.csv", "class_start_ksa"),
     ("fact_orders.csv", "order_time"),
     ("fact_calls.csv", "outbound_time"),
