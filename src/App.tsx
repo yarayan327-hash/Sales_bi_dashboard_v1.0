@@ -398,54 +398,41 @@ export default function App() {
   const trials = useMemo(() => transformTrials(raw.trials ?? []), [raw.trials]);
 
   const trialsForTab2 = useMemo(() => {
-    const agentMap = new Map<string, any>();
+    const leadMap = new Map<string, any>();
 
-    for (const a of agents ?? []) {
-      const ids = [
-        a.agent_id,
-        a.sales_id,
-        a.admin_id,
-        a.id,
-        a.user_id,
-      ].map((x: any) => String(x ?? "").trim()).filter(Boolean);
+    for (const r of leadSource ?? []) {
+      const userId = String(r.user_id ?? r.stu_id ?? "").trim();
+      if (!userId) continue;
 
-      for (const id of ids) agentMap.set(id, a);
+      const salesAgent = String(r.sales_name ?? r.sales_agent ?? "").trim();
+      const salesGroup = String(r.sales_group ?? "").trim();
+
+      if (!salesAgent && !salesGroup) continue;
+
+      leadMap.set(userId, {
+        sales_agent: salesAgent,
+        sales_name: salesAgent,
+        sales_group: salesGroup,
+      });
     }
 
     return (trials ?? [])
       .map((r: any) => {
-        const agentId = String(r.agent_id ?? r.sales_id ?? "").trim();
-        if (!agentId) return null;
+        const userId = String(r.user_id ?? "").trim();
+        if (!userId) return null;
 
-        const a = agentMap.get(agentId);
-        if (!a) return null;
-
-        const salesAgent =
-          a.sales_agent ??
-          a.sales_name ??
-          a.agent_name ??
-          a.name ??
-          a.admin_name ??
-          "";
-
-        const salesGroup =
-          a.sales_group ??
-          a.group_name ??
-          a.team ??
-          "";
-
-        if (!String(salesAgent).trim()) return null;
+        const owner = leadMap.get(userId);
+        if (!owner) return null;
 
         return {
           ...r,
-          sales_agent: salesAgent,
-          sales_name: salesAgent,
-          sales_group: salesGroup,
-          agent_id: agentId,
+          sales_agent: owner.sales_agent,
+          sales_name: owner.sales_name,
+          sales_group: owner.sales_group,
         };
       })
       .filter(Boolean);
-  }, [trials, agents]);
+  }, [trials, leadSource]);
 
   const latestLeadAssignedKsa = useMemo(() => getLatestLeadAssignedDateKSA(raw.leads ?? []), [raw.leads]);
 
