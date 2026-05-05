@@ -16,14 +16,15 @@ import { computeTab2 } from "./metrics/tab2";
 import { computeTab3SalesMtdCalendar } from "./metrics/tab3SalesMtdCalendar";
 
 type TabKey = "tab0" | "tab1" | "tab2" | "tab3";
-type Scope = "mtd" | "daily" | "all";
+type Scope = "mtd" | "daily" | "all" | "lead_source";
 
 const PATHS = {
   agents: "/data/dim_agents.csv",
-  leads: "/data/fact_leads.csv",
+  leads: "/data/fact_lead_source.csv",
   calls: "/data/fact_calls.csv",
   orders: "/data/fact_orders.csv",
   trials: "/data/fact_trials.csv",
+  leadSourceFunnel: "/data/lead_source_funnel_summary.csv",
 };
 
 function fmt(n: number) {
@@ -361,6 +362,7 @@ export default function App() {
         fetchTable(PATHS.calls),
         fetchTable(PATHS.orders),
         fetchTable(PATHS.trials),
+        fetchTable(PATHS.leadSourceFunnel),
       ]);
 
       setRaw({
@@ -369,6 +371,7 @@ export default function App() {
         calls: Array.isArray(calls) ? calls : [],
         orders: Array.isArray(orders) ? orders : [],
         trials: Array.isArray(trials) ? trials : [],
+        leadSourceFunnel: Array.isArray(leadSourceFunnel) ? leadSourceFunnel : [],
       });
 
       setLoadedAtKsa(getKsaNow());
@@ -581,22 +584,42 @@ export default function App() {
                 <button className={`pill ${scope === "all" ? "active" : ""}`} onClick={() => setScope("all")}>
                   All-time
                 </button>
+                <button className={`pill ${scope === "lead_source" ? "active" : ""}`} onClick={() => setScope("lead_source")}>
+                  Lead Source
+                </button>
               </div>
             </div>
 
-            <div className="grid kpi">
-              <KPI title="线索 Leads" value={fmt((tab0 as any)?.mtd?.leads ?? 0)} delta={(tab0 as any)?.vs_last_month_same_period?.leads_delta} />
-              <KPI title="预约 Booked" value={fmt((tab0 as any)?.mtd?.booked ?? 0)} delta={(tab0 as any)?.vs_last_month_same_period?.booked_delta} />
-              <KPI title="出席 Attended" value={fmt((tab0 as any)?.mtd?.attended ?? 0)} delta={(tab0 as any)?.vs_last_month_same_period?.attended_delta} />
-              <KPI title="订单 Orders" value={fmt((tab0 as any)?.mtd?.orders ?? 0)} delta={(tab0 as any)?.vs_last_month_same_period?.orders_delta} />
-              <KPI title="GMV" value={fmt((tab0 as any)?.mtd?.gmv ?? 0)} delta={(tab0 as any)?.vs_last_month_same_period?.gmv_delta} />
+            {scope === "lead_source" ? (
+              <div className="grid kpi">
+                {(raw as any)?.leadSourceFunnel?.map((r: any) => (
+                  <div className="kpiCard" key={`${r.segment}-${r.lead_scope}`}>
+                    <div className="kpiTitle">{r.segment}</div>
+                    <div className="kpiValue">{fmt(Number(r.leads ?? 0))}</div>
+                    <div className="kpiSub">
+                      Booked {fmt(Number(r.booked_users ?? 0))} · Attended {fmt(Number(r.attended_users ?? 0))} · Orders {fmt(Number(r.order_users ?? 0))}
+                    </div>
+                    <div className="kpiSub">
+                      GMV {fmt(Math.round(Number(r.gmv ?? 0)))} · Lead CVR {fmtPct(Number(r.lead_to_order_rate ?? 0))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="grid kpi">
+                <KPI title="线索 Leads" value={fmt((tab0 as any)?.mtd?.leads ?? 0)} delta={(tab0 as any)?.vs_last_month_same_period?.leads_delta} />
+                <KPI title="预约 Booked" value={fmt((tab0 as any)?.mtd?.booked ?? 0)} delta={(tab0 as any)?.vs_last_month_same_period?.booked_delta} />
+                <KPI title="出席 Attended" value={fmt((tab0 as any)?.mtd?.attended ?? 0)} delta={(tab0 as any)?.vs_last_month_same_period?.attended_delta} />
+                <KPI title="订单 Orders" value={fmt((tab0 as any)?.mtd?.orders ?? 0)} delta={(tab0 as any)?.vs_last_month_same_period?.orders_delta} />
+                <KPI title="GMV" value={fmt((tab0 as any)?.mtd?.gmv ?? 0)} delta={(tab0 as any)?.vs_last_month_same_period?.gmv_delta} />
 
-              <KPI title="预约率" value={fmtPct((tab0 as any)?.rates?.booking_rate ?? 0)} sub={`${fmt((tab0 as any)?.mtd?.booked ?? 0)}/${fmt((tab0 as any)?.mtd?.leads ?? 0)}`} />
-              <KPI title="出席率" value={fmtPct((tab0 as any)?.rates?.attendance_rate ?? 0)} sub={`${fmt((tab0 as any)?.mtd?.attended ?? 0)}/${fmt((tab0 as any)?.mtd?.booked ?? 0)}`} />
-              <KPI title="出席转化率" value={fmtPct((tab0 as any)?.rates?.attended_conversion ?? 0)} sub={`${fmt((tab0 as any)?.mtd?.orders ?? 0)}/${fmt((tab0 as any)?.mtd?.attended ?? 0)}`} />
-              <KPI title="线索转化率" value={fmtPct((tab0 as any)?.rates?.lead_conversion ?? 0)} sub={`${fmt((tab0 as any)?.mtd?.orders ?? 0)}/${fmt((tab0 as any)?.mtd?.leads ?? 0)}`} />
-              <KPI title="AOV" value={fmt(Math.round((tab0 as any)?.rates?.aov ?? 0))} sub="GMV / Orders" />
-            </div>
+                <KPI title="预约率" value={fmtPct((tab0 as any)?.rates?.booking_rate ?? 0)} sub={`${fmt((tab0 as any)?.mtd?.booked ?? 0)}/${fmt((tab0 as any)?.mtd?.leads ?? 0)}`} />
+                <KPI title="出席率" value={fmtPct((tab0 as any)?.rates?.attendance_rate ?? 0)} sub={`${fmt((tab0 as any)?.mtd?.attended ?? 0)}/${fmt((tab0 as any)?.mtd?.booked ?? 0)}`} />
+                <KPI title="出席转化率" value={fmtPct((tab0 as any)?.rates?.attended_conversion ?? 0)} sub={`${fmt((tab0 as any)?.mtd?.orders ?? 0)}/${fmt((tab0 as any)?.mtd?.attended ?? 0)}`} />
+                <KPI title="线索转化率" value={fmtPct((tab0 as any)?.rates?.lead_conversion ?? 0)} sub={`${fmt((tab0 as any)?.mtd?.orders ?? 0)}/${fmt((tab0 as any)?.mtd?.leads ?? 0)}`} />
+                <KPI title="AOV" value={fmt(Math.round((tab0 as any)?.rates?.aov ?? 0))} sub="GMV / Orders" />
+              </div>
+            )}
 
             <details style={{ marginTop: 12 }}>
               <summary style={{ fontWeight: 900, cursor: "pointer" }}>Debug</summary>

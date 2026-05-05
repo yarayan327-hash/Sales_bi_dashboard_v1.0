@@ -112,7 +112,14 @@ function toYMD(raw: any): string {
 }
 
 function pickLeadYmd(r: any) {
-  return toYMD(r.assigned_date_ksa ?? r.assigned_time_ksa ?? r.assigned_time ?? r.assigned_date);
+  return toYMD(
+    r.register_time ??
+    r.add_time ??
+    r.assigned_date_ksa ??
+    r.assigned_time_ksa ??
+    r.assigned_time ??
+    r.assigned_date
+  );
 }
 
 function pickTrialYmd(r: any) {
@@ -146,7 +153,8 @@ function countBy(arr: any[], pick: (r: any) => string) {
 /** ✅ IMPORTANT: named export for App.tsx import */
 export function computeTab0ProjectOverview(input: Tab0Inputs): Tab0ProjectOverviewResult {
   const reportDate = String(input.reportDate || "").slice(0, 10);
-  const scope: Scope = (input.scope as Scope) || "mtd";
+  const rawScope = (input.scope as any) || "mtd";
+  const scope: Scope = rawScope === "lead_source" ? "mtd" : rawScope;
 
   const leads = Array.isArray(input.leads) ? input.leads : [];
   const trials = Array.isArray(input.trials) ? input.trials : [];
