@@ -2,6 +2,17 @@
 import { attachSalesMeta } from "../../transformers/joinSales";
 import { isAttendedStatus } from "../../utils/status";
 
+
+function extractUserId(raw: any) {
+  const s = String(raw ?? "").trim();
+  const m = s.match(/\((\d+)\)/);
+  if (m) return m[1];
+  const m2 = s.match(/\b(\d{5,})\b/);
+  if (m2) return m2[1];
+  return s;
+}
+
+
 const EFFECTIVE_SEC = 20;
 const HOUR_MS = 60 * 60 * 1000;
 const DAY_MS = 24 * HOUR_MS;
