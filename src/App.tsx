@@ -20,7 +20,8 @@ type Scope = "mtd" | "daily" | "all" | "lead_source";
 
 const PATHS = {
   agents: "/data/dim_agents.csv",
-  leads: "/data/fact_lead_source.csv",
+  leads: "/data/fact_leads.csv",
+  leadSource: "/data/fact_lead_source.csv",
   calls: "/data/fact_calls.csv",
   orders: "/data/fact_orders.csv",
   trials: "/data/fact_trials.csv",
@@ -356,9 +357,10 @@ export default function App() {
     setErr("");
     setLoading(true);
     try {
-      const [agents, leads, calls, orders, trials, leadSourceFunnel] = await Promise.all([
+      const [agents, leads, leadSource, calls, orders, trials, leadSourceFunnel] = await Promise.all([
         fetchTable(PATHS.agents),
         fetchTable(PATHS.leads),
+        fetchTable(PATHS.leadSource),
         fetchTable(PATHS.calls),
         fetchTable(PATHS.orders),
         fetchTable(PATHS.trials),
@@ -368,6 +370,7 @@ export default function App() {
       setRaw({
         agents: Array.isArray(agents) ? agents : [],
         leads: Array.isArray(leads) ? leads : [],
+        leadSource: Array.isArray(leadSource) ? leadSource : [],
         calls: Array.isArray(calls) ? calls : [],
         orders: Array.isArray(orders) ? orders : [],
         trials: Array.isArray(trials) ? trials : [],
@@ -389,6 +392,7 @@ export default function App() {
   /* ---------- transforms ---------- */
   const agents = useMemo(() => transformAgents(raw.agents ?? []), [raw.agents]);
   const leads = useMemo(() => transformLeads(raw.leads ?? []), [raw.leads]);
+  const leadSource = useMemo(() => raw.leadSource ?? [], [raw.leadSource]);
   const calls = useMemo(() => transformCalls(raw.calls ?? []), [raw.calls]);
   const orders = useMemo(() => transformOrders(raw.orders ?? []), [raw.orders]);
   const trials = useMemo(() => transformTrials(raw.trials ?? []), [raw.trials]);
@@ -402,7 +406,7 @@ export default function App() {
         reportDate,
         scope,
         agents,
-        leads,
+        leads: leadSource,
         trials,
         orders,
       } as any);
@@ -417,7 +421,7 @@ export default function App() {
         reportDate,
         scope: "daily",
         agents,
-        leads,
+        leads: leadSource,
         trials,
         orders,
       } as any);
@@ -591,19 +595,47 @@ export default function App() {
             </div>
 
             {scope === "lead_source" ? (
-              <div className="grid kpi">
-                {(raw as any)?.leadSourceFunnel?.map((r: any) => (
-                  <div className="kpiCard" key={`${r.segment}-${r.lead_scope}`}>
-                    <div className="kpiTitle">{r.segment}</div>
-                    <div className="kpiValue">{fmt(Number(r.leads ?? 0))}</div>
-                    <div className="kpiSub">
-                      Booked {fmt(Number(r.booked_users ?? 0))} · Attended {fmt(Number(r.attended_users ?? 0))} · Orders {fmt(Number(r.order_users ?? 0))}
-                    </div>
-                    <div className="kpiSub">
-                      GMV {fmt(Math.round(Number(r.gmv ?? 0)))} · Lead CVR {fmtPct(Number(r.lead_to_order_rate ?? 0))}
-                    </div>
-                  </div>
-                ))}
+              <div className="leadSourcePanel">
+                <div className="leadSourceTitle">线索来源转化汇总</div>
+                <div className="leadSourceSub">本月注册线索 + 非当月线索转化金额</div>
+
+                <div className="tableWrap">
+                  <table className="leadSourceTable">
+                    <thead>
+                      <tr>
+                        <th>来源</th>
+                        <th className="num">线索数</th>
+                        <th className="num">预约</th>
+                        <th className="num">出席</th>
+                        <th className="num">转化</th>
+                        <th className="num">预约率</th>
+                        <th className="num">出席率</th>
+                        <th className="num">出席转化率</th>
+                        <th className="num">线索转化率</th>
+                        <th className="num">非当月线索转化金额</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {((raw as any)?.leadSourceFunnel ?? []).map((r: any) => {
+                        const isOld = r.segment === "Non-current Month Leads";
+                        return (
+                          <tr key={`${r.segment}-${r.lead_scope}`}>
+                            <td className="sourceName">{isOld ? "非当月线索" : r.segment}</td>
+                            <td className="num">{isOld ? "-" : fmt(Number(r.leads ?? 0))}</td>
+                            <td className="num">{isOld ? "-" : fmt(Number(r.booked_users ?? 0))}</td>
+                            <td className="num">{isOld ? "-" : fmt(Number(r.attended_users ?? 0))}</td>
+                            <td className="num">{isOld ? "-" : fmt(Number(r.order_users ?? 0))}</td>
+                            <td className="num">{isOld ? "-" : fmtPct(Number(r.booking_rate ?? 0))}</td>
+                            <td className="num">{isOld ? "-" : fmtPct(Number(r.attendance_rate ?? 0))}</td>
+                            <td className="num">{isOld ? "-" : fmtPct(Number(r.attended_to_order_rate ?? 0))}</td>
+                            <td className="num">{isOld ? "-" : fmtPct(Number(r.lead_to_order_rate ?? 0))}</td>
+                            <td className="num moneyCell">{isOld ? fmt(Math.round(Number(r.gmv ?? 0))) : "-"}</td>
+                          </tr>
+                        );
+                      })}
+                    </tbody>
+                  </table>
+                </div>
               </div>
             ) : (
               <div className="grid kpi">
