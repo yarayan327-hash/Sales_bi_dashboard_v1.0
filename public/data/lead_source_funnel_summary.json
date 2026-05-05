@@ -1,0 +1,66 @@
+{
+  "generated_at_ksa": "2026-05-05 13:42:11",
+  "month": "2026-05",
+  "summary": [
+    {
+      "month": "2026-05",
+      "segment": "MKT",
+      "lead_scope": "current_month_registered",
+      "leads": 94,
+      "booked_users": 0,
+      "attended_users": 0,
+      "order_users": 0,
+      "order_count": 0,
+      "gmv": 0.0,
+      "booking_rate": 0.0,
+      "attendance_rate": 0,
+      "attended_to_order_rate": 0,
+      "lead_to_order_rate": 0.0
+    },
+    {
+      "month": "2026-05",
+      "segment": "REF",
+      "lead_scope": "current_month_registered",
+      "leads": 20,
+      "booked_users": 0,
+      "attended_users": 0,
+      "order_users": 0,
+      "order_count": 0,
+      "gmv": 0.0,
+      "booking_rate": 0.0,
+      "attendance_rate": 0,
+      "attended_to_order_rate": 0,
+      "lead_to_order_rate": 0.0
+    },
+    {
+      "month": "2026-05",
+      "segment": "Public Pool",
+      "lead_scope": "current_month_registered",
+      "leads": 0,
+      "booked_users": 0,
+      "attended_users": 0,
+      "order_users": 0,
+      "order_count": 0,
+      "gmv": 0.0,
+      "booking_rate": 0,
+      "attendance_rate": 0,
+      "attended_to_order_rate": 0,
+      "lead_to_order_rate": 0
+    },
+    {
+      "month": "2026-05",
+      "segment": "Old Leads Converted",
+      "lead_scope": "not_current_month_registered_but_ordered_this_month",
+      "leads": 8266,
+      "booked_users": 0,
+      "attended_users": 0,
+      "order_users": 0,
+      "order_count": 0,
+      "gmv": 0.0,
+      "booking_rate": "",
+      "attendance_rate": "",
+      "attended_to_order_rate": "",
+      "lead_to_order_rate": ""
+    }
+  ]
+}

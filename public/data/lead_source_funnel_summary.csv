@@ -1,0 +1,5 @@
+month,segment,lead_scope,leads,booked_users,attended_users,order_users,order_count,gmv,booking_rate,attendance_rate,attended_to_order_rate,lead_to_order_rate
+2026-05,MKT,current_month_registered,94,0,0,0,0,0.0,0.0,0,0,0.0
+2026-05,REF,current_month_registered,20,0,0,0,0,0.0,0.0,0,0,0.0
+2026-05,Public Pool,current_month_registered,0,0,0,0,0,0.0,0,0,0,0
+2026-05,Old Leads Converted,not_current_month_registered_but_ordered_this_month,8266,0,0,0,0,0.0,,,,
