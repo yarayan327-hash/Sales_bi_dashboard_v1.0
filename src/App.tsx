@@ -399,13 +399,24 @@ export default function App() {
 
   const trialsForTab2 = useMemo(() => {
     const leadMap = new Map<string, any>();
+    const agentNameMap = new Map<string, any>();
+
+    for (const a of agents ?? []) {
+      const name = String(a.sales_name ?? a.sales_agent ?? a.agent_name ?? "").trim();
+      if (!name) continue;
+      agentNameMap.set(name.toLowerCase(), a);
+    }
 
     for (const r of leadSource ?? []) {
       const userId = String(r.user_id ?? r.stu_id ?? "").trim();
       if (!userId) continue;
 
       const salesAgent = String(r.sales_name ?? r.sales_agent ?? "").trim();
-      const salesGroup = String(r.sales_group ?? "").trim();
+      const agent = agentNameMap.get(salesAgent.toLowerCase());
+
+      const salesGroup =
+        String(agent?.sales_group ?? "").trim() ||
+        String(r.sales_group ?? "").trim();
 
       if (!salesAgent && !salesGroup) continue;
 
@@ -432,7 +443,7 @@ export default function App() {
         };
       })
       .filter(Boolean);
-  }, [trials, leadSource]);
+  }, [trials, leadSource, agents]);
 
   const latestLeadAssignedKsa = useMemo(() => getLatestLeadAssignedDateKSA(raw.leads ?? []), [raw.leads]);
 
