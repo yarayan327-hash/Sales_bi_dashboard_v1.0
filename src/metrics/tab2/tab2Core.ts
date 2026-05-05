@@ -93,7 +93,7 @@ function buildAggRows(
       String(t.class_date_ksa ?? "").slice(0, 10) || (startTs ? ymdFromTs(startTs) : "");
     if (!startTs || !inRangeYmd(classYmd, startYmd, endYmd)) continue;
 
-    const uid = String(t.user_id ?? "").trim();
+    const uid = extractUserId(t.user_id);
     const salesGroup = String(t.sales_group ?? "").trim();
     const salesAgent =
       safeSalesName(t.sales_name ?? t.sales_agent ?? t.sales_id ?? "") || "(empty)";
@@ -177,14 +177,14 @@ export function computeTab2(input: any) {
   // calls: 只要有效通话 + 有 user_id + 有 outbound_ts_ms
   const effectiveCalls = calls.filter((c: any) => {
     const dur = toNum(c.call_duration_sec);
-    const uid = String(c.user_id ?? "").trim();
+    const uid = extractUserId(c.user_id);
     const ts = Number(c.outbound_ts_ms ?? 0);
     return dur >= EFFECTIVE_SEC && !!uid && Number.isFinite(ts) && ts > 0;
   });
 
   const callsByUser = new Map<string, any[]>();
   for (const c of effectiveCalls) {
-    const uid = String(c.user_id ?? "").trim();
+    const uid = extractUserId(c.user_id);
     if (!uid) continue;
     if (!callsByUser.has(uid)) callsByUser.set(uid, []);
     callsByUser.get(uid)!.push(c);
@@ -224,7 +224,7 @@ export function computeTab2(input: any) {
       effectiveCalls: effectiveCalls.length,
       callsUsers: callsByUser.size,
       ordersUsers: new Set(
-        orders2.map((o: any) => String(o.user_id ?? "").trim()).filter(Boolean)
+        orders2.map((o: any) => extractUserId(o.user_id)).filter(Boolean)
       ).size,
       note: "Tab2 upgraded: per-sales weekly/monthly summary. Buckets are exclusive: <6h / 6-24h / 24-48h / 48h-7d / >7d.",
       reportDate,

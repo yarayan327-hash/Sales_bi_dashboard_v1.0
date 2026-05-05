@@ -411,19 +411,23 @@ export default function App() {
       const userId = String(r.user_id ?? r.stu_id ?? "").trim();
       if (!userId) continue;
 
-      const salesAgent = String(r.sales_name ?? r.sales_agent ?? "").trim();
-      const agent = agentNameMap.get(salesAgent.toLowerCase());
+      const rawSalesAgent = String(r.sales_name ?? r.sales_agent ?? "").trim();
+      const agent = agentNameMap.get(rawSalesAgent.toLowerCase());
+
+      const salesAgent =
+        String(agent?.sales_name ?? "").trim() ||
+        rawSalesAgent;
 
       const salesGroup =
         String(agent?.sales_group ?? "").trim() ||
         String(r.sales_group ?? "").trim();
 
-      if (!salesAgent && !salesGroup) continue;
+      if (!salesAgent) continue;
 
       leadMap.set(userId, {
         sales_agent: salesAgent,
         sales_name: salesAgent,
-        sales_group: salesGroup,
+        sales_group: salesGroup || "(empty)",
       });
     }
 
