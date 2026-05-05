@@ -28,7 +28,11 @@ def read_csv(path):
 
 
 def parse_dt(s):
-    return pd.to_datetime(s, errors="coerce")
+    if isinstance(s, pd.Series):
+        x = s.astype(str).str.extract(r"(\d{4}[-/]\d{1,2}[-/]\d{1,2}(?:\s+\d{1,2}:\d{2}(?::\d{2})?)?)", expand=False)
+        return pd.to_datetime(x, errors="coerce")
+    m = re.search(r"(\d{4}[-/]\d{1,2}[-/]\d{1,2}(?:\s+\d{1,2}:\d{2}(?::\d{2})?)?)", str(s or ""))
+    return pd.to_datetime(m.group(1), errors="coerce") if m else pd.NaT
 
 
 def clean_user_id(s):
@@ -168,17 +172,29 @@ def main():
             "lead_to_order_rate": round(order_users / lead_count, 4) if lead_count else 0,
         })
 
-    old = leads[~leads["is_register_current_month"]].copy()
+    # Non-current month conversion amount:
+    # all successful orders this month minus orders from users registered this month.
+    current_month_users = set(current["user_id"])
+    if not orders_m.empty:
+        non_current_orders = orders_m[~orders_m["user_id"].isin(current_month_users)].copy()
+        non_current_order_users = non_current_orders["user_id"].nunique()
+        non_current_order_count = non_current_orders["order_id"].nunique() if "order_id" in non_current_orders.columns else len(non_current_orders)
+        non_current_gmv = float(non_current_orders["paid_amount_num"].sum())
+    else:
+        non_current_order_users = 0
+        non_current_order_count = 0
+        non_current_gmv = 0.0
+
     rows.append({
         "month": MONTH,
-        "segment": "Old Leads Converted",
+        "segment": "Non-current Month Leads",
         "lead_scope": "not_current_month_registered_but_ordered_this_month",
-        "leads": old["user_id"].nunique(),
-        "booked_users": int(old["has_booking_this_month"].sum()),
-        "attended_users": int(old["has_attended_this_month"].sum()),
-        "order_users": int(old["has_order_this_month"].sum()),
-        "order_count": int(old["order_count_this_month"].sum()),
-        "gmv": round(float(old["gmv_this_month"].sum()), 2),
+        "leads": "",
+        "booked_users": "",
+        "attended_users": "",
+        "order_users": non_current_order_users,
+        "order_count": non_current_order_count,
+        "gmv": round(non_current_gmv, 2),
         "booking_rate": "",
         "attendance_rate": "",
         "attended_to_order_rate": "",

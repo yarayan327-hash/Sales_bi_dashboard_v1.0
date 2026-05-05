@@ -621,10 +621,12 @@ export default function App() {
               </div>
             )}
 
-            <details style={{ marginTop: 12 }}>
-              <summary style={{ fontWeight: 900, cursor: "pointer" }}>Debug</summary>
-              <pre className="pre">{JSON.stringify((tab0 as any)?.debug ?? tab0, null, 2)}</pre>
-            </details>
+            {scope !== "lead_source" ? (
+              <details style={{ marginTop: 12 }}>
+                <summary style={{ fontWeight: 900, cursor: "pointer" }}>Debug</summary>
+                <pre className="pre">{JSON.stringify((tab0 as any)?.debug ?? tab0, null, 2)}</pre>
+              </details>
+            ) : null}
           </div>
         ) : null}
 
