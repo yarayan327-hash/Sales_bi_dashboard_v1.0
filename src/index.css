@@ -513,3 +513,64 @@ html, body{
 .miniRow.g0 .meta, .miniRow.g000 .meta{
   background: rgba(0,0,0,.04);
 }
+.leadSourcePanel {
+  margin-top: 18px;
+  border-radius: 18px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.leadSourceTitle {
+  font-size: 24px;
+  font-weight: 900;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.leadSourceSub {
+  font-size: 18px;
+  font-weight: 800;
+  color: #666;
+  margin-bottom: 16px;
+}
+
+.leadSourceTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-weight: 900;
+  color: #333;
+}
+
+.leadSourceTable thead th {
+  background: #f7f7f7;
+  color: #666;
+  font-size: 16px;
+  padding: 18px 20px;
+  text-align: left;
+  border-bottom: 1px solid #e6e6e6;
+  white-space: nowrap;
+}
+
+.leadSourceTable tbody td {
+  font-size: 18px;
+  padding: 20px;
+  border-bottom: 1px solid #eeeeee;
+  white-space: nowrap;
+}
+
+.leadSourceTable tbody tr:hover td {
+  background: #f8fbff;
+}
+
+.leadSourceTable .num {
+  text-align: right;
+}
+
+.leadSourceTable .sourceName {
+  font-weight: 1000;
+}
+
+.leadSourceTable .moneyCell {
+  color: #1fb3ff;
+  font-weight: 1000;
+}
