@@ -1,7 +1,6 @@
 // src/metrics/tab2/tab2Core.ts
-import { attachSalesMeta } from "../../transformers/joinSales";
-import { isAttendedStatus } from "../../utils/status";
 
+const EFFECTIVE_SEC = 20;
 
 function extractUserId(raw: any) {
   const s = String(raw ?? "").trim();
@@ -12,250 +11,237 @@ function extractUserId(raw: any) {
   return s;
 }
 
-
-const EFFECTIVE_SEC = 20;
-const HOUR_MS = 60 * 60 * 1000;
-const DAY_MS = 24 * HOUR_MS;
-
-function toNum(v: any) {
-  const n = Number(String(v ?? "").replace(/,/g, "").trim());
+function toNum(x: any) {
+  const n = Number(String(x ?? "0").replace(/,/g, "").trim());
   return Number.isFinite(n) ? n : 0;
 }
 
-function normalizeSalesKey(v: any) {
-  return String(v ?? "")
-    .replace(/\u3000/g, " ")
-    .replace(/\s+/g, " ")
-    .trim()
-    .toLowerCase();
+function toYMD(raw: any) {
+  const s = String(raw ?? "").trim();
+  const m = s.match(/^(\d{4})[-\/](\d{1,2})[-\/](\d{1,2})/);
+  if (!m) return "";
+  return `${m[1]}-${String(Number(m[2])).padStart(2, "0")}-${String(Number(m[3])).padStart(2, "0")}`;
 }
 
-function safeSalesName(v: any) {
-  return String(v ?? "").replace(/\s+/g, " ").trim();
+function parseDateTime(raw: any) {
+  const s = String(raw ?? "").trim();
+  const m = s.match(/^(\d{4})[-\/](\d{1,2})[-\/](\d{1,2})\s+(\d{1,2}):(\d{2})(?::(\d{2}))?/);
+  if (!m) return null;
+  return new Date(
+    Number(m[1]),
+    Number(m[2]) - 1,
+    Number(m[3]),
+    Number(m[4]),
+    Number(m[5]),
+    Number(m[6] || 0)
+  );
 }
 
-function ymdFromTs(ts: number): string {
-  const d = new Date(ts);
+function parseTrialStart(raw: any) {
+  const s = String(raw ?? "").trim();
+  const m = s.match(/^(\d{4})[-\/](\d{1,2})[-\/](\d{1,2})\s+(\d{1,2}):(\d{2})/);
+  if (!m) return null;
+  return new Date(
+    Number(m[1]),
+    Number(m[2]) - 1,
+    Number(m[3]),
+    Number(m[4]),
+    Number(m[5]),
+    0
+  );
+}
+
+function addHours(d: Date, h: number) {
+  return new Date(d.getTime() + h * 3600 * 1000);
+}
+
+function addDays(d: Date, days: number) {
+  return new Date(d.getTime() + days * 24 * 3600 * 1000);
+}
+
+function fmtYMD(d: Date) {
   const y = d.getFullYear();
   const m = String(d.getMonth() + 1).padStart(2, "0");
   const day = String(d.getDate()).padStart(2, "0");
   return `${y}-${m}-${day}`;
 }
 
-function toDateStartTs(reportDate: string) {
-  return new Date(`${String(reportDate).slice(0, 10)} 00:00:00`).getTime();
+function daysBack(ymd: string, days: number) {
+  const d = parseTrialStart(`${ymd} 00:00`) || new Date();
+  d.setDate(d.getDate() - days);
+  return fmtYMD(d);
 }
 
-function sundayStartYmd(reportDate: string) {
-  const dt = new Date(`${String(reportDate).slice(0, 10)} 00:00:00`);
-  const day = dt.getDay(); // 0=Sun
-  dt.setDate(dt.getDate() - day);
-  const y = dt.getFullYear();
-  const m = String(dt.getMonth() + 1).padStart(2, "0");
-  const d = String(dt.getDate()).padStart(2, "0");
-  return `${y}-${m}-${d}`;
+function parseDurationSec(raw: any) {
+  const s = String(raw ?? "").trim();
+  if (/^\d+$/.test(s)) return Number(s);
+
+  const m1 = s.match(/(\d{1,2}):(\d{2}):(\d{2})/);
+  if (m1) return Number(m1[1]) * 3600 + Number(m1[2]) * 60 + Number(m1[3]);
+
+  return 0;
 }
 
-function monthStartYmd(reportDate: string) {
-  const dt = new Date(`${String(reportDate).slice(0, 10)} 00:00:00`);
-  const y = dt.getFullYear();
-  const m = String(dt.getMonth() + 1).padStart(2, "0");
-  return `${y}-${m}-01`;
+function isEffectiveCall(c: any) {
+  const dur =
+    parseDurationSec(c.call_duration_sec) ||
+    parseDurationSec(c.connect_time_sec) ||
+    parseDurationSec(c.ring_duration_sec);
+
+  if (dur >= EFFECTIVE_SEC) return true;
+
+  const status = String(c.call_status ?? "").trim();
+  const recording = String(c.recording_url ?? c.play_url ?? c.down_url ?? "").trim();
+
+  // 当前 CRM voice export 没有稳定 duration 字段，先用“双方接通 + 有录音”作为有效通话兜底。
+  return status === "双方接通" && recording.length > 0;
 }
 
-function inRangeYmd(ymd: string, start: string, end: string) {
-  return !!ymd && ymd >= start && ymd <= end;
-}
-
-function sortRows(rows: any[]) {
-  return [...rows].sort((a, b) => {
-    const ga = String(a.sales_group || "999");
-    const gb = String(b.sales_group || "999");
-    if (ga !== gb) return ga.localeCompare(gb);
-    return Number(b.attended ?? 0) - Number(a.attended ?? 0);
-  });
-}
-
-function emptyAggRow(sales_group: string, sales_agent: string) {
-  return {
-    sales_group,
-    sales_agent,
-    attended: 0,
-    pre_2h: 0,
-    post_6h: 0,
-    post_24h: 0,
-    post_48h: 0,
-    post_7d: 0,
-    unfollowed_7d: 0,
-  };
-}
-
-function buildAggRows(
-  attendedTrials: any[],
-  callsByUser: Map<string, any[]>,
-  startYmd: string,
-  endYmd: string
-) {
-  const map = new Map<string, any>();
-
-  for (const t of attendedTrials) {
-    const startTs = Number(t.start_ts_ms ?? 0);
-    const classYmd =
-      String(t.class_date_ksa ?? "").slice(0, 10) || (startTs ? ymdFromTs(startTs) : "");
-    if (!startTs || !inRangeYmd(classYmd, startYmd, endYmd)) continue;
-
-    const uid = extractUserId(t.user_id);
-    const salesGroup = String(t.sales_group ?? "").trim();
-    const salesAgent =
-      safeSalesName(t.sales_name ?? t.sales_agent ?? t.sales_id ?? "") || "(empty)";
-    const salesKey = normalizeSalesKey(salesAgent);
-
-    const rowKey = `${salesGroup}||${salesAgent}`;
-    if (!map.has(rowKey)) {
-      map.set(rowKey, emptyAggRow(salesGroup, salesAgent));
-    }
-    const row = map.get(rowKey);
-    row.attended += 1;
-
-    const userCalls = callsByUser.get(uid) ?? [];
-
-    // 优先统计同一销售名下的通话
-    const sameSalesCalls =
-      salesKey
-        ? userCalls.filter((c) => normalizeSalesKey(c.sales_agent) === salesKey)
-        : userCalls;
-
-    const usableCalls = sameSalesCalls.length ? sameSalesCalls : userCalls;
-
-    // 课前2小时
-    const hasPre2h = usableCalls.some((c) => {
-      const ts = Number(c.outbound_ts_ms ?? 0);
-      return ts >= startTs - 2 * HOUR_MS && ts < startTs;
-    });
-    if (hasPre2h) row.pre_2h += 1;
-
-    // 课后首次有效通话，用于互斥分桶
-    const afterCalls = usableCalls
-      .map((c) => Number(c.outbound_ts_ms ?? 0))
-      .filter((ts) => Number.isFinite(ts) && ts >= startTs)
-      .sort((a, b) => a - b);
-
-    const firstAfterTs = afterCalls.length ? afterCalls[0] : null;
-
-    if (firstAfterTs === null) {
-      row.unfollowed_7d += 1;
-      continue;
-    }
-
-    const delta = firstAfterTs - startTs;
-
-    if (delta < 6 * HOUR_MS) {
-      row.post_6h += 1;
-    } else if (delta < 24 * HOUR_MS) {
-      row.post_24h += 1;
-    } else if (delta < 48 * HOUR_MS) {
-      row.post_48h += 1;
-    } else if (delta < 7 * DAY_MS) {
-      row.post_7d += 1;
-    } else {
-      row.unfollowed_7d += 1;
-    }
-  }
-
-  return sortRows(Array.from(map.values()));
+function normalizeSalesName(name: any) {
+  return String(name ?? "").trim();
 }
 
 export function computeTab2(input: any) {
-  const reportDate = String(input.reportDate ?? "").slice(0, 10);
+  const reportDate = String(input.reportDate || "").slice(0, 10);
 
-  const agentsArr = Array.isArray(input.agents) ? input.agents : [];
   const trials = Array.isArray(input.trials) ? input.trials : [];
   const calls = Array.isArray(input.calls) ? input.calls : [];
-  const orders = Array.isArray(input.orders) ? input.orders : [];
+  const agents = Array.isArray(input.agents) ? input.agents : [];
 
-  // 试听课补销售信息
-  const trials2 = attachSalesMeta(trials, agentsArr, (r: any) => ({
-    sales_id: r.agent_id ?? r.sales_id,
-  }));
-
-  // 订单这版先保留给 debug
-  const orders2 = attachSalesMeta(orders, agentsArr, (r: any) => ({
-    sales_name: r.sales_name ?? r.sales_name_raw,
-  }));
-
-  const attendedTrials = trials2.filter((r: any) => isAttendedStatus(r.class_status));
-
-  // calls: 只要有效通话 + 有 user_id + 有 outbound_ts_ms
-  const effectiveCalls = calls.filter((c: any) => {
-    const dur = toNum(c.call_duration_sec);
-    const uid = extractUserId(c.user_id);
-    const ts = Number(c.outbound_ts_ms ?? 0);
-    return dur >= EFFECTIVE_SEC && !!uid && Number.isFinite(ts) && ts > 0;
-  });
-
-  const callsByUser = new Map<string, any[]>();
-  for (const c of effectiveCalls) {
-    const uid = extractUserId(c.user_id);
-    if (!uid) continue;
-    if (!callsByUser.has(uid)) callsByUser.set(uid, []);
-    callsByUser.get(uid)!.push(c);
+  const groupBySalesName = new Map<string, string>();
+  for (const a of agents) {
+    const name = normalizeSalesName(a.sales_name ?? a.sales_agent ?? a.agent_name);
+    const group = String(a.sales_group ?? "").trim();
+    if (name) groupBySalesName.set(name.toLowerCase(), group);
   }
 
-  // 排序，后面取首次跟进更稳
-  for (const arr of callsByUser.values()) {
-    arr.sort((a, b) => Number(a.outbound_ts_ms ?? 0) - Number(b.outbound_ts_ms ?? 0));
+  const normalizedCalls = calls
+    .map((c: any) => {
+      const uid = extractUserId(c.user_id);
+      const time = parseDateTime(c.outbound_time ?? c.call_time);
+      const salesName = normalizeSalesName(c.sales_name);
+      return {
+        ...c,
+        _uid: uid,
+        _time: time,
+        _sales_name: salesName,
+        _effective: isEffectiveCall(c),
+      };
+    })
+    .filter((c: any) => c._uid && c._time && c._effective);
+
+  const callsByUid = new Map<string, any[]>();
+  for (const c of normalizedCalls) {
+    if (!callsByUid.has(c._uid)) callsByUid.set(c._uid, []);
+    callsByUid.get(c._uid)!.push(c);
   }
 
-  const weekStart = sundayStartYmd(reportDate);
-  const monthStart = monthStartYmd(reportDate);
+  function buildRows(startYmd: string, endYmd: string) {
+    const rows = new Map<string, any>();
 
-  const weeklyBySales = buildAggRows(attendedTrials, callsByUser, weekStart, reportDate);
-  const monthlyBySales = buildAggRows(attendedTrials, callsByUser, monthStart, reportDate);
+    const attended = trials.filter((t: any) => {
+      const ymd = toYMD(t.class_start_ksa ?? t.start_time_ksa ?? t.start_time_bj ?? t.start_time);
+      return ymd >= startYmd && ymd <= endYmd && String(t.class_status ?? "").trim() === "end";
+    });
 
-  const weeklyAttended = weeklyBySales.reduce((s, r) => s + Number(r.attended ?? 0), 0);
-  const monthlyAttended = monthlyBySales.reduce((s, r) => s + Number(r.attended ?? 0), 0);
+    for (const t of attended) {
+      const uid = extractUserId(t.user_id);
+      const salesAgent = normalizeSalesName(t.sales_agent ?? t.sales_name ?? t.admin_name);
+      if (!uid || !salesAgent) continue;
+
+      const salesGroup =
+        String(groupBySalesName.get(salesAgent.toLowerCase()) ?? "").trim() ||
+        String(t.sales_group ?? "").trim() ||
+        "(empty)";
+
+      const key = `${salesGroup}__${salesAgent}`;
+
+      if (!rows.has(key)) {
+        rows.set(key, {
+          sales_group: salesGroup,
+          sales_agent: salesAgent,
+          attended: 0,
+          pre_2h: 0,
+          "0~6h": 0,
+          "6~24h": 0,
+          "24~48h": 0,
+          "48h~7d": 0,
+          unfollowed_7d: 0,
+        });
+      }
+
+      const row = rows.get(key);
+      row.attended += 1;
+
+      const classStart = parseTrialStart(t.class_start_ksa ?? t.start_time_ksa ?? t.start_time_bj ?? t.start_time);
+      if (!classStart) {
+        row.unfollowed_7d += 1;
+        continue;
+      }
+
+      const userCalls = callsByUid.get(uid) || [];
+
+      const hasPre2h = userCalls.some((c: any) => c._time >= addHours(classStart, -2) && c._time < classStart);
+      const has0to6 = userCalls.some((c: any) => c._time >= classStart && c._time < addHours(classStart, 6));
+      const has6to24 = userCalls.some((c: any) => c._time >= addHours(classStart, 6) && c._time < addHours(classStart, 24));
+      const has24to48 = userCalls.some((c: any) => c._time >= addHours(classStart, 24) && c._time < addHours(classStart, 48));
+      const has48to7d = userCalls.some((c: any) => c._time >= addHours(classStart, 48) && c._time < addDays(classStart, 7));
+
+      if (hasPre2h) row.pre_2h += 1;
+      else if (has0to6) row["0~6h"] += 1;
+      else if (has6to24) row["6~24h"] += 1;
+      else if (has24to48) row["24~48h"] += 1;
+      else if (has48to7d) row["48h~7d"] += 1;
+      else row.unfollowed_7d += 1;
+    }
+
+    return Array.from(rows.values()).sort((a, b) => b.attended - a.attended);
+  }
+
+  const weeklyStart = daysBack(reportDate, 1);
+  const monthStart = `${reportDate.slice(0, 8)}01`;
+
+  const weeklyBySales = buildRows(weeklyStart, reportDate);
+  const monthlyBySales = buildRows(monthStart, reportDate);
+
+  const weeklyAttended = weeklyBySales.reduce((s, r) => s + toNum(r.attended), 0);
+  const monthlyAttended = monthlyBySales.reduce((s, r) => s + toNum(r.attended), 0);
+
+  const callUsers = new Set(normalizedCalls.map((c: any) => c._uid)).size;
 
   return {
-    weeklyRange: { start: weekStart, end: reportDate },
-    monthlyRange: { start: monthStart, end: reportDate },
+    weekly_attended: weeklyAttended,
+    monthly_attended: monthlyAttended,
+    effective_calls: normalizedCalls.length,
+    call_users: callUsers,
 
-    // 新结构
+    weekly_by_sales: weeklyBySales,
+    monthly_by_sales: monthlyBySales,
+
     weeklyBySales,
     monthlyBySales,
 
-    // 兼容旧字段，避免别的地方炸掉
-    a_byDate: [],
-    b_bySalesDate: monthlyBySales,
-    d_unfollowed: [],
+    weekly_start: weeklyStart,
+    weekly_end: reportDate,
+    month_start: monthStart,
+    month_end: reportDate,
 
     debug: {
-      attendedTrials: attendedTrials.length,
-      attendedWeekly: weeklyAttended,
-      attendedMonthly: monthlyAttended,
-      effectiveCalls: effectiveCalls.length,
-      callsUsers: callsByUser.size,
-      ordersUsers: new Set(
-        orders2.map((o: any) => extractUserId(o.user_id)).filter(Boolean)
-      ).size,
-      note: "Tab2 upgraded: per-sales weekly/monthly summary. Buckets are exclusive: <6h / 6-24h / 24-48h / 48h-7d / >7d.",
       reportDate,
-      weeklyRange: { start: weekStart, end: reportDate },
-      monthlyRange: { start: monthStart, end: reportDate },
-      sample_calls: effectiveCalls.slice(0, 10).map((c: any) => ({
-        user_id: c.user_id,
-        sales_agent: c.sales_agent,
-        outbound_time_raw: c.outbound_time_raw,
-        outbound_ts_ms: c.outbound_ts_ms,
-        call_status_text: c.call_status_text,
-        call_duration_sec: c.call_duration_sec,
-      })),
-      sample_trials: attendedTrials.slice(0, 10).map((t: any) => ({
-        user_id: t.user_id,
-        sales_group: t.sales_group,
-        sales_name: t.sales_name,
-        class_status: t.class_status,
-        class_start_ksa: t.class_start_ksa,
-        start_ts_ms: t.start_ts_ms,
+      trials: trials.length,
+      calls: calls.length,
+      effective_calls: normalizedCalls.length,
+      call_users: callUsers,
+      weeklyAttended,
+      monthlyAttended,
+      weekly_by_sales_sample: weeklyBySales.slice(0, 5),
+      monthly_by_sales_sample: monthlyBySales.slice(0, 5),
+      sample_calls: normalizedCalls.slice(0, 10).map((c: any) => ({
+        raw_user_id: c.user_id,
+        uid: c._uid,
+        outbound_time: c.outbound_time,
+        call_status: c.call_status,
+        recording_url: c.recording_url ? "yes" : "no",
       })),
     },
   };
