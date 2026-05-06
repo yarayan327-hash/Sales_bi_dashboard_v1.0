@@ -78,5 +78,53 @@
     "post_24h_connected_count": 0,
     "missing_post_6h_touch": true,
     "missing_post_24h_touch": true
+  },
+  {
+    "user_id": "63082004",
+    "sales_group": "",
+    "sales_agent": "",
+    "booking_type": "代约",
+    "class_start_ksa": "2026-05-04 19:30 ~ 20:00",
+    "textbook": "",
+    "teacher_id": "6813744",
+    "teacher_name": "Fatma Essam",
+    "post_6h_call_count": 0,
+    "post_6h_connected_count": 0,
+    "post_24h_call_count": 2,
+    "post_24h_connected_count": 0,
+    "missing_post_6h_touch": true,
+    "missing_post_24h_touch": false
+  },
+  {
+    "user_id": "63076279",
+    "sales_group": "",
+    "sales_agent": "",
+    "booking_type": "代约",
+    "class_start_ksa": "2026-05-04 20:00 ~ 20:30",
+    "textbook": "",
+    "teacher_id": "6755745",
+    "teacher_name": "Nada Hasan",
+    "post_6h_call_count": 0,
+    "post_6h_connected_count": 0,
+    "post_24h_call_count": 0,
+    "post_24h_connected_count": 0,
+    "missing_post_6h_touch": true,
+    "missing_post_24h_touch": true
+  },
+  {
+    "user_id": "63095442",
+    "sales_group": "",
+    "sales_agent": "",
+    "booking_type": "代约",
+    "class_start_ksa": "2026-05-05 17:30 ~ 18:00",
+    "textbook": "",
+    "teacher_id": "7051694",
+    "teacher_name": "Sara Diaa",
+    "post_6h_call_count": 0,
+    "post_6h_connected_count": 0,
+    "post_24h_call_count": 0,
+    "post_24h_connected_count": 0,
+    "missing_post_6h_touch": true,
+    "missing_post_24h_touch": true
   }
 ]
