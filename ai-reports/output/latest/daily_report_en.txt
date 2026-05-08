@@ -2,25 +2,25 @@
 
 【MTD Performance】
 Leads: 0
-Bookings: 234
-Attendance: 63
+Bookings: 301
+Attendance: 66
 Orders: 3
 GMV: 2040
-Attendance Rate: 26.9%
-Conversion Rate: 4.8%
+Attendance Rate: 21.9%
+Conversion Rate: 4.5%
 
 【Key Diagnosis】
 当前首要问题为：出席不足、转化不足
 
 1. 出席不足
-MTD 出席率 26.9%，低于健康值 45%。
-- MTD出席 63 / 预约 234
-- 出席率 26.9%
+MTD 出席率 21.9%，低于健康值 45%。
+- MTD出席 66 / 预约 301
+- 出席率 21.9%
 
 2. 转化不足
-MTD 出席转化率 4.8%，低于健康值 18%。
-- MTD订单 3 / 出席 63
-- 出席转化率 4.8%
+MTD 出席转化率 4.5%，低于健康值 18%。
+- MTD订单 3 / 出席 66
+- 出席转化率 4.5%
 
 【Team PK】
 Team前端销售部001组: 2 orders / GMV 1440
