@@ -17,6 +17,19 @@ def clean_id(x):
 def parse_dt(x):
     return pd.to_datetime(str(x).replace("/", "-"), errors="coerce")
 
+
+def parse_class_end_ksa(x):
+    s = str(x)
+    m = re.search(r"(\d{4}-\d{2}-\d{2})\s+(\d{1,2}:\d{2})\s*~\s*(\d{1,2}:\d{2})", s)
+    if not m:
+        return pd.NaT
+    date, start_t, end_t = m.groups()
+    start_dt = pd.to_datetime(date + " " + start_t, errors="coerce")
+    end_dt = pd.to_datetime(date + " " + end_t, errors="coerce")
+    if pd.notna(start_dt) and pd.notna(end_dt) and end_dt < start_dt:
+        end_dt = end_dt + pd.Timedelta(days=1)
+    return end_dt
+
 def parse_trial_dt(x):
     m = re.search(r"(\d{4}-\d{2}-\d{2}\s+\d{1,2}:\d{2})", str(x))
     return pd.to_datetime(m.group(1), errors="coerce") if m else pd.NaT
@@ -116,6 +129,33 @@ df = df.merge(order_user, on="user_id", how="left")
 df["has_order"] = df["has_order"].fillna("no")
 df["paid_amount"] = df["paid_amount"].fillna(0)
 df["order_count"] = df["order_count"].fillna(0)
+
+# ===== Behavioral follow-up calibration =====
+# class_start_ksa is KSA time.
+# first_call_time / last_call_time from CRM voice list are Beijing time, so convert BJ -> KSA by -5h.
+df["class_end_ksa_dt"] = df["class_start_ksa"].map(parse_class_end_ksa)
+df["last_call_bj_dt"] = df["last_call_time"].map(parse_dt)
+df["last_call_ksa_dt"] = df["last_call_bj_dt"] - pd.Timedelta(hours=5)
+
+df["has_post_trial_call"] = (
+    df["class_end_ksa_dt"].notna()
+    & df["last_call_ksa_dt"].notna()
+    & (df["last_call_ksa_dt"] > df["class_end_ksa_dt"])
+    & (pd.to_numeric(df["connected_call_count"], errors="coerce").fillna(0) > 0)
+)
+
+# If CRM behavior proves there was a connected call after class, override AI followup_issue.
+df.loc[
+    (df["class_status"] == "end") & (df["has_post_trial_call"]),
+    "followup_issue"
+] = "followed_after_trial"
+
+df.loc[
+    (df["class_status"] == "end")
+    & (~df["has_post_trial_call"])
+    & (df["has_order"] != "yes"),
+    "followup_issue"
+] = "not_followed_after_trial"
 
 def manager_action(r):
     if str(r.get("fraud_risk","")) not in ["", "normal", "unknown", "nan"]:
