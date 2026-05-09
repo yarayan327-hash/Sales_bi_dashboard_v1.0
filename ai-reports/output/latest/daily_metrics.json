@@ -1,5 +1,5 @@
 {
-  "report_date": "2026-05-08",
+  "report_date": "2026-05-09",
   "yesterday": {
     "leads": 0,
     "booked": 0,
@@ -34,14 +34,14 @@
   "debug": {
     "source_rows": {
       "leads": 8364,
-      "trials": 4623,
+      "trials": 4680,
       "orders": 119
     },
     "ranges": {
-      "yesterday": "2026-05-08",
+      "yesterday": "2026-05-09",
       "mtd": {
         "start": "2026-05-01",
-        "end": "2026-05-08"
+        "end": "2026-05-09"
       }
     }
   }
