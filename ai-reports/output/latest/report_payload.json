@@ -1,15 +1,15 @@
 {
-  "report_date": "2026-05-11",
+  "report_date": "2026-05-12",
   "daily_metrics": {
-    "report_date": "2026-05-11",
+    "report_date": "2026-05-12",
     "yesterday": {
       "leads": 0,
-      "booked": 38,
-      "attended": 17,
+      "booked": 0,
+      "attended": 0,
       "orders": 0,
       "gmv": 0,
       "booking_rate": 0,
-      "attendance_rate": 0.4474,
+      "attendance_rate": 0,
       "attended_conversion_rate": 0,
       "lead_conversion_rate": 0,
       "aov": 0
@@ -40,10 +40,10 @@
         "orders": 119
       },
       "ranges": {
-        "yesterday": "2026-05-11",
+        "yesterday": "2026-05-12",
         "mtd": {
           "start": "2026-05-01",
-          "end": "2026-05-11"
+          "end": "2026-05-12"
         }
       }
     }
