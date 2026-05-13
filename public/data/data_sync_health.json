@@ -1,6 +1,6 @@
 {
-  "sync_date_ksa": "2026-05-12",
-  "sync_time_ksa": "2026-05-12 18:14:37",
+  "sync_date_ksa": "2026-05-13",
+  "sync_time_ksa": "2026-05-13 18:18:39",
   "status": "warning",
   "bad_count": 1,
   "checks": [
@@ -72,8 +72,8 @@
       "table": "public/data/fact_calls.csv",
       "status": "ok",
       "reason": "",
-      "rows": 5936,
-      "month_rows": 2488,
+      "rows": 6274,
+      "month_rows": 2826,
       "columns": [
         "user_id",
         "sales_name",
