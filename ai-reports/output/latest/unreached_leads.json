@@ -1,77 +1,5 @@
 [
   {
-    "user_id": "62935051",
-    "sales_id": "4122734",
-    "sales_group": "001",
-    "sales_agent": "EGCC-eman.amr",
-    "assigned_time": "2026-04-15T02:20:16+08:00",
-    "lead_source": "转介绍分配cc",
-    "total_calls": 0,
-    "connected_calls": 0,
-    "first_connect_interval_hours": null,
-    "is_reached": false
-  },
-  {
-    "user_id": "62934990",
-    "sales_id": "4123061",
-    "sales_group": "002",
-    "sales_agent": "EGCC-fatmamohamed",
-    "assigned_time": "2026-04-15T02:53:44+08:00",
-    "lead_source": "中东academy_en分配",
-    "total_calls": 0,
-    "connected_calls": 0,
-    "first_connect_interval_hours": null,
-    "is_reached": false
-  },
-  {
-    "user_id": "62935320",
-    "sales_id": "4121806",
-    "sales_group": "001",
-    "sales_agent": "51habiba.hassan",
-    "assigned_time": "2026-04-15T03:42:29+08:00",
-    "lead_source": "中东academy_en分配",
-    "total_calls": 0,
-    "connected_calls": 0,
-    "first_connect_interval_hours": null,
-    "is_reached": false
-  },
-  {
-    "user_id": "62935807",
-    "sales_id": "4123060",
-    "sales_group": "002",
-    "sales_agent": "EGCC-maiwaheed",
-    "assigned_time": "2026-04-15T07:01:56+08:00",
-    "lead_source": "中东成人高中生分配",
-    "total_calls": 0,
-    "connected_calls": 0,
-    "first_connect_interval_hours": null,
-    "is_reached": false
-  },
-  {
-    "user_id": "62935722",
-    "sales_id": "4121806",
-    "sales_group": "001",
-    "sales_agent": "51habiba.hassan",
-    "assigned_time": "2026-04-15T07:14:52+08:00",
-    "lead_source": "中东成人高中生分配",
-    "total_calls": 0,
-    "connected_calls": 0,
-    "first_connect_interval_hours": null,
-    "is_reached": false
-  },
-  {
-    "user_id": "62935593",
-    "sales_id": "4122734",
-    "sales_group": "001",
-    "sales_agent": "EGCC-eman.amr",
-    "assigned_time": "2026-04-15T07:36:40+08:00",
-    "lead_source": "中东成人高中生分配",
-    "total_calls": 0,
-    "connected_calls": 0,
-    "first_connect_interval_hours": null,
-    "is_reached": false
-  },
-  {
     "user_id": "62935671",
     "sales_id": "4123057",
     "sales_group": "002",
@@ -1308,42 +1236,6 @@
     "is_reached": false
   },
   {
-    "user_id": "62934854",
-    "sales_id": "4121807",
-    "sales_group": "002",
-    "sales_agent": "51nadamuhammad",
-    "assigned_time": "2026-04-15T01:42:30+08:00",
-    "lead_source": "中东academy_en分配",
-    "total_calls": 1,
-    "connected_calls": 0,
-    "first_connect_interval_hours": null,
-    "is_reached": false
-  },
-  {
-    "user_id": "62935124",
-    "sales_id": "4123060",
-    "sales_group": "002",
-    "sales_agent": "EGCC-maiwaheed",
-    "assigned_time": "2026-04-15T02:47:11+08:00",
-    "lead_source": "中东academy_en分配",
-    "total_calls": 1,
-    "connected_calls": 0,
-    "first_connect_interval_hours": null,
-    "is_reached": false
-  },
-  {
-    "user_id": "62935303",
-    "sales_id": "4121807",
-    "sales_group": "002",
-    "sales_agent": "51nadamuhammad",
-    "assigned_time": "2026-04-15T03:17:03+08:00",
-    "lead_source": "中东成人高中生分配",
-    "total_calls": 1,
-    "connected_calls": 0,
-    "first_connect_interval_hours": null,
-    "is_reached": false
-  },
-  {
     "user_id": "62796144",
     "sales_id": "4121807",
     "sales_group": "002",
@@ -2455,42 +2347,6 @@
     "assigned_time": "2026-04-26T23:58:09+08:00",
     "lead_source": "中东academy_en分配",
     "total_calls": 1,
-    "connected_calls": 0,
-    "first_connect_interval_hours": null,
-    "is_reached": false
-  },
-  {
-    "user_id": "62934892",
-    "sales_id": "4122734",
-    "sales_group": "001",
-    "sales_agent": "EGCC-eman.amr",
-    "assigned_time": "2026-04-15T02:28:33+08:00",
-    "lead_source": "转介绍分配cc",
-    "total_calls": 2,
-    "connected_calls": 0,
-    "first_connect_interval_hours": null,
-    "is_reached": false
-  },
-  {
-    "user_id": "62935577",
-    "sales_id": "4123061",
-    "sales_group": "002",
-    "sales_agent": "EGCC-fatmamohamed",
-    "assigned_time": "2026-04-15T07:08:26+08:00",
-    "lead_source": "中东成人高中生分配",
-    "total_calls": 2,
-    "connected_calls": 0,
-    "first_connect_interval_hours": null,
-    "is_reached": false
-  },
-  {
-    "user_id": "62935821",
-    "sales_id": "4121807",
-    "sales_group": "002",
-    "sales_agent": "51nadamuhammad",
-    "assigned_time": "2026-04-15T07:24:03+08:00",
-    "lead_source": "中东academy_en分配",
-    "total_calls": 2,
     "connected_calls": 0,
     "first_connect_interval_hours": null,
     "is_reached": false
@@ -5059,18 +4915,6 @@
     "assigned_time": "2026-04-26T20:42:22+08:00",
     "lead_source": "中东成人高中生分配",
     "total_calls": 3,
-    "connected_calls": 0,
-    "first_connect_interval_hours": null,
-    "is_reached": false
-  },
-  {
-    "user_id": "62935607",
-    "sales_id": "4122734",
-    "sales_group": "001",
-    "sales_agent": "EGCC-eman.amr",
-    "assigned_time": "2026-04-15T05:20:51+08:00",
-    "lead_source": "中东academy_en分配",
-    "total_calls": 4,
     "connected_calls": 0,
     "first_connect_interval_hours": null,
     "is_reached": false
