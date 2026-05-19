@@ -1,7 +1,7 @@
 {
-  "report_date": "2026-05-18",
+  "report_date": "2026-05-19",
   "daily_metrics": {
-    "report_date": "2026-05-18",
+    "report_date": "2026-05-19",
     "yesterday": {
       "leads": 0,
       "booked": 0,
@@ -40,10 +40,10 @@
         "orders": 122
       },
       "ranges": {
-        "yesterday": "2026-05-18",
+        "yesterday": "2026-05-19",
         "mtd": {
           "start": "2026-05-01",
-          "end": "2026-05-18"
+          "end": "2026-05-19"
         }
       }
     }
