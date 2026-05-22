@@ -1,4 +1,4 @@
-﻿order_id,user_name,user_id,sales_name_raw,sales_group,original_price,paid_amount,package_name,order_time,payment_method,pay_currency,discount_amount,order_status,processed_time,search_keyword
+order_id,user_name,user_id,sales_name_raw,sales_group,original_price,paid_amount,package_name,order_time,payment_method,pay_currency,discount_amount,order_status,processed_time,search_keyword
 31797188,student,60216099,51habiba.hassan,前端销售部001组,319,319,,2025/10/13 18:56,网银支付,SAR,0.00(SAR),网银支付,2025/10/13 19:27,crm_direct
 3758029,Sadeem,60821059,51habiba.hassan,前端销售部001组,599,599,,2025/10/29 3:33,,SAR,,,2025/10/29 4:31,crm_direct
 31864686,student,60289426,51habiba.hassan,前端销售部001组,319,319,,2025/10/30 17:39,,SAR,,,2025/10/30 20:02,crm_direct
@@ -121,3 +121,4 @@
 32568240,student,63108222,EGCC-nadahassan,前端销售部001组,1680.00(USD),840.00(USD),Eid Special Offer-Comprehensive Learning Course-45,2026-05-11 11:51:00,,SAR,3150.00(SAR),已成功,2026-05-11 12:09:42,crm_direct_EGCC-nadahassan
 32526594,student,62528617,EGCC-maiwaheed,前端销售部002组,1198.00(USD),599,Ramadan Special Offer-Super foreign teacher course package-50,2026/4/29 12:07,,SAR,2247,已成功,2026/4/29 20:02,manual_2026_04
 32531982,student,62528617,EGCC-maiwaheed,前端销售部002组,1198.00(USD),599,Ramadan Special Offer-Super foreign teacher course package-50,2026/4/30 13:01,,SAR,2247,已成功,2026/4/30 13:10,manual_2026_04
+32600464,abdallah,59495472,EGCC-nadahassan,前端销售部001组,1680.00(USD),840.00(USD),Eid Special Offer-Comprehensive Learning Course-45,2026-05-20 12:23:24,,SAR,3150.00(SAR),已成功,2026-05-20 12:33:06,crm_direct_EGCC-nadahassan
