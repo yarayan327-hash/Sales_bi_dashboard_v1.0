@@ -1,26 +1,26 @@
 {
-  "report_date": "2026-05-22",
+  "report_date": "2026-05-23",
   "yesterday": {
     "leads": 0,
-    "booked": 13,
-    "attended": 3,
+    "booked": 20,
+    "attended": 5,
     "orders": 0,
     "gmv": 0,
     "booking_rate": 0,
-    "attendance_rate": 0.2308,
+    "attendance_rate": 0.25,
     "attended_conversion_rate": 0,
     "lead_conversion_rate": 0,
     "aov": 0
   },
   "mtd": {
     "leads": 0,
-    "booked": 707,
-    "attended": 174,
+    "booked": 727,
+    "attended": 179,
     "orders": 7,
     "gmv": 5160,
     "booking_rate": 0,
-    "attendance_rate": 0.2461,
-    "attended_conversion_rate": 0.0402,
+    "attendance_rate": 0.2462,
+    "attended_conversion_rate": 0.0391,
     "lead_conversion_rate": 0,
     "aov": 737
   },
@@ -34,14 +34,14 @@
   "debug": {
     "source_rows": {
       "leads": 8364,
-      "trials": 4987,
+      "trials": 5000,
       "orders": 123
     },
     "ranges": {
-      "yesterday": "2026-05-22",
+      "yesterday": "2026-05-23",
       "mtd": {
         "start": "2026-05-01",
-        "end": "2026-05-22"
+        "end": "2026-05-23"
       }
     }
   }

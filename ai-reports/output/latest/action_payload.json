@@ -1,43 +1,7 @@
 {
-  "generated_at": "2026-05-22T02:00:05.516Z",
-  "report_date": "2026-05-21",
+  "generated_at": "2026-05-23T02:00:05.456Z",
+  "report_date": "2026-05-22",
   "unreached_leads": [
-    {
-      "user_id": "62990399",
-      "sales_id": "4122734",
-      "sales_group": "001",
-      "sales_agent": "EGCC-eman.amr",
-      "assigned_time": "2026-04-22T14:52:22+08:00",
-      "lead_source": "中东academy_en分配",
-      "total_calls": 0,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
-      "user_id": "62992194",
-      "sales_id": "4121807",
-      "sales_group": "002",
-      "sales_agent": "51nadamuhammad",
-      "assigned_time": "2026-04-22T18:34:09+08:00",
-      "lead_source": "中东成人高中生分配",
-      "total_calls": 0,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
-      "user_id": "62995517",
-      "sales_id": "4121806",
-      "sales_group": "001",
-      "sales_agent": "51habiba.hassan",
-      "assigned_time": "2026-04-23T00:33:43+08:00",
-      "lead_source": "中东academy_en分配",
-      "total_calls": 0,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
     {
       "user_id": "63000155",
       "sales_id": "4121806",
@@ -322,138 +286,6 @@
       "assigned_time": "2026-04-26T18:54:37+08:00",
       "lead_source": "转介绍分配cc",
       "total_calls": 0,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
-      "user_id": "62990418",
-      "sales_id": "4121806",
-      "sales_group": "001",
-      "sales_agent": "51habiba.hassan",
-      "assigned_time": "2026-04-22T13:02:43+08:00",
-      "lead_source": "中东academy_en分配",
-      "total_calls": 1,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
-      "user_id": "62992031",
-      "sales_id": "4121807",
-      "sales_group": "002",
-      "sales_agent": "51nadamuhammad",
-      "assigned_time": "2026-04-22T17:37:39+08:00",
-      "lead_source": "中东academy_en分配",
-      "total_calls": 1,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
-      "user_id": "62992403",
-      "sales_id": "4123061",
-      "sales_group": "002",
-      "sales_agent": "EGCC-fatmamohamed",
-      "assigned_time": "2026-04-22T17:59:42+08:00",
-      "lead_source": "中东academy_en分配",
-      "total_calls": 1,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
-      "user_id": "62241491",
-      "sales_id": "4121807",
-      "sales_group": "002",
-      "sales_agent": "51nadamuhammad",
-      "assigned_time": "2026-04-22T20:14:33+08:00",
-      "lead_source": "CC人工改派",
-      "total_calls": 1,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
-      "user_id": "62183072",
-      "sales_id": "4121807",
-      "sales_group": "002",
-      "sales_agent": "51nadamuhammad",
-      "assigned_time": "2026-04-22T20:15:31+08:00",
-      "lead_source": "CC人工改派",
-      "total_calls": 1,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
-      "user_id": "62915206",
-      "sales_id": "4123060",
-      "sales_group": "002",
-      "sales_agent": "EGCC-maiwaheed",
-      "assigned_time": "2026-04-22T20:24:08+08:00",
-      "lead_source": "CC人工改派",
-      "total_calls": 1,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
-      "user_id": "62312846",
-      "sales_id": "4123061",
-      "sales_group": "002",
-      "sales_agent": "EGCC-fatmamohamed",
-      "assigned_time": "2026-04-22T20:25:28+08:00",
-      "lead_source": "CC人工改派",
-      "total_calls": 1,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
-      "user_id": "62236440",
-      "sales_id": "4123061",
-      "sales_group": "002",
-      "sales_agent": "EGCC-fatmamohamed",
-      "assigned_time": "2026-04-22T20:26:46+08:00",
-      "lead_source": "CC人工改派",
-      "total_calls": 1,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
-      "user_id": "62274473",
-      "sales_id": "4123061",
-      "sales_group": "002",
-      "sales_agent": "EGCC-fatmamohamed",
-      "assigned_time": "2026-04-22T20:27:41+08:00",
-      "lead_source": "CC人工改派",
-      "total_calls": 1,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
-      "user_id": "62988014",
-      "sales_id": "4122734",
-      "sales_group": "001",
-      "sales_agent": "EGCC-eman.amr",
-      "assigned_time": "2026-04-22T20:40:50+08:00",
-      "lead_source": "CC人工改派",
-      "total_calls": 1,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
-      "user_id": "62512025",
-      "sales_id": "4123060",
-      "sales_group": "002",
-      "sales_agent": "EGCC-maiwaheed",
-      "assigned_time": "2026-04-22T23:35:27+08:00",
-      "lead_source": "CC人工改派",
-      "total_calls": 1,
       "connected_calls": 0,
       "first_connect_interval_hours": null,
       "is_reached": false
@@ -874,126 +706,6 @@
       "assigned_time": "2026-04-26T23:58:09+08:00",
       "lead_source": "中东academy_en分配",
       "total_calls": 1,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
-      "user_id": "62992089",
-      "sales_id": "4123057",
-      "sales_group": "002",
-      "sales_agent": "EGCC-tasneemmahmoud",
-      "assigned_time": "2026-04-22T18:20:18+08:00",
-      "lead_source": "转介绍分配cc",
-      "total_calls": 2,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
-      "user_id": "62184203",
-      "sales_id": "4121807",
-      "sales_group": "002",
-      "sales_agent": "51nadamuhammad",
-      "assigned_time": "2026-04-22T20:15:06+08:00",
-      "lead_source": "CC人工改派",
-      "total_calls": 2,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
-      "user_id": "62511608",
-      "sales_id": "4123061",
-      "sales_group": "002",
-      "sales_agent": "EGCC-fatmamohamed",
-      "assigned_time": "2026-04-22T20:26:12+08:00",
-      "lead_source": "CC人工改派",
-      "total_calls": 2,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
-      "user_id": "62990145",
-      "sales_id": "4122734",
-      "sales_group": "001",
-      "sales_agent": "EGCC-eman.amr",
-      "assigned_time": "2026-04-22T20:40:49+08:00",
-      "lead_source": "CC人工改派",
-      "total_calls": 2,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
-      "user_id": "62991804",
-      "sales_id": "4122734",
-      "sales_group": "001",
-      "sales_agent": "EGCC-eman.amr",
-      "assigned_time": "2026-04-22T20:40:50+08:00",
-      "lead_source": "CC人工改派",
-      "total_calls": 2,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
-      "user_id": "62987732",
-      "sales_id": "4122734",
-      "sales_group": "001",
-      "sales_agent": "EGCC-eman.amr",
-      "assigned_time": "2026-04-22T20:40:50+08:00",
-      "lead_source": "CC人工改派",
-      "total_calls": 2,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
-      "user_id": "62982269",
-      "sales_id": "4122734",
-      "sales_group": "001",
-      "sales_agent": "EGCC-eman.amr",
-      "assigned_time": "2026-04-22T20:40:50+08:00",
-      "lead_source": "CC人工改派",
-      "total_calls": 2,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
-      "user_id": "62993847",
-      "sales_id": "4121807",
-      "sales_group": "002",
-      "sales_agent": "51nadamuhammad",
-      "assigned_time": "2026-04-22T21:11:19+08:00",
-      "lead_source": "中东academy_en分配",
-      "total_calls": 2,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
-      "user_id": "62257333",
-      "sales_id": "4121807",
-      "sales_group": "002",
-      "sales_agent": "51nadamuhammad",
-      "assigned_time": "2026-04-22T23:18:03+08:00",
-      "lead_source": "CC人工改派",
-      "total_calls": 2,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
-      "user_id": "62995912",
-      "sales_id": "4121807",
-      "sales_group": "002",
-      "sales_agent": "51nadamuhammad",
-      "assigned_time": "2026-04-23T02:02:47+08:00",
-      "lead_source": "中东academy_en分配",
-      "total_calls": 2,
       "connected_calls": 0,
       "first_connect_interval_hours": null,
       "is_reached": false
@@ -1563,114 +1275,6 @@
       "is_reached": false
     },
     {
-      "user_id": "62989129",
-      "sales_id": "4123057",
-      "sales_group": "002",
-      "sales_agent": "EGCC-tasneemmahmoud",
-      "assigned_time": "2026-04-22T09:41:17+08:00",
-      "lead_source": "中东academy_en分配",
-      "total_calls": 3,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
-      "user_id": "62992058",
-      "sales_id": "4123057",
-      "sales_group": "002",
-      "sales_agent": "EGCC-tasneemmahmoud",
-      "assigned_time": "2026-04-22T17:56:43+08:00",
-      "lead_source": "中东academy_en分配",
-      "total_calls": 3,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
-      "user_id": "62991976",
-      "sales_id": "4123060",
-      "sales_group": "002",
-      "sales_agent": "EGCC-maiwaheed",
-      "assigned_time": "2026-04-22T17:58:17+08:00",
-      "lead_source": "中东academy_en分配",
-      "total_calls": 3,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
-      "user_id": "62523069",
-      "sales_id": "4121807",
-      "sales_group": "002",
-      "sales_agent": "51nadamuhammad",
-      "assigned_time": "2026-04-22T20:15:58+08:00",
-      "lead_source": "CC人工改派",
-      "total_calls": 3,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
-      "user_id": "61556717",
-      "sales_id": "4123060",
-      "sales_group": "002",
-      "sales_agent": "EGCC-maiwaheed",
-      "assigned_time": "2026-04-22T23:21:44+08:00",
-      "lead_source": "CC人工改派",
-      "total_calls": 3,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
-      "user_id": "61757886",
-      "sales_id": "4123060",
-      "sales_group": "002",
-      "sales_agent": "EGCC-maiwaheed",
-      "assigned_time": "2026-04-22T23:37:02+08:00",
-      "lead_source": "CC人工改派",
-      "total_calls": 3,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
-      "user_id": "62995400",
-      "sales_id": "4122734",
-      "sales_group": "001",
-      "sales_agent": "EGCC-eman.amr",
-      "assigned_time": "2026-04-23T00:45:34+08:00",
-      "lead_source": "中东academy_en分配",
-      "total_calls": 3,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
-      "user_id": "62995856",
-      "sales_id": "4121806",
-      "sales_group": "001",
-      "sales_agent": "51habiba.hassan",
-      "assigned_time": "2026-04-23T01:48:03+08:00",
-      "lead_source": "转介绍分配cc",
-      "total_calls": 3,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
-      "user_id": "62996251",
-      "sales_id": "4123057",
-      "sales_group": "002",
-      "sales_agent": "EGCC-tasneemmahmoud",
-      "assigned_time": "2026-04-23T03:37:46+08:00",
-      "lead_source": "中东academy_en分配",
-      "total_calls": 3,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
       "user_id": "62997453",
       "sales_id": "4121806",
       "sales_group": "001",
@@ -2055,138 +1659,6 @@
       "is_reached": false
     },
     {
-      "user_id": "62988786",
-      "sales_id": "4122734",
-      "sales_group": "001",
-      "sales_agent": "EGCC-eman.amr",
-      "assigned_time": "2026-04-22T09:10:20+08:00",
-      "lead_source": "中东成人高中生分配",
-      "total_calls": 4,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
-      "user_id": "62990121",
-      "sales_id": "4123061",
-      "sales_group": "002",
-      "sales_agent": "EGCC-fatmamohamed",
-      "assigned_time": "2026-04-22T12:21:24+08:00",
-      "lead_source": "中东academy_en分配",
-      "total_calls": 4,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
-      "user_id": "62992183",
-      "sales_id": "4123057",
-      "sales_group": "002",
-      "sales_agent": "EGCC-tasneemmahmoud",
-      "assigned_time": "2026-04-22T18:22:17+08:00",
-      "lead_source": "转介绍分配cc",
-      "total_calls": 4,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
-      "user_id": "62872931",
-      "sales_id": "4123060",
-      "sales_group": "002",
-      "sales_agent": "EGCC-maiwaheed",
-      "assigned_time": "2026-04-22T20:22:09+08:00",
-      "lead_source": "CC人工改派",
-      "total_calls": 4,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
-      "user_id": "62909596",
-      "sales_id": "4123060",
-      "sales_group": "002",
-      "sales_agent": "EGCC-maiwaheed",
-      "assigned_time": "2026-04-22T20:23:33+08:00",
-      "lead_source": "CC人工改派",
-      "total_calls": 4,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
-      "user_id": "62993396",
-      "sales_id": "4122734",
-      "sales_group": "001",
-      "sales_agent": "EGCC-eman.amr",
-      "assigned_time": "2026-04-22T20:56:54+08:00",
-      "lead_source": "中东academy_en分配",
-      "total_calls": 4,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
-      "user_id": "62996037",
-      "sales_id": "4123057",
-      "sales_group": "002",
-      "sales_agent": "EGCC-tasneemmahmoud",
-      "assigned_time": "2026-04-23T03:11:40+08:00",
-      "lead_source": "中东成人高中生分配",
-      "total_calls": 4,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
-      "user_id": "62996274",
-      "sales_id": "4123060",
-      "sales_group": "002",
-      "sales_agent": "EGCC-maiwaheed",
-      "assigned_time": "2026-04-23T04:05:02+08:00",
-      "lead_source": "中东academy_en分配",
-      "total_calls": 4,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
-      "user_id": "62996522",
-      "sales_id": "4123061",
-      "sales_group": "002",
-      "sales_agent": "EGCC-fatmamohamed",
-      "assigned_time": "2026-04-23T05:38:41+08:00",
-      "lead_source": "中东academy_en分配",
-      "total_calls": 4,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
-      "user_id": "62996714",
-      "sales_id": "4123060",
-      "sales_group": "002",
-      "sales_agent": "EGCC-maiwaheed",
-      "assigned_time": "2026-04-23T06:30:12+08:00",
-      "lead_source": "中东成人高中生分配",
-      "total_calls": 4,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
-      "user_id": "62996652",
-      "sales_id": "4121806",
-      "sales_group": "001",
-      "sales_agent": "51habiba.hassan",
-      "assigned_time": "2026-04-23T07:40:13+08:00",
-      "lead_source": "中东academy_en分配",
-      "total_calls": 4,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
       "user_id": "62997529",
       "sales_id": "4123061",
       "sales_group": "002",
@@ -2511,54 +1983,6 @@
       "is_reached": false
     },
     {
-      "user_id": "62989518",
-      "sales_id": "4123060",
-      "sales_group": "002",
-      "sales_agent": "EGCC-maiwaheed",
-      "assigned_time": "2026-04-22T10:43:37+08:00",
-      "lead_source": "中东academy_en分配",
-      "total_calls": 5,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
-      "user_id": "62470699",
-      "sales_id": "4123060",
-      "sales_group": "002",
-      "sales_agent": "EGCC-maiwaheed",
-      "assigned_time": "2026-04-22T20:22:57+08:00",
-      "lead_source": "CC人工改派",
-      "total_calls": 5,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
-      "user_id": "62993447",
-      "sales_id": "4121806",
-      "sales_group": "001",
-      "sales_agent": "51habiba.hassan",
-      "assigned_time": "2026-04-22T20:28:36+08:00",
-      "lead_source": "中东academy_en分配",
-      "total_calls": 5,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
-      "user_id": "62985239",
-      "sales_id": "4122734",
-      "sales_group": "001",
-      "sales_agent": "EGCC-eman.amr",
-      "assigned_time": "2026-04-22T20:40:50+08:00",
-      "lead_source": "CC人工改派",
-      "total_calls": 5,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
       "user_id": "63010164",
       "sales_id": "4123060",
       "sales_group": "002",
@@ -2710,30 +2134,6 @@
       "assigned_time": "2026-04-26T17:30:27+08:00",
       "lead_source": "CC人工改派",
       "total_calls": 5,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
-      "user_id": "62994147",
-      "sales_id": "4123057",
-      "sales_group": "002",
-      "sales_agent": "EGCC-tasneemmahmoud",
-      "assigned_time": "2026-04-22T21:28:26+08:00",
-      "lead_source": "中东academy_en分配",
-      "total_calls": 6,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
-      "user_id": "62994994",
-      "sales_id": "4123061",
-      "sales_group": "002",
-      "sales_agent": "EGCC-fatmamohamed",
-      "assigned_time": "2026-04-22T23:49:44+08:00",
-      "lead_source": "中东academy_en分配",
-      "total_calls": 6,
       "connected_calls": 0,
       "first_connect_interval_hours": null,
       "is_reached": false
@@ -2991,30 +2391,6 @@
       "is_reached": false
     },
     {
-      "user_id": "62908828",
-      "sales_id": "4123061",
-      "sales_group": "002",
-      "sales_agent": "EGCC-fatmamohamed",
-      "assigned_time": "2026-04-22T20:27:17+08:00",
-      "lead_source": "CC人工改派",
-      "total_calls": 8,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
-      "user_id": "62796982",
-      "sales_id": "4123060",
-      "sales_group": "002",
-      "sales_agent": "EGCC-maiwaheed",
-      "assigned_time": "2026-04-22T21:09:11+08:00",
-      "lead_source": "CC人工改派",
-      "total_calls": 8,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
       "user_id": "62997418",
       "sales_id": "4122734",
       "sales_group": "001",
@@ -3159,18 +2535,6 @@
       "is_reached": false
     },
     {
-      "user_id": "62539498",
-      "sales_id": "4123060",
-      "sales_group": "002",
-      "sales_agent": "EGCC-maiwaheed",
-      "assigned_time": "2026-04-22T20:24:33+08:00",
-      "lead_source": "CC人工改派",
-      "total_calls": 12,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
       "user_id": "63010693",
       "sales_id": "4123057",
       "sales_group": "002",
@@ -3202,18 +2566,6 @@
       "assigned_time": "2026-04-26T15:03:34+08:00",
       "lead_source": "中东成人高中生分配",
       "total_calls": 12,
-      "connected_calls": 0,
-      "first_connect_interval_hours": null,
-      "is_reached": false
-    },
-    {
-      "user_id": "62994199",
-      "sales_id": "4123060",
-      "sales_group": "002",
-      "sales_agent": "EGCC-maiwaheed",
-      "assigned_time": "2026-04-22T22:04:47+08:00",
-      "lead_source": "中东academy_en分配",
-      "total_calls": 13,
       "connected_calls": 0,
       "first_connect_interval_hours": null,
       "is_reached": false
@@ -6456,6 +5808,666 @@
       "pre_2h_connected_count": 0,
       "missing_pre_2h_touch": true,
       "missing_pre_2h_connect": true
+    },
+    {
+      "user_id": "60807063",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-18 19:00 ~ 19:30",
+      "class_status": "end",
+      "textbook": "",
+      "teacher_id": "6755745",
+      "teacher_name": "Nada Hasan",
+      "pre_2h_call_count": 0,
+      "pre_2h_connected_count": 0,
+      "missing_pre_2h_touch": true,
+      "missing_pre_2h_connect": true
+    },
+    {
+      "user_id": "63206959",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "自约",
+      "class_start_ksa": "2026-05-18 19:30 ~ 20:00",
+      "class_status": "s_absent",
+      "textbook": "",
+      "teacher_id": "6772855",
+      "teacher_name": "Soad",
+      "pre_2h_call_count": 0,
+      "pre_2h_connected_count": 0,
+      "missing_pre_2h_touch": true,
+      "missing_pre_2h_connect": true
+    },
+    {
+      "user_id": "60855995",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-18 20:00 ~ 20:30",
+      "class_status": "s_absent",
+      "textbook": "",
+      "teacher_id": "6755745",
+      "teacher_name": "Nada Hasan",
+      "pre_2h_call_count": 0,
+      "pre_2h_connected_count": 0,
+      "missing_pre_2h_touch": true,
+      "missing_pre_2h_connect": true
+    },
+    {
+      "user_id": "61991200",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-18 20:00 ~ 20:30",
+      "class_status": "end",
+      "textbook": "",
+      "teacher_id": "6772855",
+      "teacher_name": "Soad",
+      "pre_2h_call_count": 0,
+      "pre_2h_connected_count": 0,
+      "missing_pre_2h_touch": true,
+      "missing_pre_2h_connect": true
+    },
+    {
+      "user_id": "61448445",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-18 20:30 ~ 21:00",
+      "class_status": "end",
+      "textbook": "",
+      "teacher_id": "6755745",
+      "teacher_name": "Nada Hasan",
+      "pre_2h_call_count": 0,
+      "pre_2h_connected_count": 0,
+      "missing_pre_2h_touch": true,
+      "missing_pre_2h_connect": true
+    },
+    {
+      "user_id": "63218392",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "自约",
+      "class_start_ksa": "2026-05-19 14:30 ~ 15:00",
+      "class_status": "end",
+      "textbook": "",
+      "teacher_id": "6772855",
+      "teacher_name": "Soad",
+      "pre_2h_call_count": 0,
+      "pre_2h_connected_count": 0,
+      "missing_pre_2h_touch": true,
+      "missing_pre_2h_connect": true
+    },
+    {
+      "user_id": "63218947",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "自约",
+      "class_start_ksa": "2026-05-19 15:00 ~ 15:30",
+      "class_status": "s_absent",
+      "textbook": "",
+      "teacher_id": "0",
+      "teacher_name": "",
+      "pre_2h_call_count": 0,
+      "pre_2h_connected_count": 0,
+      "missing_pre_2h_touch": true,
+      "missing_pre_2h_connect": true
+    },
+    {
+      "user_id": "63219280",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "自约",
+      "class_start_ksa": "2026-05-19 15:30 ~ 16:00",
+      "class_status": "end",
+      "textbook": "",
+      "teacher_id": "6772855",
+      "teacher_name": "Soad",
+      "pre_2h_call_count": 0,
+      "pre_2h_connected_count": 0,
+      "missing_pre_2h_touch": true,
+      "missing_pre_2h_connect": true
+    },
+    {
+      "user_id": "63222452",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "自约",
+      "class_start_ksa": "2026-05-19 15:30 ~ 16:00",
+      "class_status": "end",
+      "textbook": "",
+      "teacher_id": "7051694",
+      "teacher_name": "Sara Diaa",
+      "pre_2h_call_count": 0,
+      "pre_2h_connected_count": 0,
+      "missing_pre_2h_touch": true,
+      "missing_pre_2h_connect": true
+    },
+    {
+      "user_id": "61166063",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-19 17:00 ~ 17:30",
+      "class_status": "s_absent",
+      "textbook": "",
+      "teacher_id": "6783916",
+      "teacher_name": "Hadir Elnaggar",
+      "pre_2h_call_count": 0,
+      "pre_2h_connected_count": 0,
+      "missing_pre_2h_touch": true,
+      "missing_pre_2h_connect": true
+    },
+    {
+      "user_id": "60329008",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-19 17:00 ~ 17:30",
+      "class_status": "s_absent",
+      "textbook": "",
+      "teacher_id": "7051694",
+      "teacher_name": "Sara Diaa",
+      "pre_2h_call_count": 0,
+      "pre_2h_connected_count": 0,
+      "missing_pre_2h_touch": true,
+      "missing_pre_2h_connect": true
+    },
+    {
+      "user_id": "63218947",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-19 17:00 ~ 17:30",
+      "class_status": "end",
+      "textbook": "",
+      "teacher_id": "6772855",
+      "teacher_name": "Soad",
+      "pre_2h_call_count": 0,
+      "pre_2h_connected_count": 0,
+      "missing_pre_2h_touch": true,
+      "missing_pre_2h_connect": true
+    },
+    {
+      "user_id": "63222453",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "自约",
+      "class_start_ksa": "2026-05-19 17:30 ~ 18:00",
+      "class_status": "end",
+      "textbook": "",
+      "teacher_id": "7051694",
+      "teacher_name": "Sara Diaa",
+      "pre_2h_call_count": 0,
+      "pre_2h_connected_count": 0,
+      "missing_pre_2h_touch": true,
+      "missing_pre_2h_connect": true
+    },
+    {
+      "user_id": "63222918",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "自约",
+      "class_start_ksa": "2026-05-19 17:30 ~ 18:00",
+      "class_status": "s_absent",
+      "textbook": "",
+      "teacher_id": "6783916",
+      "teacher_name": "Hadir Elnaggar",
+      "pre_2h_call_count": 0,
+      "pre_2h_connected_count": 0,
+      "missing_pre_2h_touch": true,
+      "missing_pre_2h_connect": true
+    },
+    {
+      "user_id": "63138376",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-19 17:30 ~ 18:00",
+      "class_status": "end",
+      "textbook": "",
+      "teacher_id": "6772855",
+      "teacher_name": "Soad",
+      "pre_2h_call_count": 0,
+      "pre_2h_connected_count": 0,
+      "missing_pre_2h_touch": true,
+      "missing_pre_2h_connect": true
+    },
+    {
+      "user_id": "63218952",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "自约",
+      "class_start_ksa": "2026-05-19 19:00 ~ 19:30",
+      "class_status": "s_absent",
+      "textbook": "",
+      "teacher_id": "0",
+      "teacher_name": "",
+      "pre_2h_call_count": 0,
+      "pre_2h_connected_count": 0,
+      "missing_pre_2h_touch": true,
+      "missing_pre_2h_connect": true
+    },
+    {
+      "user_id": "63220043",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "自约",
+      "class_start_ksa": "2026-05-19 19:30 ~ 20:00",
+      "class_status": "s_absent",
+      "textbook": "",
+      "teacher_id": "7051694",
+      "teacher_name": "Sara Diaa",
+      "pre_2h_call_count": 0,
+      "pre_2h_connected_count": 0,
+      "missing_pre_2h_touch": true,
+      "missing_pre_2h_connect": true
+    },
+    {
+      "user_id": "60855995",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-19 20:00 ~ 20:30",
+      "class_status": "end",
+      "textbook": "",
+      "teacher_id": "6755745",
+      "teacher_name": "Nada Hasan",
+      "pre_2h_call_count": 0,
+      "pre_2h_connected_count": 0,
+      "missing_pre_2h_touch": true,
+      "missing_pre_2h_connect": true
+    },
+    {
+      "user_id": "62080535",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-19 20:30 ~ 21:00",
+      "class_status": "end",
+      "textbook": "",
+      "teacher_id": "6755745",
+      "teacher_name": "Nada Hasan",
+      "pre_2h_call_count": 0,
+      "pre_2h_connected_count": 0,
+      "missing_pre_2h_touch": true,
+      "missing_pre_2h_connect": true
+    },
+    {
+      "user_id": "59365538",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-19 20:30 ~ 21:00",
+      "class_status": "end",
+      "textbook": "",
+      "teacher_id": "6783916",
+      "teacher_name": "Hadir Elnaggar",
+      "pre_2h_call_count": 0,
+      "pre_2h_connected_count": 0,
+      "missing_pre_2h_touch": true,
+      "missing_pre_2h_connect": true
+    },
+    {
+      "user_id": "62415561",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-19 20:30 ~ 21:00",
+      "class_status": "end",
+      "textbook": "",
+      "teacher_id": "6850374",
+      "teacher_name": "Manar A.Gomaa",
+      "pre_2h_call_count": 0,
+      "pre_2h_connected_count": 0,
+      "missing_pre_2h_touch": true,
+      "missing_pre_2h_connect": true
+    },
+    {
+      "user_id": "62049034",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-20 14:00 ~ 14:30",
+      "class_status": "end",
+      "textbook": "",
+      "teacher_id": "6813745",
+      "teacher_name": "Dalia Bassam",
+      "pre_2h_call_count": 0,
+      "pre_2h_connected_count": 0,
+      "missing_pre_2h_touch": true,
+      "missing_pre_2h_connect": true
+    },
+    {
+      "user_id": "61166063",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-20 16:00 ~ 16:30",
+      "class_status": "s_absent",
+      "textbook": "",
+      "teacher_id": "6755745",
+      "teacher_name": "Nada Hasan",
+      "pre_2h_call_count": 0,
+      "pre_2h_connected_count": 0,
+      "missing_pre_2h_touch": true,
+      "missing_pre_2h_connect": true
+    },
+    {
+      "user_id": "60714681",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-20 17:00 ~ 17:30",
+      "class_status": "s_absent",
+      "textbook": "",
+      "teacher_id": "0",
+      "teacher_name": "",
+      "pre_2h_call_count": 0,
+      "pre_2h_connected_count": 0,
+      "missing_pre_2h_touch": true,
+      "missing_pre_2h_connect": true
+    },
+    {
+      "user_id": "63209865",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-20 19:00 ~ 19:30",
+      "class_status": "s_absent",
+      "textbook": "",
+      "teacher_id": "6755745",
+      "teacher_name": "Nada Hasan",
+      "pre_2h_call_count": 0,
+      "pre_2h_connected_count": 0,
+      "missing_pre_2h_touch": true,
+      "missing_pre_2h_connect": true
+    },
+    {
+      "user_id": "63229877",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "自约",
+      "class_start_ksa": "2026-05-20 19:30 ~ 20:00",
+      "class_status": "s_absent",
+      "textbook": "",
+      "teacher_id": "0",
+      "teacher_name": "",
+      "pre_2h_call_count": 0,
+      "pre_2h_connected_count": 0,
+      "missing_pre_2h_touch": true,
+      "missing_pre_2h_connect": true
+    },
+    {
+      "user_id": "63228467",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-20 20:00 ~ 20:30",
+      "class_status": "s_absent",
+      "textbook": "",
+      "teacher_id": "0",
+      "teacher_name": "",
+      "pre_2h_call_count": 0,
+      "pre_2h_connected_count": 0,
+      "missing_pre_2h_touch": true,
+      "missing_pre_2h_connect": true
+    },
+    {
+      "user_id": "63235294",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-20 20:00 ~ 20:30",
+      "class_status": "end",
+      "textbook": "",
+      "teacher_id": "6755745",
+      "teacher_name": "Nada Hasan",
+      "pre_2h_call_count": 0,
+      "pre_2h_connected_count": 0,
+      "missing_pre_2h_touch": true,
+      "missing_pre_2h_connect": true
+    },
+    {
+      "user_id": "61330462",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-20 20:00 ~ 20:30",
+      "class_status": "end",
+      "textbook": "",
+      "teacher_id": "6783916",
+      "teacher_name": "Hadir Elnaggar",
+      "pre_2h_call_count": 0,
+      "pre_2h_connected_count": 0,
+      "missing_pre_2h_touch": true,
+      "missing_pre_2h_connect": true
+    },
+    {
+      "user_id": "63220106",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "自约",
+      "class_start_ksa": "2026-05-20 20:30 ~ 21:00",
+      "class_status": "s_absent",
+      "textbook": "",
+      "teacher_id": "0",
+      "teacher_name": "",
+      "pre_2h_call_count": 0,
+      "pre_2h_connected_count": 0,
+      "missing_pre_2h_touch": true,
+      "missing_pre_2h_connect": true
+    },
+    {
+      "user_id": "61450815",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-20 20:30 ~ 21:00",
+      "class_status": "end",
+      "textbook": "",
+      "teacher_id": "6772855",
+      "teacher_name": "Soad",
+      "pre_2h_call_count": 0,
+      "pre_2h_connected_count": 0,
+      "missing_pre_2h_touch": true,
+      "missing_pre_2h_connect": true
+    },
+    {
+      "user_id": "61172838",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-20 20:30 ~ 21:00",
+      "class_status": "end",
+      "textbook": "",
+      "teacher_id": "6755745",
+      "teacher_name": "Nada Hasan",
+      "pre_2h_call_count": 0,
+      "pre_2h_connected_count": 0,
+      "missing_pre_2h_touch": true,
+      "missing_pre_2h_connect": true
+    },
+    {
+      "user_id": "62052193",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-21 13:00 ~ 13:30",
+      "class_status": "end",
+      "textbook": "",
+      "teacher_id": "6813745",
+      "teacher_name": "Dalia Bassam",
+      "pre_2h_call_count": 0,
+      "pre_2h_connected_count": 0,
+      "missing_pre_2h_touch": true,
+      "missing_pre_2h_connect": true
+    },
+    {
+      "user_id": "63218952",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-21 14:00 ~ 14:30",
+      "class_status": "s_absent",
+      "textbook": "",
+      "teacher_id": "0",
+      "teacher_name": "",
+      "pre_2h_call_count": 0,
+      "pre_2h_connected_count": 0,
+      "missing_pre_2h_touch": true,
+      "missing_pre_2h_connect": true
+    },
+    {
+      "user_id": "63229684",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-21 15:30 ~ 16:00",
+      "class_status": "end",
+      "textbook": "",
+      "teacher_id": "6813745",
+      "teacher_name": "Dalia Bassam",
+      "pre_2h_call_count": 0,
+      "pre_2h_connected_count": 0,
+      "missing_pre_2h_touch": true,
+      "missing_pre_2h_connect": true
+    },
+    {
+      "user_id": "62320587",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-21 16:00 ~ 16:30",
+      "class_status": "end",
+      "textbook": "",
+      "teacher_id": "6755745",
+      "teacher_name": "Nada Hasan",
+      "pre_2h_call_count": 0,
+      "pre_2h_connected_count": 0,
+      "missing_pre_2h_touch": true,
+      "missing_pre_2h_connect": true
+    },
+    {
+      "user_id": "62354248",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-21 16:30 ~ 17:00",
+      "class_status": "s_absent",
+      "textbook": "",
+      "teacher_id": "0",
+      "teacher_name": "",
+      "pre_2h_call_count": 0,
+      "pre_2h_connected_count": 0,
+      "missing_pre_2h_touch": true,
+      "missing_pre_2h_connect": true
+    },
+    {
+      "user_id": "62387822",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-21 19:00 ~ 19:30",
+      "class_status": "end",
+      "textbook": "",
+      "teacher_id": "6755745",
+      "teacher_name": "Nada Hasan",
+      "pre_2h_call_count": 0,
+      "pre_2h_connected_count": 0,
+      "missing_pre_2h_touch": true,
+      "missing_pre_2h_connect": true
+    },
+    {
+      "user_id": "62378331",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-21 20:00 ~ 20:30",
+      "class_status": "end",
+      "textbook": "",
+      "teacher_id": "6755745",
+      "teacher_name": "Nada Hasan",
+      "pre_2h_call_count": 0,
+      "pre_2h_connected_count": 0,
+      "missing_pre_2h_touch": true,
+      "missing_pre_2h_connect": true
+    },
+    {
+      "user_id": "62833918",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-21 20:30 ~ 21:00",
+      "class_status": "s_absent",
+      "textbook": "",
+      "teacher_id": "6755745",
+      "teacher_name": "Nada Hasan",
+      "pre_2h_call_count": 0,
+      "pre_2h_connected_count": 0,
+      "missing_pre_2h_touch": true,
+      "missing_pre_2h_connect": true
+    },
+    {
+      "user_id": "63245063",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "自约",
+      "class_start_ksa": "2026-05-22 13:00 ~ 13:30",
+      "class_status": "end",
+      "textbook": "",
+      "teacher_id": "6772855",
+      "teacher_name": "Soad",
+      "pre_2h_call_count": 0,
+      "pre_2h_connected_count": 0,
+      "missing_pre_2h_touch": true,
+      "missing_pre_2h_connect": true
+    },
+    {
+      "user_id": "62852301",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-22 14:00 ~ 14:30",
+      "class_status": "s_absent",
+      "textbook": "",
+      "teacher_id": "0",
+      "teacher_name": "",
+      "pre_2h_call_count": 0,
+      "pre_2h_connected_count": 0,
+      "missing_pre_2h_touch": true,
+      "missing_pre_2h_connect": true
+    },
+    {
+      "user_id": "62500170",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-22 14:00 ~ 14:30",
+      "class_status": "end",
+      "textbook": "",
+      "teacher_id": "6772855",
+      "teacher_name": "Soad",
+      "pre_2h_call_count": 0,
+      "pre_2h_connected_count": 0,
+      "missing_pre_2h_touch": true,
+      "missing_pre_2h_connect": true
+    },
+    {
+      "user_id": "62859086",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-22 14:30 ~ 15:00",
+      "class_status": "end",
+      "textbook": "",
+      "teacher_id": "6772855",
+      "teacher_name": "Soad",
+      "pre_2h_call_count": 0,
+      "pre_2h_connected_count": 0,
+      "missing_pre_2h_touch": true,
+      "missing_pre_2h_connect": true
     }
   ],
   "postclass_unfollowed": [
@@ -7236,6 +7248,422 @@
       "textbook": "",
       "teacher_id": "6902661",
       "teacher_name": "Gehad",
+      "post_6h_call_count": 0,
+      "post_6h_connected_count": 0,
+      "post_24h_call_count": 0,
+      "post_24h_connected_count": 0,
+      "missing_post_6h_touch": true,
+      "missing_post_24h_touch": true
+    },
+    {
+      "user_id": "60807063",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-18 19:00 ~ 19:30",
+      "textbook": "",
+      "teacher_id": "6755745",
+      "teacher_name": "Nada Hasan",
+      "post_6h_call_count": 0,
+      "post_6h_connected_count": 0,
+      "post_24h_call_count": 0,
+      "post_24h_connected_count": 0,
+      "missing_post_6h_touch": true,
+      "missing_post_24h_touch": true
+    },
+    {
+      "user_id": "61991200",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-18 20:00 ~ 20:30",
+      "textbook": "",
+      "teacher_id": "6772855",
+      "teacher_name": "Soad",
+      "post_6h_call_count": 0,
+      "post_6h_connected_count": 0,
+      "post_24h_call_count": 0,
+      "post_24h_connected_count": 0,
+      "missing_post_6h_touch": true,
+      "missing_post_24h_touch": true
+    },
+    {
+      "user_id": "61448445",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-18 20:30 ~ 21:00",
+      "textbook": "",
+      "teacher_id": "6755745",
+      "teacher_name": "Nada Hasan",
+      "post_6h_call_count": 0,
+      "post_6h_connected_count": 0,
+      "post_24h_call_count": 0,
+      "post_24h_connected_count": 0,
+      "missing_post_6h_touch": true,
+      "missing_post_24h_touch": true
+    },
+    {
+      "user_id": "63218392",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "自约",
+      "class_start_ksa": "2026-05-19 14:30 ~ 15:00",
+      "textbook": "",
+      "teacher_id": "6772855",
+      "teacher_name": "Soad",
+      "post_6h_call_count": 0,
+      "post_6h_connected_count": 0,
+      "post_24h_call_count": 0,
+      "post_24h_connected_count": 0,
+      "missing_post_6h_touch": true,
+      "missing_post_24h_touch": true
+    },
+    {
+      "user_id": "63219280",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "自约",
+      "class_start_ksa": "2026-05-19 15:30 ~ 16:00",
+      "textbook": "",
+      "teacher_id": "6772855",
+      "teacher_name": "Soad",
+      "post_6h_call_count": 0,
+      "post_6h_connected_count": 0,
+      "post_24h_call_count": 0,
+      "post_24h_connected_count": 0,
+      "missing_post_6h_touch": true,
+      "missing_post_24h_touch": true
+    },
+    {
+      "user_id": "63222452",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "自约",
+      "class_start_ksa": "2026-05-19 15:30 ~ 16:00",
+      "textbook": "",
+      "teacher_id": "7051694",
+      "teacher_name": "Sara Diaa",
+      "post_6h_call_count": 0,
+      "post_6h_connected_count": 0,
+      "post_24h_call_count": 0,
+      "post_24h_connected_count": 0,
+      "missing_post_6h_touch": true,
+      "missing_post_24h_touch": true
+    },
+    {
+      "user_id": "63218947",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-19 17:00 ~ 17:30",
+      "textbook": "",
+      "teacher_id": "6772855",
+      "teacher_name": "Soad",
+      "post_6h_call_count": 0,
+      "post_6h_connected_count": 0,
+      "post_24h_call_count": 0,
+      "post_24h_connected_count": 0,
+      "missing_post_6h_touch": true,
+      "missing_post_24h_touch": true
+    },
+    {
+      "user_id": "63222453",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "自约",
+      "class_start_ksa": "2026-05-19 17:30 ~ 18:00",
+      "textbook": "",
+      "teacher_id": "7051694",
+      "teacher_name": "Sara Diaa",
+      "post_6h_call_count": 0,
+      "post_6h_connected_count": 0,
+      "post_24h_call_count": 0,
+      "post_24h_connected_count": 0,
+      "missing_post_6h_touch": true,
+      "missing_post_24h_touch": true
+    },
+    {
+      "user_id": "63138376",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-19 17:30 ~ 18:00",
+      "textbook": "",
+      "teacher_id": "6772855",
+      "teacher_name": "Soad",
+      "post_6h_call_count": 0,
+      "post_6h_connected_count": 0,
+      "post_24h_call_count": 0,
+      "post_24h_connected_count": 0,
+      "missing_post_6h_touch": true,
+      "missing_post_24h_touch": true
+    },
+    {
+      "user_id": "60855995",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-19 20:00 ~ 20:30",
+      "textbook": "",
+      "teacher_id": "6755745",
+      "teacher_name": "Nada Hasan",
+      "post_6h_call_count": 0,
+      "post_6h_connected_count": 0,
+      "post_24h_call_count": 0,
+      "post_24h_connected_count": 0,
+      "missing_post_6h_touch": true,
+      "missing_post_24h_touch": true
+    },
+    {
+      "user_id": "62080535",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-19 20:30 ~ 21:00",
+      "textbook": "",
+      "teacher_id": "6755745",
+      "teacher_name": "Nada Hasan",
+      "post_6h_call_count": 0,
+      "post_6h_connected_count": 0,
+      "post_24h_call_count": 0,
+      "post_24h_connected_count": 0,
+      "missing_post_6h_touch": true,
+      "missing_post_24h_touch": true
+    },
+    {
+      "user_id": "59365538",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-19 20:30 ~ 21:00",
+      "textbook": "",
+      "teacher_id": "6783916",
+      "teacher_name": "Hadir Elnaggar",
+      "post_6h_call_count": 0,
+      "post_6h_connected_count": 0,
+      "post_24h_call_count": 0,
+      "post_24h_connected_count": 0,
+      "missing_post_6h_touch": true,
+      "missing_post_24h_touch": true
+    },
+    {
+      "user_id": "62415561",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-19 20:30 ~ 21:00",
+      "textbook": "",
+      "teacher_id": "6850374",
+      "teacher_name": "Manar A.Gomaa",
+      "post_6h_call_count": 0,
+      "post_6h_connected_count": 0,
+      "post_24h_call_count": 0,
+      "post_24h_connected_count": 0,
+      "missing_post_6h_touch": true,
+      "missing_post_24h_touch": true
+    },
+    {
+      "user_id": "62049034",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-20 14:00 ~ 14:30",
+      "textbook": "",
+      "teacher_id": "6813745",
+      "teacher_name": "Dalia Bassam",
+      "post_6h_call_count": 0,
+      "post_6h_connected_count": 0,
+      "post_24h_call_count": 0,
+      "post_24h_connected_count": 0,
+      "missing_post_6h_touch": true,
+      "missing_post_24h_touch": true
+    },
+    {
+      "user_id": "63235294",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-20 20:00 ~ 20:30",
+      "textbook": "",
+      "teacher_id": "6755745",
+      "teacher_name": "Nada Hasan",
+      "post_6h_call_count": 0,
+      "post_6h_connected_count": 0,
+      "post_24h_call_count": 0,
+      "post_24h_connected_count": 0,
+      "missing_post_6h_touch": true,
+      "missing_post_24h_touch": true
+    },
+    {
+      "user_id": "61330462",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-20 20:00 ~ 20:30",
+      "textbook": "",
+      "teacher_id": "6783916",
+      "teacher_name": "Hadir Elnaggar",
+      "post_6h_call_count": 0,
+      "post_6h_connected_count": 0,
+      "post_24h_call_count": 0,
+      "post_24h_connected_count": 0,
+      "missing_post_6h_touch": true,
+      "missing_post_24h_touch": true
+    },
+    {
+      "user_id": "61450815",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-20 20:30 ~ 21:00",
+      "textbook": "",
+      "teacher_id": "6772855",
+      "teacher_name": "Soad",
+      "post_6h_call_count": 0,
+      "post_6h_connected_count": 0,
+      "post_24h_call_count": 0,
+      "post_24h_connected_count": 0,
+      "missing_post_6h_touch": true,
+      "missing_post_24h_touch": true
+    },
+    {
+      "user_id": "61172838",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-20 20:30 ~ 21:00",
+      "textbook": "",
+      "teacher_id": "6755745",
+      "teacher_name": "Nada Hasan",
+      "post_6h_call_count": 0,
+      "post_6h_connected_count": 0,
+      "post_24h_call_count": 0,
+      "post_24h_connected_count": 0,
+      "missing_post_6h_touch": true,
+      "missing_post_24h_touch": true
+    },
+    {
+      "user_id": "62052193",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-21 13:00 ~ 13:30",
+      "textbook": "",
+      "teacher_id": "6813745",
+      "teacher_name": "Dalia Bassam",
+      "post_6h_call_count": 0,
+      "post_6h_connected_count": 0,
+      "post_24h_call_count": 0,
+      "post_24h_connected_count": 0,
+      "missing_post_6h_touch": true,
+      "missing_post_24h_touch": true
+    },
+    {
+      "user_id": "63229684",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-21 15:30 ~ 16:00",
+      "textbook": "",
+      "teacher_id": "6813745",
+      "teacher_name": "Dalia Bassam",
+      "post_6h_call_count": 0,
+      "post_6h_connected_count": 0,
+      "post_24h_call_count": 0,
+      "post_24h_connected_count": 0,
+      "missing_post_6h_touch": true,
+      "missing_post_24h_touch": true
+    },
+    {
+      "user_id": "62320587",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-21 16:00 ~ 16:30",
+      "textbook": "",
+      "teacher_id": "6755745",
+      "teacher_name": "Nada Hasan",
+      "post_6h_call_count": 0,
+      "post_6h_connected_count": 0,
+      "post_24h_call_count": 0,
+      "post_24h_connected_count": 0,
+      "missing_post_6h_touch": true,
+      "missing_post_24h_touch": true
+    },
+    {
+      "user_id": "62387822",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-21 19:00 ~ 19:30",
+      "textbook": "",
+      "teacher_id": "6755745",
+      "teacher_name": "Nada Hasan",
+      "post_6h_call_count": 0,
+      "post_6h_connected_count": 0,
+      "post_24h_call_count": 0,
+      "post_24h_connected_count": 0,
+      "missing_post_6h_touch": true,
+      "missing_post_24h_touch": true
+    },
+    {
+      "user_id": "62378331",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-21 20:00 ~ 20:30",
+      "textbook": "",
+      "teacher_id": "6755745",
+      "teacher_name": "Nada Hasan",
+      "post_6h_call_count": 0,
+      "post_6h_connected_count": 0,
+      "post_24h_call_count": 0,
+      "post_24h_connected_count": 0,
+      "missing_post_6h_touch": true,
+      "missing_post_24h_touch": true
+    },
+    {
+      "user_id": "63245063",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "自约",
+      "class_start_ksa": "2026-05-22 13:00 ~ 13:30",
+      "textbook": "",
+      "teacher_id": "6772855",
+      "teacher_name": "Soad",
+      "post_6h_call_count": 0,
+      "post_6h_connected_count": 0,
+      "post_24h_call_count": 0,
+      "post_24h_connected_count": 0,
+      "missing_post_6h_touch": true,
+      "missing_post_24h_touch": true
+    },
+    {
+      "user_id": "62500170",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-22 14:00 ~ 14:30",
+      "textbook": "",
+      "teacher_id": "6772855",
+      "teacher_name": "Soad",
+      "post_6h_call_count": 0,
+      "post_6h_connected_count": 0,
+      "post_24h_call_count": 0,
+      "post_24h_connected_count": 0,
+      "missing_post_6h_touch": true,
+      "missing_post_24h_touch": true
+    },
+    {
+      "user_id": "62859086",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-22 14:30 ~ 15:00",
+      "textbook": "",
+      "teacher_id": "6772855",
+      "teacher_name": "Soad",
       "post_6h_call_count": 0,
       "post_6h_connected_count": 0,
       "post_24h_call_count": 0,
@@ -8515,6 +8943,270 @@
           "class_start_ksa": "2026-05-17 20:30 ~ 21:00",
           "booking_type": "自约",
           "textbook": ""
+        },
+        {
+          "user_id": "60807063",
+          "class_start_ksa": "2026-05-18 19:00 ~ 19:30",
+          "booking_type": "代约",
+          "textbook": ""
+        },
+        {
+          "user_id": "63206959",
+          "class_start_ksa": "2026-05-18 19:30 ~ 20:00",
+          "booking_type": "自约",
+          "textbook": ""
+        },
+        {
+          "user_id": "60855995",
+          "class_start_ksa": "2026-05-18 20:00 ~ 20:30",
+          "booking_type": "代约",
+          "textbook": ""
+        },
+        {
+          "user_id": "61991200",
+          "class_start_ksa": "2026-05-18 20:00 ~ 20:30",
+          "booking_type": "代约",
+          "textbook": ""
+        },
+        {
+          "user_id": "61448445",
+          "class_start_ksa": "2026-05-18 20:30 ~ 21:00",
+          "booking_type": "代约",
+          "textbook": ""
+        },
+        {
+          "user_id": "63218392",
+          "class_start_ksa": "2026-05-19 14:30 ~ 15:00",
+          "booking_type": "自约",
+          "textbook": ""
+        },
+        {
+          "user_id": "63218947",
+          "class_start_ksa": "2026-05-19 15:00 ~ 15:30",
+          "booking_type": "自约",
+          "textbook": ""
+        },
+        {
+          "user_id": "63219280",
+          "class_start_ksa": "2026-05-19 15:30 ~ 16:00",
+          "booking_type": "自约",
+          "textbook": ""
+        },
+        {
+          "user_id": "63222452",
+          "class_start_ksa": "2026-05-19 15:30 ~ 16:00",
+          "booking_type": "自约",
+          "textbook": ""
+        },
+        {
+          "user_id": "61166063",
+          "class_start_ksa": "2026-05-19 17:00 ~ 17:30",
+          "booking_type": "代约",
+          "textbook": ""
+        },
+        {
+          "user_id": "60329008",
+          "class_start_ksa": "2026-05-19 17:00 ~ 17:30",
+          "booking_type": "代约",
+          "textbook": ""
+        },
+        {
+          "user_id": "63218947",
+          "class_start_ksa": "2026-05-19 17:00 ~ 17:30",
+          "booking_type": "代约",
+          "textbook": ""
+        },
+        {
+          "user_id": "63222453",
+          "class_start_ksa": "2026-05-19 17:30 ~ 18:00",
+          "booking_type": "自约",
+          "textbook": ""
+        },
+        {
+          "user_id": "63222918",
+          "class_start_ksa": "2026-05-19 17:30 ~ 18:00",
+          "booking_type": "自约",
+          "textbook": ""
+        },
+        {
+          "user_id": "63138376",
+          "class_start_ksa": "2026-05-19 17:30 ~ 18:00",
+          "booking_type": "代约",
+          "textbook": ""
+        },
+        {
+          "user_id": "63218952",
+          "class_start_ksa": "2026-05-19 19:00 ~ 19:30",
+          "booking_type": "自约",
+          "textbook": ""
+        },
+        {
+          "user_id": "63220043",
+          "class_start_ksa": "2026-05-19 19:30 ~ 20:00",
+          "booking_type": "自约",
+          "textbook": ""
+        },
+        {
+          "user_id": "60855995",
+          "class_start_ksa": "2026-05-19 20:00 ~ 20:30",
+          "booking_type": "代约",
+          "textbook": ""
+        },
+        {
+          "user_id": "62080535",
+          "class_start_ksa": "2026-05-19 20:30 ~ 21:00",
+          "booking_type": "代约",
+          "textbook": ""
+        },
+        {
+          "user_id": "59365538",
+          "class_start_ksa": "2026-05-19 20:30 ~ 21:00",
+          "booking_type": "代约",
+          "textbook": ""
+        },
+        {
+          "user_id": "62415561",
+          "class_start_ksa": "2026-05-19 20:30 ~ 21:00",
+          "booking_type": "代约",
+          "textbook": ""
+        },
+        {
+          "user_id": "62049034",
+          "class_start_ksa": "2026-05-20 14:00 ~ 14:30",
+          "booking_type": "代约",
+          "textbook": ""
+        },
+        {
+          "user_id": "61166063",
+          "class_start_ksa": "2026-05-20 16:00 ~ 16:30",
+          "booking_type": "代约",
+          "textbook": ""
+        },
+        {
+          "user_id": "60714681",
+          "class_start_ksa": "2026-05-20 17:00 ~ 17:30",
+          "booking_type": "代约",
+          "textbook": ""
+        },
+        {
+          "user_id": "63209865",
+          "class_start_ksa": "2026-05-20 19:00 ~ 19:30",
+          "booking_type": "代约",
+          "textbook": ""
+        },
+        {
+          "user_id": "63229877",
+          "class_start_ksa": "2026-05-20 19:30 ~ 20:00",
+          "booking_type": "自约",
+          "textbook": ""
+        },
+        {
+          "user_id": "63228467",
+          "class_start_ksa": "2026-05-20 20:00 ~ 20:30",
+          "booking_type": "代约",
+          "textbook": ""
+        },
+        {
+          "user_id": "63235294",
+          "class_start_ksa": "2026-05-20 20:00 ~ 20:30",
+          "booking_type": "代约",
+          "textbook": ""
+        },
+        {
+          "user_id": "61330462",
+          "class_start_ksa": "2026-05-20 20:00 ~ 20:30",
+          "booking_type": "代约",
+          "textbook": ""
+        },
+        {
+          "user_id": "63220106",
+          "class_start_ksa": "2026-05-20 20:30 ~ 21:00",
+          "booking_type": "自约",
+          "textbook": ""
+        },
+        {
+          "user_id": "61450815",
+          "class_start_ksa": "2026-05-20 20:30 ~ 21:00",
+          "booking_type": "代约",
+          "textbook": ""
+        },
+        {
+          "user_id": "61172838",
+          "class_start_ksa": "2026-05-20 20:30 ~ 21:00",
+          "booking_type": "代约",
+          "textbook": ""
+        },
+        {
+          "user_id": "62052193",
+          "class_start_ksa": "2026-05-21 13:00 ~ 13:30",
+          "booking_type": "代约",
+          "textbook": ""
+        },
+        {
+          "user_id": "63218952",
+          "class_start_ksa": "2026-05-21 14:00 ~ 14:30",
+          "booking_type": "代约",
+          "textbook": ""
+        },
+        {
+          "user_id": "63229684",
+          "class_start_ksa": "2026-05-21 15:30 ~ 16:00",
+          "booking_type": "代约",
+          "textbook": ""
+        },
+        {
+          "user_id": "62320587",
+          "class_start_ksa": "2026-05-21 16:00 ~ 16:30",
+          "booking_type": "代约",
+          "textbook": ""
+        },
+        {
+          "user_id": "62354248",
+          "class_start_ksa": "2026-05-21 16:30 ~ 17:00",
+          "booking_type": "代约",
+          "textbook": ""
+        },
+        {
+          "user_id": "62387822",
+          "class_start_ksa": "2026-05-21 19:00 ~ 19:30",
+          "booking_type": "代约",
+          "textbook": ""
+        },
+        {
+          "user_id": "62378331",
+          "class_start_ksa": "2026-05-21 20:00 ~ 20:30",
+          "booking_type": "代约",
+          "textbook": ""
+        },
+        {
+          "user_id": "62833918",
+          "class_start_ksa": "2026-05-21 20:30 ~ 21:00",
+          "booking_type": "代约",
+          "textbook": ""
+        },
+        {
+          "user_id": "63245063",
+          "class_start_ksa": "2026-05-22 13:00 ~ 13:30",
+          "booking_type": "自约",
+          "textbook": ""
+        },
+        {
+          "user_id": "62852301",
+          "class_start_ksa": "2026-05-22 14:00 ~ 14:30",
+          "booking_type": "代约",
+          "textbook": ""
+        },
+        {
+          "user_id": "62500170",
+          "class_start_ksa": "2026-05-22 14:00 ~ 14:30",
+          "booking_type": "代约",
+          "textbook": ""
+        },
+        {
+          "user_id": "62859086",
+          "class_start_ksa": "2026-05-22 14:30 ~ 15:00",
+          "booking_type": "代约",
+          "textbook": ""
         }
       ],
       "postclass_tasks": [
@@ -8909,23 +9601,225 @@
           "textbook": "",
           "missing_post_6h_touch": true,
           "missing_post_24h_touch": true
+        },
+        {
+          "user_id": "60807063",
+          "class_start_ksa": "2026-05-18 19:00 ~ 19:30",
+          "booking_type": "代约",
+          "textbook": "",
+          "missing_post_6h_touch": true,
+          "missing_post_24h_touch": true
+        },
+        {
+          "user_id": "61991200",
+          "class_start_ksa": "2026-05-18 20:00 ~ 20:30",
+          "booking_type": "代约",
+          "textbook": "",
+          "missing_post_6h_touch": true,
+          "missing_post_24h_touch": true
+        },
+        {
+          "user_id": "61448445",
+          "class_start_ksa": "2026-05-18 20:30 ~ 21:00",
+          "booking_type": "代约",
+          "textbook": "",
+          "missing_post_6h_touch": true,
+          "missing_post_24h_touch": true
+        },
+        {
+          "user_id": "63218392",
+          "class_start_ksa": "2026-05-19 14:30 ~ 15:00",
+          "booking_type": "自约",
+          "textbook": "",
+          "missing_post_6h_touch": true,
+          "missing_post_24h_touch": true
+        },
+        {
+          "user_id": "63219280",
+          "class_start_ksa": "2026-05-19 15:30 ~ 16:00",
+          "booking_type": "自约",
+          "textbook": "",
+          "missing_post_6h_touch": true,
+          "missing_post_24h_touch": true
+        },
+        {
+          "user_id": "63222452",
+          "class_start_ksa": "2026-05-19 15:30 ~ 16:00",
+          "booking_type": "自约",
+          "textbook": "",
+          "missing_post_6h_touch": true,
+          "missing_post_24h_touch": true
+        },
+        {
+          "user_id": "63218947",
+          "class_start_ksa": "2026-05-19 17:00 ~ 17:30",
+          "booking_type": "代约",
+          "textbook": "",
+          "missing_post_6h_touch": true,
+          "missing_post_24h_touch": true
+        },
+        {
+          "user_id": "63222453",
+          "class_start_ksa": "2026-05-19 17:30 ~ 18:00",
+          "booking_type": "自约",
+          "textbook": "",
+          "missing_post_6h_touch": true,
+          "missing_post_24h_touch": true
+        },
+        {
+          "user_id": "63138376",
+          "class_start_ksa": "2026-05-19 17:30 ~ 18:00",
+          "booking_type": "代约",
+          "textbook": "",
+          "missing_post_6h_touch": true,
+          "missing_post_24h_touch": true
+        },
+        {
+          "user_id": "60855995",
+          "class_start_ksa": "2026-05-19 20:00 ~ 20:30",
+          "booking_type": "代约",
+          "textbook": "",
+          "missing_post_6h_touch": true,
+          "missing_post_24h_touch": true
+        },
+        {
+          "user_id": "62080535",
+          "class_start_ksa": "2026-05-19 20:30 ~ 21:00",
+          "booking_type": "代约",
+          "textbook": "",
+          "missing_post_6h_touch": true,
+          "missing_post_24h_touch": true
+        },
+        {
+          "user_id": "59365538",
+          "class_start_ksa": "2026-05-19 20:30 ~ 21:00",
+          "booking_type": "代约",
+          "textbook": "",
+          "missing_post_6h_touch": true,
+          "missing_post_24h_touch": true
+        },
+        {
+          "user_id": "62415561",
+          "class_start_ksa": "2026-05-19 20:30 ~ 21:00",
+          "booking_type": "代约",
+          "textbook": "",
+          "missing_post_6h_touch": true,
+          "missing_post_24h_touch": true
+        },
+        {
+          "user_id": "62049034",
+          "class_start_ksa": "2026-05-20 14:00 ~ 14:30",
+          "booking_type": "代约",
+          "textbook": "",
+          "missing_post_6h_touch": true,
+          "missing_post_24h_touch": true
+        },
+        {
+          "user_id": "63235294",
+          "class_start_ksa": "2026-05-20 20:00 ~ 20:30",
+          "booking_type": "代约",
+          "textbook": "",
+          "missing_post_6h_touch": true,
+          "missing_post_24h_touch": true
+        },
+        {
+          "user_id": "61330462",
+          "class_start_ksa": "2026-05-20 20:00 ~ 20:30",
+          "booking_type": "代约",
+          "textbook": "",
+          "missing_post_6h_touch": true,
+          "missing_post_24h_touch": true
+        },
+        {
+          "user_id": "61450815",
+          "class_start_ksa": "2026-05-20 20:30 ~ 21:00",
+          "booking_type": "代约",
+          "textbook": "",
+          "missing_post_6h_touch": true,
+          "missing_post_24h_touch": true
+        },
+        {
+          "user_id": "61172838",
+          "class_start_ksa": "2026-05-20 20:30 ~ 21:00",
+          "booking_type": "代约",
+          "textbook": "",
+          "missing_post_6h_touch": true,
+          "missing_post_24h_touch": true
+        },
+        {
+          "user_id": "62052193",
+          "class_start_ksa": "2026-05-21 13:00 ~ 13:30",
+          "booking_type": "代约",
+          "textbook": "",
+          "missing_post_6h_touch": true,
+          "missing_post_24h_touch": true
+        },
+        {
+          "user_id": "63229684",
+          "class_start_ksa": "2026-05-21 15:30 ~ 16:00",
+          "booking_type": "代约",
+          "textbook": "",
+          "missing_post_6h_touch": true,
+          "missing_post_24h_touch": true
+        },
+        {
+          "user_id": "62320587",
+          "class_start_ksa": "2026-05-21 16:00 ~ 16:30",
+          "booking_type": "代约",
+          "textbook": "",
+          "missing_post_6h_touch": true,
+          "missing_post_24h_touch": true
+        },
+        {
+          "user_id": "62387822",
+          "class_start_ksa": "2026-05-21 19:00 ~ 19:30",
+          "booking_type": "代约",
+          "textbook": "",
+          "missing_post_6h_touch": true,
+          "missing_post_24h_touch": true
+        },
+        {
+          "user_id": "62378331",
+          "class_start_ksa": "2026-05-21 20:00 ~ 20:30",
+          "booking_type": "代约",
+          "textbook": "",
+          "missing_post_6h_touch": true,
+          "missing_post_24h_touch": true
+        },
+        {
+          "user_id": "63245063",
+          "class_start_ksa": "2026-05-22 13:00 ~ 13:30",
+          "booking_type": "自约",
+          "textbook": "",
+          "missing_post_6h_touch": true,
+          "missing_post_24h_touch": true
+        },
+        {
+          "user_id": "62500170",
+          "class_start_ksa": "2026-05-22 14:00 ~ 14:30",
+          "booking_type": "代约",
+          "textbook": "",
+          "missing_post_6h_touch": true,
+          "missing_post_24h_touch": true
+        },
+        {
+          "user_id": "62859086",
+          "class_start_ksa": "2026-05-22 14:30 ~ 15:00",
+          "booking_type": "代约",
+          "textbook": "",
+          "missing_post_6h_touch": true,
+          "missing_post_24h_touch": true
         }
       ],
       "unreached_count": 0,
-      "preclass_count": 211,
-      "postclass_count": 49,
-      "total_todo_count": 260
+      "preclass_count": 255,
+      "postclass_count": 75,
+      "total_todo_count": 330
     },
     {
       "sales_group": "001",
       "sales_agent": "51habiba.hassan",
       "unreached_leads": [
-        {
-          "user_id": "62995517",
-          "lead_source": "中东academy_en分配",
-          "assigned_time": "2026-04-23T00:33:43+08:00",
-          "total_calls": 0
-        },
         {
           "user_id": "63000155",
           "lead_source": "中东academy_en分配",
@@ -9059,12 +9953,6 @@
           "total_calls": 0
         },
         {
-          "user_id": "62990418",
-          "lead_source": "中东academy_en分配",
-          "assigned_time": "2026-04-22T13:02:43+08:00",
-          "total_calls": 1
-        },
-        {
           "user_id": "63008629",
           "lead_source": "中东academy_en分配",
           "assigned_time": "2026-04-24T20:19:33+08:00",
@@ -9149,12 +10037,6 @@
           "total_calls": 2
         },
         {
-          "user_id": "62995856",
-          "lead_source": "转介绍分配cc",
-          "assigned_time": "2026-04-23T01:48:03+08:00",
-          "total_calls": 3
-        },
-        {
           "user_id": "62997453",
           "lead_source": "中东成人高中生分配",
           "assigned_time": "2026-04-23T10:56:28+08:00",
@@ -9195,12 +10077,6 @@
           "lead_source": "CC人工改派",
           "assigned_time": "2026-04-26T17:27:44+08:00",
           "total_calls": 3
-        },
-        {
-          "user_id": "62996652",
-          "lead_source": "中东academy_en分配",
-          "assigned_time": "2026-04-23T07:40:13+08:00",
-          "total_calls": 4
         },
         {
           "user_id": "63002028",
@@ -9249,12 +10125,6 @@
           "lead_source": "中东成人高中生分配",
           "assigned_time": "2026-04-26T18:39:09+08:00",
           "total_calls": 4
-        },
-        {
-          "user_id": "62993447",
-          "lead_source": "中东academy_en分配",
-          "assigned_time": "2026-04-22T20:28:36+08:00",
-          "total_calls": 5
         },
         {
           "user_id": "63011276",
@@ -9313,44 +10183,20 @@
       ],
       "preclass_tasks": [],
       "postclass_tasks": [],
-      "unreached_count": 65,
+      "unreached_count": 60,
       "preclass_count": 0,
       "postclass_count": 0,
-      "total_todo_count": 65
+      "total_todo_count": 60
     },
     {
       "sales_group": "002",
       "sales_agent": "51nadamuhammad",
       "unreached_leads": [
         {
-          "user_id": "62992194",
-          "lead_source": "中东成人高中生分配",
-          "assigned_time": "2026-04-22T18:34:09+08:00",
-          "total_calls": 0
-        },
-        {
           "user_id": "63025033",
           "lead_source": "转介绍分配cc",
           "assigned_time": "2026-04-26T18:54:37+08:00",
           "total_calls": 0
-        },
-        {
-          "user_id": "62992031",
-          "lead_source": "中东academy_en分配",
-          "assigned_time": "2026-04-22T17:37:39+08:00",
-          "total_calls": 1
-        },
-        {
-          "user_id": "62241491",
-          "lead_source": "CC人工改派",
-          "assigned_time": "2026-04-22T20:14:33+08:00",
-          "total_calls": 1
-        },
-        {
-          "user_id": "62183072",
-          "lead_source": "CC人工改派",
-          "assigned_time": "2026-04-22T20:15:31+08:00",
-          "total_calls": 1
         },
         {
           "user_id": "63003718",
@@ -9393,30 +10239,6 @@
           "lead_source": "中东academy_en分配",
           "assigned_time": "2026-04-25T23:55:16+08:00",
           "total_calls": 1
-        },
-        {
-          "user_id": "62184203",
-          "lead_source": "CC人工改派",
-          "assigned_time": "2026-04-22T20:15:06+08:00",
-          "total_calls": 2
-        },
-        {
-          "user_id": "62993847",
-          "lead_source": "中东academy_en分配",
-          "assigned_time": "2026-04-22T21:11:19+08:00",
-          "total_calls": 2
-        },
-        {
-          "user_id": "62257333",
-          "lead_source": "CC人工改派",
-          "assigned_time": "2026-04-22T23:18:03+08:00",
-          "total_calls": 2
-        },
-        {
-          "user_id": "62995912",
-          "lead_source": "中东academy_en分配",
-          "assigned_time": "2026-04-23T02:02:47+08:00",
-          "total_calls": 2
         },
         {
           "user_id": "63000700",
@@ -9513,12 +10335,6 @@
           "lead_source": "中东academy_en分配",
           "assigned_time": "2026-04-26T19:02:21+08:00",
           "total_calls": 2
-        },
-        {
-          "user_id": "62523069",
-          "lead_source": "CC人工改派",
-          "assigned_time": "2026-04-22T20:15:58+08:00",
-          "total_calls": 3
         },
         {
           "user_id": "62997476",
@@ -9631,27 +10447,15 @@
       ],
       "preclass_tasks": [],
       "postclass_tasks": [],
-      "unreached_count": 51,
+      "unreached_count": 42,
       "preclass_count": 0,
       "postclass_count": 0,
-      "total_todo_count": 51
+      "total_todo_count": 42
     },
     {
       "sales_group": "001",
       "sales_agent": "EGCC-eman.amr",
       "unreached_leads": [
-        {
-          "user_id": "62990399",
-          "lead_source": "中东academy_en分配",
-          "assigned_time": "2026-04-22T14:52:22+08:00",
-          "total_calls": 0
-        },
-        {
-          "user_id": "62988014",
-          "lead_source": "CC人工改派",
-          "assigned_time": "2026-04-22T20:40:50+08:00",
-          "total_calls": 1
-        },
         {
           "user_id": "63003096",
           "lead_source": "中东成人高中生分配",
@@ -9693,30 +10497,6 @@
           "lead_source": "CC人工改派",
           "assigned_time": "2026-04-26T17:29:15+08:00",
           "total_calls": 1
-        },
-        {
-          "user_id": "62990145",
-          "lead_source": "CC人工改派",
-          "assigned_time": "2026-04-22T20:40:49+08:00",
-          "total_calls": 2
-        },
-        {
-          "user_id": "62991804",
-          "lead_source": "CC人工改派",
-          "assigned_time": "2026-04-22T20:40:50+08:00",
-          "total_calls": 2
-        },
-        {
-          "user_id": "62987732",
-          "lead_source": "CC人工改派",
-          "assigned_time": "2026-04-22T20:40:50+08:00",
-          "total_calls": 2
-        },
-        {
-          "user_id": "62982269",
-          "lead_source": "CC人工改派",
-          "assigned_time": "2026-04-22T20:40:50+08:00",
-          "total_calls": 2
         },
         {
           "user_id": "62997460",
@@ -9773,12 +10553,6 @@
           "total_calls": 2
         },
         {
-          "user_id": "62995400",
-          "lead_source": "中东academy_en分配",
-          "assigned_time": "2026-04-23T00:45:34+08:00",
-          "total_calls": 3
-        },
-        {
           "user_id": "63000648",
           "lead_source": "中东成人高中生分配",
           "assigned_time": "2026-04-23T19:28:34+08:00",
@@ -9815,18 +10589,6 @@
           "total_calls": 3
         },
         {
-          "user_id": "62988786",
-          "lead_source": "中东成人高中生分配",
-          "assigned_time": "2026-04-22T09:10:20+08:00",
-          "total_calls": 4
-        },
-        {
-          "user_id": "62993396",
-          "lead_source": "中东academy_en分配",
-          "assigned_time": "2026-04-22T20:56:54+08:00",
-          "total_calls": 4
-        },
-        {
           "user_id": "63014562",
           "lead_source": "中东成人高中生分配",
           "assigned_time": "2026-04-25T16:44:12+08:00",
@@ -9849,12 +10611,6 @@
           "lead_source": "中东成人高中生分配",
           "assigned_time": "2026-04-26T19:10:12+08:00",
           "total_calls": 4
-        },
-        {
-          "user_id": "62985239",
-          "lead_source": "CC人工改派",
-          "assigned_time": "2026-04-22T20:40:50+08:00",
-          "total_calls": 5
         },
         {
           "user_id": "63010926",
@@ -9913,10 +10669,10 @@
       ],
       "preclass_tasks": [],
       "postclass_tasks": [],
-      "unreached_count": 45,
+      "unreached_count": 35,
       "preclass_count": 0,
       "postclass_count": 0,
-      "total_todo_count": 45
+      "total_todo_count": 35
     },
     {
       "sales_group": "002",
@@ -9927,18 +10683,6 @@
           "lead_source": "中东成人高中生分配",
           "assigned_time": "2026-04-24T04:40:06+08:00",
           "total_calls": 0
-        },
-        {
-          "user_id": "62915206",
-          "lead_source": "CC人工改派",
-          "assigned_time": "2026-04-22T20:24:08+08:00",
-          "total_calls": 1
-        },
-        {
-          "user_id": "62512025",
-          "lead_source": "CC人工改派",
-          "assigned_time": "2026-04-22T23:35:27+08:00",
-          "total_calls": 1
         },
         {
           "user_id": "62125634",
@@ -10007,24 +10751,6 @@
           "total_calls": 2
         },
         {
-          "user_id": "62991976",
-          "lead_source": "中东academy_en分配",
-          "assigned_time": "2026-04-22T17:58:17+08:00",
-          "total_calls": 3
-        },
-        {
-          "user_id": "61556717",
-          "lead_source": "CC人工改派",
-          "assigned_time": "2026-04-22T23:21:44+08:00",
-          "total_calls": 3
-        },
-        {
-          "user_id": "61757886",
-          "lead_source": "CC人工改派",
-          "assigned_time": "2026-04-22T23:37:02+08:00",
-          "total_calls": 3
-        },
-        {
           "user_id": "63010778",
           "lead_source": "中东成人高中生分配",
           "assigned_time": "2026-04-25T03:40:47+08:00",
@@ -10055,30 +10781,6 @@
           "total_calls": 3
         },
         {
-          "user_id": "62872931",
-          "lead_source": "CC人工改派",
-          "assigned_time": "2026-04-22T20:22:09+08:00",
-          "total_calls": 4
-        },
-        {
-          "user_id": "62909596",
-          "lead_source": "CC人工改派",
-          "assigned_time": "2026-04-22T20:23:33+08:00",
-          "total_calls": 4
-        },
-        {
-          "user_id": "62996274",
-          "lead_source": "中东academy_en分配",
-          "assigned_time": "2026-04-23T04:05:02+08:00",
-          "total_calls": 4
-        },
-        {
-          "user_id": "62996714",
-          "lead_source": "中东成人高中生分配",
-          "assigned_time": "2026-04-23T06:30:12+08:00",
-          "total_calls": 4
-        },
-        {
           "user_id": "62998288",
           "lead_source": "中东academy_en分配",
           "assigned_time": "2026-04-23T14:20:27+08:00",
@@ -10089,18 +10791,6 @@
           "lead_source": "中东academy_en分配",
           "assigned_time": "2026-04-24T04:11:22+08:00",
           "total_calls": 4
-        },
-        {
-          "user_id": "62989518",
-          "lead_source": "中东academy_en分配",
-          "assigned_time": "2026-04-22T10:43:37+08:00",
-          "total_calls": 5
-        },
-        {
-          "user_id": "62470699",
-          "lead_source": "CC人工改派",
-          "assigned_time": "2026-04-22T20:22:57+08:00",
-          "total_calls": 5
         },
         {
           "user_id": "63010164",
@@ -10145,28 +10835,10 @@
           "total_calls": 7
         },
         {
-          "user_id": "62796982",
-          "lead_source": "CC人工改派",
-          "assigned_time": "2026-04-22T21:09:11+08:00",
-          "total_calls": 8
-        },
-        {
           "user_id": "63018579",
           "lead_source": "中东成人高中生分配",
           "assigned_time": "2026-04-26T00:51:06+08:00",
           "total_calls": 9
-        },
-        {
-          "user_id": "62539498",
-          "lead_source": "CC人工改派",
-          "assigned_time": "2026-04-22T20:24:33+08:00",
-          "total_calls": 12
-        },
-        {
-          "user_id": "62994199",
-          "lead_source": "中东academy_en分配",
-          "assigned_time": "2026-04-22T22:04:47+08:00",
-          "total_calls": 13
         },
         {
           "user_id": "63026872",
@@ -10183,10 +10855,10 @@
       ],
       "preclass_tasks": [],
       "postclass_tasks": [],
-      "unreached_count": 43,
+      "unreached_count": 29,
       "preclass_count": 0,
       "postclass_count": 0,
-      "total_todo_count": 43
+      "total_todo_count": 29
     },
     {
       "sales_group": "002",
@@ -10247,12 +10919,6 @@
           "total_calls": 1
         },
         {
-          "user_id": "62992089",
-          "lead_source": "转介绍分配cc",
-          "assigned_time": "2026-04-22T18:20:18+08:00",
-          "total_calls": 2
-        },
-        {
           "user_id": "63001091",
           "lead_source": "中东academy_en分配",
           "assigned_time": "2026-04-23T20:36:53+08:00",
@@ -10271,24 +10937,6 @@
           "total_calls": 2
         },
         {
-          "user_id": "62989129",
-          "lead_source": "中东academy_en分配",
-          "assigned_time": "2026-04-22T09:41:17+08:00",
-          "total_calls": 3
-        },
-        {
-          "user_id": "62992058",
-          "lead_source": "中东academy_en分配",
-          "assigned_time": "2026-04-22T17:56:43+08:00",
-          "total_calls": 3
-        },
-        {
-          "user_id": "62996251",
-          "lead_source": "中东academy_en分配",
-          "assigned_time": "2026-04-23T03:37:46+08:00",
-          "total_calls": 3
-        },
-        {
           "user_id": "63000125",
           "lead_source": "转介绍分配cc",
           "assigned_time": "2026-04-23T18:04:06+08:00",
@@ -10299,18 +10947,6 @@
           "lead_source": "中东academy_en分配",
           "assigned_time": "2026-04-24T14:55:10+08:00",
           "total_calls": 3
-        },
-        {
-          "user_id": "62992183",
-          "lead_source": "转介绍分配cc",
-          "assigned_time": "2026-04-22T18:22:17+08:00",
-          "total_calls": 4
-        },
-        {
-          "user_id": "62996037",
-          "lead_source": "中东成人高中生分配",
-          "assigned_time": "2026-04-23T03:11:40+08:00",
-          "total_calls": 4
         },
         {
           "user_id": "63003822",
@@ -10329,12 +10965,6 @@
           "lead_source": "中东成人高中生分配",
           "assigned_time": "2026-04-25T23:26:12+08:00",
           "total_calls": 4
-        },
-        {
-          "user_id": "62994147",
-          "lead_source": "中东academy_en分配",
-          "assigned_time": "2026-04-22T21:28:26+08:00",
-          "total_calls": 6
         },
         {
           "user_id": "63010250",
@@ -10411,39 +11041,15 @@
       ],
       "preclass_tasks": [],
       "postclass_tasks": [],
-      "unreached_count": 36,
+      "unreached_count": 29,
       "preclass_count": 0,
       "postclass_count": 0,
-      "total_todo_count": 36
+      "total_todo_count": 29
     },
     {
       "sales_group": "002",
       "sales_agent": "EGCC-fatmamohamed",
       "unreached_leads": [
-        {
-          "user_id": "62992403",
-          "lead_source": "中东academy_en分配",
-          "assigned_time": "2026-04-22T17:59:42+08:00",
-          "total_calls": 1
-        },
-        {
-          "user_id": "62312846",
-          "lead_source": "CC人工改派",
-          "assigned_time": "2026-04-22T20:25:28+08:00",
-          "total_calls": 1
-        },
-        {
-          "user_id": "62236440",
-          "lead_source": "CC人工改派",
-          "assigned_time": "2026-04-22T20:26:46+08:00",
-          "total_calls": 1
-        },
-        {
-          "user_id": "62274473",
-          "lead_source": "CC人工改派",
-          "assigned_time": "2026-04-22T20:27:41+08:00",
-          "total_calls": 1
-        },
         {
           "user_id": "63007545",
           "lead_source": "中东academy_en分配",
@@ -10455,12 +11061,6 @@
           "lead_source": "中东成人高中生分配",
           "assigned_time": "2026-04-25T02:06:10+08:00",
           "total_calls": 1
-        },
-        {
-          "user_id": "62511608",
-          "lead_source": "CC人工改派",
-          "assigned_time": "2026-04-22T20:26:12+08:00",
-          "total_calls": 2
         },
         {
           "user_id": "63001100",
@@ -10505,18 +11105,6 @@
           "total_calls": 3
         },
         {
-          "user_id": "62990121",
-          "lead_source": "中东academy_en分配",
-          "assigned_time": "2026-04-22T12:21:24+08:00",
-          "total_calls": 4
-        },
-        {
-          "user_id": "62996522",
-          "lead_source": "中东academy_en分配",
-          "assigned_time": "2026-04-23T05:38:41+08:00",
-          "total_calls": 4
-        },
-        {
           "user_id": "62997529",
           "lead_source": "中东成人高中生分配",
           "assigned_time": "2026-04-23T10:53:21+08:00",
@@ -10559,12 +11147,6 @@
           "total_calls": 5
         },
         {
-          "user_id": "62994994",
-          "lead_source": "中东academy_en分配",
-          "assigned_time": "2026-04-22T23:49:44+08:00",
-          "total_calls": 6
-        },
-        {
           "user_id": "63003779",
           "lead_source": "中东academy_en分配",
           "assigned_time": "2026-04-24T04:36:13+08:00",
@@ -10589,12 +11171,6 @@
           "total_calls": 7
         },
         {
-          "user_id": "62908828",
-          "lead_source": "CC人工改派",
-          "assigned_time": "2026-04-22T20:27:17+08:00",
-          "total_calls": 8
-        },
-        {
           "user_id": "63021173",
           "lead_source": "中东academy_en分配",
           "assigned_time": "2026-04-26T11:30:14+08:00",
@@ -10603,10 +11179,10 @@
       ],
       "preclass_tasks": [],
       "postclass_tasks": [],
-      "unreached_count": 30,
+      "unreached_count": 21,
       "preclass_count": 0,
       "postclass_count": 0,
-      "total_todo_count": 30
+      "total_todo_count": 21
     },
     {
       "sales_group": "001",
@@ -10661,37 +11237,37 @@
     {
       "sales_group": "",
       "sales_agent": "",
-      "mention_text": "@ 今日待处理：课前待跟进 211 个，课后待跟进 49 个"
+      "mention_text": "@ 今日待处理：课前待跟进 255 个，课后待跟进 75 个"
     },
     {
       "sales_group": "001",
       "sales_agent": "51habiba.hassan",
-      "mention_text": "@51habiba.hassan 今日待处理：未接通线索 65 个"
+      "mention_text": "@51habiba.hassan 今日待处理：未接通线索 60 个"
     },
     {
       "sales_group": "002",
       "sales_agent": "51nadamuhammad",
-      "mention_text": "@51nadamuhammad 今日待处理：未接通线索 51 个"
+      "mention_text": "@51nadamuhammad 今日待处理：未接通线索 42 个"
     },
     {
       "sales_group": "001",
       "sales_agent": "EGCC-eman.amr",
-      "mention_text": "@EGCC-eman.amr 今日待处理：未接通线索 45 个"
+      "mention_text": "@EGCC-eman.amr 今日待处理：未接通线索 35 个"
     },
     {
       "sales_group": "002",
       "sales_agent": "EGCC-maiwaheed",
-      "mention_text": "@EGCC-maiwaheed 今日待处理：未接通线索 43 个"
+      "mention_text": "@EGCC-maiwaheed 今日待处理：未接通线索 29 个"
     },
     {
       "sales_group": "002",
       "sales_agent": "EGCC-tasneemmahmoud",
-      "mention_text": "@EGCC-tasneemmahmoud 今日待处理：未接通线索 36 个"
+      "mention_text": "@EGCC-tasneemmahmoud 今日待处理：未接通线索 29 个"
     },
     {
       "sales_group": "002",
       "sales_agent": "EGCC-fatmamohamed",
-      "mention_text": "@EGCC-fatmamohamed 今日待处理：未接通线索 30 个"
+      "mention_text": "@EGCC-fatmamohamed 今日待处理：未接通线索 21 个"
     },
     {
       "sales_group": "001",
