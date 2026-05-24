@@ -1533,6 +1533,36 @@
         "class_start_ksa": "2026-05-22 14:30 ~ 15:00",
         "booking_type": "代约",
         "textbook": ""
+      },
+      {
+        "user_id": "62322444",
+        "class_start_ksa": "2026-05-23 14:30 ~ 15:00",
+        "booking_type": "代约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63258329",
+        "class_start_ksa": "2026-05-23 17:30 ~ 18:00",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63204447",
+        "class_start_ksa": "2026-05-23 20:00 ~ 20:30",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63245527",
+        "class_start_ksa": "2026-05-23 21:00 ~ 21:30",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63258047",
+        "class_start_ksa": "2026-05-23 21:30 ~ 22:00",
+        "booking_type": "代约",
+        "textbook": ""
       }
     ],
     "postclass_tasks": [
@@ -2135,29 +2165,25 @@
         "textbook": "",
         "missing_post_6h_touch": true,
         "missing_post_24h_touch": true
+      },
+      {
+        "user_id": "62322444",
+        "class_start_ksa": "2026-05-23 14:30 ~ 15:00",
+        "booking_type": "代约",
+        "textbook": "",
+        "missing_post_6h_touch": true,
+        "missing_post_24h_touch": true
       }
     ],
     "unreached_count": 0,
-    "preclass_count": 255,
-    "postclass_count": 75,
-    "total_todo_count": 330
+    "preclass_count": 260,
+    "postclass_count": 76,
+    "total_todo_count": 336
   },
   {
     "sales_group": "001",
     "sales_agent": "51habiba.hassan",
     "unreached_leads": [
-      {
-        "user_id": "63000155",
-        "lead_source": "中东academy_en分配",
-        "assigned_time": "2026-04-23T18:18:52+08:00",
-        "total_calls": 0
-      },
-      {
-        "user_id": "63003783",
-        "lead_source": "中东academy_en分配",
-        "assigned_time": "2026-04-24T04:39:34+08:00",
-        "total_calls": 0
-      },
       {
         "user_id": "63007737",
         "lead_source": "中东academy_en分配",
@@ -2315,12 +2341,6 @@
         "total_calls": 1
       },
       {
-        "user_id": "63003172",
-        "lead_source": "中东成人高中生分配",
-        "assigned_time": "2026-04-24T01:13:50+08:00",
-        "total_calls": 2
-      },
-      {
         "user_id": "63005455",
         "lead_source": "中东成人高中生分配",
         "assigned_time": "2026-04-24T12:24:11+08:00",
@@ -2363,12 +2383,6 @@
         "total_calls": 2
       },
       {
-        "user_id": "62997453",
-        "lead_source": "中东成人高中生分配",
-        "assigned_time": "2026-04-23T10:56:28+08:00",
-        "total_calls": 3
-      },
-      {
         "user_id": "63010491",
         "lead_source": "CC人工改派",
         "assigned_time": "2026-04-25T18:22:54+08:00",
@@ -2403,12 +2417,6 @@
         "lead_source": "CC人工改派",
         "assigned_time": "2026-04-26T17:27:44+08:00",
         "total_calls": 3
-      },
-      {
-        "user_id": "63002028",
-        "lead_source": "中东academy_en分配",
-        "assigned_time": "2026-04-23T21:54:29+08:00",
-        "total_calls": 4
       },
       {
         "user_id": "63010643",
@@ -2477,12 +2485,6 @@
         "total_calls": 5
       },
       {
-        "user_id": "63000277",
-        "lead_source": "中东成人高中生分配",
-        "assigned_time": "2026-04-23T19:02:23+08:00",
-        "total_calls": 6
-      },
-      {
         "user_id": "63009570",
         "lead_source": "CC人工改派",
         "assigned_time": "2026-04-25T18:22:56+08:00",
@@ -2509,10 +2511,10 @@
     ],
     "preclass_tasks": [],
     "postclass_tasks": [],
-    "unreached_count": 60,
+    "unreached_count": 54,
     "preclass_count": 0,
     "postclass_count": 0,
-    "total_todo_count": 60
+    "total_todo_count": 54
   },
   {
     "sales_group": "002",
@@ -2523,12 +2525,6 @@
         "lead_source": "转介绍分配cc",
         "assigned_time": "2026-04-26T18:54:37+08:00",
         "total_calls": 0
-      },
-      {
-        "user_id": "63003718",
-        "lead_source": "中东成人高中生分配",
-        "assigned_time": "2026-04-24T03:03:30+08:00",
-        "total_calls": 1
       },
       {
         "user_id": "63003728",
@@ -2565,12 +2561,6 @@
         "lead_source": "中东academy_en分配",
         "assigned_time": "2026-04-25T23:55:16+08:00",
         "total_calls": 1
-      },
-      {
-        "user_id": "63000700",
-        "lead_source": "中东academy_en分配",
-        "assigned_time": "2026-04-23T20:02:30+08:00",
-        "total_calls": 2
       },
       {
         "user_id": "63004620",
@@ -2663,18 +2653,6 @@
         "total_calls": 2
       },
       {
-        "user_id": "62997476",
-        "lead_source": "中东academy_en分配",
-        "assigned_time": "2026-04-23T11:39:27+08:00",
-        "total_calls": 3
-      },
-      {
-        "user_id": "63003170",
-        "lead_source": "中东academy_en分配",
-        "assigned_time": "2026-04-24T01:13:10+08:00",
-        "total_calls": 3
-      },
-      {
         "user_id": "63008137",
         "lead_source": "中东academy_en分配",
         "assigned_time": "2026-04-24T19:02:21+08:00",
@@ -2703,18 +2681,6 @@
         "lead_source": "CC人工改派",
         "assigned_time": "2026-04-26T17:29:53+08:00",
         "total_calls": 3
-      },
-      {
-        "user_id": "62998794",
-        "lead_source": "中东成人高中生分配",
-        "assigned_time": "2026-04-23T15:33:32+08:00",
-        "total_calls": 4
-      },
-      {
-        "user_id": "63000974",
-        "lead_source": "中东成人高中生分配",
-        "assigned_time": "2026-04-23T20:21:10+08:00",
-        "total_calls": 4
       },
       {
         "user_id": "63007779",
@@ -2773,21 +2739,15 @@
     ],
     "preclass_tasks": [],
     "postclass_tasks": [],
-    "unreached_count": 42,
+    "unreached_count": 36,
     "preclass_count": 0,
     "postclass_count": 0,
-    "total_todo_count": 42
+    "total_todo_count": 36
   },
   {
     "sales_group": "001",
     "sales_agent": "EGCC-eman.amr",
     "unreached_leads": [
-      {
-        "user_id": "63003096",
-        "lead_source": "中东成人高中生分配",
-        "assigned_time": "2026-04-24T01:30:14+08:00",
-        "total_calls": 1
-      },
       {
         "user_id": "63008794",
         "lead_source": "中东academy_en分配",
@@ -2825,30 +2785,6 @@
         "total_calls": 1
       },
       {
-        "user_id": "62997460",
-        "lead_source": "中东成人高中生分配",
-        "assigned_time": "2026-04-23T11:06:06+08:00",
-        "total_calls": 2
-      },
-      {
-        "user_id": "63000247",
-        "lead_source": "中东academy_en分配",
-        "assigned_time": "2026-04-23T18:40:28+08:00",
-        "total_calls": 2
-      },
-      {
-        "user_id": "63002094",
-        "lead_source": "中东academy_en分配",
-        "assigned_time": "2026-04-23T22:44:12+08:00",
-        "total_calls": 2
-      },
-      {
-        "user_id": "63004253",
-        "lead_source": "中东academy_en分配",
-        "assigned_time": "2026-04-24T07:14:26+08:00",
-        "total_calls": 2
-      },
-      {
         "user_id": "63020240",
         "lead_source": "中东成人高中生分配",
         "assigned_time": "2026-04-26T09:03:02+08:00",
@@ -2877,12 +2813,6 @@
         "lead_source": "CC人工改派",
         "assigned_time": "2026-04-26T17:29:14+08:00",
         "total_calls": 2
-      },
-      {
-        "user_id": "63000648",
-        "lead_source": "中东成人高中生分配",
-        "assigned_time": "2026-04-23T19:28:34+08:00",
-        "total_calls": 3
       },
       {
         "user_id": "63010723",
@@ -2981,12 +2911,6 @@
         "total_calls": 7
       },
       {
-        "user_id": "62997418",
-        "lead_source": "中东academy_en分配",
-        "assigned_time": "2026-04-23T09:42:54+08:00",
-        "total_calls": 8
-      },
-      {
         "user_id": "63008118",
         "lead_source": "中东academy_en分配",
         "assigned_time": "2026-04-24T18:43:40+08:00",
@@ -2995,68 +2919,164 @@
     ],
     "preclass_tasks": [],
     "postclass_tasks": [],
-    "unreached_count": 35,
+    "unreached_count": 28,
     "preclass_count": 0,
     "postclass_count": 0,
-    "total_todo_count": 35
+    "total_todo_count": 28
+  },
+  {
+    "sales_group": "002",
+    "sales_agent": "EGCC-tasneemmahmoud",
+    "unreached_leads": [
+      {
+        "user_id": "61494299",
+        "lead_source": "CC人工改派",
+        "assigned_time": "2026-04-25T18:59:12+08:00",
+        "total_calls": 1
+      },
+      {
+        "user_id": "62363000",
+        "lead_source": "CC人工改派",
+        "assigned_time": "2026-04-25T18:59:33+08:00",
+        "total_calls": 1
+      },
+      {
+        "user_id": "62173165",
+        "lead_source": "CC人工改派",
+        "assigned_time": "2026-04-25T18:59:57+08:00",
+        "total_calls": 1
+      },
+      {
+        "user_id": "62045109",
+        "lead_source": "CC人工改派",
+        "assigned_time": "2026-04-25T19:00:26+08:00",
+        "total_calls": 1
+      },
+      {
+        "user_id": "61990182",
+        "lead_source": "CC人工改派",
+        "assigned_time": "2026-04-25T19:02:19+08:00",
+        "total_calls": 1
+      },
+      {
+        "user_id": "61993501",
+        "lead_source": "CC人工改派",
+        "assigned_time": "2026-04-25T19:02:54+08:00",
+        "total_calls": 1
+      },
+      {
+        "user_id": "61432105",
+        "lead_source": "CC人工改派",
+        "assigned_time": "2026-04-25T19:03:30+08:00",
+        "total_calls": 1
+      },
+      {
+        "user_id": "61620009",
+        "lead_source": "CC人工改派",
+        "assigned_time": "2026-04-25T19:04:11+08:00",
+        "total_calls": 1
+      },
+      {
+        "user_id": "63026806",
+        "lead_source": "中东academy_en分配",
+        "assigned_time": "2026-04-26T20:43:49+08:00",
+        "total_calls": 2
+      },
+      {
+        "user_id": "63006474",
+        "lead_source": "中东academy_en分配",
+        "assigned_time": "2026-04-24T14:55:10+08:00",
+        "total_calls": 3
+      },
+      {
+        "user_id": "63014529",
+        "lead_source": "中东academy_en分配",
+        "assigned_time": "2026-04-25T16:08:16+08:00",
+        "total_calls": 4
+      },
+      {
+        "user_id": "63018230",
+        "lead_source": "中东成人高中生分配",
+        "assigned_time": "2026-04-25T23:26:12+08:00",
+        "total_calls": 4
+      },
+      {
+        "user_id": "63010250",
+        "lead_source": "中东academy_en分配",
+        "assigned_time": "2026-04-25T00:16:55+08:00",
+        "total_calls": 7
+      },
+      {
+        "user_id": "63019360",
+        "lead_source": "中东成人高中生分配",
+        "assigned_time": "2026-04-26T04:23:14+08:00",
+        "total_calls": 7
+      },
+      {
+        "user_id": "63019691",
+        "lead_source": "中东academy_en分配",
+        "assigned_time": "2026-04-26T08:27:37+08:00",
+        "total_calls": 7
+      },
+      {
+        "user_id": "63008261",
+        "lead_source": "中东academy_en分配",
+        "assigned_time": "2026-04-24T19:26:49+08:00",
+        "total_calls": 8
+      },
+      {
+        "user_id": "63008956",
+        "lead_source": "中东成人高中生分配",
+        "assigned_time": "2026-04-24T20:39:41+08:00",
+        "total_calls": 8
+      },
+      {
+        "user_id": "63018807",
+        "lead_source": "中东academy_en分配",
+        "assigned_time": "2026-04-26T00:47:53+08:00",
+        "total_calls": 9
+      },
+      {
+        "user_id": "63013257",
+        "lead_source": "中东成人高中生分配",
+        "assigned_time": "2026-04-25T13:40:42+08:00",
+        "total_calls": 11
+      },
+      {
+        "user_id": "63010693",
+        "lead_source": "中东成人高中生分配",
+        "assigned_time": "2026-04-25T03:25:54+08:00",
+        "total_calls": 12
+      },
+      {
+        "user_id": "63022670",
+        "lead_source": "中东成人高中生分配",
+        "assigned_time": "2026-04-26T15:03:34+08:00",
+        "total_calls": 12
+      },
+      {
+        "user_id": "63017073",
+        "lead_source": "中东academy_en分配",
+        "assigned_time": "2026-04-25T21:26:09+08:00",
+        "total_calls": 16
+      }
+    ],
+    "preclass_tasks": [],
+    "postclass_tasks": [],
+    "unreached_count": 22,
+    "preclass_count": 0,
+    "postclass_count": 0,
+    "total_todo_count": 22
   },
   {
     "sales_group": "002",
     "sales_agent": "EGCC-maiwaheed",
     "unreached_leads": [
       {
-        "user_id": "63003865",
-        "lead_source": "中东成人高中生分配",
-        "assigned_time": "2026-04-24T04:40:06+08:00",
-        "total_calls": 0
-      },
-      {
-        "user_id": "62125634",
-        "lead_source": "CC人工改派",
-        "assigned_time": "2026-04-23T22:14:18+08:00",
-        "total_calls": 1
-      },
-      {
-        "user_id": "61505309",
-        "lead_source": "CC人工改派",
-        "assigned_time": "2026-04-23T22:20:57+08:00",
-        "total_calls": 1
-      },
-      {
         "user_id": "63009366",
         "lead_source": "中东成人高中生分配",
         "assigned_time": "2026-04-24T22:00:25+08:00",
         "total_calls": 1
-      },
-      {
-        "user_id": "62999276",
-        "lead_source": "中东成人高中生分配",
-        "assigned_time": "2026-04-23T17:06:47+08:00",
-        "total_calls": 2
-      },
-      {
-        "user_id": "63001336",
-        "lead_source": "中东academy_en分配",
-        "assigned_time": "2026-04-23T20:38:00+08:00",
-        "total_calls": 2
-      },
-      {
-        "user_id": "61437225",
-        "lead_source": "CC人工改派",
-        "assigned_time": "2026-04-23T22:14:51+08:00",
-        "total_calls": 2
-      },
-      {
-        "user_id": "62119512",
-        "lead_source": "CC人工改派",
-        "assigned_time": "2026-04-23T22:15:26+08:00",
-        "total_calls": 2
-      },
-      {
-        "user_id": "63002529",
-        "lead_source": "中东成人高中生分配",
-        "assigned_time": "2026-04-23T23:06:03+08:00",
-        "total_calls": 2
       },
       {
         "user_id": "63007426",
@@ -3107,18 +3127,6 @@
         "total_calls": 3
       },
       {
-        "user_id": "62998288",
-        "lead_source": "中东academy_en分配",
-        "assigned_time": "2026-04-23T14:20:27+08:00",
-        "total_calls": 4
-      },
-      {
-        "user_id": "63003760",
-        "lead_source": "中东academy_en分配",
-        "assigned_time": "2026-04-24T04:11:22+08:00",
-        "total_calls": 4
-      },
-      {
         "user_id": "63010164",
         "lead_source": "中东academy_en分配",
         "assigned_time": "2026-04-25T00:18:05+08:00",
@@ -3135,12 +3143,6 @@
         "lead_source": "CC人工改派",
         "assigned_time": "2026-04-26T17:30:27+08:00",
         "total_calls": 5
-      },
-      {
-        "user_id": "61271360",
-        "lead_source": "CC人工改派",
-        "assigned_time": "2026-04-23T22:13:37+08:00",
-        "total_calls": 6
       },
       {
         "user_id": "63013278",
@@ -3181,196 +3183,10 @@
     ],
     "preclass_tasks": [],
     "postclass_tasks": [],
-    "unreached_count": 29,
+    "unreached_count": 18,
     "preclass_count": 0,
     "postclass_count": 0,
-    "total_todo_count": 29
-  },
-  {
-    "sales_group": "002",
-    "sales_agent": "EGCC-tasneemmahmoud",
-    "unreached_leads": [
-      {
-        "user_id": "62999919",
-        "lead_source": "中东成人高中生分配",
-        "assigned_time": "2026-04-23T17:04:07+08:00",
-        "total_calls": 1
-      },
-      {
-        "user_id": "61494299",
-        "lead_source": "CC人工改派",
-        "assigned_time": "2026-04-25T18:59:12+08:00",
-        "total_calls": 1
-      },
-      {
-        "user_id": "62363000",
-        "lead_source": "CC人工改派",
-        "assigned_time": "2026-04-25T18:59:33+08:00",
-        "total_calls": 1
-      },
-      {
-        "user_id": "62173165",
-        "lead_source": "CC人工改派",
-        "assigned_time": "2026-04-25T18:59:57+08:00",
-        "total_calls": 1
-      },
-      {
-        "user_id": "62045109",
-        "lead_source": "CC人工改派",
-        "assigned_time": "2026-04-25T19:00:26+08:00",
-        "total_calls": 1
-      },
-      {
-        "user_id": "61990182",
-        "lead_source": "CC人工改派",
-        "assigned_time": "2026-04-25T19:02:19+08:00",
-        "total_calls": 1
-      },
-      {
-        "user_id": "61993501",
-        "lead_source": "CC人工改派",
-        "assigned_time": "2026-04-25T19:02:54+08:00",
-        "total_calls": 1
-      },
-      {
-        "user_id": "61432105",
-        "lead_source": "CC人工改派",
-        "assigned_time": "2026-04-25T19:03:30+08:00",
-        "total_calls": 1
-      },
-      {
-        "user_id": "61620009",
-        "lead_source": "CC人工改派",
-        "assigned_time": "2026-04-25T19:04:11+08:00",
-        "total_calls": 1
-      },
-      {
-        "user_id": "63001091",
-        "lead_source": "中东academy_en分配",
-        "assigned_time": "2026-04-23T20:36:53+08:00",
-        "total_calls": 2
-      },
-      {
-        "user_id": "63002268",
-        "lead_source": "中东成人高中生分配",
-        "assigned_time": "2026-04-23T22:50:09+08:00",
-        "total_calls": 2
-      },
-      {
-        "user_id": "63026806",
-        "lead_source": "中东academy_en分配",
-        "assigned_time": "2026-04-26T20:43:49+08:00",
-        "total_calls": 2
-      },
-      {
-        "user_id": "63000125",
-        "lead_source": "转介绍分配cc",
-        "assigned_time": "2026-04-23T18:04:06+08:00",
-        "total_calls": 3
-      },
-      {
-        "user_id": "63006474",
-        "lead_source": "中东academy_en分配",
-        "assigned_time": "2026-04-24T14:55:10+08:00",
-        "total_calls": 3
-      },
-      {
-        "user_id": "63003822",
-        "lead_source": "中东成人高中生分配",
-        "assigned_time": "2026-04-24T03:31:35+08:00",
-        "total_calls": 4
-      },
-      {
-        "user_id": "63014529",
-        "lead_source": "中东academy_en分配",
-        "assigned_time": "2026-04-25T16:08:16+08:00",
-        "total_calls": 4
-      },
-      {
-        "user_id": "63018230",
-        "lead_source": "中东成人高中生分配",
-        "assigned_time": "2026-04-25T23:26:12+08:00",
-        "total_calls": 4
-      },
-      {
-        "user_id": "63010250",
-        "lead_source": "中东academy_en分配",
-        "assigned_time": "2026-04-25T00:16:55+08:00",
-        "total_calls": 7
-      },
-      {
-        "user_id": "63019360",
-        "lead_source": "中东成人高中生分配",
-        "assigned_time": "2026-04-26T04:23:14+08:00",
-        "total_calls": 7
-      },
-      {
-        "user_id": "63019691",
-        "lead_source": "中东academy_en分配",
-        "assigned_time": "2026-04-26T08:27:37+08:00",
-        "total_calls": 7
-      },
-      {
-        "user_id": "63003757",
-        "lead_source": "中东academy_en分配",
-        "assigned_time": "2026-04-24T04:03:43+08:00",
-        "total_calls": 8
-      },
-      {
-        "user_id": "63008261",
-        "lead_source": "中东academy_en分配",
-        "assigned_time": "2026-04-24T19:26:49+08:00",
-        "total_calls": 8
-      },
-      {
-        "user_id": "63008956",
-        "lead_source": "中东成人高中生分配",
-        "assigned_time": "2026-04-24T20:39:41+08:00",
-        "total_calls": 8
-      },
-      {
-        "user_id": "63018807",
-        "lead_source": "中东academy_en分配",
-        "assigned_time": "2026-04-26T00:47:53+08:00",
-        "total_calls": 9
-      },
-      {
-        "user_id": "63013257",
-        "lead_source": "中东成人高中生分配",
-        "assigned_time": "2026-04-25T13:40:42+08:00",
-        "total_calls": 11
-      },
-      {
-        "user_id": "63010693",
-        "lead_source": "中东成人高中生分配",
-        "assigned_time": "2026-04-25T03:25:54+08:00",
-        "total_calls": 12
-      },
-      {
-        "user_id": "63022670",
-        "lead_source": "中东成人高中生分配",
-        "assigned_time": "2026-04-26T15:03:34+08:00",
-        "total_calls": 12
-      },
-      {
-        "user_id": "62998129",
-        "lead_source": "中东academy_en分配",
-        "assigned_time": "2026-04-23T12:54:36+08:00",
-        "total_calls": 16
-      },
-      {
-        "user_id": "63017073",
-        "lead_source": "中东academy_en分配",
-        "assigned_time": "2026-04-25T21:26:09+08:00",
-        "total_calls": 16
-      }
-    ],
-    "preclass_tasks": [],
-    "postclass_tasks": [],
-    "unreached_count": 29,
-    "preclass_count": 0,
-    "postclass_count": 0,
-    "total_todo_count": 29
+    "total_todo_count": 18
   },
   {
     "sales_group": "002",
@@ -3389,12 +3205,6 @@
         "total_calls": 1
       },
       {
-        "user_id": "63001100",
-        "lead_source": "中东academy_en分配",
-        "assigned_time": "2026-04-23T20:44:39+08:00",
-        "total_calls": 2
-      },
-      {
         "user_id": "63010645",
         "lead_source": "中东academy_en分配",
         "assigned_time": "2026-04-25T02:21:27+08:00",
@@ -3407,34 +3217,10 @@
         "total_calls": 2
       },
       {
-        "user_id": "62999750",
-        "lead_source": "中东academy_en分配",
-        "assigned_time": "2026-04-23T17:18:44+08:00",
-        "total_calls": 3
-      },
-      {
-        "user_id": "63003421",
-        "lead_source": "中东成人高中生分配",
-        "assigned_time": "2026-04-24T01:12:21+08:00",
-        "total_calls": 3
-      },
-      {
-        "user_id": "63004275",
-        "lead_source": "中东成人高中生分配",
-        "assigned_time": "2026-04-24T07:53:37+08:00",
-        "total_calls": 3
-      },
-      {
         "user_id": "63019080",
         "lead_source": "中东academy_en分配",
         "assigned_time": "2026-04-26T02:53:44+08:00",
         "total_calls": 3
-      },
-      {
-        "user_id": "62997529",
-        "lead_source": "中东成人高中生分配",
-        "assigned_time": "2026-04-23T10:53:21+08:00",
-        "total_calls": 4
       },
       {
         "user_id": "63008471",
@@ -3473,22 +3259,10 @@
         "total_calls": 5
       },
       {
-        "user_id": "63003779",
-        "lead_source": "中东academy_en分配",
-        "assigned_time": "2026-04-24T04:36:13+08:00",
-        "total_calls": 6
-      },
-      {
         "user_id": "63024840",
         "lead_source": "中东成人高中生分配",
         "assigned_time": "2026-04-26T18:35:44+08:00",
         "total_calls": 6
-      },
-      {
-        "user_id": "63000215",
-        "lead_source": "中东成人高中生分配",
-        "assigned_time": "2026-04-23T18:21:17+08:00",
-        "total_calls": 7
       },
       {
         "user_id": "63019612",
@@ -3505,10 +3279,10 @@
     ],
     "preclass_tasks": [],
     "postclass_tasks": [],
-    "unreached_count": 21,
+    "unreached_count": 14,
     "preclass_count": 0,
     "postclass_count": 0,
-    "total_todo_count": 21
+    "total_todo_count": 14
   },
   {
     "sales_group": "001",

@@ -1198,5 +1198,21 @@
     "post_24h_connected_count": 0,
     "missing_post_6h_touch": true,
     "missing_post_24h_touch": true
+  },
+  {
+    "user_id": "62322444",
+    "sales_group": "",
+    "sales_agent": "",
+    "booking_type": "代约",
+    "class_start_ksa": "2026-05-23 14:30 ~ 15:00",
+    "textbook": "",
+    "teacher_id": "6783916",
+    "teacher_name": "Hadir Elnaggar",
+    "post_6h_call_count": 0,
+    "post_6h_connected_count": 0,
+    "post_24h_call_count": 0,
+    "post_24h_connected_count": 0,
+    "missing_post_6h_touch": true,
+    "missing_post_24h_touch": true
   }
 ]
