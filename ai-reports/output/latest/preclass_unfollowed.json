@@ -3898,5 +3898,50 @@
     "pre_2h_connected_count": 0,
     "missing_pre_2h_touch": true,
     "missing_pre_2h_connect": true
+  },
+  {
+    "user_id": "63254182",
+    "sales_group": "",
+    "sales_agent": "",
+    "booking_type": "代约",
+    "class_start_ksa": "2026-05-24 15:00 ~ 15:30",
+    "class_status": "on",
+    "textbook": "",
+    "teacher_id": "0",
+    "teacher_name": "",
+    "pre_2h_call_count": 0,
+    "pre_2h_connected_count": 0,
+    "missing_pre_2h_touch": true,
+    "missing_pre_2h_connect": true
+  },
+  {
+    "user_id": "62405694",
+    "sales_group": "",
+    "sales_agent": "",
+    "booking_type": "代约",
+    "class_start_ksa": "2026-05-24 16:00 ~ 16:30",
+    "class_status": "on",
+    "textbook": "",
+    "teacher_id": "0",
+    "teacher_name": "",
+    "pre_2h_call_count": 0,
+    "pre_2h_connected_count": 0,
+    "missing_pre_2h_touch": true,
+    "missing_pre_2h_connect": true
+  },
+  {
+    "user_id": "63257605",
+    "sales_group": "",
+    "sales_agent": "",
+    "booking_type": "自约",
+    "class_start_ksa": "2026-05-24 18:30 ~ 19:00",
+    "class_status": "on",
+    "textbook": "",
+    "teacher_id": "0",
+    "teacher_name": "",
+    "pre_2h_call_count": 0,
+    "pre_2h_connected_count": 0,
+    "missing_pre_2h_touch": true,
+    "missing_pre_2h_connect": true
   }
 ]
