@@ -3,45 +3,5 @@
     "sales_group": "",
     "sales_agent": "",
     "mention_text": "@ 今日待处理：课前待跟进 263 个，课后待跟进 76 个"
-  },
-  {
-    "sales_group": "001",
-    "sales_agent": "51habiba.hassan",
-    "mention_text": "@51habiba.hassan 今日待处理：未接通线索 24 个"
-  },
-  {
-    "sales_group": "001",
-    "sales_agent": "EGCC-eman.amr",
-    "mention_text": "@EGCC-eman.amr 今日待处理：未接通线索 17 个"
-  },
-  {
-    "sales_group": "002",
-    "sales_agent": "EGCC-maiwaheed",
-    "mention_text": "@EGCC-maiwaheed 今日待处理：未接通线索 7 个"
-  },
-  {
-    "sales_group": "002",
-    "sales_agent": "51nadamuhammad",
-    "mention_text": "@51nadamuhammad 今日待处理：未接通线索 5 个"
-  },
-  {
-    "sales_group": "002",
-    "sales_agent": "EGCC-tasneemmahmoud",
-    "mention_text": "@EGCC-tasneemmahmoud 今日待处理：未接通线索 3 个"
-  },
-  {
-    "sales_group": "002",
-    "sales_agent": "EGCC-fatmamohamed",
-    "mention_text": "@EGCC-fatmamohamed 今日待处理：未接通线索 3 个"
-  },
-  {
-    "sales_group": "001",
-    "sales_agent": "EGCC-nadahassan",
-    "mention_text": "@EGCC-nadahassan 今日待处理：未接通线索 2 个"
-  },
-  {
-    "sales_group": "001",
-    "sales_agent": "51hassan02",
-    "mention_text": "@51hassan02 今日待处理：未接通线索 2 个"
   }
 ]
