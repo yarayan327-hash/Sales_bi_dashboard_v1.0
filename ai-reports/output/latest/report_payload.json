@@ -1,7 +1,7 @@
 {
-  "report_date": "2026-05-29",
+  "report_date": "2026-05-30",
   "daily_metrics": {
-    "report_date": "2026-05-29",
+    "report_date": "2026-05-30",
     "yesterday": {
       "leads": 0,
       "booked": 0,
@@ -36,14 +36,14 @@
     "debug": {
       "source_rows": {
         "leads": 8364,
-        "trials": 5005,
+        "trials": 5015,
         "orders": 123
       },
       "ranges": {
-        "yesterday": "2026-05-29",
+        "yesterday": "2026-05-30",
         "mtd": {
           "start": "2026-05-01",
-          "end": "2026-05-29"
+          "end": "2026-05-30"
         }
       }
     }

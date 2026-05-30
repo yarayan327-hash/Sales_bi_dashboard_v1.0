@@ -1,6 +1,6 @@
 {
-  "sync_date_ksa": "2026-05-29",
-  "sync_time_ksa": "2026-05-29 18:41:17",
+  "sync_date_ksa": "2026-05-30",
+  "sync_time_ksa": "2026-05-30 18:41:21",
   "status": "warning",
   "bad_count": 1,
   "checks": [
@@ -21,7 +21,7 @@
       "table": "public/data/fact_trials.csv",
       "status": "ok",
       "reason": "",
-      "rows": 5005,
+      "rows": 5015,
       "month_rows": 746,
       "columns": [
         "id",

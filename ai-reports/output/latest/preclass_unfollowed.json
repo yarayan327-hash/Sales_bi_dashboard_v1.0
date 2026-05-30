@@ -3943,5 +3943,20 @@
     "pre_2h_connected_count": 0,
     "missing_pre_2h_touch": true,
     "missing_pre_2h_connect": true
+  },
+  {
+    "user_id": "63267184",
+    "sales_group": "",
+    "sales_agent": "",
+    "booking_type": "代约",
+    "class_start_ksa": "2026-05-25 20:30 ~ 21:00",
+    "class_status": "s_absent",
+    "textbook": "",
+    "teacher_id": "0",
+    "teacher_name": "",
+    "pre_2h_call_count": 0,
+    "pre_2h_connected_count": 0,
+    "missing_pre_2h_touch": true,
+    "missing_pre_2h_connect": true
   }
 ]

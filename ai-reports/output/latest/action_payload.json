@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-29T02:00:05.340Z",
-  "report_date": "2026-05-28",
+  "generated_at": "2026-05-30T02:00:05.635Z",
+  "report_date": "2026-05-29",
   "unreached_leads": [],
   "preclass_unfollowed": [
     {
@@ -3947,6 +3947,21 @@
       "pre_2h_connected_count": 0,
       "missing_pre_2h_touch": true,
       "missing_pre_2h_connect": true
+    },
+    {
+      "user_id": "63267184",
+      "sales_group": "",
+      "sales_agent": "",
+      "booking_type": "代约",
+      "class_start_ksa": "2026-05-25 20:30 ~ 21:00",
+      "class_status": "s_absent",
+      "textbook": "",
+      "teacher_id": "0",
+      "teacher_name": "",
+      "pre_2h_call_count": 0,
+      "pre_2h_connected_count": 0,
+      "missing_pre_2h_touch": true,
+      "missing_pre_2h_connect": true
     }
   ],
   "postclass_unfollowed": [
@@ -6750,6 +6765,12 @@
           "class_start_ksa": "2026-05-24 18:30 ~ 19:00",
           "booking_type": "自约",
           "textbook": ""
+        },
+        {
+          "user_id": "63267184",
+          "class_start_ksa": "2026-05-25 20:30 ~ 21:00",
+          "booking_type": "代约",
+          "textbook": ""
         }
       ],
       "postclass_tasks": [
@@ -7363,16 +7384,16 @@
         }
       ],
       "unreached_count": 0,
-      "preclass_count": 263,
+      "preclass_count": 264,
       "postclass_count": 76,
-      "total_todo_count": 339
+      "total_todo_count": 340
     }
   ],
   "group_mentions": [
     {
       "sales_group": "",
       "sales_agent": "",
-      "mention_text": "@ 今日待处理：课前待跟进 263 个，课后待跟进 76 个"
+      "mention_text": "@ 今日待处理：课前待跟进 264 个，课后待跟进 76 个"
     }
   ]
 }

@@ -1581,6 +1581,12 @@
         "class_start_ksa": "2026-05-24 18:30 ~ 19:00",
         "booking_type": "自约",
         "textbook": ""
+      },
+      {
+        "user_id": "63267184",
+        "class_start_ksa": "2026-05-25 20:30 ~ 21:00",
+        "booking_type": "代约",
+        "textbook": ""
       }
     ],
     "postclass_tasks": [
@@ -2194,8 +2200,8 @@
       }
     ],
     "unreached_count": 0,
-    "preclass_count": 263,
+    "preclass_count": 264,
     "postclass_count": 76,
-    "total_todo_count": 339
+    "total_todo_count": 340
   }
 ]
