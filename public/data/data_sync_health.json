@@ -1,8 +1,8 @@
 {
-  "sync_date_ksa": "2026-06-01",
-  "sync_time_ksa": "2026-06-01 18:02:14",
+  "sync_date_ksa": "2026-06-03",
+  "sync_time_ksa": "2026-06-03 18:07:44",
   "status": "warning",
-  "bad_count": 2,
+  "bad_count": 1,
   "checks": [
     {
       "table": "public/data/fact_leads.csv",
@@ -21,8 +21,8 @@
       "table": "public/data/fact_trials.csv",
       "status": "ok",
       "reason": "",
-      "rows": 5015,
-      "month_rows": 10,
+      "rows": 5225,
+      "month_rows": 220,
       "columns": [
         "id",
         "course_name",
@@ -46,10 +46,10 @@
     },
     {
       "table": "public/data/fact_orders.csv",
-      "status": "warning",
-      "reason": "no_current_month_rows_2026-06",
+      "status": "ok",
+      "reason": "",
       "rows": 123,
-      "month_rows": 0,
+      "month_rows": 1,
       "columns": [
         "order_id",
         "user_name",
@@ -72,8 +72,8 @@
       "table": "public/data/fact_calls.csv",
       "status": "ok",
       "reason": "",
-      "rows": 5001,
-      "month_rows": 327,
+      "rows": 6017,
+      "month_rows": 1343,
       "columns": [
         "user_id",
         "sales_name",
