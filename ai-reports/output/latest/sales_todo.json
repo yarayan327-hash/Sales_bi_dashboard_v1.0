@@ -639,6 +639,54 @@
         "class_start_ksa": "2026-06-03 20:30 ~ 21:00",
         "booking_type": "代约",
         "textbook": ""
+      },
+      {
+        "user_id": "63279309",
+        "class_start_ksa": "2026-06-04 12:00 ~ 12:30",
+        "booking_type": "代约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63326906",
+        "class_start_ksa": "2026-06-04 15:00 ~ 15:30",
+        "booking_type": "代约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63323162",
+        "class_start_ksa": "2026-06-04 15:30 ~ 16:00",
+        "booking_type": "代约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63317214",
+        "class_start_ksa": "2026-06-04 16:00 ~ 16:30",
+        "booking_type": "代约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63330624",
+        "class_start_ksa": "2026-06-04 17:30 ~ 18:00",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63331643",
+        "class_start_ksa": "2026-06-04 19:30 ~ 20:00",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63315170",
+        "class_start_ksa": "2026-06-04 20:30 ~ 21:00",
+        "booking_type": "代约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63332731",
+        "class_start_ksa": "2026-06-04 20:30 ~ 21:00",
+        "booking_type": "代约",
+        "textbook": ""
       }
     ],
     "postclass_tasks": [
@@ -964,8 +1012,8 @@
       }
     ],
     "unreached_count": 0,
-    "preclass_count": 106,
+    "preclass_count": 114,
     "postclass_count": 40,
-    "total_todo_count": 146
+    "total_todo_count": 154
   }
 ]
