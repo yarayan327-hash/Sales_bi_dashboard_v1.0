@@ -1,8 +1,8 @@
 {
-  "sync_date_ksa": "2026-06-03",
-  "sync_time_ksa": "2026-06-03 18:07:44",
+  "sync_date_ksa": "2026-06-04",
+  "sync_time_ksa": "2026-06-04 06:12:56",
   "status": "warning",
-  "bad_count": 1,
+  "bad_count": 2,
   "checks": [
     {
       "table": "public/data/fact_leads.csv",
@@ -70,10 +70,10 @@
     },
     {
       "table": "public/data/fact_calls.csv",
-      "status": "ok",
-      "reason": "",
-      "rows": 6017,
-      "month_rows": 1343,
+      "status": "warning",
+      "reason": "no_current_month_rows_2026-06",
+      "rows": 4674,
+      "month_rows": 0,
       "columns": [
         "user_id",
         "sales_name",

@@ -11,32 +11,86 @@
         "textbook": ""
       },
       {
-        "user_id": "61779440",
+        "user_id": "63308027",
+        "class_start_ksa": "2026-06-01 12:00 ~ 12:30",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63302339",
+        "class_start_ksa": "2026-06-01 13:00 ~ 13:30",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63303244",
+        "class_start_ksa": "2026-06-01 13:30 ~ 14:00",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63304380",
+        "class_start_ksa": "2026-06-01 13:30 ~ 14:00",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63308058",
         "class_start_ksa": "2026-06-01 14:00 ~ 14:30",
         "booking_type": "自约",
         "textbook": ""
       },
       {
-        "user_id": "63295476",
+        "user_id": "63311106",
+        "class_start_ksa": "2026-06-01 14:00 ~ 14:30",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63308635",
         "class_start_ksa": "2026-06-01 14:30 ~ 15:00",
         "booking_type": "自约",
         "textbook": ""
       },
       {
-        "user_id": "63296918",
+        "user_id": "63311462",
+        "class_start_ksa": "2026-06-01 15:00 ~ 15:30",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63304263",
+        "class_start_ksa": "2026-06-01 15:00 ~ 15:30",
+        "booking_type": "代约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63305632",
         "class_start_ksa": "2026-06-01 15:30 ~ 16:00",
         "booking_type": "自约",
         "textbook": ""
       },
       {
-        "user_id": "63295728",
+        "user_id": "63313145",
+        "class_start_ksa": "2026-06-01 15:30 ~ 16:00",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63314095",
         "class_start_ksa": "2026-06-01 16:00 ~ 16:30",
         "booking_type": "自约",
         "textbook": ""
       },
       {
-        "user_id": "63299419",
-        "class_start_ksa": "2026-06-01 16:00 ~ 16:30",
+        "user_id": "63308027",
+        "class_start_ksa": "2026-06-01 16:30 ~ 17:00",
+        "booking_type": "代约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63314042",
+        "class_start_ksa": "2026-06-01 17:00 ~ 17:30",
         "booking_type": "自约",
         "textbook": ""
       },
@@ -47,15 +101,111 @@
         "textbook": ""
       },
       {
-        "user_id": "63297070",
-        "class_start_ksa": "2026-06-01 20:30 ~ 21:00",
+        "user_id": "63311135",
+        "class_start_ksa": "2026-06-01 17:30 ~ 18:00",
+        "booking_type": "代约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63314955",
+        "class_start_ksa": "2026-06-01 18:00 ~ 18:30",
         "booking_type": "自约",
         "textbook": ""
       },
       {
-        "user_id": "63297537",
-        "class_start_ksa": "2026-06-01 20:30 ~ 21:00",
+        "user_id": "63300696",
+        "class_start_ksa": "2026-06-01 18:30 ~ 19:00",
         "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63307592",
+        "class_start_ksa": "2026-06-01 18:30 ~ 19:00",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63311277",
+        "class_start_ksa": "2026-06-01 19:00 ~ 19:30",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63312047",
+        "class_start_ksa": "2026-06-01 19:00 ~ 19:30",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63312495",
+        "class_start_ksa": "2026-06-01 19:00 ~ 19:30",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63299419",
+        "class_start_ksa": "2026-06-01 19:00 ~ 19:30",
+        "booking_type": "代约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63315924",
+        "class_start_ksa": "2026-06-01 19:00 ~ 19:30",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63316351",
+        "class_start_ksa": "2026-06-01 19:30 ~ 20:00",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63302640",
+        "class_start_ksa": "2026-06-01 19:30 ~ 20:00",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63309434",
+        "class_start_ksa": "2026-06-01 19:30 ~ 20:00",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63309842",
+        "class_start_ksa": "2026-06-01 19:30 ~ 20:00",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63309980",
+        "class_start_ksa": "2026-06-01 19:30 ~ 20:00",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63312130",
+        "class_start_ksa": "2026-06-01 19:30 ~ 20:00",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63302365",
+        "class_start_ksa": "2026-06-01 20:00 ~ 20:30",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63311277",
+        "class_start_ksa": "2026-06-01 20:00 ~ 20:30",
+        "booking_type": "代约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63307507",
+        "class_start_ksa": "2026-06-01 20:00 ~ 20:30",
+        "booking_type": "代约",
         "textbook": ""
       },
       {
@@ -63,12 +213,759 @@
         "class_start_ksa": "2026-06-01 20:30 ~ 21:00",
         "booking_type": "自约",
         "textbook": ""
+      },
+      {
+        "user_id": "63316816",
+        "class_start_ksa": "2026-06-01 20:30 ~ 21:00",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63314481",
+        "class_start_ksa": "2026-06-01 20:30 ~ 21:00",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63317633",
+        "class_start_ksa": "2026-06-02 13:00 ~ 13:30",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63318444",
+        "class_start_ksa": "2026-06-02 13:30 ~ 14:00",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63318288",
+        "class_start_ksa": "2026-06-02 13:30 ~ 14:00",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63309975",
+        "class_start_ksa": "2026-06-02 14:00 ~ 14:30",
+        "booking_type": "代约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63321368",
+        "class_start_ksa": "2026-06-02 14:00 ~ 14:30",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63317271",
+        "class_start_ksa": "2026-06-02 14:30 ~ 15:00",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63317470",
+        "class_start_ksa": "2026-06-02 15:00 ~ 15:30",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63318444",
+        "class_start_ksa": "2026-06-02 15:00 ~ 15:30",
+        "booking_type": "代约",
+        "textbook": ""
+      },
+      {
+        "user_id": "62836047",
+        "class_start_ksa": "2026-06-02 15:00 ~ 15:30",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63317214",
+        "class_start_ksa": "2026-06-02 15:30 ~ 16:00",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63319545",
+        "class_start_ksa": "2026-06-02 15:30 ~ 16:00",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63319681",
+        "class_start_ksa": "2026-06-02 15:30 ~ 16:00",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63320690",
+        "class_start_ksa": "2026-06-02 15:30 ~ 16:00",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63314587",
+        "class_start_ksa": "2026-06-02 15:30 ~ 16:00",
+        "booking_type": "代约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63319120",
+        "class_start_ksa": "2026-06-02 16:00 ~ 16:30",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63319091",
+        "class_start_ksa": "2026-06-02 16:00 ~ 16:30",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63316727",
+        "class_start_ksa": "2026-06-02 17:00 ~ 17:30",
+        "booking_type": "代约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63317303",
+        "class_start_ksa": "2026-06-02 17:30 ~ 18:00",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63320412",
+        "class_start_ksa": "2026-06-02 17:30 ~ 18:00",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "61996724",
+        "class_start_ksa": "2026-06-02 17:30 ~ 18:00",
+        "booking_type": "代约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63322390",
+        "class_start_ksa": "2026-06-02 17:30 ~ 18:00",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "62852301",
+        "class_start_ksa": "2026-06-02 17:30 ~ 18:00",
+        "booking_type": "代约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63316340",
+        "class_start_ksa": "2026-06-02 18:30 ~ 19:00",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63318288",
+        "class_start_ksa": "2026-06-02 19:00 ~ 19:30",
+        "booking_type": "代约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63311295",
+        "class_start_ksa": "2026-06-02 19:30 ~ 20:00",
+        "booking_type": "代约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63296121",
+        "class_start_ksa": "2026-06-02 19:30 ~ 20:00",
+        "booking_type": "代约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63318538",
+        "class_start_ksa": "2026-06-02 19:30 ~ 20:00",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63323353",
+        "class_start_ksa": "2026-06-02 19:30 ~ 20:00",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63317221",
+        "class_start_ksa": "2026-06-02 19:30 ~ 20:00",
+        "booking_type": "代约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63320412",
+        "class_start_ksa": "2026-06-02 19:30 ~ 20:00",
+        "booking_type": "代约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63316474",
+        "class_start_ksa": "2026-06-02 20:00 ~ 20:30",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63319132",
+        "class_start_ksa": "2026-06-02 20:00 ~ 20:30",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63317081",
+        "class_start_ksa": "2026-06-02 20:30 ~ 21:00",
+        "booking_type": "代约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63318442",
+        "class_start_ksa": "2026-06-03 12:00 ~ 12:30",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63323396",
+        "class_start_ksa": "2026-06-03 12:00 ~ 12:30",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63325123",
+        "class_start_ksa": "2026-06-03 12:30 ~ 13:00",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63319072",
+        "class_start_ksa": "2026-06-03 13:00 ~ 13:30",
+        "booking_type": "代约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63319067",
+        "class_start_ksa": "2026-06-03 13:30 ~ 14:00",
+        "booking_type": "代约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63318293",
+        "class_start_ksa": "2026-06-03 14:30 ~ 15:00",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63324102",
+        "class_start_ksa": "2026-06-03 14:30 ~ 15:00",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63324579",
+        "class_start_ksa": "2026-06-03 15:30 ~ 16:00",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63323516",
+        "class_start_ksa": "2026-06-03 16:00 ~ 16:30",
+        "booking_type": "代约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63332204",
+        "class_start_ksa": "2026-06-03 17:00 ~ 17:30",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63324408",
+        "class_start_ksa": "2026-06-03 17:30 ~ 18:00",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63328815",
+        "class_start_ksa": "2026-06-03 18:00 ~ 18:30",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63328258",
+        "class_start_ksa": "2026-06-03 18:00 ~ 18:30",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63328599",
+        "class_start_ksa": "2026-06-03 18:00 ~ 18:30",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63018342",
+        "class_start_ksa": "2026-06-03 18:00 ~ 18:30",
+        "booking_type": "代约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63325097",
+        "class_start_ksa": "2026-06-03 18:30 ~ 19:00",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63325836",
+        "class_start_ksa": "2026-06-03 18:30 ~ 19:00",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63326759",
+        "class_start_ksa": "2026-06-03 18:30 ~ 19:00",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63328540",
+        "class_start_ksa": "2026-06-03 18:30 ~ 19:00",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63329974",
+        "class_start_ksa": "2026-06-03 18:30 ~ 19:00",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63316629",
+        "class_start_ksa": "2026-06-03 19:00 ~ 19:30",
+        "booking_type": "代约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63325156",
+        "class_start_ksa": "2026-06-03 19:00 ~ 19:30",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63326111",
+        "class_start_ksa": "2026-06-03 19:00 ~ 19:30",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63331543",
+        "class_start_ksa": "2026-06-03 19:00 ~ 19:30",
+        "booking_type": "代约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63323353",
+        "class_start_ksa": "2026-06-03 19:30 ~ 20:00",
+        "booking_type": "代约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63324987",
+        "class_start_ksa": "2026-06-03 19:30 ~ 20:00",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63331407",
+        "class_start_ksa": "2026-06-03 19:30 ~ 20:00",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63325394",
+        "class_start_ksa": "2026-06-03 19:30 ~ 20:00",
+        "booking_type": "代约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63312075",
+        "class_start_ksa": "2026-06-03 20:00 ~ 20:30",
+        "booking_type": "代约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63325022",
+        "class_start_ksa": "2026-06-03 20:00 ~ 20:30",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63331234",
+        "class_start_ksa": "2026-06-03 20:00 ~ 20:30",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63324888",
+        "class_start_ksa": "2026-06-03 20:30 ~ 21:00",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "58231345",
+        "class_start_ksa": "2026-06-03 20:30 ~ 21:00",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63325636",
+        "class_start_ksa": "2026-06-03 20:30 ~ 21:00",
+        "booking_type": "自约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63312047",
+        "class_start_ksa": "2026-06-03 20:30 ~ 21:00",
+        "booking_type": "代约",
+        "textbook": ""
+      },
+      {
+        "user_id": "63325488",
+        "class_start_ksa": "2026-06-03 20:30 ~ 21:00",
+        "booking_type": "代约",
+        "textbook": ""
       }
     ],
-    "postclass_tasks": [],
+    "postclass_tasks": [
+      {
+        "user_id": "63304380",
+        "class_start_ksa": "2026-06-01 13:30 ~ 14:00",
+        "booking_type": "自约",
+        "textbook": "",
+        "missing_post_6h_touch": true,
+        "missing_post_24h_touch": true
+      },
+      {
+        "user_id": "63308058",
+        "class_start_ksa": "2026-06-01 14:00 ~ 14:30",
+        "booking_type": "自约",
+        "textbook": "",
+        "missing_post_6h_touch": true,
+        "missing_post_24h_touch": true
+      },
+      {
+        "user_id": "63311106",
+        "class_start_ksa": "2026-06-01 14:00 ~ 14:30",
+        "booking_type": "自约",
+        "textbook": "",
+        "missing_post_6h_touch": true,
+        "missing_post_24h_touch": true
+      },
+      {
+        "user_id": "63308635",
+        "class_start_ksa": "2026-06-01 14:30 ~ 15:00",
+        "booking_type": "自约",
+        "textbook": "",
+        "missing_post_6h_touch": true,
+        "missing_post_24h_touch": true
+      },
+      {
+        "user_id": "63311462",
+        "class_start_ksa": "2026-06-01 15:00 ~ 15:30",
+        "booking_type": "自约",
+        "textbook": "",
+        "missing_post_6h_touch": true,
+        "missing_post_24h_touch": true
+      },
+      {
+        "user_id": "63313145",
+        "class_start_ksa": "2026-06-01 15:30 ~ 16:00",
+        "booking_type": "自约",
+        "textbook": "",
+        "missing_post_6h_touch": true,
+        "missing_post_24h_touch": true
+      },
+      {
+        "user_id": "63314095",
+        "class_start_ksa": "2026-06-01 16:00 ~ 16:30",
+        "booking_type": "自约",
+        "textbook": "",
+        "missing_post_6h_touch": true,
+        "missing_post_24h_touch": true
+      },
+      {
+        "user_id": "63308027",
+        "class_start_ksa": "2026-06-01 16:30 ~ 17:00",
+        "booking_type": "代约",
+        "textbook": "",
+        "missing_post_6h_touch": true,
+        "missing_post_24h_touch": true
+      },
+      {
+        "user_id": "63314042",
+        "class_start_ksa": "2026-06-01 17:00 ~ 17:30",
+        "booking_type": "自约",
+        "textbook": "",
+        "missing_post_6h_touch": true,
+        "missing_post_24h_touch": true
+      },
+      {
+        "user_id": "63311135",
+        "class_start_ksa": "2026-06-01 17:30 ~ 18:00",
+        "booking_type": "代约",
+        "textbook": "",
+        "missing_post_6h_touch": true,
+        "missing_post_24h_touch": true
+      },
+      {
+        "user_id": "63307592",
+        "class_start_ksa": "2026-06-01 18:30 ~ 19:00",
+        "booking_type": "自约",
+        "textbook": "",
+        "missing_post_6h_touch": true,
+        "missing_post_24h_touch": true
+      },
+      {
+        "user_id": "63299419",
+        "class_start_ksa": "2026-06-01 19:00 ~ 19:30",
+        "booking_type": "代约",
+        "textbook": "",
+        "missing_post_6h_touch": true,
+        "missing_post_24h_touch": true
+      },
+      {
+        "user_id": "63315924",
+        "class_start_ksa": "2026-06-01 19:00 ~ 19:30",
+        "booking_type": "自约",
+        "textbook": "",
+        "missing_post_6h_touch": true,
+        "missing_post_24h_touch": true
+      },
+      {
+        "user_id": "63309434",
+        "class_start_ksa": "2026-06-01 19:30 ~ 20:00",
+        "booking_type": "自约",
+        "textbook": "",
+        "missing_post_6h_touch": true,
+        "missing_post_24h_touch": true
+      },
+      {
+        "user_id": "63309842",
+        "class_start_ksa": "2026-06-01 19:30 ~ 20:00",
+        "booking_type": "自约",
+        "textbook": "",
+        "missing_post_6h_touch": true,
+        "missing_post_24h_touch": true
+      },
+      {
+        "user_id": "63302365",
+        "class_start_ksa": "2026-06-01 20:00 ~ 20:30",
+        "booking_type": "自约",
+        "textbook": "",
+        "missing_post_6h_touch": true,
+        "missing_post_24h_touch": true
+      },
+      {
+        "user_id": "63311277",
+        "class_start_ksa": "2026-06-01 20:00 ~ 20:30",
+        "booking_type": "代约",
+        "textbook": "",
+        "missing_post_6h_touch": true,
+        "missing_post_24h_touch": true
+      },
+      {
+        "user_id": "63307507",
+        "class_start_ksa": "2026-06-01 20:00 ~ 20:30",
+        "booking_type": "代约",
+        "textbook": "",
+        "missing_post_6h_touch": true,
+        "missing_post_24h_touch": true
+      },
+      {
+        "user_id": "63316816",
+        "class_start_ksa": "2026-06-01 20:30 ~ 21:00",
+        "booking_type": "自约",
+        "textbook": "",
+        "missing_post_6h_touch": true,
+        "missing_post_24h_touch": true
+      },
+      {
+        "user_id": "63318444",
+        "class_start_ksa": "2026-06-02 13:30 ~ 14:00",
+        "booking_type": "自约",
+        "textbook": "",
+        "missing_post_6h_touch": true,
+        "missing_post_24h_touch": true
+      },
+      {
+        "user_id": "63309975",
+        "class_start_ksa": "2026-06-02 14:00 ~ 14:30",
+        "booking_type": "代约",
+        "textbook": "",
+        "missing_post_6h_touch": true,
+        "missing_post_24h_touch": true
+      },
+      {
+        "user_id": "63317271",
+        "class_start_ksa": "2026-06-02 14:30 ~ 15:00",
+        "booking_type": "自约",
+        "textbook": "",
+        "missing_post_6h_touch": true,
+        "missing_post_24h_touch": true
+      },
+      {
+        "user_id": "63318444",
+        "class_start_ksa": "2026-06-02 15:00 ~ 15:30",
+        "booking_type": "代约",
+        "textbook": "",
+        "missing_post_6h_touch": true,
+        "missing_post_24h_touch": true
+      },
+      {
+        "user_id": "63320690",
+        "class_start_ksa": "2026-06-02 15:30 ~ 16:00",
+        "booking_type": "自约",
+        "textbook": "",
+        "missing_post_6h_touch": true,
+        "missing_post_24h_touch": true
+      },
+      {
+        "user_id": "63314587",
+        "class_start_ksa": "2026-06-02 15:30 ~ 16:00",
+        "booking_type": "代约",
+        "textbook": "",
+        "missing_post_6h_touch": true,
+        "missing_post_24h_touch": true
+      },
+      {
+        "user_id": "63316727",
+        "class_start_ksa": "2026-06-02 17:00 ~ 17:30",
+        "booking_type": "代约",
+        "textbook": "",
+        "missing_post_6h_touch": true,
+        "missing_post_24h_touch": true
+      },
+      {
+        "user_id": "63317303",
+        "class_start_ksa": "2026-06-02 17:30 ~ 18:00",
+        "booking_type": "自约",
+        "textbook": "",
+        "missing_post_6h_touch": true,
+        "missing_post_24h_touch": true
+      },
+      {
+        "user_id": "63322390",
+        "class_start_ksa": "2026-06-02 17:30 ~ 18:00",
+        "booking_type": "自约",
+        "textbook": "",
+        "missing_post_6h_touch": true,
+        "missing_post_24h_touch": true
+      },
+      {
+        "user_id": "63311295",
+        "class_start_ksa": "2026-06-02 19:30 ~ 20:00",
+        "booking_type": "代约",
+        "textbook": "",
+        "missing_post_6h_touch": true,
+        "missing_post_24h_touch": true
+      },
+      {
+        "user_id": "63317221",
+        "class_start_ksa": "2026-06-02 19:30 ~ 20:00",
+        "booking_type": "代约",
+        "textbook": "",
+        "missing_post_6h_touch": true,
+        "missing_post_24h_touch": true
+      },
+      {
+        "user_id": "63320412",
+        "class_start_ksa": "2026-06-02 19:30 ~ 20:00",
+        "booking_type": "代约",
+        "textbook": "",
+        "missing_post_6h_touch": true,
+        "missing_post_24h_touch": true
+      },
+      {
+        "user_id": "63319132",
+        "class_start_ksa": "2026-06-02 20:00 ~ 20:30",
+        "booking_type": "自约",
+        "textbook": "",
+        "missing_post_6h_touch": true,
+        "missing_post_24h_touch": true
+      },
+      {
+        "user_id": "63317081",
+        "class_start_ksa": "2026-06-02 20:30 ~ 21:00",
+        "booking_type": "代约",
+        "textbook": "",
+        "missing_post_6h_touch": true,
+        "missing_post_24h_touch": true
+      },
+      {
+        "user_id": "63319072",
+        "class_start_ksa": "2026-06-03 13:00 ~ 13:30",
+        "booking_type": "代约",
+        "textbook": "",
+        "missing_post_6h_touch": true,
+        "missing_post_24h_touch": true
+      },
+      {
+        "user_id": "63319067",
+        "class_start_ksa": "2026-06-03 13:30 ~ 14:00",
+        "booking_type": "代约",
+        "textbook": "",
+        "missing_post_6h_touch": true,
+        "missing_post_24h_touch": true
+      },
+      {
+        "user_id": "63318293",
+        "class_start_ksa": "2026-06-03 14:30 ~ 15:00",
+        "booking_type": "自约",
+        "textbook": "",
+        "missing_post_6h_touch": true,
+        "missing_post_24h_touch": true
+      },
+      {
+        "user_id": "63324102",
+        "class_start_ksa": "2026-06-03 14:30 ~ 15:00",
+        "booking_type": "自约",
+        "textbook": "",
+        "missing_post_6h_touch": true,
+        "missing_post_24h_touch": true
+      },
+      {
+        "user_id": "63324579",
+        "class_start_ksa": "2026-06-03 15:30 ~ 16:00",
+        "booking_type": "自约",
+        "textbook": "",
+        "missing_post_6h_touch": true,
+        "missing_post_24h_touch": true
+      },
+      {
+        "user_id": "63323516",
+        "class_start_ksa": "2026-06-03 16:00 ~ 16:30",
+        "booking_type": "代约",
+        "textbook": "",
+        "missing_post_6h_touch": true,
+        "missing_post_24h_touch": true
+      },
+      {
+        "user_id": "63324408",
+        "class_start_ksa": "2026-06-03 17:30 ~ 18:00",
+        "booking_type": "自约",
+        "textbook": "",
+        "missing_post_6h_touch": true,
+        "missing_post_24h_touch": true
+      }
+    ],
     "unreached_count": 0,
-    "preclass_count": 10,
-    "postclass_count": 0,
-    "total_todo_count": 10
+    "preclass_count": 106,
+    "postclass_count": 40,
+    "total_todo_count": 146
   }
 ]
