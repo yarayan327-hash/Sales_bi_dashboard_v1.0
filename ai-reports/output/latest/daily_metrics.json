@@ -1,5 +1,5 @@
 {
-  "report_date": "2026-06-07",
+  "report_date": "2026-06-08",
   "yesterday": {
     "leads": 0,
     "booked": 0,
@@ -38,10 +38,10 @@
       "orders": 123
     },
     "ranges": {
-      "yesterday": "2026-06-07",
+      "yesterday": "2026-06-08",
       "mtd": {
         "start": "2026-06-01",
-        "end": "2026-06-07"
+        "end": "2026-06-08"
       }
     }
   }
